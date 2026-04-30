@@ -1,4 +1,4 @@
-import InPractice from "./in-practice/in-practice";
+import InPractice from "./in-practice/page";
 
 
 export default function Home() {

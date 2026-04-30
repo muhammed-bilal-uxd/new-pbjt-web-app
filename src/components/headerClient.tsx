@@ -27,21 +27,19 @@ export function HeaderClient({ navLinks, phoneNumber }: { navLinks: INavLinks[],
                 const isActive = pathname === item.href;
 
                 return (
-
                     <Link
                         key={item.href}
                         href={item.href}
-
                     >
-
-                        {(item.type === 'button') ? (<ContactButton phoneNumber={phoneNumber} />) : <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-[25px] px-1 py-2`}>
+                        <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-[25px] px-1 py-2`}>
                             <span className="pbjt_links_label">{item.label}</span>
                             <span className="pbjt__border-bottom"></span>
-                        </span>}
-
+                        </span>
                     </Link>
                 )
             })}
+
+            <ContactButton phoneNumber={phoneNumber} />
         </nav>
     </>);
 }

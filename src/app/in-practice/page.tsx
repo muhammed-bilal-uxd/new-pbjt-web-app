@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import styles from './in-practice.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 /* ---------- Inline SVG icons (kept in JSX, no CSS) ---------- */
 const PeopleIcon = () => (
@@ -70,10 +71,10 @@ export default function PBJTInPractice() {
   ];
 
   const locations = [
-    { name: 'Dindigul', color: '#f87171' },
-    { name: 'Virudhnagar', color: '#fbbf24' },
-    { name: 'Krishnagiri', color: '#fb923c' },
-    { name: 'Hosur', color: '#f97316' },
+    { name: 'Dindigul', color: '#f87171', href: 'dindigal' },
+    { name: 'Virudhnagar', color: '#fbbf24', href: '#' },
+    { name: 'Krishnagiri', color: '#fb923c', href: '#' },
+    { name: 'Hosur', color: '#f97316', href: '#' },
   ];
 
   const handleSubscribe = (e) => {
@@ -201,17 +202,19 @@ export default function PBJTInPractice() {
 
           <div className={styles.locationGrid}>
             {locations.map((loc) => (
-              <button key={loc.name} type="button" className={styles.locationCard}>
-                <span
-                  className={styles.locationMapIcon}
-                  style={{ backgroundColor: loc.color }}
-                  aria-hidden="true"
-                />
-                <span className={styles.locationName}>{loc.name}</span>
-                <span className={styles.locationArrow} aria-hidden="true">
-                  <ArrowIcon />
-                </span>
-              </button>
+              <Link href={loc.href} key={loc.name}>
+                <button type="button" className={styles.locationCard}>
+                  <span
+                    className={styles.locationMapIcon}
+                    style={{ backgroundColor: loc.color }}
+                    aria-hidden="true"
+                  />
+                  <span className={styles.locationName}>{loc.name}</span>
+                  <span className={styles.locationArrow} aria-hidden="true">
+                    <ArrowIcon />
+                  </span>
+                </button>
+              </Link>
             ))}
           </div>
         </div>

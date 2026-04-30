@@ -4,21 +4,9 @@ import Image from 'next/image';
 import "./header.css"
 import { HeaderClient, MobileMenu } from './headerClient';
 import { INavLinks } from "@/interface/common";
+import { navLinks } from '@/data/menu';
 
 const phoneNumber = "+1 (555) 123-4567";
-
-const navLinks: INavLinks[] = [
-  { label: "In practice", href: "/" },
-  { label: "Testimonials", href: "/testimonials" },
-  { label: "About", href: "/about" },
-  { label: "Impact Proposition", href: "/impact-proposition" },
-  { label: "Framework", href: "/framework" },
-  { label: "Food menu", href: "/food-menu" },
-  { label: "Methodology", href: "/methodology" },
-  { label: "Glossary", href: "/glossary" },
-  { label: "Contact", href: "/contact", type: "button" },
-];
-
 
 function Logo() {
   return (
