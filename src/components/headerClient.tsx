@@ -34,7 +34,7 @@ export function HeaderClient({ navLinks, phoneNumber }: { navLinks: INavLinks[],
 
                     >
 
-                        {(item.type === 'button') ? (<ContactButton phoneNumber={phoneNumber} />) : <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-[25px] px-3 py-2`}>
+                        {(item.type === 'button') ? (<ContactButton phoneNumber={phoneNumber} />) : <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-[25px] px-1 py-2`}>
                             <span className="pbjt_links_label">{item.label}</span>
                             <span className="pbjt__border-bottom"></span>
                         </span>}

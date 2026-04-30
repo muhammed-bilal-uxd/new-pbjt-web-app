@@ -90,7 +90,7 @@ export function Footer() {
 
   return (
     <footer className="footer">
-      <div className="footer-container">
+      <div className="footer-container px-6 py-4">
         <div className="top-grid">
           <div className="brand-col">
             <Link href="/" >
@@ -186,7 +186,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="bottom-bar">
+        <div className="bottom-bar sm:text-center">
           <p className="copyright">&copy; 2024 Place-Based Just Transition. All rights reserved.</p>
           <div className="bottom-links">
             {["Privacy Policy", "Terms of Use", "Accessibility"].map((item, i) => (

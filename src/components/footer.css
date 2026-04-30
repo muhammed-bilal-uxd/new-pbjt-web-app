@@ -20,7 +20,7 @@
 .footer-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 60px 32px 0;
+    /* padding: 60px 32px 0; */
 }
 
 .top-grid {
@@ -308,6 +308,6 @@
     .bottom-bar {
         flex-direction: column !important;
         gap: 12px !important;
-        align-items: flex-start !important;
+        /* align-items: flex-start !important; */
     }
 }
