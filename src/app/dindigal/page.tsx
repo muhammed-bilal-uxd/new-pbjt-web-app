@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 import './DindigulPage.css';
+import BeforeAfter from '@/components/before-after';
+import Villages from '@/components/villages/villages';
+import Mapping from '@/components/mapping';
 
 /* ============================================================
    DATA
@@ -907,10 +910,13 @@ export default function DindigulPage() {
       <HeroSection />
       <KeyInsights />
       <ClimateTable />
-      <VillageProcess />
-      <VillagesSection />
-      <VillageDetail />
-      <BeforeAfterJourney />
+      {/* <VillageProcess /> */}
+      <Mapping />
+      {/* <VillagesSection /> */}
+      {/* <VillageDetail /> */}
+      <Villages />
+      {/* <BeforeAfterJourney /> */}
+      <BeforeAfter />
     </main>
   );
 }

@@ -83,7 +83,7 @@
 .heroTitle em {
   display: block;
   font-style: normal;
-  color: var(--red);
+  color: var(--pbjt-primary-color);
 }
 
 .quoteMark {
