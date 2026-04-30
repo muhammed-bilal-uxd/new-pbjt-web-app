@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+import "./footer.css"
+
 function Logo() {
   return (
     <Link href="/">
@@ -28,7 +30,7 @@ function FooterNavLinks() {
         <Link
           key={item.href}
           href={item.href}
-          className="footer-link text-sm text-white-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+          className="footer-link text-sm text-white hover:text-primary transition-colors"
         >
           {item.label}
         </Link>
