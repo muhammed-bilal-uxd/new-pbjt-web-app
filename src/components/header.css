@@ -1,15 +1,31 @@
 :root {
-    --header-from-top: 50px;
+    --header-from-top: 56px;
 }
 
-.menu.menu-active {
+.pbjt__border-bottom {
     background-color: var(--pbjt-primary-color);
-    color: #ffffff;
+    width: 0%;
+    height: 3px;
+    margin: 0 auto;
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+    display: block;
+}
+
+.menu.menu-active .pbjt__border-bottom {
+    width: 80%;
+    transform: scale(1);
 }
 
 .mobile-menu {
     height: calc(100vh - var(--from-top));
     top: var(--header-from-top);
+}
+
+.mobile-menu .menu.menu-active {
+    background-color: var(--pbjt-primary-color);
+    color: #ffffff;
 }
 
 .button-contact {

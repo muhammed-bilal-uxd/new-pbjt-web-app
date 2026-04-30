@@ -9,9 +9,10 @@ import { INavLinks } from "./Header";
 function ContactButton({ phoneNumber }: { phoneNumber: string }) {
     return (
         <button className='button-contact flex items-center gap-2'>
-            <Phone strokeWidth={2} size={16} />
+            {/* <Phone strokeWidth={2} size={16} /> */}
             <span className='text-sm'>
                 {phoneNumber}
+                {/* Contact */}
             </span>
         </button>
     )
@@ -33,7 +34,10 @@ export function HeaderClient({ navLinks, phoneNumber }: { navLinks: INavLinks[],
 
                     >
 
-                        {(item.type === 'button') ? (<ContactButton phoneNumber={phoneNumber} />) : <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-[25px] px-3 py-2`}>{item.label}</span>}
+                        {(item.type === 'button') ? (<ContactButton phoneNumber={phoneNumber} />) : <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-[25px] px-3 py-2`}>
+                            <span className="pbjt_links_label">{item.label}</span>
+                            <span className="pbjt__border-bottom"></span>
+                        </span>}
 
                     </Link>
                 )
@@ -48,6 +52,7 @@ export function MobileMenu({ navLinks, phoneNumber }: { navLinks: INavLinks[], p
 
     return (
         <div className="flex items-center gap-4">
+            <span style={{ float: "right" }}><ContactButton phoneNumber={phoneNumber} /></span>
             <div onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="cursor-pointer">
                 {isMobileMenuOpen ? <X /> : <Menu />}
             </div>
@@ -64,7 +69,7 @@ export function MobileMenu({ navLinks, phoneNumber }: { navLinks: INavLinks[], p
                                     className={`${pathname === item.href ? "menu-active" : ""} menu p-1 dark:hover:text-white transition-colors`}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
-                                    {(item.type === 'button') ? (<span style={{ float: "right" }}><ContactButton phoneNumber={phoneNumber} /></span>) : <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-full p-2`}>{item.label}</span>}
+                                    {(item.type === 'button') ? "" : <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-full p-2`}>{item.label}</span>}
                                 </Link>
                             )
                         })}
