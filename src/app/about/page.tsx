@@ -10,8 +10,8 @@ export default function AboutPage() {
         <section className="pbjt__hero">
           <div className="pbjt__heroImage">
             <Image
-              src="/images/about/about-01.png"
-              alt="Hero"
+              src="/images/about/about-07.jpg"
+              alt=""
               fill
             />
           </div>
@@ -54,7 +54,7 @@ export default function AboutPage() {
             <div className="pbjt__images">
               <Image
                 alt=""
-                src="/images/about/about-02.png"
+                src="/images/about/about-08.jpg"
                 fill
               />
 
@@ -62,7 +62,7 @@ export default function AboutPage() {
             <div className="pbjt__images">
               <Image
                 alt=""
-                src="/images/about/about-03.png"
+                src="/images/about/about-09.jpg"
                 fill
               />
             </div>
@@ -103,7 +103,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── Definition ── */}
-        <section className="pbjt__definition">
+        <section className="pbjt__definition center-content">
           <div className="pbjt__definitionCopy">
             <h2>
               Place-Based Just Transition (PBJT)
@@ -134,12 +134,7 @@ export default function AboutPage() {
           <div className="pbjt__diagram">
             <div className="relative w-full h-[300px]">
               <Image
-                src="/images/about/about-04.png"
-                alt=""
-                fill
-              />
-              <Image
-                src="/images/about/about-05.png"
+                src="/images/about/about-06.png"
                 alt=""
                 fill
               />

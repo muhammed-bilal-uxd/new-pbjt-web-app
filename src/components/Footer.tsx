@@ -7,10 +7,11 @@ function Logo() {
   return (
     <Link href="/">
       <Image
+        className='footer-logo'
         src="/images/site/logo.png"
         alt="Logo"
-        width={120}
-        height={120}
+        width={150}
+        height={150}
         priority
       />
     </Link>
