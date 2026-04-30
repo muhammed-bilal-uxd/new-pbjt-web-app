@@ -1,12 +1,14 @@
 "use client";
 
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, Phone, X } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
 
 import "./header.css"
 import { usePathname } from 'next/navigation';
+
+const phoneNumber = "+1 (555) 123-4567";
 
 const navLinks = [
   { label: "In practice", href: "/" },
@@ -17,7 +19,7 @@ const navLinks = [
   { label: "Food menu", href: "/food-menu" },
   { label: "Methodology", href: "/methodology" },
   { label: "Glossary", href: "/glossary" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact", type: "button" },
 ];
 
 function Logo() {
@@ -34,11 +36,22 @@ function Logo() {
   )
 }
 
+function ContactButton() {
+  return (
+    <button className='button-contact flex items-center gap-2'>
+      <Phone strokeWidth={2} size={16} />
+      <span className='text-sm'>
+        {phoneNumber}
+      </span>
+    </button>
+  )
+}
+
 function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-wrap gap-3">
+    <nav className="flex flex-wrap gap-3 items-center">
       {navLinks.map((item) => {
         const isActive = pathname === item.href;
 
@@ -47,9 +60,11 @@ function Navbar() {
           <Link
             key={item.href}
             href={item.href}
-            className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-full p-2`}
+
           >
-            {item.label}
+
+            {(item.type === 'button') ? (<ContactButton />) : <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-full p-2`}>{item.label}</span>}
+
           </Link>
         )
       })}
@@ -64,9 +79,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md dark:border-gray-800 dark:bg-gray-950/80">
       <div className="container-fluid mx-auto flex items-center justify-between px-6 py-2">
-        <div className="flex items-center gap-6">
+        <div className="flex items-center justify-between gap-6 w-full">
           <Logo />
-          <nav className={`hidden lg:flex gap-6`}>
+          <nav className={`hidden lg:flex gap-6 items-center`}>
             <Navbar />
           </nav>
         </div>
@@ -80,16 +95,19 @@ export function Header() {
       {isMobileMenuOpen && (
         <div className={`mobile-menu block lg:hidden absolute top-16 left-0 w-full bg-white dark:bg-gray-900`}>
           <nav className="flex flex-col gap-4 py-4 px-6">
-            {navLinks.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`${pathname === item.href ? "menu-active" : ""} menu p-1 dark:hover:text-white transition-colors`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navLinks.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`${pathname === item.href ? "menu-active" : ""} menu p-1 dark:hover:text-white transition-colors`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {(item.type === 'button') ? (<span style={{ float: "right" }}><ContactButton /></span>) : <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-full p-2`}>{item.label}</span>}
+                </Link>
+              )
+            })}
           </nav>
         </div>
       )}

@@ -4,5 +4,19 @@
 }
 
 .mobile-menu {
-    height: calc(100vh - 5rem);
+    --from-top: 52px;
+    height: calc(100vh - var(--from-top));
+    top: var(--from-top);
+}
+
+.button-contact {
+    background-color: var(--pbjt-primary-color);
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.mobile-menu nav {
+    height: calc(100vh - 47px);
+    overflow: auto;
 }
