@@ -1,0 +1,8 @@
+.menu.menu-active {
+    background-color: var(--pbjt-primary-color);
+    color: #ffffff;
+}
+
+.mobile-menu {
+    height: calc(100vh - 5rem);
+}
