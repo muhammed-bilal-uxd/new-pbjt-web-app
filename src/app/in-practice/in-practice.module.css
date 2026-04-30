@@ -1,0 +1,737 @@
+/* =========================================================
+   PBJTInPractice.module.css
+   Responsive, mobile-friendly styles. No inline CSS in JSX.
+   ========================================================= */
+
+.wrapper {
+  --color-primary: #dc2626;
+  --color-primary-dark: #b91c1c;
+  --color-primary-light: #fee2e2;
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8fafc;
+  --color-dark: #1e293b;
+  --color-border: #e5e7eb;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+  width: 100%;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  box-sizing: border-box;
+}
+
+.wrapper *,
+.wrapper *::before,
+.wrapper *::after {
+  box-sizing: border-box;
+}
+
+/* ===== Hero Banner ===== */
+.heroBanner {
+  background: var(--color-primary);
+  padding: 1.25rem 2rem 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroInner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.heroTop {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-135%);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.heroMain {
+  font-size: clamp(3rem, 11vw, 7rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.heroQuestion {
+  display: inline-block;
+  font-size: 0.65em;
+  font-weight: 700;
+  color: #1f2937;
+  margin-left: 0.1em;
+  vertical-align: top;
+}
+
+.heroBottom {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(60%);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* ===== Practice Section ===== */
+.practiceSection {
+  padding: 3.5rem 2rem;
+  position: relative;
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+}
+
+.decorCircle {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 56px;
+  height: 56px;
+  background: var(--color-primary-light);
+  border-radius: 50%;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.decorDots {
+  position: absolute;
+  bottom: 2rem;
+  left: 0.5rem;
+  width: 30px;
+  height: 30px;
+  background-image: radial-gradient(circle, #d1d5db 2px, transparent 2px);
+  background-size: 8px 8px;
+  z-index: 0;
+}
+
+.practiceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.practiceText {
+  display: flex;
+  flex-direction: column;
+}
+
+.practiceTitle {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.accentRed {
+  color: var(--color-primary);
+}
+
+.practiceSubtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #374151;
+  margin: 0 0 1.25rem;
+}
+
+.practiceParagraph {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0 0 2rem;
+}
+
+.exploreBtn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.95rem 1.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  margin-bottom: 2rem;
+}
+
+.exploreBtn:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.tagline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.taglineIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.taglineTitle {
+  font-weight: 700;
+  margin: 0;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.taglineSub {
+  margin: 0.15rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.practiceImageWrap {
+  position: relative;
+  width: 100%;
+}
+
+.practiceImageBg {
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  width: 70%;
+  height: 70%;
+  background: var(--color-primary);
+  border-radius: var(--radius-lg);
+  z-index: 0;
+}
+
+.practiceImage {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  position: relative;
+  z-index: 1;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* ===== Insights Section ===== */
+.insightsSection {
+  background: var(--color-bg-alt);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.insightsTitle {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 800;
+  margin: 0;
+  color: #111827;
+}
+
+.titleUnderline {
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: var(--color-primary);
+  margin: 0.75rem auto 3rem;
+  border-radius: 2px;
+}
+
+.insightsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.insightCard {
+  background: #ffffff;
+  padding: 2.25rem 1.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.insightCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.insightIconWrap {
+  width: 64px;
+  height: 64px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insightText {
+  font-size: 1rem;
+  line-height: 1.55;
+  margin: 0;
+  color: #1f2937;
+}
+
+.insightDivider {
+  display: block;
+  width: 36px;
+  height: 2px;
+  background: var(--color-primary);
+  margin-top: 0.25rem;
+  border-radius: 2px;
+}
+
+/* ===== Quote Section ===== */
+.quoteSection {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 0;
+  padding: 0 2rem;
+  margin: 3.5rem auto;
+  max-width: 1100px;
+}
+
+.quoteImageWrap {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  overflow: hidden;
+  background: #1e293b;
+}
+
+.quoteImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 260px;
+}
+
+.quoteBox {
+  background: var(--color-dark);
+  color: #ffffff;
+  padding: 2.5rem 2.5rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quoteOpenMark,
+.quoteCloseMark {
+  font-size: 4rem;
+  color: var(--color-primary);
+  line-height: 0.6;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+.quoteOpenMark {
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.quoteCloseMark {
+  align-self: flex-end;
+  margin-top: 0.5rem;
+}
+
+.quoteText {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.55;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ===== Location Section ===== */
+.locationSection {
+  background: var(--color-bg-alt);
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
+  border-radius: var(--radius-md);
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 2.5rem;
+  align-items: center;
+  max-width: 1100px;
+  border: 1px solid var(--color-border);
+}
+
+.locationHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.locationPin {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  display: inline-flex;
+}
+
+.locationTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem;
+  color: #111827;
+}
+
+.locationSub {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.locationGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.locationCard {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  padding: 0.7rem 0.95rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.locationCard:hover {
+  border-color: var(--color-primary);
+  transform: translateX(3px);
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.08);
+}
+
+.locationMapIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.locationName {
+  flex: 1;
+  text-align: left;
+}
+
+.locationArrow {
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+}
+
+.tnMapWrap {
+  width: 100%;
+  max-width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tnMap {
+  width: 100%;
+  height: auto;
+}
+
+/* ===== Newsletter ===== */
+.newsletterSection {
+  background: var(--pbjt-primary-color);
+  color: #ffffff;
+  padding: 2rem;
+}
+
+.newsletterContent {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.75rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.newsletterIconWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.newsletterTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem;
+}
+
+.newsletterSub {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.92;
+  line-height: 1.5;
+  max-width: 480px;
+}
+
+.newsletterForm {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.newsletterInput {
+  padding: 0.85rem 1.15rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: transparent;
+  color: #ffffff;
+  font-size: 0.95rem;
+  min-width: 260px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.newsletterInput::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.newsletterInput:focus {
+  border-color: #ffffff;
+}
+
+.newsletterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  background: #ffffff;
+  color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.newsletterBtn:hover {
+  background: #fef2f2;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   Responsive: tablet (<= 1024px)
+   ========================================================= */
+@media (max-width: 1024px) {
+  .practiceGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .insightsGrid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+
+  .quoteSection {
+    grid-template-columns: 1fr;
+  }
+
+  .quoteImageWrap {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .quoteImg {
+    height: 280px;
+    min-height: 240px;
+  }
+
+  .quoteBox {
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    padding: 2rem;
+  }
+
+  .locationSection {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .tnMapWrap {
+    margin: 0 auto;
+    max-width: 180px;
+  }
+
+  .newsletterContent {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .newsletterIconWrap {
+    margin: 0 auto;
+  }
+
+  .newsletterSub {
+    margin: 0 auto;
+  }
+
+  .newsletterForm {
+    flex-direction: column;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .newsletterInput {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .newsletterBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   Responsive: mobile (<= 640px)
+   ========================================================= */
+@media (max-width: 640px) {
+  .heroBanner {
+    padding: 1rem 1rem 0.75rem;
+  }
+
+  .heroInner {
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+    gap: 0.25rem;
+  }
+
+  .heroTop,
+  .heroBottom {
+    position: static;
+    transform: none;
+    font-size: 1.05rem;
+  }
+
+  .heroMain {
+    font-size: clamp(2.75rem, 18vw, 4.5rem);
+  }
+
+  .practiceSection,
+  .insightsSection,
+  .newsletterSection {
+    padding: 2.25rem 1rem;
+  }
+
+  .practiceTitle {
+    font-size: 1.75rem;
+  }
+
+  .practiceSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .practiceParagraph {
+    font-size: 0.95rem;
+  }
+
+  .exploreBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .insightsTitle {
+    font-size: 1.4rem;
+  }
+
+  .insightCard {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .quoteSection {
+    padding: 0 1rem;
+    margin: 2rem auto;
+  }
+
+  .quoteBox {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .quoteOpenMark,
+  .quoteCloseMark {
+    font-size: 3rem;
+  }
+
+  .quoteText {
+    font-size: 1rem;
+  }
+
+  .locationSection {
+    margin: 2rem 1rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .locationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .tnMapWrap {
+    max-width: 150px;
+  }
+
+  .newsletterTitle {
+    font-size: 1.2rem;
+  }
+}
