@@ -1,12 +1,15 @@
+:root {
+    --header-from-top: 50px;
+}
+
 .menu.menu-active {
     background-color: var(--pbjt-primary-color);
     color: #ffffff;
 }
 
 .mobile-menu {
-    --from-top: 52px;
     height: calc(100vh - var(--from-top));
-    top: var(--from-top);
+    top: var(--header-from-top);
 }
 
 .button-contact {
@@ -19,4 +22,16 @@
 .mobile-menu nav {
     height: calc(100vh - 47px);
     overflow: auto;
+}
+
+.menu {
+    display: block;
+}
+
+.header-content {
+    min-height: var(--header-from-top);
+}
+
+.site-logo {
+    min-width: 120px;
 }

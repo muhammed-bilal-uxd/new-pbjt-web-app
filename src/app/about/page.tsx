@@ -1,34 +1,144 @@
+import Image from "next/image";
+import './about.css'
+
 export default function AboutPage() {
+
   return (
-    <div className="container mx-auto px-6 py-16">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-          About PBJT
-        </h1>
-        
-        <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 space-y-6">
-          <p className="text-xl leading-relaxed">
-            Welcome to PBJT. We are dedicated to providing the best service possible to our clients, with a focus on innovation, impact, and excellence.
-          </p>
-          
-          <p>
-            Founded with a vision to redefine how value is delivered, our mission is to create impactful solutions that drive real results. 
-            We believe in strong partnerships, transparent communication, and continuous improvement.
-          </p>
-          
-          <div className="my-12 p-8 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Our Vision</h2>
-            <p className="m-0">
-              To be the leading provider of innovative solutions in our field, recognized globally for our commitment to excellence, sustainable practices, and unwavering client satisfaction.
+    <>
+      <div className="pbjt">
+        {/* ── Hero ── */}
+        <section className="pbjt__hero">
+          <Image
+            src="/images/content/img124.jpg"
+            alt=""
+            width={100}
+            height={100}
+          />
+          <div className="pbjt__heroText">
+            <h1 className="title-shaping">Shaping</h1>
+            <h2>
+              Place-Based Just Transition
+            </h2>
+          </div>
+        </section>
+
+        {/* ── Intro ── */}
+        <section className="pbjt__intro">
+          <div className="pbjt__copy">
+            <h2>No one-size-fits-all approach exists.</h2>
+            <p>
+              Just Transition often appears in global discussions as a policy
+              framework for meeting climate goals, shifting energy systems, or
+              channelling green investments.
+            </p>
+            <p>
+              Yet for workers and communities on the ground, it unfolds more
+              intimately: in the quiet shifts to daily income, working
+              conditions, ebb and flow of access to essential resources, and
+              dignity that holds it all together.
+            </p>
+            <p>
+              <strong>
+                Who carries the cost of transition, and who decides how it
+                happens?
+              </strong>
+            </p>
+            <p>
+              Across most value chains, the heaviest burdens fall on those at
+              the last tier: informal workers, MSMEs, vendors, and marginalised
+              communities.
             </p>
           </div>
 
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Our Team</h2>
+          <div className="pbjt__images">
+            <Image
+              src="/images/content/img125.jpg"
+              alt=""
+              width={100}
+              height={100}
+            />
+            <Image
+              src="/images/content/img126.jpg"
+              alt=""
+              width={100}
+              height={100}
+            />
+          </div>
+        </section>
+
+        {/* ── Pull quote ── */}
+        <section className="pbjt__question">
           <p>
-            With years of experience across various industries, our multidisciplinary team brings a wealth of knowledge and technical expertise to every project we undertake. We are passionate about what we do and are always looking for the next big challenge.
+            A Place-Based Just Transition begins with a simple but critical
+            question:
           </p>
-        </div>
+          <strong>
+            Who carries the cost of transition, and who decides how it happens?
+          </strong>
+        </section>
+
+        {/* ── "What is?" banner ── */}
+        <section className="pbjt__what">
+          <Image
+            src="/images/content/img127.jpg"
+            alt=""
+            width={100}
+            height={100}
+          />
+          <div>
+            <h2>
+              What is<span>?</span>
+            </h2>
+            <h3>Place-Based Just Transition</h3>
+          </div>
+        </section>
+
+        {/* ── Definition ── */}
+        <section className="pbjt__definition">
+          <div className="pbjt__definitionCopy">
+            <h2>
+              Place-Based Just Transition (PBJT)
+              <br />
+              is an approach to sustainability that
+              <br />
+              starts from the ground up.
+            </h2>
+
+            <p>
+              PBJT recognises that environmental change and economic transition
+              are not abstract ideas. They are lived every day in villages,
+              neighbourhoods, worksites, and local production clusters.
+            </p>
+
+            <p>
+              PBJT focuses on how workers, MSMEs, vendors, informal labour, and
+              communities experience climate action, sustainability policies, and
+              business practices.
+            </p>
+
+            <blockquote>
+              A transition can only be called &ldquo;green&rdquo; when it also
+              protects people.
+            </blockquote>
+          </div>
+
+          <div className="pbjt__diagram">
+            <Image
+              src="/images/content/img129.jpg"
+              alt=""
+              width={300}
+              height={300}
+            />
+
+            <div className="pbjt__redbox mt-3">
+              <h3>PBJT ensures that the shift to greener economies:</h3>
+              <p>Protects both people and the planet</p>
+              <p>Strengthens local livelihoods</p>
+              <p>Builds resilient and responsible local economic ecosystems</p>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
+    </>
   );
 }

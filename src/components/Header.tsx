@@ -26,6 +26,7 @@ function Logo() {
   return (
     <Link href="/">
       <Image
+        className='site-logo'
         src="/images/site/logo.png"
         alt="Logo"
         width={120}
@@ -63,7 +64,7 @@ function Navbar() {
 
           >
 
-            {(item.type === 'button') ? (<ContactButton />) : <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-full p-2`}>{item.label}</span>}
+            {(item.type === 'button') ? (<ContactButton />) : <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-[25px] px-3 py-2`}>{item.label}</span>}
 
           </Link>
         )
@@ -78,7 +79,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md dark:border-gray-800 dark:bg-gray-950/80">
-      <div className="container-fluid mx-auto flex items-center justify-between px-6 py-2">
+      <div className="header-content container-fluid mx-auto flex items-center justify-between px-6 py-2">
         <div className="flex items-center justify-between gap-6 w-full">
           <Logo />
           <nav className={`hidden lg:flex gap-6 items-center`}>
