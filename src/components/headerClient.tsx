@@ -51,15 +51,17 @@ export function MobileMenu({ navLinks, phoneNumber }: { navLinks: INavLinks[], p
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     return (
-        <div className="flex items-center gap-4">
-            <span style={{ float: "right" }}><ContactButton phoneNumber={phoneNumber} /></span>
-            <div onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="cursor-pointer">
-                {isMobileMenuOpen ? <X /> : <Menu />}
+        <div className="flex items-center">
+            <div className="flex items-center gap-2">
+                <span style={{ float: "right" }}><ContactButton phoneNumber={phoneNumber} /></span>
+                <div onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="cursor-pointer">
+                    {isMobileMenuOpen ? <X /> : <Menu />}
+                </div>
             </div>
 
             {isMobileMenuOpen && (
                 <div className={`mobile-menu absolute top-16 left-0 w-full bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800`}>
-                    <nav className="flex flex-col gap-4 py-4 px-6">
+                    <nav className="flex flex-col py-4 px-6">
                         {navLinks.map((item) => {
                             const isActive = pathname === item.href;
                             return (
