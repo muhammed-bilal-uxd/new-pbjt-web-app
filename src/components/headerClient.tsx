@@ -17,7 +17,7 @@ function ContactButton({ phoneNumber }: { phoneNumber: string }) {
     )
 }
 
-export function HeaderClient({ navLinks, phoneNumber, isMobileMenuOpen, setIsMobileMenuOpen }: { navLinks: INavLinks[], phoneNumber: string, isMobileMenuOpen: any, setIsMobileMenuOpen: any }) {
+export function HeaderClient({ navLinks, phoneNumber }: { navLinks: INavLinks[], phoneNumber: string }) {
     const pathname = usePathname();
 
     return (<>
@@ -39,11 +39,6 @@ export function HeaderClient({ navLinks, phoneNumber, isMobileMenuOpen, setIsMob
                 )
             })}
         </nav>
-        <div className={`flex lg:hidden items-center gap-4`}>
-            <div onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} >
-                {isMobileMenuOpen ? <X /> : <Menu />}
-            </div>
-        </div>
     </>);
 }
 
@@ -51,21 +46,31 @@ export function MobileMenu({ navLinks, phoneNumber }: { navLinks: INavLinks[], p
     const pathname = usePathname();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-    return (<div className={`mobile-menu block lg:hidden absolute top-16 left-0 w-full bg-white dark:bg-gray-900`}>
-        <nav className="flex flex-col gap-4 py-4 px-6">
-            {navLinks.map((item) => {
-                const isActive = pathname === item.href;
-                return (
-                    <Link
-                        key={item.href}
-                        href={item.href}
-                        className={`${pathname === item.href ? "menu-active" : ""} menu p-1 dark:hover:text-white transition-colors`}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                        {(item.type === 'button') ? (<span style={{ float: "right" }}><ContactButton phoneNumber={phoneNumber} /></span>) : <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-full p-2`}>{item.label}</span>}
-                    </Link>
-                )
-            })}
-        </nav>
-    </div>)
+    return (
+        <div className="flex items-center gap-4">
+            <div onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="cursor-pointer">
+                {isMobileMenuOpen ? <X /> : <Menu />}
+            </div>
+
+            {isMobileMenuOpen && (
+                <div className={`mobile-menu absolute top-16 left-0 w-full bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800`}>
+                    <nav className="flex flex-col gap-4 py-4 px-6">
+                        {navLinks.map((item) => {
+                            const isActive = pathname === item.href;
+                            return (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    className={`${pathname === item.href ? "menu-active" : ""} menu p-1 dark:hover:text-white transition-colors`}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    {(item.type === 'button') ? (<span style={{ float: "right" }}><ContactButton phoneNumber={phoneNumber} /></span>) : <span className={`${isActive ? "menu-active" : ""} menu dark:hover:text-white transition-colors rounded-full p-2`}>{item.label}</span>}
+                                </Link>
+                            )
+                        })}
+                    </nav>
+                </div>
+            )}
+        </div>
+    )
 } 
