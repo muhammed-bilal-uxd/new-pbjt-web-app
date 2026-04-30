@@ -8,12 +8,13 @@ export default function AboutPage() {
       <div className="pbjt">
         {/* ── Hero ── */}
         <section className="pbjt__hero">
-          <Image
-            src="/images/content/img124.jpg"
-            alt=""
-            width={100}
-            height={100}
-          />
+          <div className="pbjt__heroImage">
+            <Image
+              src="/images/about/about-01.png"
+              alt="Hero"
+              fill
+            />
+          </div>
           <div className="pbjt__heroText">
             <h1 className="title-shaping">Shaping</h1>
             <h2>
@@ -23,7 +24,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── Intro ── */}
-        <section className="pbjt__intro">
+        <section className="pbjt__intro center-content">
           <div className="pbjt__copy">
             <h2>No one-size-fits-all approach exists.</h2>
             <p>
@@ -49,25 +50,27 @@ export default function AboutPage() {
               communities.
             </p>
           </div>
+          <div className="flex flex-col gap-4">
+            <div className="pbjt__images">
+              <Image
+                alt=""
+                src="/images/about/about-02.png"
+                fill
+              />
 
-          <div className="pbjt__images">
-            <Image
-              src="/images/content/img125.jpg"
-              alt=""
-              width={100}
-              height={100}
-            />
-            <Image
-              src="/images/content/img126.jpg"
-              alt=""
-              width={100}
-              height={100}
-            />
+            </div>
+            <div className="pbjt__images">
+              <Image
+                alt=""
+                src="/images/about/about-03.png"
+                fill
+              />
+            </div>
           </div>
         </section>
 
         {/* ── Pull quote ── */}
-        <section className="pbjt__question">
+        <section className="pbjt__question text-center">
           <p>
             A Place-Based Just Transition begins with a simple but critical
             question:
@@ -78,12 +81,18 @@ export default function AboutPage() {
         </section>
 
         {/* ── "What is?" banner ── */}
-        <section className="pbjt__what">
+        <section className="pbjt__what relative h-[500px] full-content">
           <Image
-            src="/images/content/img127.jpg"
+            className="what-image what-image-1"
+            src="/images/about/about-05.png"
             alt=""
-            width={100}
-            height={100}
+            fill
+          />
+          <Image
+            className="what-image what-image-2"
+            src="/images/about/about-05.png"
+            alt=""
+            fill
           />
           <div>
             <h2>
@@ -123,12 +132,18 @@ export default function AboutPage() {
           </div>
 
           <div className="pbjt__diagram">
-            <Image
-              src="/images/content/img129.jpg"
-              alt=""
-              width={300}
-              height={300}
-            />
+            <div className="relative w-full h-[300px]">
+              <Image
+                src="/images/about/about-04.png"
+                alt=""
+                fill
+              />
+              <Image
+                src="/images/about/about-05.png"
+                alt=""
+                fill
+              />
+            </div>
 
             <div className="pbjt__redbox mt-3">
               <h3>PBJT ensures that the shift to greener economies:</h3>
