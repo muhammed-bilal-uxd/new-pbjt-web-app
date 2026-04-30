@@ -1,0 +1,278 @@
+.wrap {
+    --red: #d71920;
+    --text: #4f4f4f;
+    --soft: #eadede;
+    --max: 1200px;
+
+    width: 100%;
+    background: #e9e9e9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    line-height: 1.45;
+    overflow: hidden;
+}
+
+.wrap * {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.hero {
+    position: relative;
+    min-height: 245px;
+    background: url("https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1400&q=80") center / cover no-repeat;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 107, 184, 0.35),
+            rgba(0, 107, 184, 0.15));
+}
+
+.heroInner {
+    position: relative;
+    z-index: 2;
+    min-height: 245px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroBig {
+    margin: 0;
+    font-size: clamp(72px, 15vw, 230px);
+    line-height: 0.9;
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+    letter-spacing: -3px;
+}
+
+.heroSmallTop {
+    position: absolute;
+    top: 28px;
+    left: 8%;
+    margin: 0;
+    color: var(--red);
+    font-size: clamp(22px, 3vw, 34px);
+    font-weight: 800;
+}
+
+.heroSmallBottom {
+    position: absolute;
+    right: 10%;
+    bottom: 22px;
+    margin: 0;
+    color: var(--red);
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 800;
+}
+
+.section {
+    padding: 26px 0 10px;
+}
+
+.gridTwo {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 34px;
+    align-items: start;
+}
+
+.copyLarge {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.65;
+    font-weight: 800;
+    color: #5b5b5b;
+}
+
+.card {
+    background: var(--soft);
+    padding: 18px 24px;
+}
+
+.card h3 {
+    margin: 0 0 16px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 800;
+    color: #555;
+}
+
+.keyList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.keyList li {
+    text-align: center;
+    font-size: 16px;
+    color: #5a5a5a;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(80, 80, 80, 0.15);
+}
+
+.keyList li:last-child {
+    border-bottom: 0;
+}
+
+.expectedGrid {
+    margin-top: 24px;
+}
+
+.expected h4 {
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0 0 8px;
+    color: #555;
+}
+
+.expected h5 {
+    font-size: 15px;
+    font-weight: 800;
+    margin: 18px 0 6px;
+    color: #555;
+}
+
+.expected p,
+.archCopy p {
+    margin: 0 0 8px;
+    font-size: 15px;
+    color: #666;
+}
+
+.imageBox img,
+.stackImages img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.banner {
+    margin-top: 8px;
+    background: var(--red);
+    color: #fff;
+    padding: 12px 0 16px;
+}
+
+.banner span {
+    display: block;
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.banner strong {
+    display: block;
+    font-size: clamp(44px, 8vw, 86px);
+    font-weight: 800;
+    line-height: 0.95;
+    margin-top: 4px;
+}
+
+.banner em {
+    display: block;
+    font-style: normal;
+    font-size: clamp(22px, 4vw, 56px);
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+    margin-top: -6px;
+}
+
+.architectureSection {
+    padding-top: 26px;
+    padding-bottom: 18px;
+}
+
+.reverse {
+    grid-template-columns: 0.95fr 1.05fr;
+}
+
+.boldCopy {
+    font-weight: 800;
+}
+
+.bullets {
+    margin: 8px 0 18px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.bullets li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.bullets li::before {
+    content: "- ";
+}
+
+.stackImages {
+    display: grid;
+    gap: 16px;
+}
+
+@media (max-width: 991px) {
+
+    .gridTwo,
+    .reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .copyLarge {
+        font-size: 18px;
+    }
+
+    .heroSmallTop,
+    .heroSmallBottom {
+        position: static;
+        text-align: center;
+    }
+
+    .heroInner {
+        flex-direction: column;
+        gap: 10px;
+        padding: 26px 24px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .copyLarge {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .banner em {
+        text-align: left;
+        margin-top: 6px;
+    }
+}

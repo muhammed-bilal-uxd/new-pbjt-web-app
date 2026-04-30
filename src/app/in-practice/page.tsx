@@ -77,7 +77,7 @@ export default function PBJTInPractice() {
     { name: 'Hosur', color: '#f97316', href: '#' },
   ];
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = (e: any) => {
     e.preventDefault();
     // TODO: wire to your API / mailing list
     console.log('Subscribed:', email);
