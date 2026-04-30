@@ -108,7 +108,7 @@
 }
 
 .hero-tag {
-  border-left: 3px solid var(--color-primary);
+  border-left: 5px solid var(--pbjt-primary-color);
   padding-left: 16px;
   max-width: 480px;
 }
@@ -189,7 +189,7 @@
 }
 
 .alphabet-btn.active {
-  background: var(--color-primary);
+  background: var(--pbjt-primary-color);
   color: #fff;
 }
 
@@ -216,8 +216,8 @@
 }
 
 .category-btn.active {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  background: var(--pbjt-primary-color);
+  border-color: var(--pbjt-primary-color);
   color: #fff;
 }
 
@@ -252,7 +252,7 @@
   width: 40px;
   height: 40px;
   background: var(--color-primary-soft);
-  color: var(--color-primary);
+  color: var(--pbjt-primary-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -436,7 +436,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: var(--pbjt-primary-color);
   color: #fff;
   display: flex;
   align-items: center;
@@ -558,7 +558,7 @@
   width: 32px;
   height: 32px;
   background: var(--color-primary-soft);
-  color: var(--color-primary);
+  color: var(--pbjt-primary-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -614,7 +614,7 @@
   width: 130px;
   height: 130px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: var(--pbjt-primary-color);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -677,7 +677,7 @@
 .letter-heading {
   font-size: 22px;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--pbjt-primary-color);
   margin: 0 0 10px 0;
 }
 
@@ -697,7 +697,7 @@
    CTA BANNER
    ========================= */
 .cta-banner {
-  background: var(--color-primary);
+  background: var(--pbjt-primary-color);
   color: #fff;
   padding: 24px;
 }
