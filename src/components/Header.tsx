@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import "./header.css"
 import { HeaderClient, MobileMenu } from './headerClient';
+import { INavLinks } from "@/interface/common";
 
 const phoneNumber = "+1 (555) 123-4567";
 
@@ -18,7 +19,6 @@ const navLinks: INavLinks[] = [
   { label: "Contact", href: "/contact", type: "button" },
 ];
 
-export interface INavLinks { label: string, href: string, type?: string }
 
 function Logo() {
   return (

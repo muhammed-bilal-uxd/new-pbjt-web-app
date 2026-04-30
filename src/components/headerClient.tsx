@@ -1,10 +1,10 @@
 'use client'
 
+import { INavLinks } from "@/interface/common";
 import { Menu, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { INavLinks } from "./Header";
 
 function ContactButton({ phoneNumber }: { phoneNumber: string }) {
     return (
