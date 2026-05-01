@@ -536,7 +536,7 @@ export default function VillageDetail() {
 .titleIcon {
   width: 36px;
   height: 36px;
-  background: #e63946;
+  background: var(--pbjt-primary-color);
   color: white;
   border-radius: 50%;
   display: inline-flex;
@@ -559,7 +559,7 @@ export default function VillageDetail() {
 }
 
 .titleAccent {
-  color: #e63946;
+  color: var(--pbjt-primary-color);
 }
 
 .subtitle {
@@ -596,7 +596,7 @@ export default function VillageDetail() {
 }
 
 .cardActive {
-  border-color: #e63946;
+  border-color: var(--pbjt-primary-color);
   box-shadow: 0 4px 12px rgba(230, 57, 70, 0.18);
 }
 
@@ -633,7 +633,7 @@ export default function VillageDetail() {
 }
 
 .cardBadgeActive {
-  background: #e63946;
+  background: var(--pbjt-primary-color);
 }
 
 .cardBadgeIcon {
@@ -674,7 +674,7 @@ export default function VillageDetail() {
 
 .metric_red {
   background: #fde8ea;
-  color: #e63946;
+  color: var(--pbjt-primary-color);
 }
 
 .metric_blue {
@@ -718,11 +718,11 @@ export default function VillageDetail() {
 
 .viewMore:hover,
 .viewMoreActive {
-  color: #e63946;
+  color: var(--pbjt-primary-color);
 }
 
 .viewMore:focus-visible {
-  outline: 2px solid #e63946;
+  outline: 2px solid var(--pbjt-primary-color);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -766,7 +766,7 @@ export default function VillageDetail() {
 
 /* Sidebar */
 .panelSidebar {
-  background: #e63946;
+  background: var(--pbjt-primary-color);
   color: white;
   padding: 28px 24px;
   position: relative;
@@ -888,7 +888,7 @@ export default function VillageDetail() {
 
 .blockIcon_red {
   background: #fde8ea;
-  color: #e63946;
+  color: var(--pbjt-primary-color);
 }
 
 .blockIcon_green {
@@ -929,7 +929,7 @@ export default function VillageDetail() {
 }
 
 .blockList_red li::before {
-  background: #e63946;
+  background: var(--pbjt-primary-color);
 }
 
 .blockList_green li::before {
@@ -950,7 +950,7 @@ export default function VillageDetail() {
 }
 
 .insightIcon {
-  color: #e63946;
+  color: var(--pbjt-primary-color);
   flex-shrink: 0;
   margin-top: 1px;
   display: inline-flex;
@@ -1048,7 +1048,7 @@ export default function VillageDetail() {
 .footerStar {
   width: 28px;
   height: 28px;
-  background: #e63946;
+  background: var(--pbjt-primary-color);
   color: white;
   border-radius: 50%;
   display: inline-flex;

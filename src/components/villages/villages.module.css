@@ -39,7 +39,7 @@
 .titleIcon {
   width: 36px;
   height: 36px;
-  background: #e63946;
+  background: var(--pbjt-primary-color);
   color: white;
   border-radius: 50%;
   display: inline-flex;
@@ -62,7 +62,7 @@
 }
 
 .titleAccent {
-  color: #e63946;
+  color: var(--pbjt-primary-color);
 }
 
 .subtitle {
@@ -99,7 +99,7 @@
 }
 
 .cardActive {
-  border-color: #e63946;
+  border-color: var(--pbjt-primary-color);
   box-shadow: 0 4px 12px rgba(230, 57, 70, 0.18);
 }
 
@@ -136,7 +136,7 @@
 }
 
 .cardBadgeActive {
-  background: #e63946;
+  background: var(--pbjt-primary-color);
 }
 
 .cardBadgeIcon {
@@ -177,7 +177,7 @@
 
 .metric_red {
   background: #fde8ea;
-  color: #e63946;
+  color: var(--pbjt-primary-color);
 }
 
 .metric_blue {
@@ -221,11 +221,11 @@
 
 .viewMore:hover,
 .viewMoreActive {
-  color: #e63946;
+  color: var(--pbjt-primary-color);
 }
 
 .viewMore:focus-visible {
-  outline: 2px solid #e63946;
+  outline: 2px solid var(--pbjt-primary-color);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -269,7 +269,7 @@
 
 /* Sidebar */
 .panelSidebar {
-  background: #e63946;
+  background: var(--pbjt-primary-color);
   color: white;
   padding: 28px 24px;
   position: relative;
@@ -391,7 +391,7 @@
 
 .blockIcon_red {
   background: #fde8ea;
-  color: #e63946;
+  color: var(--pbjt-primary-color);
 }
 
 .blockIcon_green {
@@ -432,7 +432,7 @@
 }
 
 .blockList_red li::before {
-  background: #e63946;
+  background: var(--pbjt-primary-color);
 }
 
 .blockList_green li::before {
@@ -453,7 +453,7 @@
 }
 
 .insightIcon {
-  color: #e63946;
+  color: var(--pbjt-primary-color);
   flex-shrink: 0;
   margin-top: 1px;
   display: inline-flex;
@@ -551,7 +551,7 @@
 .footerStar {
   width: 28px;
   height: 28px;
-  background: #e63946;
+  background: var(--pbjt-primary-color);
   color: white;
   border-radius: 50%;
   display: inline-flex;
@@ -578,12 +578,15 @@
   .cardGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   .panel {
     grid-template-columns: 1fr;
   }
+
   .panelSidebar {
     padding: 20px;
   }
+
   .panelContent {
     grid-template-columns: 1fr;
     padding: 20px;
@@ -595,21 +598,26 @@
   .section {
     padding: 20px 16px;
   }
+
   .cardGrid {
     grid-template-columns: 1fr;
     gap: 14px;
   }
+
   .subtitle {
     margin-left: 0;
     font-size: 0.95rem;
   }
+
   .titleIcon {
     width: 32px;
     height: 32px;
   }
+
   .metricValue {
     font-size: 1.25rem;
   }
+
   .panelFooter {
     padding: 14px 16px;
     font-size: 0.88rem;
@@ -621,17 +629,21 @@
   .cardMetrics {
     gap: 4px;
   }
+
   .metricIcon {
     width: 32px;
     height: 32px;
   }
+
   .metricIcon svg {
     width: 16px;
     height: 16px;
   }
+
   .metricValue {
     font-size: 1.1rem;
   }
+
   .metricLabel {
     font-size: 0.68rem;
   }

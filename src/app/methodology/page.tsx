@@ -1,124 +1,221 @@
-import Image from "next/image";
+
+
+import {
+  Sprout,
+  Users,
+  Share2,
+  UsersRound,
+  Building2,
+  Briefcase,
+  TrendingUp,
+  Leaf,
+} from "lucide-react";
 import styles from "./methodology.module.css";
 
-export const metadata = {
-    title: "PBJT – Methodology",
-    description: "Methodology and expected changes of PBJT",
-};
+const KEY_ELEMENTS = [
+  {
+    icon: Sprout,
+    text: "Supporting MSMEs to adopt green practices such as solarisation and waste reduction",
+  },
+  {
+    icon: Users,
+    text: "Worker think tanks that define green job standards based on lived realities",
+  },
+  {
+    icon: Share2,
+    text: "Collective platforms that connect workers to green employment",
+  },
+  {
+    icon: UsersRound,
+    text: "Community task groups addressing waste, water, climate adaptation, and stewardship",
+  },
+  {
+    icon: Building2,
+    text: "A convener role that connects communities, businesses, institutions, and government schemes",
+  },
+];
 
-export default function MethodologyPage() {
-    return (
-        <main className={styles.wrap}>
-            <section className={styles.hero}>
-                <div className={`${styles.container} ${styles.heroInner}`}>
-                    <h2 className={styles.heroSmallTop}>Methodology:</h2>
-                    <h1 className={styles.heroBig}>How?</h1>
-                    <h2 className={styles.heroSmallBottom}>PBJT works</h2>
+const EXPECTED_CHANGES = [
+  {
+    icon: Users,
+    title: "For Communities and Workers",
+    desc: "Improved livelihoods, stronger collective power, increased participation in sustainability decisions, and access to green jobs.",
+  },
+  {
+    icon: Briefcase,
+    title: "For MSMEs",
+    desc: "Support for sustainable production, access to finance and markets, and reduced transition risks.",
+  },
+  {
+    icon: TrendingUp,
+    title: "For Businesses and Brands",
+    desc: "Stronger value chains, improved ESG outcomes, deeper risk understanding, and more credible sustainability action.",
+  },
+  {
+    icon: Leaf,
+    title: "For Local Ecosystems",
+    desc: "Better environmental outcomes, stronger local governance, and more equitable economic systems.",
+  },
+];
+
+const ARCHITECTURE_PRINCIPLES = [
+  "Local realities shape sustainability action",
+  "Businesses become accountable to communities",
+  "Workers become agents of transition",
+  "MSMEs become sustainability partners",
+  "Communities co-create their environmental and economic futures",
+];
+
+const PILLARS = [
+  {
+    img: "/images/pbjt-workers.jpg",
+    alt: "Workers in green value chains",
+    title: "Workers",
+    desc: "From labour to leadership in green value chains.",
+  },
+  {
+    img: "/images/pbjt-msmes.jpg",
+    alt: "MSME shop owner",
+    title: "Businesses & MSMEs",
+    desc: "From extraction to sustainable value creation.",
+  },
+  {
+    img: "/images/pbjt-communities.jpg",
+    alt: "Local community storefront",
+    title: "Communities",
+    desc: "From vulnerability to voice, ownership, and resilience.",
+  },
+];
+
+export default function Methodology() {
+  return (
+    <div className={styles.page}>
+      {/* Hero */}
+      <section className={styles.hero}>
+        <div className={styles.heroContent}>
+          <span className={styles.methodologyLabel}>METHODOLOGY:</span>
+          <h1 className={styles.heroTitle}>
+            How<span className={styles.questionMark}>?</span>
+            <br />
+            PBJT works
+          </h1>
+        </div>
+        <div className={styles.heroImage}>
+          <img src="/images/pbjt-hero.jpg" alt="Workers carrying loads" />
+        </div>
+      </section>
+
+      {/* Intro + Key Elements */}
+      <section className={styles.keyElementsSection}>
+        <div className={styles.intro}>
+          <p className={styles.introMain}>
+            PBJT follows a participatory action study approach that integrates
+            social realities, environmental conditions, market systems, village
+            governance, and business value chains.
+          </p>
+          <p className={styles.introSecondary}>
+            The focus is on strengthening existing groups rather than creating
+            parallel structures, ensuring long-term ownership and
+            sustainability.
+          </p>
+        </div>
+
+        <div className={styles.keyElements}>
+          <h2 className={styles.sectionHeading}>Key elements include:</h2>
+          <div className={styles.elementsGrid}>
+            {KEY_ELEMENTS.map((el, i) => {
+              const Icon = el.icon;
+              return (
+                <div className={styles.elementCard} key={i}>
+                  <div className={styles.iconWrapper}>
+                    <Icon className={styles.icon} />
+                  </div>
+                  <p>{el.text}</p>
                 </div>
-            </section>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-            <section className={styles.section}>
-                <div className={styles.container}>
-                    <div className={styles.gridTwo}>
-                        <div>
-                            <p className={styles.copyLarge}>
-                                PBJT follows a participatory action study approach that
-                                integrates social realities, environmental conditions, market
-                                systems, village governance, and business value chains. The
-                                focus is on strengthening existing groups rather than creating
-                                parallel structures, ensuring long-term ownership and
-                                sustainability.
-                            </p>
-                        </div>
-
-                        <div className={styles.card}>
-                            <h3>Key elements include:</h3>
-                            <ul className={styles.keyList}>
-                                <li>Supporting MSMEs to adopt green practices such as solarisation and waste reduction</li>
-                                <li>Worker think tanks that define green job standards based on lived realities</li>
-                                <li>Collective platforms that connect workers to green employment</li>
-                                <li>Community task groups addressing waste, water, climate adaptation, and stewardship</li>
-                                <li>A convener role that connects communities, businesses, institutions, and government schemes</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className={`${styles.gridTwo} ${styles.expectedGrid}`}>
-                        <div className={styles.expected}>
-                            <h4>Expected Change - Of Place-Based Just Transition</h4>
-
-                            <h5>For Communities and Workers</h5>
-                            <p>Improved livelihoods, stronger collective power, increased participation in sustainability decisions, and access to green jobs.</p>
-
-                            <h5>For MSMEs</h5>
-                            <p>Support for sustainable production, access to finance and markets, and reduced transition risks.</p>
-
-                            <h5>For Businesses and Brands</h5>
-                            <p>Stronger value chains, improved ESG outcomes, deeper risk understanding, and more credible sustainability action.</p>
-
-                            <h5>For Local Ecosystems</h5>
-                            <p>Better environmental outcomes, stronger local governance, and more equitable economic systems.</p>
-                        </div>
-
-                        <div className={styles.imageBox}>
-                            <img
-                                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80"
-                                alt="Community action"
-                                width={900}
-                                height={600}
-                            />
-                        </div>
-                    </div>
+      {/* Expected Change */}
+      <section className={styles.expectedChange}>
+        <div className={styles.changeContent}>
+          <h2 className={styles.changeHeading}>
+            Expected Change <br />
+            <span className={styles.changeSubheading}>
+              Of Place-Based Just Transition
+            </span>
+          </h2>
+          <div className={styles.changeList}>
+            {EXPECTED_CHANGES.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <div className={styles.changeItem} key={i}>
+                  <div className={styles.changeIcon}>
+                    <Icon />
+                  </div>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                  </div>
                 </div>
-            </section>
+              );
+            })}
+          </div>
+        </div>
 
-            <section className={styles.banner}>
-                <div className={styles.container}>
-                    <span>PBJT:</span>
-                    <strong>A New Architecture</strong>
-                    <em>for Responsible Business</em>
-                </div>
-            </section>
+        <div className={styles.changeImageWrapper}>
+          <img
+            src="/images/pbjt-weaver.jpg"
+            alt="Worker in dramatic light"
+            className={styles.changeImage}
+          />
+          <div className={styles.quoteBox}>
+            <span className={styles.quoteMark}>&#8220;</span>
+            <p>From local realities to systemic change, together.</p>
+          </div>
+        </div>
+      </section>
 
-            <section className={`${styles.section} ${styles.architectureSection}`}>
-                <div className={styles.container}>
-                    <div className={`${styles.gridTwo} ${styles.reverse}`}>
-                        <div className={styles.archCopy}>
-                            <p className={styles.boldCopy}>
-                                Place-Based Just Transition offers a model where sustainability
-                                is co-created by workers, communities, MSMEs, and businesses.
-                            </p>
+      {/* New Architecture */}
+      <section className={styles.architecture}>
+        <div className={styles.architectureContent}>
+          <h2 className={styles.architectureTitle}>
+            <span className={styles.titleRed}>PBJT:</span>
+            <br />
+            A New Architecture{" "}
+            <span className={styles.titleRed}>for Responsible Business</span>
+          </h2>
+          <p className={styles.architectureDesc}>
+            Place-Based Just Transition offers a model where sustainability is
+            co-created by workers, communities, MSMEs, and businesses.
+          </p>
 
-                            <p className={styles.boldCopy}>In this architecture:</p>
+          <div className={styles.checklist}>
+            <h3>In this architecture:</h3>
+            <ul>
+              {ARCHITECTURE_PRINCIPLES.map((principle, i) => (
+                <li key={i}>{principle}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
-                            <ul className={styles.bullets}>
-                                <li>Local realities shape sustainability action</li>
-                                <li>Businesses become accountable to communities</li>
-                                <li>Workers become agents of transition</li>
-                                <li>MSMEs become sustainability partners</li>
-                                <li>Communities co-create their environmental and economic futures</li>
-                            </ul>
-
-                            <p>
-                                This process does not aim to audit companies, but to democratise
-                                sustainability language. When communities understand what
-                                companies promise, they are better positioned to engage,
-                                negotiate, and hold systems accountable. Our work aligns with
-                                emerging global conversations on responsible value chains,
-                                including perspectives from organisations like the Institute for
-                                Human Rights and Business and investor-led frameworks that
-                                emphasise last-mile accountability.
-                            </p>
-                        </div>
-
-                        <div className={styles.stackImages}>
-                            <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80" alt="Workers" width={900} height={600} />
-                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80" alt="Retail ecosystem" width={900} height={600} />
-                            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80" alt="Community storefront" width={900} height={600} />
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    );
+        <div className={styles.pillars}>
+          {PILLARS.map((p, i) => (
+            <div className={styles.pillarCard} key={i}>
+              <div className={styles.pillarImage}>
+                <img src={p.img} alt={p.alt} />
+              </div>
+              <div className={styles.pillarText}>
+                <h4>{p.title}</h4>
+                <p>{p.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
 }

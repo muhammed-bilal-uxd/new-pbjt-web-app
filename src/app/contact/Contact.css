@@ -35,12 +35,10 @@
 .contact-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.85) 0%,
-    rgba(0, 0, 0, 0.55) 55%,
-    rgba(0, 0, 0, 0.25) 100%
-  );
+  background: linear-gradient(to right,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.55) 55%,
+      rgba(0, 0, 0, 0.25) 100%);
   z-index: 1;
 }
 
@@ -136,7 +134,7 @@
   flex-direction: column;
 }
 
-.form-field > label {
+.form-field>label {
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -245,7 +243,7 @@
 }
 
 .link {
-  color: #dc2626;
+  color: var(--pbjt-primary-color);
   text-decoration: none;
   font-weight: 600;
 }
@@ -255,7 +253,7 @@
 }
 
 .submit-btn {
-  background: #dc2626;
+  background: var(--pbjt-primary-color);
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -304,7 +302,7 @@
 }
 
 .info-icon {
-  color: #dc2626;
+  color: var(--pbjt-primary-color);
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -332,7 +330,7 @@
 }
 
 .info-link {
-  color: #dc2626;
+  color: var(--pbjt-primary-color);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -440,7 +438,7 @@
    Newsletter Banner
    ============================ */
 .newsletter {
-  background: #dc2626;
+  background: var(--pbjt-primary-color);
   color: #ffffff;
   padding: 2.5rem 2rem;
 }
@@ -458,7 +456,7 @@
   height: 64px;
   border-radius: 50%;
   background: #ffffff;
-  color: #dc2626;
+  color: var(--pbjt-primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -501,7 +499,7 @@
 
 .subscribe-btn:hover {
   background: #ffffff;
-  color: #dc2626;
+  color: var(--pbjt-primary-color);
 }
 
 /* ============================

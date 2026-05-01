@@ -68,7 +68,7 @@ h1, h2, h3 {
   letter-spacing: -0.02em;
   line-height: 1.15;
 }
-:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: 4px; }
+:focus-visible { outline: 2px solid var(--pbjt-primary-color); outline-offset: 3px; border-radius: 4px; }
 
 /* Layout */
 .vui-main { min-height: 100vh; padding: clamp(16px, 3vw, 40px); }
@@ -88,7 +88,7 @@ h1, h2, h3 {
   color: var(--color-text-soft);
   font-size: 0.85rem;
 }
-.vui-footer strong { color: var(--color-primary); font-weight: 700; }
+.vui-footer strong { color: var(--pbjt-primary-color); font-weight: 700; }
 
 /* Sidebar */
 .vui-sidebar {
@@ -103,7 +103,7 @@ h1, h2, h3 {
   border: 1px solid var(--color-border);
 }
 .vui-heroBanner {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: linear-gradient(135deg, var(--pbjt-primary-color) 0%, var(--color-primary-dark) 100%);
   color: #fff;
   padding: 32px 24px 40px;
   position: relative; overflow: hidden;
@@ -143,18 +143,18 @@ h1, h2, h3 {
 .vui-stepNumber {
   display: flex; align-items: center; justify-content: center;
   width: 32px; height: 32px; border-radius: 50%;
-  background: var(--color-primary); color: #fff;
+  background: var(--pbjt-primary-color); color: #fff;
   font-family: var(--font-display); font-weight: 700;
   font-size: 0.95rem; flex-shrink: 0;
 }
 .vui-stepContent { display: flex; flex-direction: column; gap: 2px; }
 .vui-stepIconRow {
   display: flex; align-items: center; gap: 8px;
-  color: var(--color-primary);
+  color: var(--pbjt-primary-color);
 }
 .vui-stepLabel {
   font-family: var(--font-display); font-weight: 700;
-  font-size: 1rem; color: var(--color-primary);
+  font-size: 1rem; color: var(--pbjt-primary-color);
   letter-spacing: -0.01em;
 }
 .vui-stepDesc { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.45; }
@@ -178,7 +178,7 @@ h1, h2, h3 {
 .vui-numberBadge {
   display: flex; align-items: center; justify-content: center;
   width: 44px; height: 44px; border-radius: 50%;
-  background: var(--color-primary); color: #fff;
+  background: var(--pbjt-primary-color); color: #fff;
   font-family: var(--font-display); font-weight: 700;
   font-size: 1.25rem; flex-shrink: 0;
 }
@@ -205,10 +205,10 @@ h1, h2, h3 {
   width: 40px; height: 40px; border-radius: 50%;
 }
 .vui-footerNeutral { background: var(--color-surface-alt); color: var(--color-text); }
-.vui-footerPrimary { background: var(--color-primary-soft); color: var(--color-primary); }
+.vui-footerPrimary { background: var(--color-primary-soft); color: var(--pbjt-primary-color); }
 .vui-footerWater { background: rgba(74,159,217,0.12); color: var(--color-water); }
 .vui-footerLeaf { background: rgba(92,171,92,0.14); color: var(--color-leaf); }
-.vui-footerCheck { background: var(--color-primary); color: #fff; }
+.vui-footerCheck { background: var(--pbjt-primary-color); color: #fff; }
 .vui-footerLabel {
   font-size: 0.75rem; color: var(--color-text-muted);
   text-align: center; font-weight: 500; line-height: 1.3;
@@ -226,7 +226,7 @@ h1, h2, h3 {
 .vui-priorityIcon {
   display: flex; align-items: center; justify-content: center;
   width: 36px; height: 36px; border-radius: 50%;
-  background: var(--color-primary); color: #fff; flex-shrink: 0;
+  background: var(--pbjt-primary-color); color: #fff; flex-shrink: 0;
 }
 .vui-priorityLabel { font-weight: 700; font-size: 0.95rem; color: var(--color-text); }
 .vui-priorityDetail { font-size: 0.8rem; color: var(--color-text-muted); }
@@ -242,7 +242,7 @@ h1, h2, h3 {
 .vui-clipboardIcon {
   width: 56px; height: 64px;
   background: var(--color-surface);
-  border: 2px solid var(--color-primary);
+  border: 2px solid var(--pbjt-primary-color);
   border-radius: 8px;
   position: relative;
   display: flex; flex-direction: column;
@@ -252,15 +252,15 @@ h1, h2, h3 {
   content: ""; position: absolute; top: -8px; left: 50%;
   transform: translateX(-50%);
   width: 24px; height: 12px;
-  background: var(--color-primary); border-radius: 4px;
+  background: var(--pbjt-primary-color); border-radius: 4px;
 }
-.vui-clipCheck { width: 100%; height: 3px; background: var(--color-primary); border-radius: 2px; }
+.vui-clipCheck { width: 100%; height: 3px; background: var(--pbjt-primary-color); border-radius: 2px; }
 .vui-clipboardList { display: flex; flex-direction: column; gap: 8px; }
 .vui-clipboardItem {
   display: flex; align-items: center; gap: 8px;
   font-size: 0.9rem; font-weight: 600; color: var(--color-text);
 }
-.vui-clipboardItem svg { color: var(--color-primary); flex-shrink: 0; }
+.vui-clipboardItem svg { color: var(--pbjt-primary-color); flex-shrink: 0; }
 .vui-clipboardItem small {
   font-weight: 400; color: var(--color-text-muted);
   font-size: 0.78rem; margin-left: 4px;
