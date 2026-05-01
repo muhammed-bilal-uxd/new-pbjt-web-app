@@ -132,7 +132,7 @@ const PlaceBasedJustTransition = () => {
       </section>
 
       {/* ============ HERO 2: WHAT IS ============ */}
-      <section
+      {/* <section
         className="pbjt-hero pbjt-hero--whatis"
         style={{ backgroundImage: "url('/images/pbjt-whatis-hero.jpg')" }}
         aria-label="What is Place-Based Just Transition"
@@ -143,7 +143,7 @@ const PlaceBasedJustTransition = () => {
           </h1>
           <h2 className="pbjt-hero__sub">Place-Based Just Transition</h2>
         </div>
-      </section>
+      </section> */}
 
       {/* ============ WHAT IS CONTENT ============ */}
       <section className="pbjt-section">
