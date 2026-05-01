@@ -4,6 +4,8 @@
   --background: #ffffff;
   --foreground: #171717;
   --pbjt-primary-color: #ba151d;
+  --font-geist-sans: Arial, Helvetica, sans-serif;
+  --font-geist-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 @theme inline {

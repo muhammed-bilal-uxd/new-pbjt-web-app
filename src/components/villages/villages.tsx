@@ -137,11 +137,14 @@ const VILLAGES = [
   },
 ];
 
+type Village = (typeof VILLAGES)[number];
+type VillageId = Village["id"];
+
 /* ------------------------------------------------------------------ */
 /*  ICONS                                                             */
 /* ------------------------------------------------------------------ */
 
-const TrashIcon = (props) => (
+const TrashIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <path d="M3 6h18" />
@@ -151,25 +154,25 @@ const TrashIcon = (props) => (
   </svg>
 );
 
-const WaterIcon = (props) => (
+const WaterIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
     <path d="M12 2.5s-6 7-6 11.5a6 6 0 0 0 12 0c0-4.5-6-11.5-6-11.5z" />
   </svg>
 );
 
-const TreeIcon = (props) => (
+const TreeIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
     <path d="M12 2 7.5 9H10v3.5H7L12 20l5-7.5h-3V9h2.5z" />
   </svg>
 );
 
-const PinIcon = (props) => (
+const PinIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
     <path d="M12 2C8 2 5 5 5 9c0 5.5 7 13 7 13s7-7.5 7-13c0-4-3-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" />
   </svg>
 );
 
-const PeopleIcon = (props) => (
+const PeopleIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <circle cx="9" cy="8" r="3" />
@@ -179,7 +182,7 @@ const PeopleIcon = (props) => (
   </svg>
 );
 
-const ClipboardIcon = (props) => (
+const ClipboardIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <rect x="6" y="4" width="12" height="17" rx="2" />
@@ -188,13 +191,13 @@ const ClipboardIcon = (props) => (
   </svg>
 );
 
-const LeafIcon = (props) => (
+const LeafIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
     <path d="M20 3c-9 0-15 5-15 13 0 2 .5 4 1.5 5l1.5-1.5C12 17 17 14 20 9V3z" />
   </svg>
 );
 
-const StarIcon = (props) => (
+const StarIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
     <path d="M12 2l2.9 6.5 7.1.8-5.3 4.9 1.6 7L12 17.8 5.7 21.2l1.6-7L2 9.3l7.1-.8z" />
   </svg>
@@ -204,7 +207,17 @@ const StarIcon = (props) => (
 /*  SUB COMPONENTS                                                    */
 /* ------------------------------------------------------------------ */
 
-const MetricTile = ({ icon, value, label, variant }) => (
+const MetricTile = ({
+  icon,
+  value,
+  label,
+  variant,
+}: {
+  icon: React.ReactNode;
+  value: string | number;
+  label: string;
+  variant: string;
+}) => (
   <div className={styles.metric}>
     <span className={`${styles.metricIcon} ${styles[`metric_${variant}`]}`}>
       {icon}
@@ -214,7 +227,15 @@ const MetricTile = ({ icon, value, label, variant }) => (
   </div>
 );
 
-const VillageCard = ({ village, isActive, onSelect }) => (
+const VillageCard = ({
+  village,
+  isActive,
+  onSelect,
+}: {
+  village: Village;
+  isActive: boolean;
+  onSelect: (id: VillageId) => void;
+}) => (
   <article
     className={`${styles.card} ${isActive ? styles.cardActive : ''}`}
     aria-current={isActive ? 'true' : undefined}
@@ -274,9 +295,9 @@ const VillageCard = ({ village, isActive, onSelect }) => (
 /* ------------------------------------------------------------------ */
 
 export default function Villages() {
-  const [activeId, setActiveId] = useState('avilipatti');
-  const panelRef = useRef(null);
-  const previousIdRef = useRef('avilipatti');
+  const [activeId, setActiveId] = useState<VillageId | null>("avilipatti");
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  const previousIdRef = useRef<VillageId | null>("avilipatti");
 
   // Scroll panel into view on mobile when user picks a different village.
   useEffect(() => {

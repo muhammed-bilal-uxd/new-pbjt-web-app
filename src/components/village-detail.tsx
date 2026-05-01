@@ -136,6 +136,9 @@ const VILLAGES = [
   },
 ];
 
+type Village = (typeof VILLAGES)[number];
+type VillageId = Village["id"];
+
 /* ------------------------------------------------------------------ */
 /*  ICONS                                                             */
 /* ------------------------------------------------------------------ */
@@ -203,7 +206,17 @@ const StarIcon = (props: React.SVGProps<SVGSVGElement>) => (
 /*  SUB COMPONENTS                                                    */
 /* ------------------------------------------------------------------ */
 
-const MetricTile = ({ icon, value, label, variant }: { icon: React.ReactNode, value: string, label: string, variant: string }) => (
+const MetricTile = ({
+  icon,
+  value,
+  label,
+  variant,
+}: {
+  icon: React.ReactNode;
+  value: string | number;
+  label: string;
+  variant: string;
+}) => (
   <div className="metric">
     <span className={`metricIcon metric_${variant}`}>
       {icon}
@@ -213,7 +226,15 @@ const MetricTile = ({ icon, value, label, variant }: { icon: React.ReactNode, va
   </div>
 );
 
-const VillageCard = ({ village, isActive, onSelect }: { village: any, isActive: boolean, onSelect: () => void }) => (
+const VillageCard = ({
+  village,
+  isActive,
+  onSelect,
+}: {
+  village: Village;
+  isActive: boolean;
+  onSelect: (id: VillageId) => void;
+}) => (
   <article
     className={`card ${isActive ? "cardActive" : ''}`}
     aria-current={isActive ? 'true' : undefined}
@@ -273,9 +294,9 @@ const VillageCard = ({ village, isActive, onSelect }: { village: any, isActive: 
 /* ------------------------------------------------------------------ */
 
 export default function VillageDetail() {
-  const [activeId, setActiveId] = useState('avilipatti');
-  const panelRef = useRef(null);
-  const previousIdRef = useRef('avilipatti');
+  const [activeId, setActiveId] = useState<VillageId | null>("avilipatti");
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  const previousIdRef = useRef<VillageId | null>("avilipatti");
 
   // Scroll panel into view on mobile when user picks a different village.
   useEffect(() => {
