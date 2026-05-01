@@ -122,13 +122,13 @@ const features = [
 
 const cards = [
   {
-    src: "/images/focus-vendors.jpg",
+    src: "/images/focus-area/img94.jpg",
     alt: "Vendors working with goods on the ground",
     caption: "We strengthen the organisations that strengthen communities.",
     icon: UsersIcon,
   },
   {
-    src: "/images/focus-factory.jpg",
+    src: "/images/focus-area/img107.jpg",
     alt: "Workers folding garments on a factory floor",
     caption: "From local realities to systemic change, together.",
     icon: TargetIcon,

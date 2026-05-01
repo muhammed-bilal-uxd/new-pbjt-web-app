@@ -69,19 +69,19 @@ const ARCHITECTURE_PRINCIPLES = [
 
 const PILLARS = [
   {
-    img: "/images/pbjt-workers.jpg",
+    img: "/images/methodology/img14.jpg",
     alt: "Workers in green value chains",
     title: "Workers",
     desc: "From labour to leadership in green value chains.",
   },
   {
-    img: "/images/pbjt-msmes.jpg",
+    img: "/images/methodology/img18.jpg",
     alt: "MSME shop owner",
     title: "Businesses & MSMEs",
     desc: "From extraction to sustainable value creation.",
   },
   {
-    img: "/images/pbjt-communities.jpg",
+    img: "/images/methodology/img20.jpg",
     alt: "Local community storefront",
     title: "Communities",
     desc: "From vulnerability to voice, ownership, and resilience.",
@@ -160,7 +160,7 @@ export default function Methodology() {
 
         <div className={styles.changeImageWrapper}>
           <img
-            src="/images/pbjt-weaver.jpg"
+            src="/images/methodology/img94.jpg"
             alt="Worker in dramatic light"
             className={styles.changeImage}
           />

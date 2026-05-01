@@ -61,7 +61,7 @@ const PlaceBasedJustTransition = () => {
               <article className="pbjt-card">
                 <div className="pbjt-card__media">
                   <img
-                    src="/images/pbjt-bricks.jpg"
+                    src="/images/about/about-09.jpg"
                     alt="Workers carrying bricks"
                     loading="lazy"
                   />
@@ -83,7 +83,7 @@ const PlaceBasedJustTransition = () => {
               <article className="pbjt-card">
                 <div className="pbjt-card__media">
                   <img
-                    src="/images/pbjt-worker.jpg"
+                    src="/images/about/about-08.jpg"
                     alt="Informal worker loading sacks"
                     loading="lazy"
                   />

@@ -22,7 +22,7 @@ export function HeaderClient({ navLinks, phoneNumber }: { navLinks: INavLinks[],
     const pathname = usePathname();
 
     return (<>
-        <nav className="flex flex-wrap gap-3 items-center">
+        <nav className="flex flex-wrap gap-5 items-center">
             {navLinks.map((item) => {
                 const isActive = pathname === item.href;
 

@@ -63,7 +63,7 @@ export default function Framework() {
         </div>
 
         <div className="pbjt-tools__image">
-          <img src="/images/recycler.jpg" alt="Informal worker collecting recyclables" />
+          <img src="/images/focus-area/img171.jpg" alt="Informal worker collecting recyclables" />
         </div>
       </section>
 
@@ -120,7 +120,7 @@ export default function Framework() {
         </div>
 
         <div className="pbjt-principles__image">
-          <img src="/images/farmer.jpg" alt="Farmer in field" />
+          <img src="/images/framework/img137.jpg" alt="Farmer in field" />
         </div>
       </section>
 

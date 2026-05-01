@@ -7,8 +7,6 @@
 .pbjt {
   --pbjt-yellow: #f5b819;
   --pbjt-yellow-dark: #e0a30b;
-  --pbjt-red: #e85a3a;
-  --pbjt-red-soft: #f5b8b8;
   --pbjt-text: #2a2a2a;
   --pbjt-text-soft: #555;
   --pbjt-bg: #ffffff;
@@ -42,7 +40,7 @@
   display: block;
   width: 28px;
   height: 3px;
-  background: var(--pbjt-red);
+  background: var(--pbjt-primary-color);
   margin-bottom: 1rem;
 }
 
@@ -94,7 +92,7 @@
 .pbjt-hero__subtitle {
   font-size: clamp(1.1rem, 3.2vw, 2.1rem);
   font-weight: 700;
-  color: var(--pbjt-red);
+  color: var(--pbjt-primary-color);
   margin: 0.25rem 0 0;
   letter-spacing: -0.01em;
 }
@@ -206,11 +204,11 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1.5px solid var(--pbjt-red-soft);
+  border: 1.5px solid #f5b8b8;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--pbjt-red);
+  color: var(--pbjt-primary-color);
   flex-shrink: 0;
 }
 

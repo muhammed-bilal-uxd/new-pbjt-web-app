@@ -12,7 +12,7 @@ const VILLAGES = [
   {
     id: 'avilipatti',
     name: 'AVILIPATTI',
-    image: 'https://picsum.photos/seed/avilipatti-village/640/360',
+    image: '/images/in-practice-detail/img01.png',
     cardMetrics: { dumpSites: 4, waterBodies: 1, trees: 120 },
     panel: {
       tagline:
@@ -41,7 +41,7 @@ const VILLAGES = [
   {
     id: 'pethampatty',
     name: 'PETHAMPATTY',
-    image: 'https://picsum.photos/seed/pethampatty-village/640/360',
+    image: '/images/in-practice-detail/img02.png',
     cardMetrics: { dumpSites: 2, waterBodies: 2, trees: 50 },
     panel: {
       tagline:
@@ -68,7 +68,7 @@ const VILLAGES = [
   {
     id: 'gopalpatti',
     name: 'GOPALPATTI',
-    image: 'https://picsum.photos/seed/gopalpatti-village/640/360',
+    image: '/images/in-practice-detail/img03.png',
     cardMetrics: { dumpSites: 6, waterBodies: 3, trees: 100 },
     panel: {
       tagline:
@@ -101,7 +101,7 @@ const VILLAGES = [
   {
     id: 'sanarpatty',
     name: 'SANARPATTY',
-    image: 'https://picsum.photos/seed/sanarpatty-village/640/360',
+    image: '/images/in-practice-detail/img04.png',
     cardMetrics: { dumpSites: 6, waterBodies: 5, trees: 200 },
     panel: {
       tagline:

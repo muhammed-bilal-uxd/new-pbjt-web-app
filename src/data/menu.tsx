@@ -1,7 +1,7 @@
 import { INavLinks } from "@/interface/common";
 
 export const navLinks: INavLinks[] = [
-    { label: "In practice", href: "/" },
+    { label: "In Practice", href: "/" },
     { label: "About", href: "/about" },
     { label: "Impact Proposition", href: "/impact-proposition" },
     { label: "Framework", href: "/framework" },

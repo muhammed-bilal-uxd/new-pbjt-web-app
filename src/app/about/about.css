@@ -4,10 +4,9 @@
    ============================================================ */
 
 .pbjt {
-  --pbjt-red: #d9342b;
-  --pbjt-red-dark: #b8281f;
-  --pbjt-red-soft: #fdeeec;
-  --pbjt-red-soft-2: #fbe2dd;
+  --pbjt-primary-color-dark: #b8281f;
+  --pbjt-primary-color-soft: #fdeeec;
+  --pbjt-primary-color-soft-2: #fbe2dd;
   --pbjt-text: #1a1a1a;
   --pbjt-muted: #555;
   --pbjt-line: #e5e5e5;
@@ -91,7 +90,7 @@
 .pbjt-hero__main {
   font-size: clamp(56px, 12vw, 150px);
   font-weight: 800;
-  color: var(--pbjt-red);
+  color: var(--pbjt-primary-color);
   line-height: 0.92;
   margin: 0;
   letter-spacing: -0.025em;
@@ -102,7 +101,7 @@
 }
 
 .pbjt-hero__qmark {
-  color: var(--pbjt-red);
+  color: var(--pbjt-primary-color);
   margin-left: 0.05em;
   font-size: 1.05em;
 }
@@ -145,7 +144,7 @@
   display: block;
   width: 32px;
   height: 3px;
-  background: var(--pbjt-red);
+  background: var(--pbjt-primary-color);
   margin: 0 0 14px 0;
   border-radius: 2px;
 }
@@ -175,7 +174,7 @@
    CALLOUT
    ============================================================ */
 .pbjt-callout {
-  background: var(--pbjt-red-soft);
+  background: var(--pbjt-primary-color-soft);
   border-radius: var(--pbjt-radius);
   padding: 18px;
   margin: 22px 0;
@@ -195,13 +194,13 @@
 }
 
 .pbjt-callout__badge--solid {
-  background: var(--pbjt-red);
+  background: var(--pbjt-primary-color);
   color: #fff;
 }
 
 .pbjt-callout__badge--ghost {
   background: transparent;
-  color: var(--pbjt-red);
+  color: var(--pbjt-primary-color);
 }
 
 .pbjt-callout__body {
@@ -218,7 +217,7 @@
 .pbjt-callout__highlight {
   font-size: 15.5px;
   font-weight: 700;
-  color: var(--pbjt-red);
+  color: var(--pbjt-primary-color);
   margin: 0;
   line-height: 1.4;
 }
@@ -238,7 +237,7 @@
    IMAGE CARDS
    ============================================================ */
 .pbjt-card {
-  background: var(--pbjt-red-soft);
+  background: var(--pbjt-primary-color-soft);
   border-radius: var(--pbjt-radius);
   padding: 14px;
   display: grid;
@@ -270,8 +269,8 @@
   height: 38px;
   border-radius: 50%;
   background: #fff;
-  border: 1px solid var(--pbjt-red-soft-2);
-  color: var(--pbjt-red);
+  border: 1px solid var(--pbjt-primary-color-soft-2);
+  color: var(--pbjt-primary-color);
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
@@ -297,7 +296,7 @@
    ============================================================ */
 .pbjt-strip {
   margin-top: 36px;
-  background: var(--pbjt-red-soft);
+  background: var(--pbjt-primary-color-soft);
   border-radius: var(--pbjt-radius);
   padding: 22px;
   display: grid;
@@ -329,7 +328,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--pbjt-red);
+  background: var(--pbjt-primary-color);
   color: #fff;
   display: inline-flex;
   align-items: center;
@@ -368,7 +367,7 @@
 }
 
 .pbjt-network__dot {
-  fill: var(--pbjt-red);
+  fill: var(--pbjt-primary-color);
 }
 
 .pbjt-network__node {
@@ -376,7 +375,7 @@
 }
 
 .pbjt-network__center {
-  fill: var(--pbjt-red);
+  fill: var(--pbjt-primary-color);
 }
 
 .pbjt-network__center-text {
@@ -397,7 +396,7 @@
    BENEFITS BOX
    ============================================================ */
 .pbjt-benefits {
-  background: var(--pbjt-red);
+  background: var(--pbjt-primary-color);
   color: #fff;
   border-radius: var(--pbjt-radius);
   padding: 24px;
@@ -438,7 +437,7 @@
   height: 22px;
   border-radius: 50%;
   background: #fff;
-  color: var(--pbjt-red);
+  color: var(--pbjt-primary-color);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -501,7 +500,7 @@
   .pbjt-strip__divider {
     display: block;
     width: 1px;
-    background: var(--pbjt-red-soft-2);
+    background: var(--pbjt-primary-color-soft-2);
     align-self: stretch;
   }
 }

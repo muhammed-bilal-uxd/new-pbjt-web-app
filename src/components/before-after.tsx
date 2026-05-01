@@ -137,7 +137,10 @@ function ListBlock({ title, items, type }: { title: string, items: string[], typ
   const isBefore = type === "before";
 
   return (
-    <article className={`pbjt-info-box ${isBefore ? "pbjt-before" : "pbjt-after"}`}>
+    <article className={`flex flex-col gap-3 pbjt-info-box ${isBefore ? "pbjt-before" : "pbjt-after"}`}>
+      <div className="image-container">
+        <img className="w-full h-[200px] object-cover" src={`/images/in-practice-detail/${isBefore ? "img05.png" : "img06.png"}`} alt="" />
+      </div>
       <div className="pbjt-box-title">
         <span className="pbjt-status-icon">{isBefore ? "!" : "✓"}</span>
         <span>{title}</span>
