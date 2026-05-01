@@ -71,10 +71,10 @@ export default function PBJTInPractice() {
   ];
 
   const locations = [
-    { name: 'Dindigul', color: '#f87171', href: 'dindigal' },
-    { name: 'Virudhnagar', color: '#fbbf24', href: '#' },
-    { name: 'Krishnagiri', color: '#fb923c', href: '#' },
-    { name: 'Hosur', color: '#f97316', href: '#' },
+    { name: 'Dindigul', color: '#f87171', href: 'dindigal', img: '/images/in-practice/dindukal.png' },
+    { name: 'Virudhnagar', color: '#fbbf24', href: '#', img: '/images/in-practice/virutunagar.png' },
+    { name: 'Krishnagiri', color: '#fb923c', href: '#', img: '/images/in-practice/krisnakiri.png' },
+    { name: 'Hosur', color: '#f97316', href: '#', img: '/images/in-practice/osur.png' },
   ];
 
   const handleSubscribe = (e: any) => {
@@ -98,7 +98,7 @@ export default function PBJTInPractice() {
       </section>
 
       {/* ===== PBJT In Practice ===== */}
-      <section className={styles.practiceSection + " center-container"}>
+      <section className={styles.practiceSection + " center-content"}>
         {/* <span className={styles.decorCircle} aria-hidden="true" /> */}
         <span className={styles.decorDots} aria-hidden="true" />
         <div className={styles.practiceGrid}>
@@ -135,13 +135,11 @@ export default function PBJTInPractice() {
 
           <div className={styles.practiceImageWrap}>
             {/* <span className={styles.practiceImageBg} aria-hidden="true" /> */}
-            {/* <Image
+            <img
               src="/images/in-practice/yellow-flower.png"
               alt="Workers harvesting marigold flowers in a field"
-              fill
-              className="relative"
-            /> */}
-            <h3 className='text-3xl'>image?</h3>
+              className="cover-image rounded-[12px]"
+            />
           </div>
         </div>
       </section>
@@ -168,7 +166,7 @@ export default function PBJTInPractice() {
       <section className={styles.quoteSection}>
         <div className={styles.quoteImageWrap}>
           <img
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900"
+            src="/images/in-practice/fun-time.png"
             alt="Two women workers in conversation at a worksite"
             className={styles.quoteImg}
           />
@@ -206,9 +204,12 @@ export default function PBJTInPractice() {
                 <button type="button" className={styles.locationCard}>
                   <span
                     className={styles.locationMapIcon}
-                    style={{ backgroundColor: loc.color }}
+                    // style={{ backgroundColor: loc.color }}
                     aria-hidden="true"
-                  />
+                  >
+                    <img src={loc?.img} alt="" className={"relative h-full w-full"} />
+                  </span>
+
                   <span className={styles.locationName}>{loc.name}</span>
                   <span className={styles.locationArrow} aria-hidden="true">
                     <ArrowIcon />
@@ -220,16 +221,7 @@ export default function PBJTInPractice() {
         </div>
 
         <div className={styles.tnMapWrap} aria-hidden="true">
-          <svg viewBox="0 0 200 300" className={styles.tnMap}>
-            <path
-              d="M80 20 Q90 10 110 15 L130 30 Q140 50 135 80 L145 110 Q160 140 155 170 L165 200 Q160 230 140 260 L120 280 Q100 285 80 275 L60 250 Q50 220 55 190 L45 160 Q40 130 50 100 L60 70 Q70 45 80 20 Z"
-              fill="#d1d5db"
-              stroke="#9ca3af"
-              strokeWidth="1.5"
-            />
-            <circle cx="120" cy="220" r="14" fill="#dc2626" opacity="0.25" />
-            <circle cx="120" cy="220" r="7" fill="#dc2626" />
-          </svg>
+          <img src="/images/in-practice/tn.png" alt="Tamil Nadu Map" style={{ width: 260, height: "auto", maxWidth: "none" }} />
         </div>
       </section>
 

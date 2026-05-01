@@ -447,7 +447,8 @@ function HeroSection() {
           </button>
         </div>
         <div className="dp-hero__map">
-          <TamilNaduMap />
+          {/* <TamilNaduMap /> */}
+          <img src="/images/in-practice/tn.png" alt="Tamil Nadu Map" style={{ width: 415, height: "auto", maxWidth: "none" }} />
         </div>
       </div>
     </section>

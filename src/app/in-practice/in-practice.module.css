@@ -397,7 +397,6 @@
 .locationHeader {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
 
@@ -427,6 +426,10 @@
   gap: 0.85rem;
 }
 
+.locationGrid a button {
+  width: 100%;
+}
+
 .locationCard {
   display: flex;
   align-items: center;
@@ -449,11 +452,16 @@
 }
 
 .locationMapIcon {
-  width: 30px;
-  height: 30px;
+  --map-size: 50px;
+  width: var(--map-size);
+  height: var(--map-size);
   border-radius: 6px;
   flex-shrink: 0;
   display: inline-block;
+}
+
+.locationMapIcon img {
+  object-fit: cover;
 }
 
 .locationName {
