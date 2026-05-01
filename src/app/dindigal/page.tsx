@@ -386,7 +386,7 @@ const Icon = {
   ),
 };
 
-const ICON_BY_KEY = {
+const ICON_BY_KEY: Record<string, any> = {
   mountains: Icon.Mountains,
   rain: Icon.Rain,
   leaf: Icon.Leaf,
@@ -455,13 +455,13 @@ function HeroSection() {
 }
 
 function KeyInsights() {
-  const [open, setOpen] = useState({
+  const [open, setOpen] = useState<any>({
     geography: true,
     climate: true,
     livelihoods: true,
     industries: true,
   });
-  const toggle = (id) => setOpen((p) => ({ ...p, [id]: !p[id] }));
+  const toggle = (id: string) => setOpen((p: any) => ({ ...p, [id]: !p[id] }));
 
   return (
     <section className="dp-insights">
@@ -503,7 +503,7 @@ function KeyInsights() {
 
 function ClimateTable() {
   const [unit, setUnit] = useState('C');
-  const fmt = (c) => (unit === 'F' ? (c * 9 / 5 + 32).toFixed(1) : c.toFixed(1));
+  const fmt = (c: any) => (unit === 'F' ? (c * 9 / 5 + 32).toFixed(1) : c.toFixed(1));
 
   return (
     <section className="dp-climate">
@@ -874,7 +874,7 @@ function WasteThemePanel() {
   );
 }
 
-function BACard({ variant, title, block }) {
+function BACard({ variant, title, block }: { variant: any, title: any, block: any }) {
   return (
     <div className={`dp-ba dp-ba--${variant}`}>
       <header className="dp-ba__head">
@@ -884,7 +884,7 @@ function BACard({ variant, title, block }) {
         <span>{title}</span>
       </header>
       <div className="dp-ba__images">
-        {block.images.map((im, i) => (
+        {block.images.map((im: any, i: any) => (
           <figure key={i} className="dp-ba__fig">
             <img src={im.src} alt={im.label} loading="lazy" />
             <figcaption>{im.label}</figcaption>
@@ -892,7 +892,7 @@ function BACard({ variant, title, block }) {
         ))}
       </div>
       <ul className="dp-ba__points">
-        {block.points.map((p, i) => (
+        {block.points.map((p: any, i: any) => (
           <li key={i}>{p}</li>
         ))}
       </ul>

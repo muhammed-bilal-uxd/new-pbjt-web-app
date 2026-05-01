@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 
 import './before-after.css'
 
-const icons = {
+const icons: any = {
   waste: "▣",
   plastic: "♻",
   water: "💧",
@@ -133,7 +133,7 @@ function runTests() {
 
 runTests();
 
-function ListBlock({ title, items, type }) {
+function ListBlock({ title, items, type }: { title: string, items: string[], type: string }) {
   const isBefore = type === "before";
 
   return (
@@ -143,7 +143,7 @@ function ListBlock({ title, items, type }) {
         <span>{title}</span>
       </div>
       <ul className="pbjt-list">
-        {items.map((item, index) => (
+        {items.map((item: string, index: number) => (
           <li key={index}>{item}</li>
         ))}
       </ul>
