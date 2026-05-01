@@ -9,8 +9,8 @@ const PlaceBasedJustTransition = () => {
       {/* ============ HERO 1: SHAPING ============ */}
 
       <Banner
-        title="Shaping Place-Based Just Transition"
-        imgUrl="/images/about/about-07.jpg"
+        title="Where PBJT works"
+        imgUrl="/images/impact-proposition/hero-center.jpg"
         textColor="#ffffff"
       />
 
