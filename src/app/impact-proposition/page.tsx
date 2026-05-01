@@ -1,5 +1,6 @@
 'use client';
 
+import Banner from '@/components/banner';
 import './impact-proposition.css';
 import {
   Sprout,
@@ -15,35 +16,17 @@ import {
 
 export default function ImpactProposition() {
   return (
-    <article className="pbjt">
+    <article className="pbjt impact-proposition-page">
       {/* ===================== HERO ===================== */}
-      <header className="pbjt-hero">
-        <div className="pbjt-hero__media pbjt-hero__media--left">
-          <img
-            src="/images/pbjt/hero-left.jpg"
-            alt="Workers carrying construction materials"
-          />
-        </div>
 
-        <div className="pbjt-hero__center">
-          <div className="pbjt-hero__title-row">
-            <h1 className="pbjt-hero__title">
-              <span className="pbjt-hero__why">Why</span>
-              <span className="pbjt-hero__line">Place-Based</span>
-              <span className="pbjt-hero__line">Just Transition</span>
-              <span className="pbjt-hero__necessary">is Necessary</span>
-            </h1>
-            <span className="pbjt-hero__qmark" aria-hidden="true">?</span>
-          </div>
-        </div>
-
-        <div className="pbjt-hero__media pbjt-hero__media--right">
-          <img
-            src="/images/pbjt/hero-right.jpg"
-            alt="Workers on scaffolding"
-          />
-        </div>
-      </header>
+      <Banner
+        title="Why
+              Place-Based
+              Just Transition
+              is Necessary?"
+        imgUrl="/images/impact-proposition/hero-center.jpg"
+        textColor="#ffffff"
+      />
 
       {/* ===================== BOARDROOM SECTION ===================== */}
       <section className="pbjt-section pbjt-boardroom">
@@ -71,8 +54,8 @@ export default function ImpactProposition() {
         </div>
 
         <div className="pbjt-boardroom__media">
-          <img src="/images/pbjt/cement-worker.jpg" alt="Worker handling cement bags" />
-          <img src="/images/pbjt/women-workers.jpg" alt="Women workers smiling at a worksite" />
+          <img src="/images/impact-proposition/img137.jpg" alt="Worker handling cement bags" />
+          <img src="/images/impact-proposition/img138.jpg" alt="Women workers smiling at a worksite" />
         </div>
       </section>
 
@@ -132,17 +115,17 @@ export default function ImpactProposition() {
 
       {/* ===================== BANNER ===================== */}
       <section className="pbjt-banner">
-        <div className="pbjt-banner__cell pbjt-banner__cell--with-text">
-          <img src="/images/pbjt/factory.jpg" alt="Workers in a production facility" />
+        <div className="pbjt-banner__cell pbjt-banner__cell--with-text relative">
+          <img src="/images/impact-proposition/img139.jpg" alt="Workers in a production facility" />
           <h3 className="pbjt-banner__title">
             Critical inputs in<br />villages and<br />production clusters
           </h3>
         </div>
-        <div className="pbjt-banner__cell">
-          <img src="/images/pbjt/labourer.jpg" alt="Agricultural labourer" />
+        <div className="pbjt-banner__cell relative">
+          <img src="/images/impact-proposition/img142.jpg" alt="Agricultural labourer" />
         </div>
-        <div className="pbjt-banner__cell">
-          <img src="/images/pbjt/farmer.jpg" alt="Farmer in a turban" />
+        <div className="pbjt-banner__cell relative">
+          <img src="/images/impact-proposition/img143.jpg" alt="Farmer in a turban" />
         </div>
       </section>
 

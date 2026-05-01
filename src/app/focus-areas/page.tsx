@@ -1,5 +1,6 @@
 "use client";
 
+import Banner from "@/components/banner";
 import "./focus-areas.css";
 
 /* ------------------------------------------------------------------ */
@@ -147,24 +148,12 @@ export default function FocusAreas() {
   return (
     <section className="pbjt" aria-labelledby="pbjt-heading">
       {/* HERO */}
-      <header className="pbjt-hero">
-        <div className="pbjt-hero__overlay" />
-        <div className="pbjt-hero__inner">
-          <span className="pbjt-hero__eyebrow">FOCUS AREAS</span>
-          <h1 id="pbjt-heading" className="pbjt-hero__title">
-            <span className="pbjt-hero__where">Where</span>
-            <span className="pbjt-hero__row">
-              <span className="pbjt-hero__pbjt">PBJT works</span>
-              <span className="pbjt-hero__mark" aria-hidden="true">?</span>
-            </span>
-          </h1>
-          <p className="pbjt-hero__subtitle">
-            Grounded in local realities.
-            <br />
-            Shaping a just and green future.
-          </p>
-        </div>
-      </header>
+
+      <Banner
+        title="Where PBJT works"
+        imgUrl="/images/impact-proposition/hero-center.jpg"
+        textColor="#ffffff"
+      />
 
       {/* MAIN GRID */}
       <div className="pbjt-main">

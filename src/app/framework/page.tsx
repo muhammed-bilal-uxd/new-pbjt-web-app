@@ -5,23 +5,19 @@
 //   /public/images/recycler.jpg
 //   /public/images/farmer.jpg
 
+import Banner from "@/components/banner";
 import "./framework.css";
 
 export default function Framework() {
   return (
-    <div className="pbjt">
+    <div className="pbjt framework-page">
       {/* ============ HERO ============ */}
-      <header className="pbjt-hero">
-        <div className="pbjt-hero__inner">
-          <p className="pbjt-hero__eyebrow">PBJT - FRAMEWORK</p>
-          <h1 className="pbjt-hero__title">Principles</h1>
-          <p className="pbjt-hero__subtitle">of Place-Based Just Transition</p>
-        </div>
 
-        <div className="pbjt-hero__image">
-          <img src="/images/hero-worker.jpg" alt="Worker" />
-        </div>
-      </header>
+      <Banner
+        title="PBJT - FRAMEWORK Principles of Place-Based Just Transition"
+        imgUrl="/images/impact-proposition/hero-center.jpg"
+        textColor="#ffffff"
+      />
 
       {/* ============ TOOLS ============ */}
       <section className="pbjt-tools">

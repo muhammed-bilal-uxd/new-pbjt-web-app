@@ -11,6 +11,7 @@ import {
   Leaf,
 } from "lucide-react";
 import styles from "./methodology.module.css";
+import Banner from "@/components/banner";
 
 const KEY_ELEMENTS = [
   {
@@ -90,20 +91,12 @@ const PILLARS = [
 export default function Methodology() {
   return (
     <div className={styles.page}>
-      {/* Hero */}
-      <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <span className={styles.methodologyLabel}>METHODOLOGY:</span>
-          <h1 className={styles.heroTitle}>
-            How<span className={styles.questionMark}>?</span>
-            <br />
-            PBJT works
-          </h1>
-        </div>
-        <div className={styles.heroImage}>
-          <img src="/images/pbjt-hero.jpg" alt="Workers carrying loads" />
-        </div>
-      </section>
+
+      <Banner
+        title="How PBJT works"
+        imgUrl="/images/impact-proposition/hero-center.jpg"
+        textColor="#ffffff"
+      />
 
       {/* Intro + Key Elements */}
       <section className={styles.keyElementsSection}>

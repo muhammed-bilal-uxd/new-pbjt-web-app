@@ -4,6 +4,7 @@ import { useState } from 'react';
 import styles from './in-practice.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import Banner from '@/components/banner';
 
 /* ---------- Inline SVG icons (kept in JSX, no CSS) ---------- */
 const PeopleIcon = () => (

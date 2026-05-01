@@ -17,6 +17,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import './Contact.css';
+import Banner from '@/components/banner';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -45,7 +46,7 @@ export default function Contact() {
   return (
     <div className="contact-page">
       {/* Hero */}
-      <section className="contact-hero">
+      {/* <section className="contact-hero">
         <div className="contact-hero-overlay" aria-hidden="true" />
         <div className="contact-hero-content">
           <h1 className="contact-hero-title">Contact Us</h1>
@@ -57,7 +58,13 @@ export default function Contact() {
             <p>Reach out to the PBJT team&mdash;we&apos;d love to hear from you.</p>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <Banner
+        title="Contact us"
+        imgUrl="/images/impact-proposition/hero-center.jpg"
+        textColor="#ffffff"
+      />
 
       {/* Form + Info */}
       <section className="contact-main">

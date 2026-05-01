@@ -1,25 +1,18 @@
 "use client";
 
+import Banner from "@/components/banner";
 import "./about.css";
 
 const PlaceBasedJustTransition = () => {
   return (
-    <div className="pbjt">
+    <div className="pbjt about-page">
       {/* ============ HERO 1: SHAPING ============ */}
-      <section
-        className="pbjt-hero pbjt-hero--shaping"
-        style={{ backgroundImage: "url('/images/pbjt-shaping-hero.jpg')" }}
-        aria-label="Shaping Place-Based Just Transition"
-      >
-        <div className="pbjt-hero__inner">
-          <h1 className="pbjt-hero__main">Shaping</h1>
-          <h2 className="pbjt-hero__sub">
-            Place-Based
-            <br />
-            Just Transition
-          </h2>
-        </div>
-      </section>
+
+      <Banner
+        title="Shaping Place-Based Just Transition"
+        imgUrl="/images/about/about-07.jpg"
+        textColor="#ffffff"
+      />
 
       {/* ============ SHAPING CONTENT ============ */}
       <section className="pbjt-section">

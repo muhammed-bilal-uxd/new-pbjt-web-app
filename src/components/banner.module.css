@@ -1,0 +1,43 @@
+/* components/Banner.module.css */
+.banner {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bgImage {
+    object-fit: cover;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 2;
+}
+
+.content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #fff;
+    max-width: 900px;
+    padding: 24px;
+}
+
+.content h1 {
+    font-size: clamp(42px, 7vw, 50px);
+    line-height: 1;
+    font-weight: 800;
+    margin: 0;
+}
+
+.content p {
+    margin-top: 18px;
+    font-size: clamp(16px, 2vw, 24px);
+    line-height: 1.5;
+}
