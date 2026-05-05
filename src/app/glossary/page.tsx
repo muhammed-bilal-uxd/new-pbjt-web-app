@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import {
   Search,
   Building2,
@@ -14,146 +14,146 @@ import {
   BookOpen,
   ChevronDown,
   ArrowRight,
-} from 'lucide-react';
-import styles from './Glossary.module.css';
+} from "lucide-react";
+import styles from "./Glossary.module.css";
 
 const cn = (names: string) =>
   names
     .split(/\s+/)
     .filter(Boolean)
     .map((name) => styles[name] ?? name)
-    .join(' ');
+    .join(" ");
 
 const terms = [
   {
-    id: 'pbjt',
-    name: 'PBJT',
-    category: 'Framework',
+    id: "pbjt",
+    name: "PBJT",
+    category: "Framework",
     icon: Building2,
     description:
-      'Place-Based Just Transition focuses on how sustainability is experienced at the last tiers of value chains...',
+      "Place-Based Just Transition focuses on how sustainability is experienced at the last tiers of value chains...",
   },
   {
-    id: 'jt',
-    name: 'JT',
-    category: 'Framework',
+    id: "jt",
+    name: "JT",
+    category: "Framework",
     icon: Users,
     description:
-      'A process of shifting to environmentally sustainable economies in a way that is fair and inclusive...',
+      "A process of shifting to environmentally sustainable economies in a way that is fair and inclusive...",
   },
   {
-    id: 'esg',
-    name: 'ESG',
-    category: 'Business',
+    id: "esg",
+    name: "ESG",
+    category: "Business",
     icon: Leaf,
     description:
-      'A framework used by companies and investors to assess non-financial performance...',
+      "A framework used by companies and investors to assess non-financial performance...",
   },
   {
-    id: 'brsr',
-    name: 'BRSR',
-    category: 'Business',
+    id: "brsr",
+    name: "BRSR",
+    category: "Business",
     icon: FileText,
     description:
-      'A disclosure framework through which companies report on their social and environmental responsibilities...',
+      "A disclosure framework through which companies report on their social and environmental responsibilities...",
   },
   {
-    id: 'msmes',
-    name: 'MSMEs',
-    category: 'Business',
+    id: "msmes",
+    name: "MSMEs",
+    category: "Business",
     icon: Store,
     description:
-      'Small-scale businesses that form the backbone of local economies and supply chains...',
+      "Small-scale businesses that form the backbone of local economies and supply chains...",
   },
   {
-    id: 'csr',
-    name: 'CSR',
-    category: 'Business',
+    id: "csr",
+    name: "CSR",
+    category: "Business",
     icon: Heart,
     description:
-      'Activities undertaken by companies to contribute to social and environmental wellbeing...',
+      "Activities undertaken by companies to contribute to social and environmental wellbeing...",
   },
   {
-    id: 'shgs',
-    name: 'SHGs',
-    category: 'Community',
+    id: "shgs",
+    name: "SHGs",
+    category: "Community",
     icon: UsersRound,
     description:
-      'Community-based groups, often of women, formed around savings, credit, livelihoods, or shared issues...',
+      "Community-based groups, often of women, formed around savings, credit, livelihoods, or shared issues...",
   },
   {
-    id: 'value-chain',
-    name: 'Value Chain',
-    category: 'Framework',
+    id: "value-chain",
+    name: "Value Chain",
+    category: "Framework",
     icon: Link2,
     description:
-      'The full range of activities and actors involved in producing, distributing, using, and disposing of...',
+      "The full range of activities and actors involved in producing, distributing, using, and disposing of...",
   },
 ];
 
 const alphabet = [
-  'All',
+  "All",
   ...Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i)),
 ];
 const categories = [
-  'All',
-  'Framework',
-  'Community',
-  'Business',
-  'Governance',
-  'Research',
+  "All",
+  "Framework",
+  "Community",
+  "Business",
+  "Governance",
+  "Research",
 ];
 
 const allTermsAZ = {
-  A: ['Accountability', 'Action Study', 'Acronyms'],
-  B: ['BRSR', 'Business Responsibility', 'Business Ecosystem'],
-  C: ['CSR', 'Collective Agency', 'Collectivisation'],
-  G: ['Grievance Mechanism', 'Green Jobs', 'Governance'],
-  I: ['Informal Economy', 'Inclusive Transition', 'Impact'],
-  L: ['Last-Tier / Last-Mile', 'Local Resilience', 'Livelihood Security'],
+  A: ["Accountability", "Action Study", "Acronyms"],
+  B: ["BRSR", "Business Responsibility", "Business Ecosystem"],
+  C: ["CSR", "Collective Agency", "Collectivisation"],
+  G: ["Grievance Mechanism", "Green Jobs", "Governance"],
+  I: ["Informal Economy", "Inclusive Transition", "Impact"],
+  L: ["Last-Tier / Last-Mile", "Local Resilience", "Livelihood Security"],
 };
 
 const featuredTerms = [
   {
-    id: 'pbjt',
-    name: 'PBJT',
-    subtitle: 'Place-Based Just Transition',
+    id: "pbjt",
+    name: "PBJT",
+    subtitle: "Place-Based Just Transition",
     description:
-      'An approach that begins with places and people, centering workers, MSMEs, and communities.',
+      "An approach that begins with places and people, centering workers, MSMEs, and communities.",
     icon: Building2,
     image:
-      'https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=600&h=400&fit=crop',
+      "https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=600&h=400&fit=crop",
   },
   {
-    id: 'jt',
-    name: 'Just Transition',
+    id: "jt",
+    name: "Just Transition",
     description:
-      'A fair and inclusive shift to sustainable economies where no worker or community is left behind.',
+      "A fair and inclusive shift to sustainable economies where no worker or community is left behind.",
     icon: Users,
     image:
-      'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=400&fit=crop',
+      "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=400&fit=crop",
   },
   {
-    id: 'value-chain',
-    name: 'Value Chain',
+    id: "value-chain",
+    name: "Value Chain",
     description:
-      'Inclusive of informal and last-tier actors whose work drives real economies.',
+      "Inclusive of informal and last-tier actors whose work drives real economies.",
     icon: Link2,
     image:
-      'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop',
+      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
   },
 ];
 
 export default function Glossary() {
-  const [activeLetter, setActiveLetter] = useState('All');
-  const [activeCategory, setActiveCategory] = useState('All');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [activeLetter, setActiveLetter] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const filteredTerms = terms.filter((term) => {
     const matchesCategory =
-      activeCategory === 'All' || term.category === activeCategory;
+      activeCategory === "All" || term.category === activeCategory;
     const matchesLetter =
-      activeLetter === 'All' ||
+      activeLetter === "All" ||
       term.name.charAt(0).toUpperCase() === activeLetter;
     const matchesSearch =
       !searchQuery ||
@@ -167,7 +167,7 @@ export default function Glossary() {
       {/* HERO */}
       <header className={cn("hero")}>
         <div className={cn("hero-overlay")} />
-        <div className={cn("hero-inner")}>
+        <div className={cn("hero-inner center-content")}>
           <h1 className={cn("hero-title")}>Glossary</h1>
           <p className={cn("hero-subtitle")}>
             Understanding the language of Place-Based Just Transition
@@ -181,7 +181,7 @@ export default function Glossary() {
         </div>
       </header>
 
-      <main className={cn("container")}>
+      <main className={cn("container center-content")}>
         {/* SEARCH */}
         <div className={cn("search-bar")}>
           <Search size={20} className={cn("search-icon")} />
@@ -200,9 +200,9 @@ export default function Glossary() {
             {alphabet.map((letter) => (
               <button
                 key={letter}
-                className={cn(`alphabet-btn ${
-                  activeLetter === letter ? 'active' : ''
-                }`)}
+                className={cn(
+                  `alphabet-btn ${activeLetter === letter ? "active" : ""}`,
+                )}
                 onClick={() => setActiveLetter(letter)}
               >
                 {letter}
@@ -218,9 +218,9 @@ export default function Glossary() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                className={cn(`category-btn ${
-                  activeCategory === cat ? 'active' : ''
-                }`)}
+                className={cn(
+                  `category-btn ${activeCategory === cat ? "active" : ""}`,
+                )}
                 onClick={() => setActiveCategory(cat)}
               >
                 {cat}
@@ -241,7 +241,9 @@ export default function Glossary() {
                 <div className={cn("term-header")}>
                   <h3 className={cn("term-name")}>{term.name}</h3>
                   <span
-                    className={cn(`term-category cat-${term.category.toLowerCase()}`)}
+                    className={cn(
+                      `term-category cat-${term.category.toLowerCase()}`,
+                    )}
                   >
                     {term.category.toUpperCase()}
                   </span>
@@ -362,7 +364,9 @@ export default function Glossary() {
             </div>
             <div className={cn("diagram-center")}>
               <span className={cn("center-title")}>PBJT</span>
-              <span className={cn("center-sub")}>Place-Based Just Transition</span>
+              <span className={cn("center-sub")}>
+                Place-Based Just Transition
+              </span>
             </div>
           </div>
         </section>
@@ -411,4 +415,3 @@ export default function Glossary() {
     </div>
   );
 }
-

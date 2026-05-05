@@ -3,49 +3,57 @@
    Mobile-first. Class prefix: dp-
    ========================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
 
 .dp-page {
-  --dp-red: #E11D2E;
-  --dp-red-dark: #B91C1C;
-  --dp-red-soft: #FEE2E2;
-  --dp-red-tint: #FFF5F5;
+  --dp-red: #e11d2e;
+  --dp-red-dark: #b91c1c;
+  --dp-red-soft: #fee2e2;
+  --dp-red-tint: #fff5f5;
 
   --dp-ink: #111827;
-  --dp-ink-2: #1F2937;
+  --dp-ink-2: #1f2937;
   --dp-text: #374151;
-  --dp-muted: #6B7280;
-  --dp-line: #E5E7EB;
-  --dp-line-soft: #F3F4F6;
+  --dp-muted: #6b7280;
+  --dp-line: #e5e7eb;
+  --dp-line-soft: #f3f4f6;
 
-  --dp-bg: #FFFFFF;
-  --dp-bg-soft: #F9FAFB;
-  --dp-bg-cream: #FBF8F4;
+  --dp-bg: #ffffff;
+  --dp-bg-soft: #f9fafb;
+  --dp-bg-cream: #fbf8f4;
 
-  --dp-dark: #0E0807;
-  --dp-dark-2: #1C1212;
+  --dp-dark: #0e0807;
+  --dp-dark-2: #1c1212;
 
-  --dp-blue: #2563EB;
-  --dp-blue-soft: #DBEAFE;
-  --dp-green: #16A34A;
-  --dp-green-soft: #DCFCE7;
-  --dp-purple: #7C3AED;
-  --dp-purple-soft: #EDE9FE;
-  --dp-amber: #D97706;
-  --dp-amber-soft: #FEF3C7;
+  --dp-blue: #2563eb;
+  --dp-blue-soft: #dbeafe;
+  --dp-green: #16a34a;
+  --dp-green-soft: #dcfce7;
+  --dp-purple: #7c3aed;
+  --dp-purple-soft: #ede9fe;
+  --dp-amber: #d97706;
+  --dp-amber-soft: #fef3c7;
 
   --dp-radius: 14px;
   --dp-radius-lg: 20px;
   --dp-radius-pill: 999px;
 
-  --dp-shadow-sm: 0 1px 2px rgba(15, 23, 42, .04), 0 1px 3px rgba(15, 23, 42, .06);
-  --dp-shadow: 0 6px 16px rgba(15, 23, 42, .06), 0 2px 4px rgba(15, 23, 42, .04);
-  --dp-shadow-lg: 0 20px 40px rgba(15, 23, 42, .08);
+  --dp-shadow-sm:
+    0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06);
+  --dp-shadow:
+    0 6px 16px rgba(15, 23, 42, 0.06), 0 2px 4px rgba(15, 23, 42, 0.04);
+  --dp-shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.08);
 
   --dp-content: 1200px;
   --dp-pad-x: clamp(16px, 4vw, 56px);
 
-  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    "Manrope",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   color: var(--dp-text);
   background: var(--dp-bg);
   line-height: 1.55;
@@ -78,9 +86,9 @@
 }
 
 .dp-eyebrow {
-  font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+  font-family: "Plus Jakarta Sans", "Manrope", sans-serif;
   font-size: 12px;
-  letter-spacing: .18em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--pbjt-primary-color);
   font-weight: 700;
@@ -92,12 +100,12 @@
 }
 
 .dp-h2 {
-  font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+  font-family: "Plus Jakarta Sans", "Manrope", sans-serif;
   font-size: clamp(24px, 3.4vw, 34px);
   font-weight: 800;
   color: var(--dp-ink);
   line-height: 1.2;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   margin: 0;
 }
 
@@ -122,9 +130,12 @@
   border-radius: var(--dp-radius);
   padding: 14px 22px;
   font-weight: 700;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   font-size: 14px;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
 }
 
 .dp-btn svg {
@@ -135,7 +146,7 @@
 .dp-btn--primary {
   background: var(--pbjt-primary-color);
   color: #fff;
-  box-shadow: 0 8px 18px rgba(225, 29, 46, .25);
+  box-shadow: 0 8px 18px rgba(225, 29, 46, 0.25);
 }
 
 .dp-btn--primary:hover {
@@ -162,8 +173,8 @@
    HERO
    ========================================================== */
 .dp-hero {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FCFBFA 100%);
-  padding: clamp(24px, 6vw, 56px) var(--dp-pad-x) clamp(40px, 8vw, 72px);
+  background: linear-gradient(180deg, #ffffff 0%, #fcfbfa 100%);
+  padding-block: clamp(24px, 6vw, 56px) clamp(40px, 8vw, 72px);
   position: relative;
   overflow: hidden;
 }
@@ -175,13 +186,16 @@
   top: 40px;
   width: 380px;
   height: 380px;
-  background: radial-gradient(circle, rgba(225, 29, 46, .06) 0%, rgba(225, 29, 46, 0) 60%);
+  background: radial-gradient(
+    circle,
+    rgba(225, 29, 46, 0.06) 0%,
+    rgba(225, 29, 46, 0) 60%
+  );
   z-index: 0;
 }
 
 .dp-hero__inner {
-  max-width: var(--dp-content);
-  margin: 0 auto;
+  margin-block: 0;
   position: relative;
   display: grid;
   gap: clamp(24px, 4vw, 48px);
@@ -228,11 +242,11 @@
 }
 
 .dp-hero__title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(36px, 7vw, 64px);
   font-weight: 800;
   line-height: 1.02;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   color: var(--dp-ink);
   margin: 0;
   display: flex;
@@ -269,17 +283,17 @@
 .dp-tn-map {
   width: clamp(220px, 50vw, 380px);
   height: auto;
-  filter: drop-shadow(0 10px 24px rgba(15, 23, 42, .08));
+  filter: drop-shadow(0 10px 24px rgba(15, 23, 42, 0.08));
 }
 
 .dp-tn-shape {
-  fill: #E8E9EE;
-  stroke: #D1D5DB;
-  stroke-width: .5;
+  fill: #e8e9ee;
+  stroke: #d1d5db;
+  stroke-width: 0.5;
 }
 
 .dp-tn-pin-bg {
-  fill: rgba(225, 29, 46, .18);
+  fill: rgba(225, 29, 46, 0.18);
 }
 
 .dp-tn-pin path {
@@ -300,9 +314,8 @@
    KEY INSIGHTS
    ========================================================== */
 .dp-insights {
-  padding: clamp(40px, 7vw, 72px) var(--dp-pad-x);
-  max-width: var(--dp-content);
-  margin: 0 auto;
+  padding-block: clamp(40px, 7vw, 72px);
+  margin-block: 0;
 }
 
 .dp-insights__head {
@@ -319,11 +332,13 @@
   border: 1px solid var(--dp-line);
   border-radius: var(--dp-radius);
   background: #fff;
-  transition: border-color .2s, box-shadow .2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .dp-insight:hover {
-  border-color: #D1D5DB;
+  border-color: #d1d5db;
   box-shadow: var(--dp-shadow-sm);
 }
 
@@ -363,7 +378,7 @@
 
 .dp-insight__title {
   display: block;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   font-size: 18px;
   color: var(--dp-ink);
@@ -385,7 +400,7 @@
   flex-shrink: 0;
   color: var(--dp-muted);
   margin-top: 16px;
-  transition: transform .25s ease;
+  transition: transform 0.25s ease;
 }
 
 .dp-insight__chev svg {
@@ -402,9 +417,8 @@
    CLIMATE TABLE
    ========================================================== */
 .dp-climate {
-  padding: 0 var(--dp-pad-x) clamp(40px, 6vw, 72px);
-  max-width: var(--dp-content);
-  margin: 0 auto;
+  padding-block: 0 clamp(40px, 6vw, 72px);
+  margin-block: 0;
 }
 
 .dp-climate__card {
@@ -426,7 +440,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: var(--dp-ink);
@@ -469,7 +483,9 @@
   color: var(--dp-muted);
   border-radius: 8px;
   font-size: 14px;
-  transition: background .15s, color .15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 }
 
 .dp-toggle__btn.is-active {
@@ -570,7 +586,7 @@
 }
 
 .dp-climate__weather svg:last-child {
-  color: #60A5FA;
+  color: #60a5fa;
 }
 
 /* ==========================================================
@@ -578,7 +594,7 @@
    ========================================================== */
 .dp-process {
   background: var(--dp-dark);
-  color: #E5E7EB;
+  color: #e5e7eb;
   padding: clamp(28px, 5vw, 56px) var(--dp-pad-x);
 }
 
@@ -617,17 +633,17 @@
 }
 
 .dp-process__intro-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 17px;
   font-weight: 800;
   line-height: 1.25;
-  letter-spacing: .01em;
+  letter-spacing: 0.01em;
   margin: 0 0 12px;
 }
 
 .dp-process__intro-text {
   font-size: 13.5px;
-  color: rgba(255, 255, 255, .9);
+  color: rgba(255, 255, 255, 0.9);
   margin: 0 0 18px;
   line-height: 1.55;
 }
@@ -662,14 +678,14 @@
 .dp-process__step-title {
   font-size: 13px;
   font-weight: 800;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   margin: 0 0 2px;
   color: #fff;
 }
 
 .dp-process__step-sub {
   font-size: 12px;
-  color: rgba(255, 255, 255, .8);
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
   line-height: 1.4;
 }
@@ -677,12 +693,12 @@
 .dp-process__intro-foot {
   margin: auto 0 0;
   padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, .2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   gap: 10px;
   align-items: center;
   font-size: 12.5px;
-  color: rgba(255, 255, 255, .9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .dp-process__intro-foot svg {
@@ -701,12 +717,12 @@
 }
 
 .dp-step__head h4 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 14px;
   font-weight: 800;
   color: var(--dp-ink);
   margin: 0 0 4px;
-  letter-spacing: .02em;
+  letter-spacing: 0.02em;
 }
 
 .dp-step__head p {
@@ -717,7 +733,7 @@
 
 .dp-step__art {
   margin: 14px -4px;
-  background: #F1F5F9;
+  background: #f1f5f9;
   border-radius: 10px;
   aspect-ratio: 16 / 11;
   overflow: hidden;
@@ -728,9 +744,9 @@
 
 .dp-step__art::after {
   content: "Illustration";
-  color: #94A3B8;
+  color: #94a3b8;
   font-size: 11px;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   font-weight: 700;
 }
 
@@ -802,7 +818,7 @@
   color: #fff;
   padding: 2px 10px;
   border-radius: 8px;
-  font-size: .8em;
+  font-size: 0.8em;
   margin-right: 6px;
   font-weight: 800;
   vertical-align: 2px;
@@ -839,7 +855,9 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform .2s, box-shadow .2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .dp-village-card:hover {
@@ -849,7 +867,7 @@
 
 .dp-village-card__media {
   aspect-ratio: 16 / 10;
-  background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
   position: relative;
 }
 
@@ -867,12 +885,12 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 16px;
   font-weight: 800;
   color: var(--dp-ink);
   margin: 0 0 14px;
-  letter-spacing: .03em;
+  letter-spacing: 0.03em;
 }
 
 .dp-village-card__pin {
@@ -908,7 +926,7 @@
 }
 
 .dp-village-card__stats strong {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 18px;
   color: var(--dp-ink);
   font-weight: 800;
@@ -917,7 +935,7 @@
 .dp-village-card__stats small {
   font-size: 11px;
   color: var(--dp-muted);
-  letter-spacing: .02em;
+  letter-spacing: 0.02em;
 }
 
 .dp-stat {
@@ -961,7 +979,7 @@
 .dp-village-card__link svg {
   width: 14px;
   height: 14px;
-  transition: transform .15s;
+  transition: transform 0.15s;
 }
 
 .dp-village-card__link:hover svg {
@@ -1001,11 +1019,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 18px;
   font-weight: 800;
   margin: 0 0 10px;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
 }
 
 .dp-detail__pin {
@@ -1025,7 +1043,7 @@
 
 .dp-detail__blurb {
   font-size: 13px;
-  color: rgba(255, 255, 255, .9);
+  color: rgba(255, 255, 255, 0.9);
   margin: 0 0 22px;
   line-height: 1.55;
 }
@@ -1047,18 +1065,18 @@
 }
 
 .dp-detail__stats strong {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 800;
   font-size: 18px;
 }
 
 .dp-detail__stats small {
-  color: rgba(255, 255, 255, .85);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 12px;
 }
 
 .dp-detail__stats .dp-stat {
-  background: rgba(255, 255, 255, .15);
+  background: rgba(255, 255, 255, 0.15);
   color: #fff;
 }
 
@@ -1091,9 +1109,9 @@
 }
 
 .dp-panel__head h5 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 13px;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
   color: var(--dp-ink);
   margin: 0;
   font-weight: 800;
@@ -1186,7 +1204,7 @@
 .dp-panel__figure img {
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  background: #F1F5F9;
+  background: #f1f5f9;
 }
 
 .dp-panel__figure figcaption {
@@ -1205,7 +1223,7 @@
 .dp-mini-table th {
   text-align: left;
   font-size: 11px;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--dp-muted);
   padding: 8px 0;
@@ -1325,7 +1343,9 @@
   font-size: 13.5px;
   white-space: nowrap;
   margin-bottom: -1px;
-  transition: color .15s, border-color .15s;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
 }
 
 .dp-tab:hover {
@@ -1396,7 +1416,7 @@
 }
 
 .dp-theme__head h3 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 18px;
   font-weight: 800;
   color: var(--dp-ink);
@@ -1427,13 +1447,13 @@
 }
 
 .dp-ba--before {
-  background: #FFF7ED;
-  border: 1px solid #FED7AA;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
 }
 
 .dp-ba--after {
-  background: #F0FDF4;
-  border: 1px solid #BBF7D0;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
 }
 
 .dp-ba__head {
@@ -1481,7 +1501,7 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 8px;
-  background: #F1F5F9;
+  background: #f1f5f9;
 }
 
 .dp-ba__fig figcaption {
@@ -1533,9 +1553,9 @@
 }
 
 .dp-impact__head h4 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 13px;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
   color: var(--dp-ink);
   font-weight: 800;
   margin: 0;

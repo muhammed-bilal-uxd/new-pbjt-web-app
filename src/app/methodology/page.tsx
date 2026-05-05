@@ -1,5 +1,3 @@
-
-
 import {
   Sprout,
   Users,
@@ -91,7 +89,6 @@ const PILLARS = [
 export default function Methodology() {
   return (
     <div className={styles.page}>
-
       <Banner
         title="How PBJT works"
         imgUrl="/images/impact-proposition/hero-center.jpg"
@@ -99,7 +96,7 @@ export default function Methodology() {
       />
 
       {/* Intro + Key Elements */}
-      <section className={styles.keyElementsSection}>
+      <section className={styles.keyElementsSection + " center-content"}>
         <div className={styles.intro}>
           <p className={styles.introMain}>
             PBJT follows a participatory action study approach that integrates
@@ -133,51 +130,52 @@ export default function Methodology() {
 
       {/* Expected Change */}
       <section className={styles.expectedChange}>
-        <div className={styles.changeContent}>
-          <h2 className={styles.changeHeading}>
-            Expected Change <br />
-            <span className={styles.changeSubheading}>
-              Of Place-Based Just Transition
-            </span>
-          </h2>
-          <div className={styles.changeList}>
-            {EXPECTED_CHANGES.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <div className={styles.changeItem} key={i}>
-                  <div className={styles.changeIcon}>
-                    <Icon />
+        <div className={styles.expectedChangeContent + " center-content"}>
+          <div className={styles.changeContent}>
+            <h2 className={styles.changeHeading}>
+              Expected Change <br />
+              <span className={styles.changeSubheading}>
+                Of Place-Based Just Transition
+              </span>
+            </h2>
+            <div className={styles.changeList}>
+              {EXPECTED_CHANGES.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <div className={styles.changeItem} key={i}>
+                    <div className={styles.changeIcon}>
+                      <Icon />
+                    </div>
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.desc}</p>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
 
-        <div className={styles.changeImageWrapper}>
-          <img
-            src="/images/methodology/img94.jpg"
-            alt="Worker in dramatic light"
-            className={styles.changeImage}
-          />
-          <div className={styles.quoteBox}>
-            <span className={styles.quoteMark}>&#8220;</span>
-            <p>From local realities to systemic change, together.</p>
+          <div className={styles.changeImageWrapper}>
+            <img
+              src="/images/methodology/img94.jpg"
+              alt="Worker in dramatic light"
+              className={styles.changeImage}
+            />
+            <div className={styles.quoteBox}>
+              <span className={styles.quoteMark}>&#8220;</span>
+              <p>From local realities to systemic change, together.</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* New Architecture */}
-      <section className={styles.architecture}>
+      <section className={styles.architecture + " center-content"}>
         <div className={styles.architectureContent}>
           <h2 className={styles.architectureTitle}>
             <span className={styles.titleRed}>PBJT:</span>
-            <br />
-            A New Architecture{" "}
+            <br />A New Architecture{" "}
             <span className={styles.titleRed}>for Responsible Business</span>
           </h2>
           <p className={styles.architectureDesc}>

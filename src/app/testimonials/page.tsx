@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import {
   Users,
   MapPin,
@@ -15,90 +15,111 @@ import {
   Quote,
   Play,
   ArrowRight,
-} from 'lucide-react';
-import styles from './Testimonials.module.css';
+} from "lucide-react";
+import styles from "./Testimonials.module.css";
 
 const STATS = [
-  { Icon: Users, value: '250+', label: 'People Engaged' },
-  { Icon: MapPin, value: '5', label: 'Villages' },
-  { Icon: MessageSquare, value: '60+', label: 'Stories Collected' },
-  { Icon: Lock, value: '12+', label: 'Video Stories' },
+  { Icon: Users, value: "250+", label: "People Engaged" },
+  { Icon: MapPin, value: "5", label: "Villages" },
+  { Icon: MessageSquare, value: "60+", label: "Stories Collected" },
+  { Icon: Lock, value: "12+", label: "Video Stories" },
 ];
 
 const FILTERS = [
-  { id: 'all', label: 'All Stories', Icon: Sparkles },
-  { id: 'workers', label: 'Workers', Icon: HardHat },
-  { id: 'women', label: 'Women', Icon: User },
-  { id: 'youth', label: 'Youth', Icon: GraduationCap },
-  { id: 'leaders', label: 'Community Leaders', Icon: Users },
-  { id: 'business', label: 'Small Businesses', Icon: Store },
-  { id: 'environment', label: 'Environment', Icon: Leaf },
+  { id: "all", label: "All Stories", Icon: Sparkles },
+  { id: "workers", label: "Workers", Icon: HardHat },
+  { id: "women", label: "Women", Icon: User },
+  { id: "youth", label: "Youth", Icon: GraduationCap },
+  { id: "leaders", label: "Community Leaders", Icon: Users },
+  { id: "business", label: "Small Businesses", Icon: Store },
+  { id: "environment", label: "Environment", Icon: Leaf },
 ];
 
 const TESTIMONIALS = [
   {
-    quote: 'Green jobs meant little without wage security.',
-    text: 'We needed steady income, not just good intentions.',
-    name: 'Kumar',
-    role: 'Waste Worker, Dindigul',
-    avatar: 'https://placehold.co/80x80/c8102e/ffffff?text=K',
+    quote: "Green jobs meant little without wage security.",
+    text: "We needed steady income, not just good intentions.",
+    name: "Kumar",
+    role: "Waste Worker, Dindigul",
+    avatar: "https://placehold.co/80x80/c8102e/ffffff?text=K",
   },
   {
-    quote: 'Waste systems improved, but it also increased unpaid labour for women.',
-    text: 'We do more, but it is not always visible.',
-    name: 'Malika',
-    role: 'Home-based Worker',
-    avatar: 'https://placehold.co/80x80/c8102e/ffffff?text=M',
+    quote:
+      "Waste systems improved, but it also increased unpaid labour for women.",
+    text: "We do more, but it is not always visible.",
+    name: "Malika",
+    role: "Home-based Worker",
+    avatar: "https://placehold.co/80x80/c8102e/ffffff?text=M",
   },
   {
     quote: "We adapted sustainability to survive. Now, we're proud to lead it.",
-    text: 'Small changes, together, made a big difference.',
-    name: 'Ramesh',
-    role: 'Youth Volunteer',
-    avatar: 'https://placehold.co/80x80/c8102e/ffffff?text=R',
+    text: "Small changes, together, made a big difference.",
+    name: "Ramesh",
+    role: "Youth Volunteer",
+    avatar: "https://placehold.co/80x80/c8102e/ffffff?text=R",
   },
 ];
 
 const VIDEOS = [
   {
-    title: 'From Waste to Worth: Our Village Journey',
-    location: 'Sanarpatty, Dindigul',
-    duration: '02:46',
-    thumbnail: 'https://placehold.co/600x340/8b1a1a/ffffff?text=Village+Journey',
+    title: "From Waste to Worth: Our Village Journey",
+    location: "Sanarpatty, Dindigul",
+    duration: "02:46",
+    thumbnail:
+      "https://placehold.co/600x340/8b1a1a/ffffff?text=Village+Journey",
     featured: true,
   },
   {
-    title: 'Water Changes Everything',
-    location: 'Gopalpatty, Dindigul',
-    duration: '01:58',
-    thumbnail: 'https://placehold.co/300x180/4a7c59/ffffff?text=Water+Story',
+    title: "Water Changes Everything",
+    location: "Gopalpatty, Dindigul",
+    duration: "01:58",
+    thumbnail: "https://placehold.co/300x180/4a7c59/ffffff?text=Water+Story",
   },
   {
-    title: 'Women Leading Waste Management',
-    location: 'Avilipatti, Dindigul',
-    duration: '02:12',
-    thumbnail: 'https://placehold.co/300x180/c8102e/ffffff?text=Women+Lead',
+    title: "Women Leading Waste Management",
+    location: "Avilipatti, Dindigul",
+    duration: "02:12",
+    thumbnail: "https://placehold.co/300x180/c8102e/ffffff?text=Women+Lead",
   },
 ];
 
 const MOMENTS = [
-  { title: 'Waste Segregation Drive', location: 'Sanarpatty', image: 'https://placehold.co/300x220/4a7c59/ffffff?text=Segregation' },
-  { title: 'Water Body Restoration', location: 'Gopalpatty', image: 'https://placehold.co/300x220/2c5f7c/ffffff?text=Water' },
-  { title: 'Tree Plantation', location: 'Pettampatty', image: 'https://placehold.co/300x220/3a6b3a/ffffff?text=Trees' },
-  { title: 'Plastic-Free Shop', location: 'Avilipatti', image: 'https://placehold.co/300x220/c8102e/ffffff?text=Shop' },
-  { title: 'Community Meeting', location: 'Sanarpatty', image: 'https://placehold.co/300x220/8b6914/ffffff?text=Meeting' },
+  {
+    title: "Waste Segregation Drive",
+    location: "Sanarpatty",
+    image: "https://placehold.co/300x220/4a7c59/ffffff?text=Segregation",
+  },
+  {
+    title: "Water Body Restoration",
+    location: "Gopalpatty",
+    image: "https://placehold.co/300x220/2c5f7c/ffffff?text=Water",
+  },
+  {
+    title: "Tree Plantation",
+    location: "Pettampatty",
+    image: "https://placehold.co/300x220/3a6b3a/ffffff?text=Trees",
+  },
+  {
+    title: "Plastic-Free Shop",
+    location: "Avilipatti",
+    image: "https://placehold.co/300x220/c8102e/ffffff?text=Shop",
+  },
+  {
+    title: "Community Meeting",
+    location: "Sanarpatty",
+    image: "https://placehold.co/300x220/8b6914/ffffff?text=Meeting",
+  },
 ];
 
 export default function Testimonials() {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState("all");
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const featuredVideo = VIDEOS.find((v) => v.featured);
   const otherVideos = VIDEOS.filter((v) => !v.featured);
 
   return (
-    <div className={styles.page}>
-
+    <div>
       {/* ===== HERO ===== */}
       <section className={styles.hero}>
         <div className={styles.heroLeft}>
@@ -125,151 +146,172 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* ===== FILTERS ===== */}
-      <div className={styles.filtersWrap}>
-        <div className={styles.filters}>
-          {FILTERS.map(({ id, label, Icon }) => (
-            <button
-              key={id}
-              onClick={() => setActiveFilter(id)}
-              className={`${styles.filterBtn} ${activeFilter === id ? styles.filterActive : ''}`}
-            >
-              <Icon size={15} />
-              {label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* ===== CONTENT GRID ===== */}
-      <section className={styles.contentGrid}>
-        {/* Voices */}
-        <div className={styles.voicesCol}>
-          <div className={styles.colHeader}>
-            <h2 className={styles.h2}>Voices that Inspire Change</h2>
-            <p className={styles.sectionSub}>
-              Every quote, every story, every image is a piece of the transition puzzle.
-            </p>
-          </div>
-
-          <div className={styles.voicesGrid}>
-            {TESTIMONIALS.map((t, i) => (
-              <article key={i} className={styles.voiceCard}>
-                <div className={styles.quoteBadge}>
-                  <Quote size={12} fill="white" strokeWidth={0} />
-                </div>
-                <p className={styles.voiceQuote}>{t.quote}</p>
-                <p className={styles.voiceText}>{t.text}</p>
-                <div className={styles.voiceAuthor}>
-                  <img src={t.avatar} alt={t.name} className={styles.avatar} />
-                  <div>
-                    <div className={styles.authorName}>{t.name}</div>
-                    <div className={styles.authorRole}>{t.role}</div>
-                  </div>
-                </div>
-              </article>
+      <div className={styles.page + " center-content"}>
+        {/* ===== FILTERS ===== */}
+        <div className={styles.filtersWrap}>
+          <div className={styles.filters}>
+            {FILTERS.map(({ id, label, Icon }) => (
+              <button
+                key={id}
+                onClick={() => setActiveFilter(id)}
+                className={`${styles.filterBtn} ${activeFilter === id ? styles.filterActive : ""}`}
+              >
+                <Icon size={15} />
+                {label}
+              </button>
             ))}
           </div>
         </div>
 
-        {/* Videos */}
-        <div className={styles.videosCol}>
-          <div className={styles.colHeader}>
-            <div className={styles.headerRow}>
-              <h2 className={styles.h2}>Stories in Motion</h2>
-              <a href="#" className={styles.viewAll}>
-                View All Videos <ArrowRight size={14} />
-              </a>
-            </div>
-            <p className={styles.sectionSub}>
-              Watch and listen to real experiences from the field.
-            </p>
-          </div>
-
-          {featuredVideo && (
-            <div className={`${styles.videoCard} ${styles.videoFeatured}`}>
-              <div className={styles.videoThumb}>
-                <img src={featuredVideo.thumbnail} alt={featuredVideo.title} />
-                <button className={styles.playBtn} aria-label="Play video">
-                  <Play size={18} fill="white" strokeWidth={0} />
-                </button>
-                <span className={styles.duration}>{featuredVideo.duration}</span>
-              </div>
-              <div className={styles.videoMeta}>
-                <h3 className={styles.videoTitle}>"{featuredVideo.title}"</h3>
-                <p className={styles.videoLoc}>{featuredVideo.location}</p>
-              </div>
-            </div>
-          )}
-
-          <div className={styles.videoSubGrid}>
-            {otherVideos.map((v, i) => (
-              <div key={i} className={styles.videoCard}>
-                <div className={styles.videoThumb}>
-                  <img src={v.thumbnail} alt={v.title} />
-                  <button className={styles.playBtnSm} aria-label="Play video">
-                    <Play size={12} fill="white" strokeWidth={0} />
-                  </button>
-                  <span className={styles.durationSm}>{v.duration}</span>
-                </div>
-                <div className={styles.videoMeta}>
-                  <h4 className={styles.videoTitleSm}>"{v.title}"</h4>
-                  <p className={styles.videoLocSm}>{v.location}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== MOMENTS ===== */}
-      <section className={styles.moments}>
-        <div className={styles.headerRow}>
-          <div>
-            <h2 className={styles.h2}>Moments of Change</h2>
-            <p className={styles.sectionSub}>
-              Snapshots from the ground that tell powerful stories.
-            </p>
-          </div>
-          <a href="#" className={styles.viewAll}>
-            View All Photos <ArrowRight size={14} />
-          </a>
-        </div>
-
-        <div className={styles.momentsGrid}>
-          {MOMENTS.map((m, i) => (
-            <figure key={i} className={styles.momentCard}>
-              <div className={styles.momentImg}>
-                <img src={m.image} alt={m.title} />
-              </div>
-              <figcaption>
-                <div className={styles.momentTitle}>{m.title}</div>
-                <div className={styles.momentLoc}>{m.location}</div>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
-
-      {/* ===== CTA ===== */}
-      <section className={styles.cta}>
-        <div className={styles.ctaInner}>
-          <div className={styles.ctaLeft}>
-            <Quote size={28} className={styles.ctaQuote} fill="#c8102e" strokeWidth={0} />
-            <div>
-              <h3 className={styles.ctaTitle}>
-                These are not just stories. They are the foundation of a just transition.
-              </h3>
-              <p className={styles.ctaSub}>
-                Real people. Real challenges. Real progress.
+        {/* ===== CONTENT GRID ===== */}
+        <section className={styles.contentGrid}>
+          {/* Voices */}
+          <div className={styles.voicesCol}>
+            <div className={styles.colHeader}>
+              <h2 className={styles.h2}>Voices that Inspire Change</h2>
+              <p className={styles.sectionSub}>
+                Every quote, every story, every image is a piece of the
+                transition puzzle.
               </p>
             </div>
+
+            <div className={styles.voicesGrid}>
+              {TESTIMONIALS.map((t, i) => (
+                <article key={i} className={styles.voiceCard}>
+                  <div className={styles.quoteBadge}>
+                    <Quote size={12} fill="white" strokeWidth={0} />
+                  </div>
+                  <p className={styles.voiceQuote}>{t.quote}</p>
+                  <p className={styles.voiceText}>{t.text}</p>
+                  <div className={styles.voiceAuthor}>
+                    <img
+                      src={t.avatar}
+                      alt={t.name}
+                      className={styles.avatar}
+                    />
+                    <div>
+                      <div className={styles.authorName}>{t.name}</div>
+                      <div className={styles.authorRole}>{t.role}</div>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
-          <button className={styles.ctaBtn}>
-            Share Your Story <ArrowRight size={16} />
-          </button>
-        </div>
-      </section>
+
+          {/* Videos */}
+          <div className={styles.videosCol}>
+            <div className={styles.colHeader}>
+              <div className={styles.headerRow}>
+                <h2 className={styles.h2}>Stories in Motion</h2>
+                <a href="#" className={styles.viewAll}>
+                  View All Videos <ArrowRight size={14} />
+                </a>
+              </div>
+              <p className={styles.sectionSub}>
+                Watch and listen to real experiences from the field.
+              </p>
+            </div>
+
+            {featuredVideo && (
+              <div className={`${styles.videoCard} ${styles.videoFeatured}`}>
+                <div className={styles.videoThumb}>
+                  <img
+                    src={featuredVideo.thumbnail}
+                    alt={featuredVideo.title}
+                  />
+                  <button className={styles.playBtn} aria-label="Play video">
+                    <Play size={18} fill="white" strokeWidth={0} />
+                  </button>
+                  <span className={styles.duration}>
+                    {featuredVideo.duration}
+                  </span>
+                </div>
+                <div className={styles.videoMeta}>
+                  <h3 className={styles.videoTitle}>"{featuredVideo.title}"</h3>
+                  <p className={styles.videoLoc}>{featuredVideo.location}</p>
+                </div>
+              </div>
+            )}
+
+            <div className={styles.videoSubGrid}>
+              {otherVideos.map((v, i) => (
+                <div key={i} className={styles.videoCard}>
+                  <div className={styles.videoThumb}>
+                    <img src={v.thumbnail} alt={v.title} />
+                    <button
+                      className={styles.playBtnSm}
+                      aria-label="Play video"
+                    >
+                      <Play size={12} fill="white" strokeWidth={0} />
+                    </button>
+                    <span className={styles.durationSm}>{v.duration}</span>
+                  </div>
+                  <div className={styles.videoMeta}>
+                    <h4 className={styles.videoTitleSm}>"{v.title}"</h4>
+                    <p className={styles.videoLocSm}>{v.location}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ===== MOMENTS ===== */}
+        <section className={styles.moments}>
+          <div className={styles.headerRow}>
+            <div>
+              <h2 className={styles.h2}>Moments of Change</h2>
+              <p className={styles.sectionSub}>
+                Snapshots from the ground that tell powerful stories.
+              </p>
+            </div>
+            <a href="#" className={styles.viewAll}>
+              View All Photos <ArrowRight size={14} />
+            </a>
+          </div>
+
+          <div className={styles.momentsGrid}>
+            {MOMENTS.map((m, i) => (
+              <figure key={i} className={styles.momentCard}>
+                <div className={styles.momentImg}>
+                  <img src={m.image} alt={m.title} />
+                </div>
+                <figcaption>
+                  <div className={styles.momentTitle}>{m.title}</div>
+                  <div className={styles.momentLoc}>{m.location}</div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        {/* ===== CTA ===== */}
+        <section className={styles.cta}>
+          <div className={styles.ctaInner}>
+            <div className={styles.ctaLeft}>
+              <Quote
+                size={28}
+                className={styles.ctaQuote}
+                fill="#c8102e"
+                strokeWidth={0}
+              />
+              <div>
+                <h3 className={styles.ctaTitle}>
+                  These are not just stories. They are the foundation of a just
+                  transition.
+                </h3>
+                <p className={styles.ctaSub}>
+                  Real people. Real challenges. Real progress.
+                </p>
+              </div>
+            </div>
+            <button className={styles.ctaBtn}>
+              Share Your Story <ArrowRight size={16} />
+            </button>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

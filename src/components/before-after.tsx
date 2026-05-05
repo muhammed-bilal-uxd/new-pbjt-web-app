@@ -33,7 +33,11 @@ const themes = [
       "Hair waste from salons is being segregated and sent to farmers for use as organic manure",
       "Community-level awareness has translated into consistent waste management practices",
     ],
-    impact: ["Informal dumping reduced", "Structured waste segregation", "Resource recovery enabled"],
+    impact: [
+      "Informal dumping reduced",
+      "Structured waste segregation",
+      "Resource recovery enabled",
+    ],
   },
   {
     id: "plastic",
@@ -51,7 +55,11 @@ const themes = [
       "Shopkeepers have transitioned to eco-friendly alternatives such as banana leaves for packaging",
       "Community-level conversations on plastic accountability are influencing local business practices",
     ],
-    impact: ["Reduced open burning", "Circular waste systems", "Responsible retail practices"],
+    impact: [
+      "Reduced open burning",
+      "Circular waste systems",
+      "Responsible retail practices",
+    ],
   },
   {
     id: "water",
@@ -69,7 +77,11 @@ const themes = [
       "Tree saplings were planted to restore and protect the ecological spaces",
       "Community engagement has strengthened local stewardship over common water resources",
     ],
-    impact: ["Reduced ecological degradation", "Restoration of commons", "Protection of local ecosystems"],
+    impact: [
+      "Reduced ecological degradation",
+      "Restoration of commons",
+      "Protection of local ecosystems",
+    ],
   },
   {
     id: "energy",
@@ -78,7 +90,9 @@ const themes = [
     timeline: "June 2025 -> February 2026",
     beforeTitle: "Before (June 2025)",
     afterTitle: "After (By February 2026)",
-    before: ["Awareness sessions conducted on rainwater harvesting and its benefits"],
+    before: [
+      "Awareness sessions conducted on rainwater harvesting and its benefits",
+    ],
     after: ["2 households adopted and installed a rainwater harvesting pit"],
     impact: [
       "Knowledge translated into action at the household level",
@@ -93,7 +107,10 @@ const themes = [
     timeline: "June 2025 -> February 2026",
     beforeTitle: "Before (June 2025)",
     afterTitle: "After (February 2026)",
-    before: ["Festivals used flex banners", "Non-sustainable practices were followed"],
+    before: [
+      "Festivals used flex banners",
+      "Non-sustainable practices were followed",
+    ],
     after: [
       "Temple festival organized as a Green Festival initiative",
       "Plastic-free celebration implemented",
@@ -174,28 +191,51 @@ const themes = [
 function runTests() {
   console.assert(themes.length === 8, "Expected 8 PBJT journey themes");
   console.assert(
-    themes.every((theme) => theme.id && theme.label && theme.heading && theme.timeline),
+    themes.every(
+      (theme) => theme.id && theme.label && theme.heading && theme.timeline,
+    ),
     "Every theme needs id, label, heading and timeline",
   );
   console.assert(
-    themes.every((theme) => Array.isArray(theme.before) && Array.isArray(theme.after) && Array.isArray(theme.impact)),
+    themes.every(
+      (theme) =>
+        Array.isArray(theme.before) &&
+        Array.isArray(theme.after) &&
+        Array.isArray(theme.impact),
+    ),
     "Every theme needs before, after and impact arrays",
   );
   console.assert(
     themes[0].impact.includes("Resource recovery enabled"),
     "Waste theme should include resource recovery impact",
   );
-  console.assert(new Set(themes.map((theme) => theme.id)).size === themes.length, "Theme IDs must be unique");
-  console.assert(themes.every((theme) => icons[theme.id]), "Every theme must have an icon mapping");
+  console.assert(
+    new Set(themes.map((theme) => theme.id)).size === themes.length,
+    "Theme IDs must be unique",
+  );
+  console.assert(
+    themes.every((theme) => icons[theme.id]),
+    "Every theme must have an icon mapping",
+  );
 }
 
 runTests();
 
-function ListBlock({ title, items, type }: { title: string; items: string[]; type: string }) {
+function ListBlock({
+  title,
+  items,
+  type,
+}: {
+  title: string;
+  items: string[];
+  type: string;
+}) {
   const isBefore = type === "before";
 
   return (
-    <article className={`${styles.listBlock} ${styles.infoBox} ${isBefore ? styles.before : styles.after}`}>
+    <article
+      className={`${styles.listBlock} ${styles.infoBox} ${isBefore ? styles.before : styles.after}`}
+    >
       <div className={styles.imageContainer}>
         <img
           className={styles.comparisonImage}
@@ -222,113 +262,146 @@ export default function BeforeAfter() {
 
   const next = () => {
     setActiveIndex((value) => (value + 1) % themes.length);
-    document.getElementById("pbjt-root")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById("pbjt-root")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const previous = () => {
     setActiveIndex((value) => (value - 1 + themes.length) % themes.length);
-    document.getElementById("pbjt-root")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById("pbjt-root")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const activeIcon = useMemo(() => icons[active.id] || "o", [active.id]);
 
   return (
     <main id="pbjt-root" className={styles.page}>
-      <section className={styles.shell}>
-        <header className={styles.hero}>
-          <p className={styles.eyebrow}>Dindigul</p>
-          <h1 className={styles.title}>PBJT: The Before and After Journey</h1>
-          <p className={styles.subtitle}>Rooted in collaboration. Measurable impact across seven key themes.</p>
-          <div className={styles.badge}>Built by communities. Sustained together.</div>
-        </header>
-
-        <nav className={styles.tabsWrap} aria-label="PBJT journey themes">
-          <div className={styles.tabs} role="tablist" aria-orientation="horizontal">
-            {themes.map((theme, index) => {
-              const selected = index === activeIndex;
-              return (
-                <button
-                  key={theme.id}
-                  role="tab"
-                  aria-selected={selected}
-                  aria-controls={`panel-${theme.id}`}
-                  id={`tab-${theme.id}`}
-                  type="button"
-                  onClick={() => setActiveIndex(index)}
-                  onKeyDown={(event) => {
-                    if (event.key === "ArrowRight") setActiveIndex((index + 1) % themes.length);
-                    if (event.key === "ArrowLeft") setActiveIndex((index - 1 + themes.length) % themes.length);
-                  }}
-                  title={theme.label}
-                  className={`${styles.tab} ${selected ? styles.active : ""}`}
-                >
-                  <span className={styles.tabIcon}>{icons[theme.id]}</span>
-                  <span>{theme.label}</span>
-                </button>
-              );
-            })}
-          </div>
-        </nav>
-
-        <section
-          className={styles.contentGrid}
-          id={`panel-${active.id}`}
-          role="tabpanel"
-          aria-labelledby={`tab-${active.id}`}
-        >
-          <div>
-            <article className={styles.themeCard}>
-              <div className={styles.themeIcon}>{activeIcon}</div>
-              <h2 className={styles.themeTitle}>{active.heading}</h2>
-              <div className={styles.timeline}>Timeline: {active.timeline}</div>
-            </article>
-
-            <div className={styles.beforeAfterGrid}>
-              <ListBlock title={active.beforeTitle} items={active.before} type="before" />
-              <ListBlock title={active.afterTitle} items={active.after} type="after" />
+      <div className="center-content">
+        <section className={styles.shell}>
+          <header className={styles.hero}>
+            <p className={styles.eyebrow}>Dindigul</p>
+            <h1 className={styles.title}>PBJT: The Before and After Journey</h1>
+            <p className={styles.subtitle}>
+              Rooted in collaboration. Measurable impact across seven key
+              themes.
+            </p>
+            <div className={styles.badge}>
+              Built by communities. Sustained together.
             </div>
-          </div>
+          </header>
 
-          <aside className={styles.impactPanel}>
-            <div className={styles.impactHead}>
-              <div className={styles.impactIcon}>*</div>
-              <div>
-                <small className={styles.impactLabel}>Impact</small>
-                <h3 className={styles.impactTitle}>What changed</h3>
+          <nav className={styles.tabsWrap} aria-label="PBJT journey themes">
+            <div
+              className={styles.tabs}
+              role="tablist"
+              aria-orientation="horizontal"
+            >
+              {themes.map((theme, index) => {
+                const selected = index === activeIndex;
+                return (
+                  <button
+                    key={theme.id}
+                    role="tab"
+                    aria-selected={selected}
+                    aria-controls={`panel-${theme.id}`}
+                    id={`tab-${theme.id}`}
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    onKeyDown={(event) => {
+                      if (event.key === "ArrowRight")
+                        setActiveIndex((index + 1) % themes.length);
+                      if (event.key === "ArrowLeft")
+                        setActiveIndex(
+                          (index - 1 + themes.length) % themes.length,
+                        );
+                    }}
+                    title={theme.label}
+                    className={`${styles.tab} ${selected ? styles.active : ""}`}
+                  >
+                    <span className={styles.tabIcon}>{icons[theme.id]}</span>
+                    <span>{theme.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </nav>
+
+          <section
+            className={styles.contentGrid}
+            id={`panel-${active.id}`}
+            role="tabpanel"
+            aria-labelledby={`tab-${active.id}`}
+          >
+            <div>
+              <article className={styles.themeCard}>
+                <div className={styles.themeIcon}>{activeIcon}</div>
+                <h2 className={styles.themeTitle}>{active.heading}</h2>
+                <div className={styles.timeline}>
+                  Timeline: {active.timeline}
+                </div>
+              </article>
+
+              <div className={styles.beforeAfterGrid}>
+                <ListBlock
+                  title={active.beforeTitle}
+                  items={active.before}
+                  type="before"
+                />
+                <ListBlock
+                  title={active.afterTitle}
+                  items={active.after}
+                  type="after"
+                />
               </div>
             </div>
-            <div>
-              {active.impact.map((item, index) => (
-                <div key={index} className={styles.impactItem}>
-                  {item}
+
+            <aside className={styles.impactPanel}>
+              <div className={styles.impactHead}>
+                <div className={styles.impactIcon}>*</div>
+                <div>
+                  <small className={styles.impactLabel}>Impact</small>
+                  <h3 className={styles.impactTitle}>What changed</h3>
                 </div>
+              </div>
+              <div>
+                {active.impact.map((item, index) => (
+                  <div key={index} className={styles.impactItem}>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </aside>
+          </section>
+
+          <footer className={styles.navRow}>
+            <button type="button" onClick={previous} className={styles.navBtn}>
+              {"<"} Previous
+            </button>
+
+            <div className={styles.dots}>
+              {themes.map((theme, index) => (
+                <button
+                  key={theme.id}
+                  type="button"
+                  onClick={() => setActiveIndex(index)}
+                  aria-label={`Go to ${theme.label}`}
+                  className={`${styles.dot} ${index === activeIndex ? styles.active : ""}`}
+                />
               ))}
             </div>
-          </aside>
+
+            <button
+              type="button"
+              onClick={next}
+              className={`${styles.navBtn} ${styles.navBtnNext}`}
+            >
+              Next {">"}
+            </button>
+          </footer>
         </section>
-
-        <footer className={styles.navRow}>
-          <button type="button" onClick={previous} className={styles.navBtn}>
-            {"<"} Previous
-          </button>
-
-          <div className={styles.dots}>
-            {themes.map((theme, index) => (
-              <button
-                key={theme.id}
-                type="button"
-                onClick={() => setActiveIndex(index)}
-                aria-label={`Go to ${theme.label}`}
-                className={`${styles.dot} ${index === activeIndex ? styles.active : ""}`}
-              />
-            ))}
-          </div>
-
-          <button type="button" onClick={next} className={`${styles.navBtn} ${styles.navBtnNext}`}>
-            Next {">"}
-          </button>
-        </footer>
-      </section>
+      </div>
     </main>
   );
 }
