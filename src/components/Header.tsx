@@ -1,18 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import "./header.css"
+import styles from "./header.module.css"
 import { HeaderClient, MobileMenu } from './headerClient';
-import { INavLinks } from "@/interface/common";
 import { navLinks } from '@/data/menu';
 
 const phoneNumber = "+1 (555) 123-4567";
 
 function Logo() {
   return (
-    <Link href="/">
+      <Link href="/">
       <Image
-        className='site-logo'
+        className={styles.siteLogo}
         src="/images/site/logo.png"
         alt="Logo"
         width={120}
@@ -27,12 +26,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md dark:border-gray-800 dark:bg-gray-950/80">
-      <div className="header-content container-fluid mx-auto flex items-center justify-between px-6 py-2">
+      <div className={`${styles.headerContent} container-fluid mx-auto flex items-center justify-between px-6 py-2`}>
         <div className="hidden lg:flex items-center justify-between gap-6 w-full">
           <Logo />
-          <nav className={`flex gap-6 items-center`}>
-            <HeaderClient navLinks={navLinks} phoneNumber={phoneNumber} />
-          </nav>
+          <HeaderClient navLinks={navLinks} phoneNumber={phoneNumber} />
         </div>
         <div className={"flex lg:hidden items-center justify-between gap-6 w-full"}>
           <Logo />

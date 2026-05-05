@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import {
   User,
   Mail,
@@ -10,14 +10,17 @@ import {
   Phone,
   Clock,
   Globe,
-  Users,
-  Megaphone,
-  Lightbulb,
-  Headphones,
   ArrowRight,
 } from 'lucide-react';
-import './Contact.css';
+import styles from './Contact.module.css';
 import Banner from '@/components/banner';
+
+const cn = (names: string) =>
+  names
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((name) => styles[name] ?? name)
+    .join(' ');
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -29,22 +32,29 @@ export default function Contact() {
     agreed: false,
   });
 
-  const handleChange = (e: any) => {
-    const { name, value, type, checked } = e.target;
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
+    const target = e.target;
+    const { name, value } = target;
+    const checkboxTarget =
+      target instanceof HTMLInputElement && target.type === 'checkbox'
+        ? target
+        : null;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: checkboxTarget ? checkboxTarget.checked : value,
     }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Replace with API call
     console.log('Form submitted:', formData);
   };
 
   return (
-    <div className="contact-page">
+    <div className={cn('contact-page')}>
       {/* Hero */}
       {/* <section className="contact-hero">
         <div className="contact-hero-overlay" aria-hidden="true" />
@@ -67,23 +77,23 @@ export default function Contact() {
       />
 
       {/* Form + Info */}
-      <section className="contact-main">
-        <div className="contact-grid">
+      <section className={cn('contact-main')}>
+        <div className={cn('contact-grid')}>
           {/* Form */}
-          <div className="contact-form-card">
-            <h2 className="form-title">Send us a message</h2>
-            <p className="form-subtitle">
+          <div className={cn('contact-form-card')}>
+            <h2 className={cn('form-title')}>Send us a message</h2>
+            <p className={cn('form-subtitle')}>
               Use the form below to get in touch. Our team will get back to you as soon as possible.
             </p>
 
-            <form onSubmit={handleSubmit} className="contact-form" noValidate>
-              <div className="form-row">
-                <div className="form-field">
+            <form onSubmit={handleSubmit} className={cn('contact-form')} noValidate>
+              <div className={cn('form-row')}>
+                <div className={cn('form-field')}>
                   <label htmlFor="name">
-                    Your Name <span className="required">*</span>
+                    Your Name <span className={cn('required')}>*</span>
                   </label>
-                  <div className="input-wrapper">
-                    <User className="input-icon" size={18} />
+                  <div className={cn('input-wrapper')}>
+                    <User className={cn('input-icon')} size={18} />
                     <input
                       type="text"
                       id="name"
@@ -96,12 +106,12 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="form-field">
+                <div className={cn('form-field')}>
                   <label htmlFor="email">
-                    Email Address <span className="required">*</span>
+                    Email Address <span className={cn('required')}>*</span>
                   </label>
-                  <div className="input-wrapper">
-                    <Mail className="input-icon" size={18} />
+                  <div className={cn('input-wrapper')}>
+                    <Mail className={cn('input-icon')} size={18} />
                     <input
                       type="email"
                       id="email"
@@ -115,10 +125,10 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="form-field">
+              <div className={cn('form-field')}>
                 <label htmlFor="organisation">Organisation / Company</label>
-                <div className="input-wrapper">
-                  <Building2 className="input-icon" size={18} />
+                <div className={cn('input-wrapper')}>
+                  <Building2 className={cn('input-icon')} size={18} />
                   <input
                     type="text"
                     id="organisation"
@@ -130,9 +140,9 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="form-field">
+              <div className={cn('form-field')}>
                 <label htmlFor="subject">
-                  Subject <span className="required">*</span>
+                  Subject <span className={cn('required')}>*</span>
                 </label>
                 <select
                   id="subject"
@@ -140,7 +150,7 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="form-select"
+                  className={cn('form-select')}
                 >
                   <option value="">Select a subject</option>
                   <option value="partnership">Partnership Inquiry</option>
@@ -151,12 +161,12 @@ export default function Contact() {
                 </select>
               </div>
 
-              <div className="form-field">
+              <div className={cn('form-field')}>
                 <label htmlFor="message">
-                  Your Message <span className="required">*</span>
+                  Your Message <span className={cn('required')}>*</span>
                 </label>
-                <div className="textarea-wrapper">
-                  <MessageSquare className="textarea-icon" size={18} />
+                <div className={cn('textarea-wrapper')}>
+                  <MessageSquare className={cn('textarea-icon')} size={18} />
                   <textarea
                     id="message"
                     name="message"
@@ -168,12 +178,12 @@ export default function Contact() {
                     required
                   />
                 </div>
-                <div className="char-count">
+                <div className={cn('char-count')}>
                   {formData.message.length} / 1000 characters
                 </div>
               </div>
 
-              <div className="form-checkbox">
+              <div className={cn('form-checkbox')}>
                 <input
                   type="checkbox"
                   id="privacy"
@@ -184,28 +194,28 @@ export default function Contact() {
                 />
                 <label htmlFor="privacy">
                   I agree to the{' '}
-                  <a href="/privacy" className="link">
+                  <a href="/privacy" className={cn('link')}>
                     Privacy Policy
                   </a>{' '}
                   and consent to being contacted.
                 </label>
               </div>
 
-              <button type="submit" className="submit-btn">
+              <button type="submit" className={cn('submit-btn')}>
                 Send Message <ArrowRight size={18} />
               </button>
             </form>
           </div>
 
           {/* Info Card */}
-          <aside className="contact-info-card">
-            <h3 className="info-title">Contact Information</h3>
+          <aside className={cn('contact-info-card')}>
+            <h3 className={cn('info-title')}>Contact Information</h3>
 
-            <div className="info-item">
-              <div className="info-icon">
+            <div className={cn('info-item')}>
+              <div className={cn('info-icon')}>
                 <MapPin size={20} />
               </div>
-              <div className="info-content">
+              <div className={cn('info-content')}>
                 <h4>Address</h4>
                 <p>
                   Place-Based Just Transition (PBJT)
@@ -219,43 +229,43 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="info-divider" />
+            <div className={cn('info-divider')} />
 
-            <div className="info-item">
-              <div className="info-icon">
+            <div className={cn('info-item')}>
+              <div className={cn('info-icon')}>
                 <Mail size={20} />
               </div>
-              <div className="info-content">
+              <div className={cn('info-content')}>
                 <h4>Email</h4>
-                <a href="mailto:hello@pbjt.org" className="info-link">
+                <a href="mailto:hello@pbjt.org" className={cn('info-link')}>
                   hello@pbjt.org
                 </a>
-                <p className="info-note">We aim to respond within 2&ndash;3 working days.</p>
+                <p className={cn('info-note')}>We aim to respond within 2&ndash;3 working days.</p>
               </div>
             </div>
 
-            <div className="info-divider" />
+            <div className={cn('info-divider')} />
 
-            <div className="info-item">
-              <div className="info-icon">
+            <div className={cn('info-item')}>
+              <div className={cn('info-icon')}>
                 <Phone size={20} />
               </div>
-              <div className="info-content">
+              <div className={cn('info-content')}>
                 <h4>Phone</h4>
-                <a href="tel:+918012345678" className="info-link">
+                <a href="tel:+918012345678" className={cn('info-link')}>
                   +91 80 1234 5678
                 </a>
-                <p className="info-note">Mon &ndash; Fri, 10:00 AM &ndash; 6:00 PM IST</p>
+                <p className={cn('info-note')}>Mon &ndash; Fri, 10:00 AM &ndash; 6:00 PM IST</p>
               </div>
             </div>
 
-            <div className="info-divider" />
+            <div className={cn('info-divider')} />
 
-            <div className="info-item">
-              <div className="info-icon">
+            <div className={cn('info-item')}>
+              <div className={cn('info-icon')}>
                 <Clock size={20} />
               </div>
-              <div className="info-content">
+              <div className={cn('info-content')}>
                 <h4>Office Hours</h4>
                 <p>
                   Monday to Friday
@@ -265,15 +275,15 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="info-divider" />
+            <div className={cn('info-divider')} />
 
-            <div className="info-item">
-              <div className="info-icon">
+            <div className={cn('info-item')}>
+              <div className={cn('info-icon')}>
                 <Globe size={20} />
               </div>
-              <div className="info-content">
+              <div className={cn('info-content')}>
                 <h4>Website</h4>
-                <a href="https://www.pbjt.org" className="info-link">
+                <a href="https://www.pbjt.org" className={cn('info-link')}>
                   www.pbjt.org
                 </a>
               </div>
@@ -333,19 +343,19 @@ export default function Contact() {
       </section> */}
 
       {/* Newsletter */}
-      <section className="newsletter">
-        <div className="newsletter-content">
-          <div className="newsletter-icon">
+      <section className={cn('newsletter')}>
+        <div className={cn('newsletter-content')}>
+          <div className={cn('newsletter-icon')}>
             <Mail size={32} />
           </div>
-          <div className="newsletter-text">
+          <div className={cn('newsletter-text')}>
             <h3>Stay connected with PBJT</h3>
             <p>
               Subscribe to our newsletter to stay updated on our latest research, stories, and
               opportunities.
             </p>
           </div>
-          <button className="subscribe-btn" type="button">
+          <button className={cn('subscribe-btn')} type="button">
             Subscribe Now <ArrowRight size={18} />
           </button>
         </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import Banner from '@/components/banner';
-import './impact-proposition.css';
+import styles from './impact-proposition.module.css';
 import {
   Sprout,
   Users,
@@ -14,9 +14,16 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 
+const cn = (names: string) =>
+  names
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((name) => styles[name] ?? name)
+    .join(' ');
+
 export default function ImpactProposition() {
   return (
-    <article className="pbjt impact-proposition-page">
+    <article className={cn("pbjt impact-proposition-page")}>
       {/* ===================== HERO ===================== */}
 
       <Banner
@@ -29,13 +36,13 @@ export default function ImpactProposition() {
       />
 
       {/* ===================== BOARDROOM SECTION ===================== */}
-      <section className="pbjt-section pbjt-boardroom">
-        <div className="pbjt-boardroom__text">
-          <div className="pbjt-iconchip">
+      <section className={cn("pbjt-section pbjt-boardroom")}>
+        <div className={cn("pbjt-boardroom__text")}>
+          <div className={cn("pbjt-iconchip")}>
             <Sprout size={22} strokeWidth={1.8} />
           </div>
-          <h2 className="pbjt-h2">Sustainability efforts must go beyond the boardroom.</h2>
-          <p className="pbjt-p">
+          <h2 className={cn("pbjt-h2")}>Sustainability efforts must go beyond the boardroom.</h2>
+          <p className={cn("pbjt-p")}>
             Most sustainability efforts today stop at corporate offices or
             first-tier suppliers. But the real impacts of business, both
             positive and negative, are felt much further down the chain.
@@ -47,43 +54,43 @@ export default function ImpactProposition() {
             and support. Workers experience the risks of transition long
             before companies or investors do.
           </p>
-          <p className="pbjt-p">
+          <p className={cn("pbjt-p")}>
             PBJT bridges this gap by shifting the focus of sustainability
             to where impacts are real, visible, and sustainable.
           </p>
         </div>
 
-        <div className="pbjt-boardroom__media">
+        <div className={cn("pbjt-boardroom__media")}>
           <img src="/images/impact-proposition/img137.jpg" alt="Worker handling cement bags" />
           <img src="/images/impact-proposition/img138.jpg" alt="Women workers smiling at a worksite" />
         </div>
       </section>
 
       {/* ===================== FRAMEWORK SECTION ===================== */}
-      <section className="pbjt-section pbjt-framework">
-        <div className="pbjt-framework__panel">
-          <div className="pbjt-iconchip pbjt-iconchip--solid">
+      <section className={cn("pbjt-section pbjt-framework")}>
+        <div className={cn("pbjt-framework__panel")}>
+          <div className={cn("pbjt-iconchip pbjt-iconchip--solid")}>
             <Users size={22} strokeWidth={1.8} />
           </div>
-          <h2 className="pbjt-h2">PBJT as a Value Chain Discovery and Accountability Framework</h2>
-          <p className="pbjt-p">
+          <h2 className={cn("pbjt-h2")}>PBJT as a Value Chain Discovery and Accountability Framework</h2>
+          <p className={cn("pbjt-p")}>
             Corporate sustainability reports speak of responsibility,
             ethics, and impact. PBJT asks a different question: how
             do these commitments translate in villages and worksites?
             Using disclosures such as BRSR, PBJT creates a ground-level
             lens for reflection:
           </p>
-          <ul className="pbjt-checklist">
+          <ul className={cn("pbjt-checklist")}>
             <li>
-              <CheckCircle2 size={18} strokeWidth={1.8} className="pbjt-checklist__icon" />
+              <CheckCircle2 size={18} strokeWidth={1.8} className={cn("pbjt-checklist__icon")} />
               <span>Do reported labour standards match worker experiences?</span>
             </li>
             <li>
-              <CheckCircle2 size={18} strokeWidth={1.8} className="pbjt-checklist__icon" />
+              <CheckCircle2 size={18} strokeWidth={1.8} className={cn("pbjt-checklist__icon")} />
               <span>Are environmental claims visible in local ecosystems?</span>
             </li>
             <li>
-              <CheckCircle2 size={18} strokeWidth={1.8} className="pbjt-checklist__icon" />
+              <CheckCircle2 size={18} strokeWidth={1.8} className={cn("pbjt-checklist__icon")} />
               <span>Are informal and last-tier risks acknowledged?</span>
             </li>
           </ul>
@@ -91,20 +98,20 @@ export default function ImpactProposition() {
       </section>
 
       {/* ===================== INFO BOXES ===================== */}
-      <section className="pbjt-info">
-        <div className="pbjt-info__box pbjt-info__box--icon">
-          <div className="pbjt-iconchip pbjt-iconchip--solid">
+      <section className={cn("pbjt-info")}>
+        <div className={cn("pbjt-info__box pbjt-info__box--icon")}>
+          <div className={cn("pbjt-iconchip pbjt-iconchip--solid")}>
             <Globe size={22} strokeWidth={1.8} />
           </div>
-          <p className="pbjt-p pbjt-p--muted">
+          <p className={cn("pbjt-p pbjt-p--muted")}>
             This work is not about auditing companies. It is about
             democratising sustainability language, enabling communities
             to understand what companies promise and to engage,
             negotiate, and seek accountability.
           </p>
         </div>
-        <div className="pbjt-info__box">
-          <p className="pbjt-p pbjt-p--muted">
+        <div className={cn("pbjt-info__box")}>
+          <p className={cn("pbjt-p pbjt-p--muted")}>
             Our approach aligns with emerging global thinking on responsible
             value chains, including work by the Institute for Human Rights
             and Business and investor discussions that emphasise
@@ -114,55 +121,55 @@ export default function ImpactProposition() {
       </section>
 
       {/* ===================== BANNER ===================== */}
-      <section className="pbjt-banner">
-        <div className="pbjt-banner__cell pbjt-banner__cell--with-text relative">
+      <section className={cn("pbjt-banner")}>
+        <div className={cn("pbjt-banner__cell pbjt-banner__cell--with-text relative")}>
           <img src="/images/impact-proposition/img139.jpg" alt="Workers in a production facility" />
-          <h3 className="pbjt-banner__title">
+          <h3 className={cn("pbjt-banner__title")}>
             Critical inputs in<br />villages and<br />production clusters
           </h3>
         </div>
-        <div className="pbjt-banner__cell relative">
+        <div className={cn("pbjt-banner__cell relative")}>
           <img src="/images/impact-proposition/img142.jpg" alt="Agricultural labourer" />
         </div>
-        <div className="pbjt-banner__cell relative">
+        <div className={cn("pbjt-banner__cell relative")}>
           <img src="/images/impact-proposition/img143.jpg" alt="Farmer in a turban" />
         </div>
       </section>
 
       {/* ===================== BENEFITS ===================== */}
-      <section className="pbjt-benefits">
-        <h3 className="pbjt-benefits__lead">
+      <section className={cn("pbjt-benefits")}>
+        <h3 className={cn("pbjt-benefits__lead")}>
           By working directly in villages and production clusters,
           <br />PBJT helps businesses:
         </h3>
 
-        <div className="pbjt-benefits__grid">
-          <article className="pbjt-card">
-            <div className="pbjt-card__icon"><UserPlus size={26} strokeWidth={1.6} /></div>
-            <p className="pbjt-card__body">
+        <div className={cn("pbjt-benefits__grid")}>
+          <article className={cn("pbjt-card")}>
+            <div className={cn("pbjt-card__icon")}><UserPlus size={26} strokeWidth={1.6} /></div>
+            <p className={cn("pbjt-card__body")}>
               <strong>Identify</strong> informal workers, vendors, and
               micro-enterprises linked to their operations
             </p>
           </article>
 
-          <article className="pbjt-card">
-            <div className="pbjt-card__icon"><HandHeart size={26} strokeWidth={1.6} /></div>
-            <p className="pbjt-card__body">
+          <article className={cn("pbjt-card")}>
+            <div className={cn("pbjt-card__icon")}><HandHeart size={26} strokeWidth={1.6} /></div>
+            <p className={cn("pbjt-card__body")}>
               <strong>Understand</strong> how environmental and social
               risks are distributed locally
             </p>
           </article>
 
-          <article className="pbjt-card">
-            <div className="pbjt-card__icon"><Store size={26} strokeWidth={1.6} /></div>
-            <p className="pbjt-card__body">
+          <article className={cn("pbjt-card")}>
+            <div className={cn("pbjt-card__icon")}><Store size={26} strokeWidth={1.6} /></div>
+            <p className={cn("pbjt-card__body")}>
               <strong>Support MSMEs</strong> to transition responsibly
             </p>
           </article>
 
-          <article className="pbjt-card">
-            <div className="pbjt-card__icon"><ShieldCheck size={26} strokeWidth={1.6} /></div>
-            <p className="pbjt-card__body">
+          <article className={cn("pbjt-card")}>
+            <div className={cn("pbjt-card__icon")}><ShieldCheck size={26} strokeWidth={1.6} /></div>
+            <p className={cn("pbjt-card__body")}>
               <strong>Build stronger</strong>, more ethical, and resilient
               supply chains
             </p>
@@ -171,8 +178,8 @@ export default function ImpactProposition() {
       </section>
 
       {/* ===================== FOOTNOTE ===================== */}
-      <footer className="pbjt-footnote">
-        <Check size={18} strokeWidth={2.2} className="pbjt-footnote__icon" />
+      <footer className={cn("pbjt-footnote")}>
+        <Check size={18} strokeWidth={2.2} className={cn("pbjt-footnote__icon")} />
         <p>
           Accountability becomes real when it is visible at the place
           level, not just on paper.
@@ -181,3 +188,4 @@ export default function ImpactProposition() {
     </article>
   );
 }
+

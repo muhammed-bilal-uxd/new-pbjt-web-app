@@ -1,11 +1,18 @@
 "use client";
 
 import Banner from "@/components/banner";
-import "./about.css";
+import styles from "./about.module.css";
+
+const cn = (names: string) =>
+  names
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((name) => styles[name] ?? name)
+    .join(" ");
 
 const PlaceBasedJustTransition = () => {
   return (
-    <div className="pbjt about-page">
+    <div className={cn("pbjt about-page")}>
       {/* ============ HERO 1: SHAPING ============ */}
 
       <Banner
@@ -15,14 +22,14 @@ const PlaceBasedJustTransition = () => {
       />
 
       {/* ============ SHAPING CONTENT ============ */}
-      <section className="pbjt-section">
-        <div className="pbjt-container">
-          <div className="pbjt-grid pbjt-grid--two">
+      <section className={cn("pbjt-section")}>
+        <div className={cn("pbjt-container")}>
+          <div className={cn("pbjt-grid pbjt-grid--two")}>
             {/* LEFT */}
             <div>
-              <span className="pbjt-bar" aria-hidden="true" />
-              <h3 className="pbjt-h3">No one-size-fits-all approach exists.</h3>
-              <p className="pbjt-p">
+              <span className={cn("pbjt-bar")} aria-hidden="true" />
+              <h3 className={cn("pbjt-h3")}>No one-size-fits-all approach exists.</h3>
+              <p className={cn("pbjt-p")}>
                 Just Transition often appears in global discussions as a policy
                 framework for meeting climate goals, shifting energy systems,
                 or channeling green investments yet for workers and communities
@@ -33,23 +40,23 @@ const PlaceBasedJustTransition = () => {
                 realities.
               </p>
 
-              <div className="pbjt-callout">
-                <div className="pbjt-callout__badge pbjt-callout__badge--solid" aria-hidden="true">
+              <div className={cn("pbjt-callout")}>
+                <div className={cn("pbjt-callout__badge pbjt-callout__badge--solid")} aria-hidden="true">
                   <PeopleIcon />
                 </div>
-                <div className="pbjt-callout__body">
-                  <p className="pbjt-callout__lead">
+                <div className={cn("pbjt-callout__body")}>
+                  <p className={cn("pbjt-callout__lead")}>
                     A Place-Based Just Transition begins with a simple but
                     critical question:
                   </p>
-                  <p className="pbjt-callout__highlight">
+                  <p className={cn("pbjt-callout__highlight")}>
                     Who carries the cost of transition, and who decides how it
                     happens?
                   </p>
                 </div>
               </div>
 
-              <p className="pbjt-p">
+              <p className={cn("pbjt-p")}>
                 Across most value chains, the heaviest burdens fall on those at
                 the last tier: informal workers, MSMEs, vendors, and
                 marginalised communities.
@@ -57,45 +64,45 @@ const PlaceBasedJustTransition = () => {
             </div>
 
             {/* RIGHT */}
-            <div className="pbjt-stack">
-              <article className="pbjt-card">
-                <div className="pbjt-card__media">
+            <div className={cn("pbjt-stack")}>
+              <article className={cn("pbjt-card")}>
+                <div className={cn("pbjt-card__media")}>
                   <img
                     src="/images/about/about-09.jpg"
                     alt="Workers carrying bricks"
                     loading="lazy"
                   />
                 </div>
-                <div className="pbjt-card__body">
-                  <span className="pbjt-card__icon" aria-hidden="true">
+                <div className={cn("pbjt-card__body")}>
+                  <span className={cn("pbjt-card__icon")} aria-hidden="true">
                     <SeedIcon />
                   </span>
-                  <h4 className="pbjt-card__title">
+                  <h4 className={cn("pbjt-card__title")}>
                     The places where environmental damage is felt first
                   </h4>
-                  <p className="pbjt-card__text">
+                  <p className={cn("pbjt-card__text")}>
                     livelihoods are most vulnerable, and transitions are often
                     the most disruptive.
                   </p>
                 </div>
               </article>
 
-              <article className="pbjt-card">
-                <div className="pbjt-card__media">
+              <article className={cn("pbjt-card")}>
+                <div className={cn("pbjt-card__media")}>
                   <img
                     src="/images/about/about-08.jpg"
                     alt="Informal worker loading sacks"
                     loading="lazy"
                   />
                 </div>
-                <div className="pbjt-card__body">
-                  <span className="pbjt-card__icon" aria-hidden="true">
+                <div className={cn("pbjt-card__body")}>
+                  <span className={cn("pbjt-card__icon")} aria-hidden="true">
                     <UserIcon />
                   </span>
-                  <h4 className="pbjt-card__title">
+                  <h4 className={cn("pbjt-card__title")}>
                     PBJT brings attention back to these actors
                   </h4>
-                  <p className="pbjt-card__text">
+                  <p className={cn("pbjt-card__text")}>
                     and treats them as central, not peripheral, to
                     sustainability.
                   </p>
@@ -105,9 +112,9 @@ const PlaceBasedJustTransition = () => {
           </div>
 
           {/* BOTTOM STRIP */}
-          <div className="pbjt-strip">
-            <div className="pbjt-strip__col pbjt-strip__col--main">
-              <span className="pbjt-strip__icon" aria-hidden="true">
+          <div className={cn("pbjt-strip")}>
+            <div className={cn("pbjt-strip__col pbjt-strip__col--main")}>
+              <span className={cn("pbjt-strip__icon")} aria-hidden="true">
                 <GlobeIcon />
               </span>
               <p>
@@ -119,8 +126,8 @@ const PlaceBasedJustTransition = () => {
                 production clusters.
               </p>
             </div>
-            <div className="pbjt-strip__divider" aria-hidden="true" />
-            <div className="pbjt-strip__col pbjt-strip__col--quote">
+            <div className={cn("pbjt-strip__divider")} aria-hidden="true" />
+            <div className={cn("pbjt-strip__col pbjt-strip__col--quote")}>
               <p>
                 A transition is only just when it improves environmental
                 outcomes and strengthens livelihoods, agency, and collective
@@ -133,36 +140,36 @@ const PlaceBasedJustTransition = () => {
 
       {/* ============ HERO 2: WHAT IS ============ */}
       {/* <section
-        className="pbjt-hero pbjt-hero--whatis"
+        className={cn("pbjt-hero pbjt-hero--whatis")}
         style={{ backgroundImage: "url('/images/pbjt-whatis-hero.jpg')" }}
         aria-label="What is Place-Based Just Transition"
       >
-        <div className="pbjt-hero__inner pbjt-hero__inner--center">
-          <h1 className="pbjt-hero__main pbjt-hero__main--white">
-            What is<span className="pbjt-hero__qmark">?</span>
+        <div className={cn("pbjt-hero__inner pbjt-hero__inner--center")}>
+          <h1 className={cn("pbjt-hero__main pbjt-hero__main--white")}>
+            What is<span className={cn("pbjt-hero__qmark")}>?</span>
           </h1>
-          <h2 className="pbjt-hero__sub">Place-Based Just Transition</h2>
+          <h2 className={cn("pbjt-hero__sub")}>Place-Based Just Transition</h2>
         </div>
       </section> */}
 
       {/* ============ WHAT IS CONTENT ============ */}
-      <section className="pbjt-section">
-        <div className="pbjt-container">
-          <div className="pbjt-grid pbjt-grid--two">
+      <section className={cn("pbjt-section")}>
+        <div className={cn("pbjt-container")}>
+          <div className={cn("pbjt-grid pbjt-grid--two")}>
             {/* LEFT */}
             <div>
-              <h3 className="pbjt-h3 pbjt-h3--lg">
+              <h3 className={cn("pbjt-h3 pbjt-h3--lg")}>
                 Place-Based Just Transition (PBJT) is an approach to
                 sustainability that starts from the ground up.
               </h3>
-              <span className="pbjt-bar" aria-hidden="true" />
-              <p className="pbjt-p">
+              <span className={cn("pbjt-bar")} aria-hidden="true" />
+              <p className={cn("pbjt-p")}>
                 PBJT recognises that environmental change and economic
                 transition are not abstract ideas, they are lived every day in
                 villages, neighbourhoods, worksites, and local production
                 clusters.
               </p>
-              <p className="pbjt-p">
+              <p className={cn("pbjt-p")}>
                 PBJT focuses on how workers, MSMEs, vendors, informal labour,
                 and communities experience climate action, sustainability
                 policies, and business practices at the last tiers of the value
@@ -170,15 +177,15 @@ const PlaceBasedJustTransition = () => {
                 visibility is lowest.
               </p>
 
-              <div className="pbjt-callout">
+              <div className={cn("pbjt-callout")}>
                 <div
-                  className="pbjt-callout__badge pbjt-callout__badge--ghost"
+                  className={cn("pbjt-callout__badge pbjt-callout__badge--ghost")}
                   aria-hidden="true"
                 >
                   <LeafIcon />
                 </div>
-                <div className="pbjt-callout__body">
-                  <p className="pbjt-callout__text">
+                <div className={cn("pbjt-callout__body")}>
+                  <p className={cn("pbjt-callout__text")}>
                     <strong>A transition can only be called &ldquo;green&rdquo;</strong>{" "}
                     when it also protects people. As workers often remind us,
                     environmental improvements must go hand in hand with fair
@@ -189,34 +196,34 @@ const PlaceBasedJustTransition = () => {
             </div>
 
             {/* RIGHT */}
-            <div className="pbjt-stack">
+            <div className={cn("pbjt-stack")}>
               <NetworkDiagram />
 
-              <div className="pbjt-benefits">
-                <h4 className="pbjt-benefits__title">
+              <div className={cn("pbjt-benefits")}>
+                <h4 className={cn("pbjt-benefits__title")}>
                   PBJT ensures that the shift to greener economies:
                 </h4>
-                <ul className="pbjt-benefits__list">
+                <ul className={cn("pbjt-benefits__list")}>
                   <li>
-                    <span className="pbjt-check" aria-hidden="true">
+                    <span className={cn("pbjt-check")} aria-hidden="true">
                       <CheckIcon />
                     </span>
                     Protects both people and the planet
                   </li>
                   <li>
-                    <span className="pbjt-check" aria-hidden="true">
+                    <span className={cn("pbjt-check")} aria-hidden="true">
                       <CheckIcon />
                     </span>
                     Strengthens local livelihoods rather than displacing them
                   </li>
                   <li>
-                    <span className="pbjt-check" aria-hidden="true">
+                    <span className={cn("pbjt-check")} aria-hidden="true">
                       <CheckIcon />
                     </span>
                     Makes businesses accountable to the places they operate in
                   </li>
                   <li>
-                    <span className="pbjt-check" aria-hidden="true">
+                    <span className={cn("pbjt-check")} aria-hidden="true">
                       <CheckIcon />
                     </span>
                     Builds resilient and responsible local economic ecosystems
@@ -286,10 +293,10 @@ const CheckIcon = () => (
 /* ============================================================ */
 
 const NetworkDiagram = () => (
-  <div className="pbjt-network" role="img" aria-label="Network of actors around Place-Based Transition">
-    <svg viewBox="0 0 460 340" className="pbjt-network__svg">
+  <div className={cn("pbjt-network")} role="img" aria-label="Network of actors around Place-Based Transition">
+    <svg viewBox="0 0 460 340" className={cn("pbjt-network__svg")}>
       {/* Connecting lines */}
-      <g className="pbjt-network__lines">
+      <g className={cn("pbjt-network__lines")}>
         <line x1="230" y1="170" x2="90" y2="230" />
         <line x1="230" y1="170" x2="230" y2="60" />
         <line x1="230" y1="170" x2="360" y2="120" />
@@ -304,40 +311,41 @@ const NetworkDiagram = () => (
       </g>
 
       {/* Small accent dots */}
-      <circle cx="160" cy="120" r="6" className="pbjt-network__dot" />
-      <circle cx="160" cy="220" r="6" className="pbjt-network__dot" />
-      <circle cx="300" cy="230" r="6" className="pbjt-network__dot" />
-      <circle cx="305" cy="80" r="5" className="pbjt-network__dot" />
+      <circle cx="160" cy="120" r="6" className={cn("pbjt-network__dot")} />
+      <circle cx="160" cy="220" r="6" className={cn("pbjt-network__dot")} />
+      <circle cx="300" cy="230" r="6" className={cn("pbjt-network__dot")} />
+      <circle cx="305" cy="80" r="5" className={cn("pbjt-network__dot")} />
 
       {/* Outer nodes */}
-      <circle cx="90" cy="230" r="22" className="pbjt-network__node" />
-      <circle cx="230" cy="60" r="22" className="pbjt-network__node" />
-      <circle cx="360" cy="120" r="20" className="pbjt-network__node" />
-      <circle cx="370" cy="230" r="22" className="pbjt-network__node" />
-      <circle cx="230" cy="290" r="22" className="pbjt-network__node" />
+      <circle cx="90" cy="230" r="22" className={cn("pbjt-network__node")} />
+      <circle cx="230" cy="60" r="22" className={cn("pbjt-network__node")} />
+      <circle cx="360" cy="120" r="20" className={cn("pbjt-network__node")} />
+      <circle cx="370" cy="230" r="22" className={cn("pbjt-network__node")} />
+      <circle cx="230" cy="290" r="22" className={cn("pbjt-network__node")} />
 
       {/* Center */}
-      <circle cx="230" cy="170" r="52" className="pbjt-network__center" />
-      <text x="230" y="160" textAnchor="middle" className="pbjt-network__center-text">
+      <circle cx="230" cy="170" r="52" className={cn("pbjt-network__center")} />
+      <text x="230" y="160" textAnchor="middle" className={cn("pbjt-network__center-text")}>
         Placed
       </text>
-      <text x="230" y="175" textAnchor="middle" className="pbjt-network__center-text">
+      <text x="230" y="175" textAnchor="middle" className={cn("pbjt-network__center-text")}>
         Based
       </text>
-      <text x="230" y="190" textAnchor="middle" className="pbjt-network__center-text">
+      <text x="230" y="190" textAnchor="middle" className={cn("pbjt-network__center-text")}>
         Transition
       </text>
 
       {/* Labels */}
-      <text x="90" y="200" textAnchor="middle" className="pbjt-network__label">Workers</text>
-      <text x="230" y="32" textAnchor="middle" className="pbjt-network__label">Associations</text>
-      <text x="395" y="100" textAnchor="start" className="pbjt-network__label">Actor</text>
-      <text x="395" y="113" textAnchor="start" className="pbjt-network__label">driver</text>
-      <text x="395" y="126" textAnchor="start" className="pbjt-network__label">Small</text>
-      <text x="395" y="139" textAnchor="start" className="pbjt-network__label">Vendor</text>
-      <text x="395" y="225" textAnchor="start" className="pbjt-network__label">Children and</text>
-      <text x="395" y="238" textAnchor="start" className="pbjt-network__label">Youth</text>
-      <text x="230" y="320" textAnchor="middle" className="pbjt-network__label">MSMEs</text>
+      <text x="90" y="200" textAnchor="middle" className={cn("pbjt-network__label")}>Workers</text>
+      <text x="230" y="32" textAnchor="middle" className={cn("pbjt-network__label")}>Associations</text>
+      <text x="395" y="100" textAnchor="start" className={cn("pbjt-network__label")}>Actor</text>
+      <text x="395" y="113" textAnchor="start" className={cn("pbjt-network__label")}>driver</text>
+      <text x="395" y="126" textAnchor="start" className={cn("pbjt-network__label")}>Small</text>
+      <text x="395" y="139" textAnchor="start" className={cn("pbjt-network__label")}>Vendor</text>
+      <text x="395" y="225" textAnchor="start" className={cn("pbjt-network__label")}>Children and</text>
+      <text x="395" y="238" textAnchor="start" className={cn("pbjt-network__label")}>Youth</text>
+      <text x="230" y="320" textAnchor="middle" className={cn("pbjt-network__label")}>MSMEs</text>
     </svg>
   </div>
 );
+

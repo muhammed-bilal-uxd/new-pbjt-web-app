@@ -1,0 +1,537 @@
+.vui-main {
+  --color-primary: #d62828;
+  --color-primary-dark: #a51d1d;
+  --color-primary-soft: #fdecec;
+  --color-primary-tint: #fef5f5;
+  --color-bg: #fafaf7;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f4f3ee;
+  --color-text: #1a1a1a;
+  --color-text-muted: #555;
+  --color-text-soft: #777;
+  --color-border: #ececec;
+  --color-water: #4a9fd9;
+  --color-leaf: #5cab5c;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --font-display: "Bricolage Grotesque", "SF Pro Display", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", "SF Pro Text", system-ui, sans-serif;
+  min-height: 100vh;
+  padding: clamp(16px, 3vw, 40px);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(214, 40, 40, 0.04) 0%, transparent 35%),
+    radial-gradient(circle at 100% 100%, rgba(92, 171, 92, 0.04) 0%, transparent 35%);
+  background-attachment: fixed;
+}
+
+.vui-main * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.vui-main img,
+.vui-main svg {
+  display: block;
+  max-width: 100%;
+}
+
+.vui-main ul,
+.vui-main ol {
+  list-style: none;
+}
+
+.vui-main h1,
+.vui-main h2,
+.vui-main h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.vui-main :focus-visible {
+  outline: 2px solid var(--pbjt-primary-color);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.vui-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.vui-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.vui-cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.vui-footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  color: var(--color-text-soft);
+  font-size: 0.85rem;
+}
+
+.vui-footer strong {
+  color: var(--pbjt-primary-color);
+  font-weight: 700;
+}
+
+.vui-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 24px;
+  height: fit-content;
+}
+
+.vui-heroCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+.vui-heroBanner {
+  background: linear-gradient(135deg, var(--pbjt-primary-color) 0%, var(--color-primary-dark) 100%);
+  color: #fff;
+  padding: 32px 24px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.vui-heroBanner::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.vui-heroBanner::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.vui-heroEyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.85;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.vui-heroTitle {
+  font-size: clamp(1.75rem, 2.4vw, 2.4rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  position: relative;
+  z-index: 1;
+}
+
+.vui-heroBody {
+  padding: 24px;
+}
+
+.vui-heroSubtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+  line-height: 1.55;
+}
+
+.vui-stepList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vui-stepItem {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.vui-stepItem:hover {
+  background: var(--color-primary-tint);
+}
+
+.vui-stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--pbjt-primary-color);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.vui-stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vui-stepIconRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--pbjt-primary-color);
+}
+
+.vui-stepLabel {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--pbjt-primary-color);
+  letter-spacing: -0.01em;
+}
+
+.vui-stepDesc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+
+.vui-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.vui-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.vui-cardHeader {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.vui-numberBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--pbjt-primary-color);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.vui-titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vui-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.vui-subtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.vui-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vui-cardFooter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--color-border);
+  justify-content: space-around;
+}
+
+.vui-footerItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 60px;
+}
+
+.vui-footerIconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.vui-footerNeutral {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+}
+
+.vui-footerPrimary {
+  background: var(--color-primary-soft);
+  color: var(--pbjt-primary-color);
+}
+
+.vui-footerWater {
+  background: rgba(74, 159, 217, 0.12);
+  color: var(--color-water);
+}
+
+.vui-footerLeaf {
+  background: rgba(92, 171, 92, 0.14);
+  color: var(--color-leaf);
+}
+
+.vui-footerCheck {
+  background: var(--pbjt-primary-color);
+  color: #fff;
+}
+
+.vui-footerLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.vui-priorityList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vui-priorityItem {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: var(--color-primary-tint);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-primary-soft);
+}
+
+.vui-priorityIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--pbjt-primary-color);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.vui-priorityLabel {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.vui-priorityDetail {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.vui-clipboardWrap {
+  background: var(--color-primary-tint);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.vui-clipboardIcon {
+  width: 56px;
+  height: 64px;
+  background: var(--color-surface);
+  border: 2px solid var(--pbjt-primary-color);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 8px;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.vui-clipboardIcon::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 12px;
+  background: var(--pbjt-primary-color);
+  border-radius: 4px;
+}
+
+.vui-clipCheck {
+  width: 100%;
+  height: 3px;
+  background: var(--pbjt-primary-color);
+  border-radius: 2px;
+}
+
+.vui-clipboardList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vui-clipboardItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.vui-clipboardItem svg {
+  color: var(--pbjt-primary-color);
+  flex-shrink: 0;
+}
+
+.vui-clipboardItem small {
+  font-weight: 400;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  margin-left: 4px;
+}
+
+@media (max-width: 1180px) {
+  .vui-layout {
+    grid-template-columns: minmax(260px, 320px) 1fr;
+  }
+
+  .vui-cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 960px) {
+  .vui-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .vui-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .vui-cardGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .vui-main {
+    padding: 16px;
+  }
+
+  .vui-card {
+    padding: 20px;
+  }
+
+  .vui-title {
+    font-size: 1.15rem;
+  }
+
+  .vui-numberBadge {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .vui-heroBanner {
+    padding: 24px 20px 32px;
+  }
+
+  .vui-heroBody {
+    padding: 20px;
+  }
+
+  .vui-cardFooter {
+    gap: 8px;
+  }
+
+  .vui-footerItem {
+    min-width: 52px;
+  }
+}

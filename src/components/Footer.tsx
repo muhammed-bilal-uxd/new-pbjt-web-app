@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import "./footer.css";
+import styles from "./footer.module.css";
 import Link from "next/link";
 import { navLinks } from "@/data/menu";
 import { INavLinks } from "@/interface/common";
@@ -89,35 +89,35 @@ export function Footer() {
   };
 
   return (
-    <footer className="footer">
-      <div className="footer-container px-6 py-4">
-        <div className="top-grid">
-          <div className="brand-col">
+    <footer className={styles.footer}>
+      <div className={`${styles.footerContainer} px-6 py-4`}>
+        <div className={styles.topGrid}>
+          <div className={styles.brandCol}>
             <Link href="/" >
-              <div className="footer-brand-logo">
-                <div className="logo-box">
-                  <span className="logo-text">PB</span>
-                  <span className="logo-text">JT</span>
+              <div className={styles.footerBrandLogo}>
+                <div className={styles.logoBox}>
+                  <span className={styles.logoText}>PB</span>
+                  <span className={styles.logoText}>JT</span>
                 </div>
-                <div className="logo-name">
+                <div className={styles.logoName}>
                   <span>PLACE</span>
                   <span>BASED JUST</span>
                   <span>TRANSITION</span>
                 </div>
               </div>
             </Link>
-            <p className="footer-tagline">
+            <p className={styles.footerTagline}>
               Building fair, inclusive and sustainable economies from the ground up.
             </p>
-            <div className="footer-divider" />
-            <div className="socials">
+            <div className={styles.footerDivider} />
+            <div className={styles.socials}>
               {[
                 { icon: <TwitterIcon />, label: "Twitter" },
                 { icon: <LinkedInIcon />, label: "LinkedIn" },
                 { icon: <YouTubeIcon />, label: "YouTube" },
                 { icon: <InstagramIcon />, label: "Instagram" },
               ].map(({ icon, label }) => (
-                <a key={label} href="#" aria-label={label} className="social-btn">
+                <a key={label} href="#" aria-label={label} className={styles.socialBtn}>
                   {icon}
                 </a>
               ))}
@@ -143,42 +143,42 @@ export function Footer() {
             onToggle={() => toggleSection("resources")}
           />
 
-          <div className="nav-col">
+          <div className={styles.navCol}>
             <button
               type="button"
-              className="col-header"
+              className={styles.colHeader}
               onClick={() => toggleSection("contact")}
               aria-expanded={!!expandedSections.contact}
             >
               <span>CONTACT US</span>
-              <span className={`mobile-chevron${expandedSections.contact ? " expanded" : ""}`}>
+              <span className={`${styles.mobileChevron} ${expandedSections.contact ? styles.expanded : ""}`}>
                 <ChevronRightIcon />
               </span>
             </button>
-            <div className="header-underline" />
-            <div className={`col-content${expandedSections.contact ? " expanded" : ""}`}>
+            <div className={styles.headerUnderline} />
+            <div className={`${styles.colContent} ${expandedSections.contact ? styles.expanded : ""}`}>
               <ContactItem icon={<LocationIcon />}>
-                <span className="contact-text">C/o Centre for Sustainable Work</span>
-                <span className="contact-text">First Floor, 123 Community Lane</span>
-                <span className="contact-text">Bengaluru, Karnataka 560001, India</span>
+                <span className={styles.contactText}>C/o Centre for Sustainable Work</span>
+                <span className={styles.contactText}>First Floor, 123 Community Lane</span>
+                <span className={styles.contactText}>Bengaluru, Karnataka 560001, India</span>
               </ContactItem>
-              <div className="contact-divider" />
+              <div className={styles.contactDivider} />
               <ContactItem icon={<MailIcon />}>
-                <a href="mailto:hello@pbjt.org" className="contact-link">
+                <a href="mailto:hello@pbjt.org" className={styles.contactLink}>
                   hello@pbjt.org
                 </a>
-                <span className="contact-subtext">We aim to respond within 2-3 working days.</span>
+                <span className={styles.contactSubtext}>We aim to respond within 2-3 working days.</span>
               </ContactItem>
-              <div className="contact-divider" />
+              <div className={styles.contactDivider} />
               <ContactItem icon={<PhoneIcon />}>
-                <a href="tel:+918012345678" className="contact-link">
+                <a href="tel:+918012345678" className={styles.contactLink}>
                   +91 80 1234 5678
                 </a>
-                <span className="contact-subtext">Mon - Fri, 10:00 AM - 6:00 PM IST</span>
+                <span className={styles.contactSubtext}>Mon - Fri, 10:00 AM - 6:00 PM IST</span>
               </ContactItem>
-              <div className="contact-divider" />
+              <div className={styles.contactDivider} />
               <ContactItem icon={<GlobeIcon />}>
-                <a href="https://www.pbjt.org" className="contact-link">
+                <a href="https://www.pbjt.org" className={styles.contactLink}>
                   www.pbjt.org
                 </a>
               </ContactItem>
@@ -186,15 +186,15 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="bottom-bar sm:text-center">
-          <p className="copyright">&copy; 2024 Place-Based Just Transition. All rights reserved.</p>
-          <div className="bottom-links">
+        <div className={`${styles.bottomBar} sm:text-center`}>
+          <p className={styles.copyright}>&copy; 2024 Place-Based Just Transition. All rights reserved.</p>
+          <div className={styles.bottomLinks}>
             {["Privacy Policy", "Terms of Use", "Accessibility"].map((item, i) => (
-              <span key={item} className="bottom-link-group">
-                <a href="#" className="bottom-link">
+              <span key={item} className={styles.bottomLinkGroup}>
+                <a href="#" className={styles.bottomLink}>
                   {item}
                 </a>
-                {i < 2 && <span className="bottom-sep">|</span>}
+                {i < 2 && <span className={styles.bottomSep}>|</span>}
               </span>
             ))}
           </div>
@@ -211,26 +211,26 @@ function NavColumn({
   onToggle,
 }: {
   title: string;
-  links: INavLinks[];
+  links: Array<Pick<INavLinks, "label" | "href" | "hasArrow">>;
   expanded: boolean;
   onToggle: () => void;
 }) {
   return (
-    <div className="nav-col">
-      <button type="button" className="col-header" onClick={onToggle} aria-expanded={expanded}>
+    <div className={styles.navCol}>
+      <button type="button" className={styles.colHeader} onClick={onToggle} aria-expanded={expanded}>
         <span>{title}</span>
-        <span className={`mobile-chevron${expanded ? " expanded" : ""}`}>
+        <span className={`${styles.mobileChevron} ${expanded ? styles.expanded : ""}`}>
           <ChevronRightIcon />
         </span>
       </button>
-      <div className="header-underline" />
-      <ul className={`nav-list${expanded ? " expanded" : ""}`}>
+      <div className={styles.headerUnderline} />
+      <ul className={`${styles.navList} ${expanded ? styles.expanded : ""}`}>
         {links.map(({ label, href, hasArrow }) => (
           <li key={label}>
-            <a href={href} className="nav-link">
+            <a href={href} className={styles.navLink}>
               {label}
               {hasArrow && (
-                <span className="arrow-icon">
+                <span className={styles.arrowIcon}>
                   <ChevronRightIcon />
                 </span>
               )}
@@ -244,9 +244,9 @@ function NavColumn({
 
 function ContactItem({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
   return (
-    <div className="contact-item">
-      <span className="contact-icon">{icon}</span>
-      <div className="contact-details">{children}</div>
+    <div className={styles.contactItem}>
+      <span className={styles.contactIcon}>{icon}</span>
+      <div className={styles.contactDetails}>{children}</div>
     </div>
   );
 }

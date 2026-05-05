@@ -1,0 +1,28 @@
+Common issues on all pages 9 pages
+	> Unique css - functional changes (wip)
+	> Height balance and white space distraction ()
+	> Hero/Banner - background and text correction
+	> Page content center
+	
+In practice page
+	> Explore button navigate to locations section
+	> Real story navigate to testimonials
+	> "What the groud teaches us" duplication text (ask suhail)
+	> Section reorder needed  ? & Location section need UI enhancement (ask suhail)
+	
+About page
+	> Missing 2nd Hero
+	> Labour Organization and the UNFCCC need logo (ask suhail)
+
+Impact proposition
+	> 2nd hero issue
+	
+Framework
+	> 2nd hero issue
+
+Methodology
+	> 2nd hero missing
+	
+Other pages and locations
+	> Waiting for feedback from the client
+

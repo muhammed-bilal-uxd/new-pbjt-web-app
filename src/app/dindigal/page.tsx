@@ -1,10 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import './DindigulPage.css';
+import styles from './DindigulPage.module.css';
 import BeforeAfter from '@/components/before-after';
 import Villages from '@/components/villages/villages';
 import Mapping from '@/components/mapping';
+
+const cn = (names: string) =>
+  names
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((name) => styles[name] ?? name)
+    .join(' ');
 
 /* ============================================================
    DATA
@@ -53,8 +60,8 @@ const INSIGHTS = [
     title: 'Local Industries',
     body: (
       <div>
-        <p className="dp-mb-sm">Traditional industries include:</p>
-        <p className="dp-text-muted">
+        <p className={cn("dp-mb-sm")}>Traditional industries include:</p>
+        <p className={cn("dp-text-muted")}>
           Iron lock making · Leather tanning · Textile production (Art-Silk &amp;
           Sungudi sarees)
         </p>
@@ -404,13 +411,13 @@ const ICON_BY_KEY: Record<string, any> = {
 
 /* Stylized Tamil Nadu silhouette. Replace with a real geo-SVG in production. */
 const TamilNaduMap = ({ pinX = 38, pinY = 58 }) => (
-  <svg className="dp-tn-map" viewBox="0 0 100 120" aria-hidden="true">
+  <svg className={cn("dp-tn-map")} viewBox="0 0 100 120" aria-hidden="true">
     <path
       d="M48 4 C58 6, 64 14, 66 22 C72 28, 74 38, 70 46 C76 52, 78 62, 72 70 C74 80, 68 90, 60 96 C56 104, 50 112, 42 110 C34 108, 28 100, 26 92 C20 86, 18 76, 22 68 C16 62, 14 50, 20 42 C18 32, 26 22, 36 18 C38 10, 42 4, 48 4 Z"
-      className="dp-tn-shape"
+      className={cn("dp-tn-shape")}
     />
-    <circle cx={pinX} cy={pinY} r="6" className="dp-tn-pin-bg" />
-    <g transform={`translate(${pinX - 3} ${pinY - 6})`} className="dp-tn-pin">
+    <circle cx={pinX} cy={pinY} r="6" className={cn("dp-tn-pin-bg")} />
+    <g transform={`translate(${pinX - 3} ${pinY - 6})`} className={cn("dp-tn-pin")}>
       <path d="M3 0C1.3 0 0 1.3 0 3c0 2.2 3 6 3 6s3-3.8 3-6c0-1.7-1.3-3-3-3z" />
     </g>
   </svg>
@@ -422,31 +429,31 @@ const TamilNaduMap = ({ pinX = 38, pinY = 58 }) => (
 
 function HeroSection() {
   return (
-    <section className="dp-hero">
-      <div className="dp-hero__inner">
-        <div className="dp-hero__copy">
-          <div className="dp-locator">
-            <span className="dp-locator__pin">
+    <section className={cn("dp-hero")}>
+      <div className={cn("dp-hero__inner")}>
+        <div className={cn("dp-hero__copy")}>
+          <div className={cn("dp-locator")}>
+            <span className={cn("dp-locator__pin")}>
               <Icon.Pin />
             </span>
             <span>Dindigul, Tamil Nadu</span>
           </div>
-          <h1 className="dp-hero__title">
+          <h1 className={cn("dp-hero__title")}>
             <span>DINDIGUL</span>
-            <span className="dp-hero__title--accent">IN TAMIL NADU</span>
+            <span className={cn("dp-hero__title--accent")}>IN TAMIL NADU</span>
           </h1>
-          <span className="dp-hero__rule" aria-hidden="true" />
-          <p className="dp-hero__lede">
+          <span className={cn("dp-hero__rule")} aria-hidden="true" />
+          <p className={cn("dp-hero__lede")}>
             A land of fertile plains, resilient communities, and rich traditions
             — where nature, culture, and livelihoods shape everyday life.
           </p>
-          <button type="button" className="dp-btn dp-btn--primary">
+          <button type="button" className={cn("dp-btn dp-btn--primary")}>
             <Icon.Bars />
             <span>VIEW CLIMATE DATA</span>
             <Icon.ChevRight />
           </button>
         </div>
-        <div className="dp-hero__map">
+        <div className={cn("dp-hero__map")}>
           {/* <TamilNaduMap /> */}
           <img src="/images/in-practice/tn.png" alt="Tamil Nadu Map" style={{ width: 415, height: "auto", maxWidth: "none" }} />
         </div>
@@ -465,32 +472,32 @@ function KeyInsights() {
   const toggle = (id: string) => setOpen((p: any) => ({ ...p, [id]: !p[id] }));
 
   return (
-    <section className="dp-insights">
-      <div className="dp-insights__head">
-        <p className="dp-eyebrow">ABOUT DINDIGUL</p>
-        <h2 className="dp-h2">Key Insights At A Glance</h2>
-        <span className="dp-rule" aria-hidden="true" />
+    <section className={cn("dp-insights")}>
+      <div className={cn("dp-insights__head")}>
+        <p className={cn("dp-eyebrow")}>ABOUT DINDIGUL</p>
+        <h2 className={cn("dp-h2")}>Key Insights At A Glance</h2>
+        <span className={cn("dp-rule")} aria-hidden="true" />
       </div>
-      <div className="dp-insights__list">
+      <div className={cn("dp-insights__list")}>
         {INSIGHTS.map((it) => {
           const I = ICON_BY_KEY[it.icon];
           const isOpen = open[it.id];
           return (
-            <div key={it.id} className={`dp-insight ${isOpen ? 'is-open' : ''}`}>
+            <div key={it.id} className={cn(`dp-insight ${isOpen ? 'is-open' : ''}`)}>
               <button
                 type="button"
-                className="dp-insight__row"
+                className={cn("dp-insight__row")}
                 onClick={() => toggle(it.id)}
                 aria-expanded={isOpen}
               >
-                <span className="dp-insight__icon">
+                <span className={cn("dp-insight__icon")}>
                   <I />
                 </span>
-                <span className="dp-insight__body">
-                  <span className="dp-insight__title">{it.title}</span>
-                  {isOpen && <span className="dp-insight__text">{it.body}</span>}
+                <span className={cn("dp-insight__body")}>
+                  <span className={cn("dp-insight__title")}>{it.title}</span>
+                  {isOpen && <span className={cn("dp-insight__text")}>{it.body}</span>}
                 </span>
-                <span className={`dp-insight__chev ${isOpen ? 'is-open' : ''}`}>
+                <span className={cn(`dp-insight__chev ${isOpen ? 'is-open' : ''}`)}>
                   <Icon.ChevDown />
                 </span>
               </button>
@@ -507,24 +514,24 @@ function ClimateTable() {
   const fmt = (c: any) => (unit === 'F' ? (c * 9 / 5 + 32).toFixed(1) : c.toFixed(1));
 
   return (
-    <section className="dp-climate">
-      <div className="dp-climate__card">
-        <div className="dp-climate__head">
-          <h3 className="dp-climate__title">
-            <span className="dp-climate__icon">
+    <section className={cn("dp-climate")}>
+      <div className={cn("dp-climate__card")}>
+        <div className={cn("dp-climate__head")}>
+          <h3 className={cn("dp-climate__title")}>
+            <span className={cn("dp-climate__icon")}>
               <Icon.Bars />
             </span>
             Climate At A Glance
           </h3>
-          <div className="dp-climate__sub">
+          <div className={cn("dp-climate__sub")}>
             Year-wise rainfall and temperature overview for Dindigul district.
           </div>
-          <div className="dp-toggle" role="tablist">
+          <div className={cn("dp-toggle")} role="tablist">
             <button
               type="button"
               role="tab"
               aria-selected={unit === 'C'}
-              className={`dp-toggle__btn ${unit === 'C' ? 'is-active' : ''}`}
+              className={cn(`dp-toggle__btn ${unit === 'C' ? 'is-active' : ''}`)}
               onClick={() => setUnit('C')}
             >
               °C
@@ -533,7 +540,7 @@ function ClimateTable() {
               type="button"
               role="tab"
               aria-selected={unit === 'F'}
-              className={`dp-toggle__btn ${unit === 'F' ? 'is-active' : ''}`}
+              className={cn(`dp-toggle__btn ${unit === 'F' ? 'is-active' : ''}`)}
               onClick={() => setUnit('F')}
             >
               °F
@@ -541,8 +548,8 @@ function ClimateTable() {
           </div>
         </div>
 
-        <div className="dp-table-wrap">
-          <table className="dp-table">
+        <div className={cn("dp-table-wrap")}>
+          <table className={cn("dp-table")}>
             <thead>
               <tr>
                 <th>Year</th>
@@ -564,10 +571,10 @@ function ClimateTable() {
           </table>
         </div>
 
-        <div className="dp-climate__foot">
-          <span className="dp-climate__info"><Icon.Info /></span>
+        <div className={cn("dp-climate__foot")}>
+          <span className={cn("dp-climate__info")}><Icon.Info /></span>
           <span>Rainfall varies year to year, largely influenced by the North East Monsoon.</span>
-          <span className="dp-climate__weather" aria-hidden="true">
+          <span className={cn("dp-climate__weather")} aria-hidden="true">
             <Icon.Sun />
             <Icon.Rain />
           </span>
@@ -579,28 +586,28 @@ function ClimateTable() {
 
 function VillageProcess() {
   return (
-    <section className="dp-process">
-      <div className="dp-process__grid">
-        <div className="dp-process__intro">
-          <h3 className="dp-process__intro-title">
+    <section className={cn("dp-process")}>
+      <div className={cn("dp-process__grid")}>
+        <div className={cn("dp-process__intro")}>
+          <h3 className={cn("dp-process__intro-title")}>
             MAPPING OUR VILLAGE NEEDS &amp; RESOURCES, GUIDING LOCAL ACTION
           </h3>
-          <p className="dp-process__intro-text">
+          <p className={cn("dp-process__intro-text")}>
             From identifying challenges to taking action and growing together
             for a cleaner, greener, and stronger village.
           </p>
-          <ol className="dp-process__intro-list">
+          <ol className={cn("dp-process__intro-list")}>
             {PROCESS_STEPS.map((s) => (
               <li key={s.n}>
-                <span className="dp-process__num">{s.n}</span>
+                <span className={cn("dp-process__num")}>{s.n}</span>
                 <div>
-                  <p className="dp-process__step-title">{s.title}</p>
-                  <p className="dp-process__step-sub">{s.sub}</p>
+                  <p className={cn("dp-process__step-title")}>{s.title}</p>
+                  <p className={cn("dp-process__step-sub")}>{s.sub}</p>
                 </div>
               </li>
             ))}
           </ol>
-          <p className="dp-process__intro-foot">
+          <p className={cn("dp-process__intro-foot")}>
             <Icon.Leaf />
             <span>
               Locally driven. Everyone involved.
@@ -611,17 +618,17 @@ function VillageProcess() {
         </div>
 
         {PROCESS_STEPS.map((s) => (
-          <article key={s.n} className="dp-step">
-            <header className="dp-step__head">
+          <article key={s.n} className={cn("dp-step")}>
+            <header className={cn("dp-step__head")}>
               <h4>
                 {s.n}. {s.title}
               </h4>
               <p>{s.sub}</p>
             </header>
-            <div className="dp-step__art">
+            <div className={cn("dp-step__art")}>
               <img src={s.img} alt={`${s.title} illustration`} loading="lazy" />
             </div>
-            <ul className="dp-step__legend">
+            <ul className={cn("dp-step__legend")}>
               {s.legend.map((l, i) => (
                 <li key={i}>{l}</li>
               ))}
@@ -635,50 +642,50 @@ function VillageProcess() {
 
 function VillagesSection() {
   return (
-    <section className="dp-villages">
-      <header className="dp-villages__head">
-        <span className="dp-villages__badge">
+    <section className={cn("dp-villages")}>
+      <header className={cn("dp-villages__head")}>
+        <span className={cn("dp-villages__badge")}>
           <Icon.Group />
         </span>
         <div>
-          <h2 className="dp-h2 dp-h2--inline">
-            <span className="dp-villages__pbjt">PBJT</span> In Four Villages Across Dindigul
+          <h2 className={cn("dp-h2 dp-h2--inline")}>
+            <span className={cn("dp-villages__pbjt")}>PBJT</span> In Four Villages Across Dindigul
           </h2>
-          <p className="dp-villages__sub">
+          <p className={cn("dp-villages__sub")}>
             Community-Led actions restoring ecosystems, reducing waste and building local livelihoods.
           </p>
         </div>
       </header>
 
-      <div className="dp-villages__grid">
+      <div className={cn("dp-villages__grid")}>
         {VILLAGES.map((v) => (
-          <article key={v.id} className="dp-village-card">
-            <div className="dp-village-card__media">
+          <article key={v.id} className={cn("dp-village-card")}>
+            <div className={cn("dp-village-card__media")}>
               <img src={v.image} alt={v.name} loading="lazy" />
             </div>
-            <div className="dp-village-card__body">
-              <h4 className="dp-village-card__name">
-                <span className="dp-village-card__pin"><Icon.Pin /></span>
+            <div className={cn("dp-village-card__body")}>
+              <h4 className={cn("dp-village-card__name")}>
+                <span className={cn("dp-village-card__pin")}><Icon.Pin /></span>
                 {v.name}
               </h4>
-              <ul className="dp-village-card__stats">
+              <ul className={cn("dp-village-card__stats")}>
                 <li>
-                  <span className="dp-stat dp-stat--red"><Icon.Trash /></span>
+                  <span className={cn("dp-stat dp-stat--red")}><Icon.Trash /></span>
                   <strong>{v.dump}</strong>
                   <small>Dump sites</small>
                 </li>
                 <li>
-                  <span className="dp-stat dp-stat--blue"><Icon.Drop /></span>
+                  <span className={cn("dp-stat dp-stat--blue")}><Icon.Drop /></span>
                   <strong>{v.water}</strong>
                   <small>Water bodies</small>
                 </li>
                 <li>
-                  <span className="dp-stat dp-stat--green"><Icon.Tree /></span>
+                  <span className={cn("dp-stat dp-stat--green")}><Icon.Tree /></span>
                   <strong>{v.trees}</strong>
                   <small>{v.treesLabel}</small>
                 </li>
               </ul>
-              <a href="#" className="dp-village-card__link">
+              <a href="#" className={cn("dp-village-card__link")}>
                 View More <Icon.ArrowRight />
               </a>
             </div>
@@ -692,69 +699,69 @@ function VillagesSection() {
 function VillageDetail() {
   const d = VILLAGE_DETAIL;
   return (
-    <section className="dp-detail">
-      <aside className="dp-detail__side">
-        <h4 className="dp-detail__name">
-          <span className="dp-detail__pin"><Icon.Pin /></span>
+    <section className={cn("dp-detail")}>
+      <aside className={cn("dp-detail__side")}>
+        <h4 className={cn("dp-detail__name")}>
+          <span className={cn("dp-detail__pin")}><Icon.Pin /></span>
           {d.village}
         </h4>
-        <p className="dp-detail__blurb">{d.blurb}</p>
-        <ul className="dp-detail__stats">
+        <p className={cn("dp-detail__blurb")}>{d.blurb}</p>
+        <ul className={cn("dp-detail__stats")}>
           <li>
-            <span className="dp-stat dp-stat--red"><Icon.Trash /></span>
+            <span className={cn("dp-stat dp-stat--red")}><Icon.Trash /></span>
             <strong>{d.stats.dump}</strong><small>Dump sites</small>
           </li>
           <li>
-            <span className="dp-stat dp-stat--blue"><Icon.Drop /></span>
+            <span className={cn("dp-stat dp-stat--blue")}><Icon.Drop /></span>
             <strong>{d.stats.water}</strong><small>Water bodies</small>
           </li>
           <li>
-            <span className="dp-stat dp-stat--green"><Icon.Tree /></span>
+            <span className={cn("dp-stat dp-stat--green")}><Icon.Tree /></span>
             <strong>{d.stats.trees}</strong><small>Trees planted</small>
           </li>
         </ul>
       </aside>
 
-      <div className="dp-detail__panels">
-        <div className="dp-panel">
-          <header className="dp-panel__head">
-            <span className="dp-panel__icon dp-panel__icon--red"><Icon.Clipboard /></span>
+      <div className={cn("dp-detail__panels")}>
+        <div className={cn("dp-panel")}>
+          <header className={cn("dp-panel__head")}>
+            <span className={cn("dp-panel__icon dp-panel__icon--red")}><Icon.Clipboard /></span>
             <h5>ACTIVITIES</h5>
           </header>
-          <ul className="dp-panel__list">
+          <ul className={cn("dp-panel__list")}>
             {d.activities.items.map((it, i) => (
               <li key={i}>{it}</li>
             ))}
-            <li className="dp-panel__list-strong">{d.activities.note}</li>
+            <li className={cn("dp-panel__list-strong")}>{d.activities.note}</li>
           </ul>
-          <div className="dp-panel__badge">
+          <div className={cn("dp-panel__badge")}>
             <Icon.Star /><span>{d.activities.badge}</span>
           </div>
         </div>
 
-        <div className="dp-panel">
-          <header className="dp-panel__head">
-            <span className="dp-panel__icon dp-panel__icon--green"><Icon.Leaf /></span>
+        <div className={cn("dp-panel")}>
+          <header className={cn("dp-panel__head")}>
+            <span className={cn("dp-panel__icon dp-panel__icon--green")}><Icon.Leaf /></span>
             <h5>RESTORED</h5>
           </header>
-          <ul className="dp-panel__list">
+          <ul className={cn("dp-panel__list")}>
             {d.restored.items.map((it, i) => (
               <li key={i}>{it}</li>
             ))}
           </ul>
-          <figure className="dp-panel__figure">
+          <figure className={cn("dp-panel__figure")}>
             <img src={d.restored.image} alt="Restored water body" loading="lazy" />
             <figcaption>{d.restored.caption}</figcaption>
           </figure>
         </div>
 
-        <div className="dp-panel">
-          <header className="dp-panel__head">
-            <span className="dp-panel__icon dp-panel__icon--purple"><Icon.Group /></span>
+        <div className={cn("dp-panel")}>
+          <header className={cn("dp-panel__head")}>
+            <span className={cn("dp-panel__icon dp-panel__icon--purple")}><Icon.Group /></span>
             <h5>GROUPS &amp; MEMBERS</h5>
           </header>
-          <p className="dp-panel__lede">{d.groups.blurb}</p>
-          <table className="dp-mini-table">
+          <p className={cn("dp-panel__lede")}>{d.groups.blurb}</p>
+          <table className={cn("dp-mini-table")}>
             <thead>
               <tr><th>Groups</th><th>Members</th></tr>
             </thead>
@@ -767,8 +774,8 @@ function VillageDetail() {
         </div>
       </div>
 
-      <p className="dp-detail__motto">
-        <span className="dp-detail__motto-star"><Icon.Star /></span>
+      <p className={cn("dp-detail__motto")}>
+        <span className={cn("dp-detail__motto-star")}><Icon.Star /></span>
         Small actions. Collective spirit. Lasting change.
       </p>
     </section>
@@ -779,22 +786,22 @@ function BeforeAfterJourney() {
   const [active, setActive] = useState('waste');
 
   return (
-    <section className="dp-journey">
-      <header className="dp-journey__head">
-        <p className="dp-eyebrow dp-eyebrow--dark">DINDIGUL</p>
-        <div className="dp-journey__title-row">
-          <h2 className="dp-h2">PBJT: The Before and After Journey</h2>
-          <span className="dp-journey__pill">
+    <section className={cn("dp-journey")}>
+      <header className={cn("dp-journey__head")}>
+        <p className={cn("dp-eyebrow dp-eyebrow--dark")}>DINDIGUL</p>
+        <div className={cn("dp-journey__title-row")}>
+          <h2 className={cn("dp-h2")}>PBJT: The Before and After Journey</h2>
+          <span className={cn("dp-journey__pill")}>
             <Icon.Group />
             Built by communities. Sustained together.
           </span>
         </div>
-        <p className="dp-journey__sub">
+        <p className={cn("dp-journey__sub")}>
           Rooted in collaboration. Measurable impact across seven key themes.
         </p>
       </header>
 
-      <div className="dp-tabs" role="tablist">
+      <div className={cn("dp-tabs")} role="tablist">
         {THEMES.map((t) => {
           const I = ICON_BY_KEY[t.icon] || Icon.Leaf;
           return (
@@ -803,11 +810,11 @@ function BeforeAfterJourney() {
               type="button"
               role="tab"
               aria-selected={active === t.id}
-              className={`dp-tab ${active === t.id ? 'is-active' : ''}`}
+              className={cn(`dp-tab ${active === t.id ? 'is-active' : ''}`)}
               onClick={() => setActive(t.id)}
             >
-              <span className="dp-tab__icon"><I /></span>
-              <span className="dp-tab__label">{t.label}</span>
+              <span className={cn("dp-tab__icon")}><I /></span>
+              <span className={cn("dp-tab__label")}>{t.label}</span>
             </button>
           );
         })}
@@ -816,17 +823,17 @@ function BeforeAfterJourney() {
       {active === 'waste' ? (
         <WasteThemePanel />
       ) : (
-        <div className="dp-journey__placeholder">
+        <div className={cn("dp-journey__placeholder")}>
           Content for this theme will appear here.
         </div>
       )}
 
-      <footer className="dp-journey__foot">
-        <button type="button" className="dp-btn dp-btn--ghost">← Previous</button>
-        <div className="dp-dots" aria-hidden="true">
-          <span className="is-active" /><span /><span /><span /><span /><span /><span />
+      <footer className={cn("dp-journey__foot")}>
+        <button type="button" className={cn("dp-btn dp-btn--ghost")}>← Previous</button>
+        <div className={cn("dp-dots")} aria-hidden="true">
+          <span className={cn("is-active")} /><span /><span /><span /><span /><span /><span />
         </div>
-        <button type="button" className="dp-btn dp-btn--primary dp-btn--sm">
+        <button type="button" className={cn("dp-btn dp-btn--primary dp-btn--sm")}>
           Next <Icon.ArrowRight />
         </button>
       </footer>
@@ -837,34 +844,34 @@ function BeforeAfterJourney() {
 function WasteThemePanel() {
   const t = WASTE_THEME;
   return (
-    <div className="dp-theme">
-      <div className="dp-theme__main">
-        <header className="dp-theme__head">
-          <span className="dp-theme__head-icon"><Icon.Trash /></span>
+    <div className={cn("dp-theme")}>
+      <div className={cn("dp-theme__main")}>
+        <header className={cn("dp-theme__head")}>
+          <span className={cn("dp-theme__head-icon")}><Icon.Trash /></span>
           <div>
             <h3>Waste System Transformation</h3>
-            <p className="dp-theme__time">📅 Timeline: {t.timeline}</p>
+            <p className={cn("dp-theme__time")}>📅 Timeline: {t.timeline}</p>
           </div>
         </header>
 
-        <div className="dp-ba-grid">
+        <div className={cn("dp-ba-grid")}>
           <BACard variant="before" title={`Before (June 2025)`} block={t.before} />
           <BACard variant="after" title={`After (By February 2026)`} block={t.after} />
         </div>
       </div>
 
-      <aside className="dp-impact">
-        <header className="dp-impact__head">
-          <span className="dp-impact__trophy"><Icon.Trophy /></span>
+      <aside className={cn("dp-impact")}>
+        <header className={cn("dp-impact__head")}>
+          <span className={cn("dp-impact__trophy")}><Icon.Trophy /></span>
           <h4>IMPACT SNAPSHOT</h4>
           <p>What changed</p>
         </header>
-        <ul className="dp-impact__list">
+        <ul className={cn("dp-impact__list")}>
           {t.impact.map((it, i) => {
             const I = ICON_BY_KEY[it.icon] || Icon.Leaf;
             return (
               <li key={i}>
-                <span className="dp-impact__icon"><I /></span>
+                <span className={cn("dp-impact__icon")}><I /></span>
                 {it.label}
               </li>
             );
@@ -877,22 +884,22 @@ function WasteThemePanel() {
 
 function BACard({ variant, title, block }: { variant: any, title: any, block: any }) {
   return (
-    <div className={`dp-ba dp-ba--${variant}`}>
-      <header className="dp-ba__head">
-        <span className="dp-ba__pill">
+    <div className={cn(`dp-ba dp-ba--${variant}`)}>
+      <header className={cn("dp-ba__head")}>
+        <span className={cn("dp-ba__pill")}>
           {variant === 'before' ? '!' : '✓'}
         </span>
         <span>{title}</span>
       </header>
-      <div className="dp-ba__images">
+      <div className={cn("dp-ba__images")}>
         {block.images.map((im: any, i: any) => (
-          <figure key={i} className="dp-ba__fig">
+          <figure key={i} className={cn("dp-ba__fig")}>
             <img src={im.src} alt={im.label} loading="lazy" />
             <figcaption>{im.label}</figcaption>
           </figure>
         ))}
       </div>
-      <ul className="dp-ba__points">
+      <ul className={cn("dp-ba__points")}>
         {block.points.map((p: any, i: any) => (
           <li key={i}>{p}</li>
         ))}
@@ -907,7 +914,7 @@ function BACard({ variant, title, block }: { variant: any, title: any, block: an
 
 export default function DindigulPage() {
   return (
-    <main className="dp-page">
+    <main className={cn("dp-page")}>
       <HeroSection />
       <KeyInsights />
       <ClimateTable />
@@ -921,3 +928,4 @@ export default function DindigulPage() {
     </main>
   );
 }
+

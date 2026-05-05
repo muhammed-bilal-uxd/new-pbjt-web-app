@@ -1,7 +1,14 @@
 "use client";
 
 import Banner from "@/components/banner";
-import "./focus-areas.css";
+import styles from "./focus-areas.module.css";
+
+const cn = (names: string) =>
+  names
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((name) => styles[name] ?? name)
+    .join(" ");
 
 /* ------------------------------------------------------------------ */
 /*  Inline SVG icons (no external dependency)                          */
@@ -146,7 +153,7 @@ const tags = [
 /* ------------------------------------------------------------------ */
 export default function FocusAreas() {
   return (
-    <section className="pbjt" aria-labelledby="pbjt-heading">
+    <section className={cn("pbjt")} aria-labelledby="pbjt-heading">
       {/* HERO */}
 
       <Banner
@@ -156,45 +163,45 @@ export default function FocusAreas() {
       />
 
       {/* MAIN GRID */}
-      <div className="pbjt-main">
-        <div className="pbjt-main__left">
-          <span className="pbjt-bar" aria-hidden="true" />
-          <h2 className="pbjt-main__title">
+      <div className={cn("pbjt-main")}>
+        <div className={cn("pbjt-main__left")}>
+          <span className={cn("pbjt-bar")} aria-hidden="true" />
+          <h2 className={cn("pbjt-main__title")}>
             Strengthening Local
             <br />
             Groups and Collectives
           </h2>
-          <p className="pbjt-main__lead">
+          <p className={cn("pbjt-main__lead")}>
             PBJT works through existing collectives, worker groups, vendor
             associations, MSMEs, women&rsquo;s collectives and SHGs, youth and
             farmer groups, recognising them as the foundation of democratic
             participation and accountability.
           </p>
 
-          <ul className="pbjt-features">
+          <ul className={cn("pbjt-features")}>
             {features.map((f) => (
-              <li key={f.title} className="pbjt-feature">
-                <span className="pbjt-feature__icon" aria-hidden="true">
+              <li key={f.title} className={cn("pbjt-feature")}>
+                <span className={cn("pbjt-feature__icon")} aria-hidden="true">
                   {f.icon}
                 </span>
-                <div className="pbjt-feature__body">
-                  <h3 className="pbjt-feature__title">{f.title}</h3>
-                  <p className="pbjt-feature__desc">{f.desc}</p>
+                <div className={cn("pbjt-feature__body")}>
+                  <h3 className={cn("pbjt-feature__title")}>{f.title}</h3>
+                  <p className={cn("pbjt-feature__desc")}>{f.desc}</p>
                 </div>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="pbjt-main__right">
+        <div className={cn("pbjt-main__right")}>
           {cards.map((c) => (
-            <figure key={c.caption} className="pbjt-card">
-              <img src={c.src} alt={c.alt} className="pbjt-card__img" />
-              <figcaption className="pbjt-card__caption">
-                <span className="pbjt-card__icon" aria-hidden="true">
+            <figure key={c.caption} className={cn("pbjt-card")}>
+              <img src={c.src} alt={c.alt} className={cn("pbjt-card__img")} />
+              <figcaption className={cn("pbjt-card__caption")}>
+                <span className={cn("pbjt-card__icon")} aria-hidden="true">
                   {c.icon}
                 </span>
-                <span className="pbjt-card__text">{c.caption}</span>
+                <span className={cn("pbjt-card__text")}>{c.caption}</span>
               </figcaption>
             </figure>
           ))}
@@ -202,9 +209,9 @@ export default function FocusAreas() {
       </div>
 
       {/* FOOTER STRIP */}
-      <footer className="pbjt-footer">
-        <div className="pbjt-footer__message">
-          <span className="pbjt-footer__icon" aria-hidden="true">
+      <footer className={cn("pbjt-footer")}>
+        <div className={cn("pbjt-footer__message")}>
+          <span className={cn("pbjt-footer__icon")} aria-hidden="true">
             {HandsHeartIcon}
           </span>
           <p>
@@ -212,10 +219,10 @@ export default function FocusAreas() {
             engaged as equal partners in shaping fair, sustainable futures.
           </p>
         </div>
-        <ul className="pbjt-tags">
+        <ul className={cn("pbjt-tags")}>
           {tags.map((t) => (
-            <li key={t.label} className="pbjt-tag">
-              <span className="pbjt-tag__icon" aria-hidden="true">
+            <li key={t.label} className={cn("pbjt-tag")}>
+              <span className={cn("pbjt-tag__icon")} aria-hidden="true">
                 {t.icon}
               </span>
               {t.label}
@@ -226,3 +233,4 @@ export default function FocusAreas() {
     </section>
   );
 }
+

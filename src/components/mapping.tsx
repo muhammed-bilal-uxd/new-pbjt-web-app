@@ -16,277 +16,13 @@ import {
   Route,
 } from "lucide-react";
 import type { ReactNode } from "react";
+import styles from "./mapping.module.css";
 
-/* ============================================================
-   PAGE STYLES
-   All CSS lives in this constant. Class names are prefixed
-   (vui-) to keep the global namespace clean.
-   ============================================================ */
-const STYLES = `
-:root {
-  --color-primary: #d62828;
-  --color-primary-dark: #a51d1d;
-  --color-primary-soft: #fdecec;
-  --color-primary-tint: #fef5f5;
-  --color-bg: #fafaf7;
-  --color-surface: #ffffff;
-  --color-surface-alt: #f4f3ee;
-  --color-text: #1a1a1a;
-  --color-text-muted: #555;
-  --color-text-soft: #777;
-  --color-border: #ececec;
-  --color-water: #4a9fd9;
-  --color-leaf: #5cab5c;
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
-  --font-display: "Bricolage Grotesque", "SF Pro Display", system-ui, sans-serif;
-  --font-body: "Plus Jakarta Sans", "SF Pro Text", system-ui, sans-serif;
-}
+const s = styles;
 
-.vui-main * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
-body {
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--color-text);
-  background: var(--color-bg);
-  -webkit-font-smoothing: antialiased;
-  background-image:
-    radial-gradient(circle at 0% 0%, rgba(214,40,40,0.04) 0%, transparent 35%),
-    radial-gradient(circle at 100% 100%, rgba(92,171,92,0.04) 0%, transparent 35%);
-  background-attachment: fixed;
+function cx(...classes: Array<string | undefined>) {
+  return classes.filter(Boolean).join(" ");
 }
-img, svg { display: block; max-width: 100%; }
-ul, ol { list-style: none; }
-h1, h2, h3 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-}
-:focus-visible { outline: 2px solid var(--pbjt-primary-color); outline-offset: 3px; border-radius: 4px; }
-
-/* Layout */
-.vui-main { min-height: 100vh; padding: clamp(16px, 3vw, 40px); }
-.vui-container { max-width: 1440px; margin: 0 auto; }
-.vui-layout {
-  display: grid;
-  grid-template-columns: minmax(280px, 340px) 1fr;
-  gap: 20px;
-  align-items: start;
-}
-.vui-cardGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.vui-footer {
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--color-border);
-  text-align: center;
-  color: var(--color-text-soft);
-  font-size: 0.85rem;
-}
-.vui-footer strong { color: var(--pbjt-primary-color); font-weight: 700; }
-
-/* Sidebar */
-.vui-sidebar {
-  display: flex; flex-direction: column; gap: 24px;
-  position: sticky; top: 24px; height: fit-content;
-}
-.vui-heroCard {
-  background: var(--color-surface);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--color-border);
-}
-.vui-heroBanner {
-  background: linear-gradient(135deg, var(--pbjt-primary-color) 0%, var(--color-primary-dark) 100%);
-  color: #fff;
-  padding: 32px 24px 40px;
-  position: relative; overflow: hidden;
-}
-.vui-heroBanner::before {
-  content: ""; position: absolute; top: -40px; right: -40px;
-  width: 140px; height: 140px; border-radius: 50%;
-  background: rgba(255,255,255,0.08);
-}
-.vui-heroBanner::after {
-  content: ""; position: absolute; bottom: -60px; left: -30px;
-  width: 120px; height: 120px; border-radius: 50%;
-  background: rgba(255,255,255,0.06);
-}
-.vui-heroEyebrow {
-  font-size: 0.75rem; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.12em;
-  opacity: 0.85; margin-bottom: 12px; position: relative; z-index: 1;
-}
-.vui-heroTitle {
-  font-size: clamp(1.75rem, 2.4vw, 2.4rem);
-  line-height: 1.05; font-weight: 800;
-  letter-spacing: -0.03em; position: relative; z-index: 1;
-}
-.vui-heroBody { padding: 24px; }
-.vui-heroSubtitle {
-  font-size: 0.95rem; color: var(--color-text-muted);
-  margin-bottom: 24px; line-height: 1.55;
-}
-.vui-stepList { display: flex; flex-direction: column; gap: 16px; }
-.vui-stepItem {
-  display: grid; grid-template-columns: 36px 1fr; gap: 12px;
-  align-items: flex-start; padding: 8px;
-  border-radius: 8px; transition: background-color 0.15s ease;
-}
-.vui-stepItem:hover { background: var(--color-primary-tint); }
-.vui-stepNumber {
-  display: flex; align-items: center; justify-content: center;
-  width: 32px; height: 32px; border-radius: 50%;
-  background: var(--pbjt-primary-color); color: #fff;
-  font-family: var(--font-display); font-weight: 700;
-  font-size: 0.95rem; flex-shrink: 0;
-}
-.vui-stepContent { display: flex; flex-direction: column; gap: 2px; }
-.vui-stepIconRow {
-  display: flex; align-items: center; gap: 8px;
-  color: var(--pbjt-primary-color);
-}
-.vui-stepLabel {
-  font-family: var(--font-display); font-weight: 700;
-  font-size: 1rem; color: var(--pbjt-primary-color);
-  letter-spacing: -0.01em;
-}
-.vui-stepDesc { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.45; }
-
-/* Card */
-.vui-card {
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  display: flex; flex-direction: column; gap: 16px;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-border);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  position: relative; overflow: hidden;
-}
-.vui-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.vui-cardHeader {
-  display: grid; grid-template-columns: 48px 1fr; gap: 16px;
-  align-items: flex-start;
-}
-.vui-numberBadge {
-  display: flex; align-items: center; justify-content: center;
-  width: 44px; height: 44px; border-radius: 50%;
-  background: var(--pbjt-primary-color); color: #fff;
-  font-family: var(--font-display); font-weight: 700;
-  font-size: 1.25rem; flex-shrink: 0;
-}
-.vui-titleBlock { display: flex; flex-direction: column; gap: 4px; }
-.vui-title {
-  font-size: 1.35rem; font-weight: 700;
-  color: var(--color-text); text-transform: uppercase;
-  letter-spacing: -0.01em;
-}
-.vui-subtitle { font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500; }
-.vui-body { flex: 1; display: flex; flex-direction: column; gap: 16px; }
-.vui-cardFooter {
-  display: flex; flex-wrap: wrap; gap: 16px;
-  padding-top: 16px;
-  border-top: 1px dashed var(--color-border);
-  justify-content: space-around;
-}
-.vui-footerItem {
-  display: flex; flex-direction: column; align-items: center;
-  gap: 8px; flex: 1; min-width: 60px;
-}
-.vui-footerIconCircle {
-  display: flex; align-items: center; justify-content: center;
-  width: 40px; height: 40px; border-radius: 50%;
-}
-.vui-footerNeutral { background: var(--color-surface-alt); color: var(--color-text); }
-.vui-footerPrimary { background: var(--color-primary-soft); color: var(--pbjt-primary-color); }
-.vui-footerWater { background: rgba(74,159,217,0.12); color: var(--color-water); }
-.vui-footerLeaf { background: rgba(92,171,92,0.14); color: var(--color-leaf); }
-.vui-footerCheck { background: var(--pbjt-primary-color); color: #fff; }
-.vui-footerLabel {
-  font-size: 0.75rem; color: var(--color-text-muted);
-  text-align: center; font-weight: 500; line-height: 1.3;
-}
-
-/* Priorities (step 2) */
-.vui-priorityList { display: flex; flex-direction: column; gap: 12px; }
-.vui-priorityItem {
-  display: grid; grid-template-columns: 40px 1fr; gap: 12px;
-  align-items: center; padding: 12px;
-  background: var(--color-primary-tint);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-primary-soft);
-}
-.vui-priorityIcon {
-  display: flex; align-items: center; justify-content: center;
-  width: 36px; height: 36px; border-radius: 50%;
-  background: var(--pbjt-primary-color); color: #fff; flex-shrink: 0;
-}
-.vui-priorityLabel { font-weight: 700; font-size: 0.95rem; color: var(--color-text); }
-.vui-priorityDetail { font-size: 0.8rem; color: var(--color-text-muted); }
-
-/* Plan (step 3) */
-.vui-clipboardWrap {
-  background: var(--color-primary-tint);
-  border-radius: var(--radius-md);
-  padding: 16px;
-  display: grid; grid-template-columns: auto 1fr; gap: 16px;
-  align-items: flex-start;
-}
-.vui-clipboardIcon {
-  width: 56px; height: 64px;
-  background: var(--color-surface);
-  border: 2px solid var(--pbjt-primary-color);
-  border-radius: 8px;
-  position: relative;
-  display: flex; flex-direction: column;
-  padding: 12px 8px; gap: 4px; flex-shrink: 0;
-}
-.vui-clipboardIcon::before {
-  content: ""; position: absolute; top: -8px; left: 50%;
-  transform: translateX(-50%);
-  width: 24px; height: 12px;
-  background: var(--pbjt-primary-color); border-radius: 4px;
-}
-.vui-clipCheck { width: 100%; height: 3px; background: var(--pbjt-primary-color); border-radius: 2px; }
-.vui-clipboardList { display: flex; flex-direction: column; gap: 8px; }
-.vui-clipboardItem {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 0.9rem; font-weight: 600; color: var(--color-text);
-}
-.vui-clipboardItem svg { color: var(--pbjt-primary-color); flex-shrink: 0; }
-.vui-clipboardItem small {
-  font-weight: 400; color: var(--color-text-muted);
-  font-size: 0.78rem; margin-left: 4px;
-}
-
-/* Responsive */
-@media (max-width: 1180px) {
-  .vui-layout { grid-template-columns: minmax(260px, 320px) 1fr; }
-  .vui-cardGrid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 960px) {
-  .vui-layout { grid-template-columns: 1fr; }
-  .vui-sidebar { position: static; }
-}
-@media (max-width: 640px) {
-  .vui-cardGrid { grid-template-columns: 1fr; gap: 16px; }
-  .vui-main { padding: 16px; }
-  .vui-card { padding: 20px; }
-  .vui-title { font-size: 1.15rem; }
-  .vui-numberBadge { width: 40px; height: 40px; font-size: 1.1rem; }
-  .vui-heroBanner { padding: 24px 20px 32px; }
-  .vui-heroBody { padding: 20px; }
-  .vui-cardFooter { gap: 8px; }
-  .vui-footerItem { min-width: 52px; }
-}
-`;
 
 /* ============================================================
    INLINE SVG ILLUSTRATIONS
@@ -453,17 +189,17 @@ const FooterItem = ({
   variant?: FooterVariant;
 }) => {
   const variantClass = {
-    neutral: "vui-footerNeutral",
-    primary: "vui-footerPrimary",
-    water: "vui-footerWater",
-    leaf: "vui-footerLeaf",
-    check: "vui-footerCheck",
+    neutral: s["vui-footerNeutral"],
+    primary: s["vui-footerPrimary"],
+    water: s["vui-footerWater"],
+    leaf: s["vui-footerLeaf"],
+    check: s["vui-footerCheck"],
   }[variant];
 
   return (
-    <div className="vui-footerItem">
-      <div className={`vui-footerIconCircle ${variantClass}`}>{icon}</div>
-      <span className="vui-footerLabel">{label}</span>
+    <div className={s["vui-footerItem"]}>
+      <div className={cx(s["vui-footerIconCircle"], variantClass)}>{icon}</div>
+      <span className={s["vui-footerLabel"]}>{label}</span>
     </div>
   );
 };
@@ -481,16 +217,16 @@ const StepCard = ({
   children: ReactNode;
   footer?: ReactNode;
 }) => (
-  <article className="vui-card">
-    <header className="vui-cardHeader">
-      <div className="vui-numberBadge">{number}</div>
-      <div className="vui-titleBlock">
-        <h2 className="vui-title">{title}</h2>
-        <p className="vui-subtitle">{subtitle}</p>
+  <article className={s["vui-card"]}>
+    <header className={s["vui-cardHeader"]}>
+      <div className={s["vui-numberBadge"]}>{number}</div>
+      <div className={s["vui-titleBlock"]}>
+        <h2 className={s["vui-title"]}>{title}</h2>
+        <p className={s["vui-subtitle"]}>{subtitle}</p>
       </div>
     </header>
-    <div className="vui-body">{children}</div>
-    {footer && <div className="vui-cardFooter">{footer}</div>}
+    <div className={s["vui-body"]}>{children}</div>
+    {footer && <div className={s["vui-cardFooter"]}>{footer}</div>}
   </article>
 );
 
@@ -504,26 +240,26 @@ const SIDEBAR_STEPS = [
 ];
 
 const Sidebar = () => (
-  <aside className="vui-sidebar">
-    <div className="vui-heroCard">
-      <div className="vui-heroBanner">
-        <p className="vui-heroEyebrow">A Community Roadmap</p>
-        <h1 className="vui-heroTitle">Building a Better Village Together</h1>
+  <aside className={s["vui-sidebar"]}>
+    <div className={s["vui-heroCard"]}>
+      <div className={s["vui-heroBanner"]}>
+        <p className={s["vui-heroEyebrow"]}>A Community Roadmap</p>
+        <h1 className={s["vui-heroTitle"]}>Building a Better Village Together</h1>
       </div>
-      <div className="vui-heroBody">
-        <p className="vui-heroSubtitle">
+      <div className={s["vui-heroBody"]}>
+        <p className={s["vui-heroSubtitle"]}>
           Simple steps for a cleaner, greener, and stronger village.
         </p>
-        <ol className="vui-stepList">
+        <ol className={s["vui-stepList"]}>
           {SIDEBAR_STEPS.map(({ n, Icon, label, desc }) => (
-            <li key={n} className="vui-stepItem">
-              <div className="vui-stepNumber">{n}</div>
-              <div className="vui-stepContent">
-                <div className="vui-stepIconRow">
+            <li key={n} className={s["vui-stepItem"]}>
+              <div className={s["vui-stepNumber"]}>{n}</div>
+              <div className={s["vui-stepContent"]}>
+                <div className={s["vui-stepIconRow"]}>
                   <Icon size={16} strokeWidth={2.2} />
-                  <span className="vui-stepLabel">{label}</span>
+                  <span className={s["vui-stepLabel"]}>{label}</span>
                 </div>
-                <p className="vui-stepDesc">{desc}</p>
+                <p className={s["vui-stepDesc"]}>{desc}</p>
               </div>
             </li>
           ))}
@@ -545,21 +281,19 @@ export const metadata = {
 export default function Mapping() {
   return (
     <>
-      {/* Inline Google Fonts and global styles */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet"
       />
-      <style dangerouslySetInnerHTML={{ __html: STYLES }} />
 
-      <main className="vui-main">
-        <div className="vui-container">
-          <div className="vui-layout">
+      <main className={s["vui-main"]}>
+        <div className={s["vui-container"]}>
+          <div className={s["vui-layout"]}>
             <Sidebar />
 
-            <div className="vui-cardGrid">
+            <div className={s["vui-cardGrid"]}>
               {/* STEP 1 */}
               <StepCard
                 number={1}
@@ -584,32 +318,32 @@ export default function Mapping() {
                 title="Identify Priorities"
                 subtitle="What needs our attention first."
               >
-                <ul className="vui-priorityList">
-                  <li className="vui-priorityItem">
-                    <div className="vui-priorityIcon"><AlertCircle size={18} /></div>
+                <ul className={s["vui-priorityList"]}>
+                  <li className={s["vui-priorityItem"]}>
+                    <div className={s["vui-priorityIcon"]}><AlertCircle size={18} /></div>
                     <div>
-                      <div className="vui-priorityLabel">Dump sites</div>
-                      <div className="vui-priorityDetail">health risk</div>
+                      <div className={s["vui-priorityLabel"]}>Dump sites</div>
+                      <div className={s["vui-priorityDetail"]}>health risk</div>
                     </div>
                   </li>
-                  <li className="vui-priorityItem">
-                    <div className="vui-priorityIcon"><CloudRain size={18} /></div>
+                  <li className={s["vui-priorityItem"]}>
+                    <div className={s["vui-priorityIcon"]}><CloudRain size={18} /></div>
                     <div>
-                      <div className="vui-priorityLabel">Poor drainage</div>
-                      <div className="vui-priorityDetail">flooding</div>
+                      <div className={s["vui-priorityLabel"]}>Poor drainage</div>
+                      <div className={s["vui-priorityDetail"]}>flooding</div>
                     </div>
                   </li>
-                  <li className="vui-priorityItem">
-                    <div className="vui-priorityIcon"><Sprout size={18} /></div>
+                  <li className={s["vui-priorityItem"]}>
+                    <div className={s["vui-priorityIcon"]}><Sprout size={18} /></div>
                     <div>
-                      <div className="vui-priorityLabel">Few trees</div>
-                      <div className="vui-priorityDetail">heat, erosion</div>
+                      <div className={s["vui-priorityLabel"]}>Few trees</div>
+                      <div className={s["vui-priorityDetail"]}>heat, erosion</div>
                     </div>
                   </li>
-                  <li className="vui-priorityItem">
-                    <div className="vui-priorityIcon"><Trash2 size={18} /></div>
+                  <li className={s["vui-priorityItem"]}>
+                    <div className={s["vui-priorityIcon"]}><Trash2 size={18} /></div>
                     <div>
-                      <div className="vui-priorityLabel">Limited waste management</div>
+                      <div className={s["vui-priorityLabel"]}>Limited waste management</div>
                     </div>
                   </li>
                 </ul>
@@ -621,19 +355,19 @@ export default function Mapping() {
                 title="Plan Together"
                 subtitle="Agree on actions, roles, and timeline."
               >
-                <div className="vui-clipboardWrap">
-                  <div className="vui-clipboardIcon">
-                    <div className="vui-clipCheck" />
-                    <div className="vui-clipCheck" />
-                    <div className="vui-clipCheck" />
-                    <div className="vui-clipCheck" />
+                <div className={s["vui-clipboardWrap"]}>
+                  <div className={s["vui-clipboardIcon"]}>
+                    <div className={s["vui-clipCheck"]} />
+                    <div className={s["vui-clipCheck"]} />
+                    <div className={s["vui-clipCheck"]} />
+                    <div className={s["vui-clipCheck"]} />
                   </div>
-                  <ul className="vui-clipboardList">
-                    <li className="vui-clipboardItem"><Users size={16} /> Assign roles & set dates</li>
-                    <li className="vui-clipboardItem"><Calendar size={16} /> Review & adjust plan</li>
-                    <li className="vui-clipboardItem"><Sprout size={16} /> Plant trees <small>(shade & soil)</small></li>
-                    <li className="vui-clipboardItem"><Droplet size={16} /> Improve drainage</li>
-                    <li className="vui-clipboardItem"><Trash2 size={16} /> Clean dump sites</li>
+                  <ul className={s["vui-clipboardList"]}>
+                    <li className={s["vui-clipboardItem"]}><Users size={16} /> Assign roles & set dates</li>
+                    <li className={s["vui-clipboardItem"]}><Calendar size={16} /> Review & adjust plan</li>
+                    <li className={s["vui-clipboardItem"]}><Sprout size={16} /> Plant trees <small>(shade & soil)</small></li>
+                    <li className={s["vui-clipboardItem"]}><Droplet size={16} /> Improve drainage</li>
+                    <li className={s["vui-clipboardItem"]}><Trash2 size={16} /> Clean dump sites</li>
                   </ul>
                 </div>
               </StepCard>
@@ -692,7 +426,7 @@ export default function Mapping() {
             </div>
           </div>
 
-          <footer className="vui-footer">
+          <footer className={s["vui-footer"]}>
             <p>
               <strong>Building a Better Village Together</strong> &middot; A community-led, step-by-step roadmap.
             </p>

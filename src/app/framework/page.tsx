@@ -6,11 +6,18 @@
 //   /public/images/farmer.jpg
 
 import Banner from "@/components/banner";
-import "./framework.css";
+import styles from "./framework.module.css";
+
+const cn = (names: string) =>
+  names
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((name) => styles[name] ?? name)
+    .join(" ");
 
 export default function Framework() {
   return (
-    <div className="pbjt framework-page">
+    <div className={cn("pbjt framework-page")}>
       {/* ============ HERO ============ */}
 
       <Banner
@@ -20,21 +27,21 @@ export default function Framework() {
       />
 
       {/* ============ TOOLS ============ */}
-      <section className="pbjt-tools">
-        <div className="pbjt-tools__text">
-          <span className="pbjt-bar" aria-hidden="true" />
-          <p className="pbjt-tools__lead">
+      <section className={cn("pbjt-tools")}>
+        <div className={cn("pbjt-tools__text")}>
+          <span className={cn("pbjt-bar")} aria-hidden="true" />
+          <p className={cn("pbjt-tools__lead")}>
             To make Place-Based Transition actionable, PBJT develops and uses
             simple, practical tools that communities and practitioners can
             actually use.
           </p>
 
-          <div className="pbjt-item">
-            <div className="pbjt-icon">
+          <div className={cn("pbjt-item")}>
+            <div className={cn("pbjt-icon")}>
               <IconNetwork />
             </div>
             <div>
-              <h3 className="pbjt-item__heading">These include:</h3>
+              <h3 className={cn("pbjt-item__heading")}>These include:</h3>
               <p>
                 Value Chain Mapping Tools that identify informal and last-tier
                 actors, Community Impact Reflection Guides to assess
@@ -45,12 +52,12 @@ export default function Framework() {
             </div>
           </div>
 
-          <div className="pbjt-item">
-            <div className="pbjt-icon">
+          <div className={cn("pbjt-item")}>
+            <div className={cn("pbjt-icon")}>
               <IconQuestion />
             </div>
             <div>
-              <h3 className="pbjt-item__heading">
+              <h3 className={cn("pbjt-item__heading")}>
                 Each tool is designed to support discussion, not compliance.
               </h3>
               <p>
@@ -62,20 +69,20 @@ export default function Framework() {
           </div>
         </div>
 
-        <div className="pbjt-tools__image">
+        <div className={cn("pbjt-tools__image")}>
           <img src="/images/focus-area/img171.jpg" alt="Informal worker collecting recyclables" />
         </div>
       </section>
 
       {/* ============ PRINCIPLES ============ */}
-      <section className="pbjt-principles">
-        <div className="pbjt-principles__card">
-          <div className="pbjt-item">
-            <div className="pbjt-icon">
+      <section className={cn("pbjt-principles")}>
+        <div className={cn("pbjt-principles__card")}>
+          <div className={cn("pbjt-item")}>
+            <div className={cn("pbjt-icon")}>
               <IconPeople />
             </div>
             <div>
-              <h3 className="pbjt-item__heading">
+              <h3 className={cn("pbjt-item__heading")}>
                 Embedded in Business Responsibility:
               </h3>
               <p>
@@ -95,14 +102,14 @@ export default function Framework() {
             </div>
           </div>
 
-          <hr className="pbjt-divider" />
+          <hr className={cn("pbjt-divider")} />
 
-          <div className="pbjt-item">
-            <div className="pbjt-icon">
+          <div className={cn("pbjt-item")}>
+            <div className={cn("pbjt-icon")}>
               <IconHands />
             </div>
             <div>
-              <h3 className="pbjt-item__heading">
+              <h3 className={cn("pbjt-item__heading")}>
                 Collectivisation and Collective Agency:
               </h3>
               <p>
@@ -119,24 +126,24 @@ export default function Framework() {
           </div>
         </div>
 
-        <div className="pbjt-principles__image">
+        <div className={cn("pbjt-principles__image")}>
           <img src="/images/framework/img137.jpg" alt="Farmer in field" />
         </div>
       </section>
 
       {/* ============ LAST TIER ============ */}
-      <section className="pbjt-tiers">
-        <div className="pbjt-tiers__head">
-          <h2 className="pbjt-tiers__title">Starting from the Last Tier</h2>
-          <span className="pbjt-bar pbjt-bar--center" aria-hidden="true" />
+      <section className={cn("pbjt-tiers")}>
+        <div className={cn("pbjt-tiers__head")}>
+          <h2 className={cn("pbjt-tiers__title")}>Starting from the Last Tier</h2>
+          <span className={cn("pbjt-bar pbjt-bar--center")} aria-hidden="true" />
         </div>
 
-        <div className="pbjt-tiers__grid">
-          <article className="pbjt-tiers__card">
-            <div className="pbjt-icon">
+        <div className={cn("pbjt-tiers__grid")}>
+          <article className={cn("pbjt-tiers__card")}>
+            <div className={cn("pbjt-icon")}>
               <IconPeople />
             </div>
-            <h3 className="pbjt-tiers__heading">
+            <h3 className={cn("pbjt-tiers__heading")}>
               PBJT prioritises those most affected
             </h3>
             <p>
@@ -148,11 +155,11 @@ export default function Framework() {
             </p>
           </article>
 
-          <article className="pbjt-tiers__card">
-            <div className="pbjt-icon">
+          <article className={cn("pbjt-tiers__card")}>
+            <div className={cn("pbjt-icon")}>
               <IconPin />
             </div>
-            <h3 className="pbjt-tiers__heading">Place-Based and Context-Driven</h3>
+            <h3 className={cn("pbjt-tiers__heading")}>Place-Based and Context-Driven</h3>
             <p>
               Every place is different. PBJT is rooted in local social,
               economic, cultural, and environmental contexts. Instead of
@@ -162,11 +169,11 @@ export default function Framework() {
             </p>
           </article>
 
-          <article className="pbjt-tiers__card">
-            <div className="pbjt-icon">
+          <article className={cn("pbjt-tiers__card")}>
+            <div className={cn("pbjt-icon")}>
               <IconScales />
             </div>
-            <h3 className="pbjt-tiers__heading">
+            <h3 className={cn("pbjt-tiers__heading")}>
               Equity and Redistribution of Power
             </h3>
             <p>
@@ -253,3 +260,4 @@ function IconScales() {
     </svg>
   );
 }
+

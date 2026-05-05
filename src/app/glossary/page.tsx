@@ -15,7 +15,14 @@ import {
   ChevronDown,
   ArrowRight,
 } from 'lucide-react';
-import './Glossary.css';
+import styles from './Glossary.module.css';
+
+const cn = (names: string) =>
+  names
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((name) => styles[name] ?? name)
+    .join(' ');
 
 const terms = [
   {
@@ -156,16 +163,16 @@ export default function Glossary() {
   });
 
   return (
-    <div className="glossary-page">
+    <div className={cn("glossary-page")}>
       {/* HERO */}
-      <header className="hero">
-        <div className="hero-overlay" />
-        <div className="hero-inner">
-          <h1 className="hero-title">Glossary</h1>
-          <p className="hero-subtitle">
+      <header className={cn("hero")}>
+        <div className={cn("hero-overlay")} />
+        <div className={cn("hero-inner")}>
+          <h1 className={cn("hero-title")}>Glossary</h1>
+          <p className={cn("hero-subtitle")}>
             Understanding the language of Place-Based Just Transition
           </p>
-          <div className="hero-tag">
+          <div className={cn("hero-tag")}>
             <p>
               Key terms, concepts, and frameworks that shape how PBJT works on
               the ground.
@@ -174,10 +181,10 @@ export default function Glossary() {
         </div>
       </header>
 
-      <main className="container">
+      <main className={cn("container")}>
         {/* SEARCH */}
-        <div className="search-bar">
-          <Search size={20} className="search-icon" />
+        <div className={cn("search-bar")}>
+          <Search size={20} className={cn("search-icon")} />
           <input
             type="text"
             placeholder="Search for a term, acronym or concept..."
@@ -187,15 +194,15 @@ export default function Glossary() {
         </div>
 
         {/* ALPHABET FILTER */}
-        <div className="filter-section">
-          <p className="filter-label">Browse by alphabet</p>
-          <div className="alphabet-filter">
+        <div className={cn("filter-section")}>
+          <p className={cn("filter-label")}>Browse by alphabet</p>
+          <div className={cn("alphabet-filter")}>
             {alphabet.map((letter) => (
               <button
                 key={letter}
-                className={`alphabet-btn ${
+                className={cn(`alphabet-btn ${
                   activeLetter === letter ? 'active' : ''
-                }`}
+                }`)}
                 onClick={() => setActiveLetter(letter)}
               >
                 {letter}
@@ -205,15 +212,15 @@ export default function Glossary() {
         </div>
 
         {/* CATEGORY FILTER */}
-        <div className="filter-section">
-          <p className="filter-label">Filter by category</p>
-          <div className="category-filter">
+        <div className={cn("filter-section")}>
+          <p className={cn("filter-label")}>Filter by category</p>
+          <div className={cn("category-filter")}>
             {categories.map((cat) => (
               <button
                 key={cat}
-                className={`category-btn ${
+                className={cn(`category-btn ${
                   activeCategory === cat ? 'active' : ''
-                }`}
+                }`)}
                 onClick={() => setActiveCategory(cat)}
               >
                 {cat}
@@ -223,24 +230,24 @@ export default function Glossary() {
         </div>
 
         {/* TERMS GRID */}
-        <div className="terms-grid">
+        <div className={cn("terms-grid")}>
           {filteredTerms.map((term) => {
             const Icon = term.icon;
             return (
-              <article key={term.id} className="term-card">
-                <div className="term-icon">
+              <article key={term.id} className={cn("term-card")}>
+                <div className={cn("term-icon")}>
                   <Icon size={22} />
                 </div>
-                <div className="term-header">
-                  <h3 className="term-name">{term.name}</h3>
+                <div className={cn("term-header")}>
+                  <h3 className={cn("term-name")}>{term.name}</h3>
                   <span
-                    className={`term-category cat-${term.category.toLowerCase()}`}
+                    className={cn(`term-category cat-${term.category.toLowerCase()}`)}
                   >
                     {term.category.toUpperCase()}
                   </span>
                 </div>
-                <p className="term-description">{term.description}</p>
-                <a href="#" className="read-more">
+                <p className={cn("term-description")}>{term.description}</p>
+                <a href="#" className={cn("read-more")}>
                   Read more <ArrowRight size={14} />
                 </a>
               </article>
@@ -249,43 +256,43 @@ export default function Glossary() {
         </div>
 
         {filteredTerms.length === 0 && (
-          <div className="no-results">No terms match your filters.</div>
+          <div className={cn("no-results")}>No terms match your filters.</div>
         )}
 
-        <div className="view-all-wrapper">
-          <button className="view-all-btn">
+        <div className={cn("view-all-wrapper")}>
+          <button className={cn("view-all-btn")}>
             View all terms <ChevronDown size={16} />
           </button>
         </div>
 
         {/* FEATURED TERMS */}
-        <section className="featured-section">
-          <div className="section-header">
+        <section className={cn("featured-section")}>
+          <div className={cn("section-header")}>
             <h2>Featured terms</h2>
-            <a href="#" className="view-all-link">
+            <a href="#" className={cn("view-all-link")}>
               View all featured <ArrowRight size={14} />
             </a>
           </div>
-          <div className="featured-grid">
+          <div className={cn("featured-grid")}>
             {featuredTerms.map((item) => {
               const Icon = item.icon;
               return (
                 <article
                   key={item.id}
-                  className="featured-card"
+                  className={cn("featured-card")}
                   style={{ backgroundImage: `url(${item.image})` }}
                 >
-                  <div className="featured-overlay" />
-                  <div className="featured-icon-circle">
+                  <div className={cn("featured-overlay")} />
+                  <div className={cn("featured-icon-circle")}>
                     <Icon size={20} />
                   </div>
-                  <div className="featured-content">
+                  <div className={cn("featured-content")}>
                     <h3>{item.name}</h3>
                     {item.subtitle && (
-                      <p className="featured-subtitle">{item.subtitle}</p>
+                      <p className={cn("featured-subtitle")}>{item.subtitle}</p>
                     )}
-                    <p className="featured-desc">{item.description}</p>
-                    <a href="#" className="explore-link">
+                    <p className={cn("featured-desc")}>{item.description}</p>
+                    <a href="#" className={cn("explore-link")}>
                       Explore <ArrowRight size={14} />
                     </a>
                   </div>
@@ -296,82 +303,82 @@ export default function Glossary() {
         </section>
 
         {/* CONNECTIONS DIAGRAM */}
-        <section className="connections-section">
-          <div className="connections-intro">
+        <section className={cn("connections-section")}>
+          <div className={cn("connections-intro")}>
             <h2>How key terms connect in PBJT</h2>
             <p>
               PBJT is an interconnected approach. These terms work together to
               build fair, inclusive, and sustainable economies.
             </p>
-            <button className="explore-framework-btn">
+            <button className={cn("explore-framework-btn")}>
               Explore the framework <ArrowRight size={14} />
             </button>
           </div>
-          <div className="connections-diagram">
-            <div className="diagram-node node-tl">
-              <div className="node-icon">
+          <div className={cn("connections-diagram")}>
+            <div className={cn("diagram-node node-tl")}>
+              <div className={cn("node-icon")}>
                 <Users size={16} />
               </div>
-              <div className="node-text">
+              <div className={cn("node-text")}>
                 <strong>Workers</strong>
                 <span>Dignified work and collective voice</span>
               </div>
             </div>
-            <div className="diagram-node node-tr">
-              <div className="node-icon">
+            <div className={cn("diagram-node node-tr")}>
+              <div className={cn("node-icon")}>
                 <Link2 size={16} />
               </div>
-              <div className="node-text">
+              <div className={cn("node-text")}>
                 <strong>Value Chain</strong>
                 <span>Inclusive of last-tier and informal actors</span>
               </div>
             </div>
-            <div className="diagram-node node-ml">
-              <div className="node-icon">
+            <div className={cn("diagram-node node-ml")}>
+              <div className={cn("node-icon")}>
                 <Store size={16} />
               </div>
-              <div className="node-text">
+              <div className={cn("node-text")}>
                 <strong>MSMEs</strong>
                 <span>Local enterprises as transition partners</span>
               </div>
             </div>
-            <div className="diagram-node node-mr">
-              <div className="node-icon">
+            <div className={cn("diagram-node node-mr")}>
+              <div className={cn("node-icon")}>
                 <FileText size={16} />
               </div>
-              <div className="node-text">
+              <div className={cn("node-text")}>
                 <strong>ESG &amp; BRSR</strong>
                 <span>Accountability through real impact</span>
               </div>
             </div>
-            <div className="diagram-node node-bm">
-              <div className="node-icon">
+            <div className={cn("diagram-node node-bm")}>
+              <div className={cn("node-icon")}>
                 <UsersRound size={16} />
               </div>
-              <div className="node-text">
+              <div className={cn("node-text")}>
                 <strong>Communities</strong>
                 <span>Collective agency and local resilience</span>
               </div>
             </div>
-            <div className="diagram-center">
-              <span className="center-title">PBJT</span>
-              <span className="center-sub">Place-Based Just Transition</span>
+            <div className={cn("diagram-center")}>
+              <span className={cn("center-title")}>PBJT</span>
+              <span className={cn("center-sub")}>Place-Based Just Transition</span>
             </div>
           </div>
         </section>
 
         {/* ALL TERMS A-Z */}
-        <section className="all-terms-section">
-          <div className="section-header">
+        <section className={cn("all-terms-section")}>
+          <div className={cn("section-header")}>
             <h2>All terms A–Z</h2>
-            <a href="#" className="view-all-link">
+            <a href="#" className={cn("view-all-link")}>
               View all terms <ArrowRight size={14} />
             </a>
           </div>
-          <div className="all-terms-grid">
+          <div className={cn("all-terms-grid")}>
             {Object.entries(allTermsAZ).map(([letter, list]) => (
-              <div key={letter} className="letter-group">
-                <h3 className="letter-heading">{letter}</h3>
+              <div key={letter} className={cn("letter-group")}>
+                <h3 className={cn("letter-heading")}>{letter}</h3>
                 <ul>
                   {list.map((t) => (
                     <li key={t}>{t}</li>
@@ -384,23 +391,24 @@ export default function Glossary() {
       </main>
 
       {/* CTA BANNER */}
-      <section className="cta-banner">
-        <div className="cta-inner">
-          <div className="cta-left">
-            <div className="cta-icon">
+      <section className={cn("cta-banner")}>
+        <div className={cn("cta-inner")}>
+          <div className={cn("cta-left")}>
+            <div className={cn("cta-icon")}>
               <BookOpen size={26} />
             </div>
-            <div className="cta-text">
+            <div className={cn("cta-text")}>
               <h3>Understanding the terms is just the beginning.</h3>
               <p>Explore how these ideas translate into action.</p>
             </div>
           </div>
-          <div className="cta-buttons">
-            <button className="cta-btn">Explore Methodology</button>
-            <button className="cta-btn">View Framework</button>
+          <div className={cn("cta-buttons")}>
+            <button className={cn("cta-btn")}>Explore Methodology</button>
+            <button className={cn("cta-btn")}>View Framework</button>
           </div>
         </div>
       </section>
     </div>
   );
 }
+
