@@ -3,7 +3,7 @@
    External styles - no inline CSS in component.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap");
 
 /* ---------- Tokens ---------- */
 .pbjt {
@@ -22,7 +22,8 @@
 
   --pbjt-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
 
-  --pbjt-font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --pbjt-font-body:
+    "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 
   --pbjt-max: 1180px;
   --pbjt-gap: 28px;
@@ -219,9 +220,7 @@
    SECTION SHELL
    ============================================================ */
 .pbjt-section {
-  max-width: var(--pbjt-max);
-  margin: 0 auto;
-  padding: 48px 32px 24px;
+  padding-block: 48px 24px;
 }
 
 /* ---------- Boardroom ---------- */
@@ -283,9 +282,7 @@
    INFO BOXES
    ============================================================ */
 .pbjt-info {
-  max-width: var(--pbjt-max);
-  margin: 24px auto 0;
-  padding: 0 32px 36px;
+  margin-block: 24px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
@@ -316,10 +313,14 @@
 }
 
 .pbjt-banner__cell--with-text::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(20, 20, 30, 0.55), rgba(20, 20, 30, 0.25));
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 30, 0.55),
+    rgba(20, 20, 30, 0.25)
+  );
 }
 
 .pbjt-banner__title {
@@ -343,10 +344,8 @@
    BENEFITS
    ============================================================ */
 .pbjt-benefits {
-  max-width: var(--pbjt-max);
-  margin: 0 auto;
-  padding: 48px 32px 40px;
   text-align: center;
+  padding-block: 48px 40px;
 }
 
 .pbjt-benefits__lead {
@@ -361,7 +360,7 @@
 }
 
 .pbjt-benefits__lead::after {
-  content: '';
+  content: "";
   display: block;
   width: 70px;
   height: 3px;
@@ -387,7 +386,10 @@
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .pbjt-card:hover {
@@ -425,8 +427,7 @@
    FOOTNOTE
    ============================================================ */
 .pbjt-footnote {
-  max-width: var(--pbjt-max);
-  margin: 0 auto 56px;
+  margin-block: 0 56px;
   padding: 18px 24px;
   background: var(--pbjt-pink-soft);
   border-radius: var(--pbjt-radius-md);
@@ -484,12 +485,7 @@
 
 /* Small tablet / large mobile: 768px */
 @media (max-width: 768px) {
-  .pbjt-section {
-    padding: 40px 22px 16px;
-  }
-
   .pbjt-info {
-    padding: 0 22px 28px;
     grid-template-columns: 1fr;
   }
 
@@ -547,7 +543,7 @@
   }
 
   .pbjt-benefits {
-    padding: 36px 22px 32px;
+    padding-block: 36px 32px;
   }
 
   .pbjt-benefits__lead {

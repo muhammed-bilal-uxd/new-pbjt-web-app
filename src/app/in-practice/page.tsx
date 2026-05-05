@@ -1,14 +1,23 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import styles from './in-practice.module.css';
-import Image from 'next/image';
-import Link from 'next/link';
-import Banner from '@/components/banner';
+import { useState } from "react";
+import styles from "./in-practice.module.css";
+import Image from "next/image";
+import Link from "next/link";
+import Banner from "@/components/banner";
 
 /* ---------- Inline SVG icons (kept in JSX, no CSS) ---------- */
 const PeopleIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="32"
+    height="32"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
     <circle cx="9" cy="7" r="4" />
     <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
@@ -17,7 +26,16 @@ const PeopleIcon = () => (
 );
 
 const HandshakeIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="32"
+    height="32"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="m11 17 2 2a1 1 0 1 0 3-3" />
     <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
     <path d="m21 3 1 11h-2" />
@@ -27,7 +45,16 @@ const HandshakeIcon = () => (
 );
 
 const PlantIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="32"
+    height="32"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M7 20h10" />
     <path d="M10 20c5.5-2.5.8-6.4 3-10" />
     <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z" />
@@ -36,13 +63,31 @@ const PlantIcon = () => (
 );
 
 const BookIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
   </svg>
 );
 
 const MailIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <rect width="20" height="16" x="2" y="4" rx="2" />
     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
   </svg>
@@ -55,7 +100,16 @@ const MapPinIcon = () => (
 );
 
 const ArrowIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <line x1="5" y1="12" x2="19" y2="12" />
     <polyline points="12 5 19 12 12 19" />
   </svg>
@@ -63,26 +117,55 @@ const ArrowIcon = () => (
 
 /* ---------- Component ---------- */
 export default function PBJTInPractice() {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   const insights = [
-    { icon: <PeopleIcon />, text: 'How workers define dignity in the midst of transition.' },
-    { icon: <HandshakeIcon />, text: 'How communities negotiate responsibility with businesses.' },
-    { icon: <PlantIcon />, text: 'How informal actors adapt sustainability simply to survive.' },
+    {
+      icon: <PeopleIcon />,
+      text: "How workers define dignity in the midst of transition.",
+    },
+    {
+      icon: <HandshakeIcon />,
+      text: "How communities negotiate responsibility with businesses.",
+    },
+    {
+      icon: <PlantIcon />,
+      text: "How informal actors adapt sustainability simply to survive.",
+    },
   ];
 
   const locations = [
-    { name: 'Dindigul', color: '#f87171', href: 'dindigal', img: '/images/in-practice/dindukal.png' },
-    { name: 'Virudhnagar', color: '#fbbf24', href: '#', img: '/images/in-practice/virutunagar.png' },
-    { name: 'Krishnagiri', color: '#fb923c', href: '#', img: '/images/in-practice/krisnakiri.png' },
-    { name: 'Hosur', color: '#f97316', href: '#', img: '/images/in-practice/osur.png' },
+    {
+      name: "Dindigul",
+      color: "#f87171",
+      href: "dindigal",
+      img: "/images/in-practice/dindukal.png",
+    },
+    {
+      name: "Virudhnagar",
+      color: "#fbbf24",
+      href: "#",
+      img: "/images/in-practice/virutunagar.png",
+    },
+    {
+      name: "Krishnagiri",
+      color: "#fb923c",
+      href: "#",
+      img: "/images/in-practice/krisnakiri.png",
+    },
+    {
+      name: "Hosur",
+      color: "#f97316",
+      href: "#",
+      img: "/images/in-practice/osur.png",
+    },
   ];
 
   const handleSubscribe = (e: any) => {
     e.preventDefault();
     // TODO: wire to your API / mailing list
-    console.log('Subscribed:', email);
-    setEmail('');
+    console.log("Subscribed:", email);
+    setEmail("");
   };
 
   return (
@@ -107,15 +190,17 @@ export default function PBJTInPractice() {
             <h2 className={styles.practiceTitle}>
               <span className={styles.accentRed}>PBJT</span> In Practice
             </h2>
-            <h3 className={styles.practiceSubtitle}>What The Ground Teaches Us</h3>
+            <h3 className={styles.practiceSubtitle}>
+              What The Ground Teaches Us
+            </h3>
             <p className={styles.practiceParagraph}>
-              PBJT&apos;s learning emerges through real conversations on worksites,
-              in community meetings, and in everyday informal spaces. In one
-              cluster, workers told us that &lsquo;green jobs&rsquo; meant little
-              without wage security. In another village, sustainability investments
-              improved waste management but quietly increased unpaid labour for
-              women. These experiences expose the gap between intention and lived
-              impact.
+              PBJT&apos;s learning emerges through real conversations on
+              worksites, in community meetings, and in everyday informal spaces.
+              In one cluster, workers told us that &lsquo;green jobs&rsquo;
+              meant little without wage security. In another village,
+              sustainability investments improved waste management but quietly
+              increased unpaid labour for women. These experiences expose the
+              gap between intention and lived impact.
             </p>
 
             <button type="button" className={styles.exploreBtn}>
@@ -128,8 +213,12 @@ export default function PBJTInPractice() {
                 <BookIcon />
               </span>
               <div>
-                <p className={styles.taglineTitle}>Real stories. Local voices.</p>
-                <p className={styles.taglineSub}>Grounded insights from the field.</p>
+                <p className={styles.taglineTitle}>
+                  Real stories. Local voices.
+                </p>
+                <p className={styles.taglineSub}>
+                  Grounded insights from the field.
+                </p>
               </div>
             </div>
           </div>
@@ -148,11 +237,12 @@ export default function PBJTInPractice() {
       {/* ===== Field Insights ===== */}
       <section className={styles.insightsSection}>
         <h2 className={styles.insightsTitle}>
-          Our Field Insights <span className={styles.accentRed}>Centre</span> On:
+          Our Field Insights <span className={styles.accentRed}>Centre</span>{" "}
+          On:
         </h2>
         <span className={styles.titleUnderline} aria-hidden="true" />
 
-        <div className={styles.insightsGrid}>
+        <div className={styles.insightsGrid + " center-content"}>
           {insights.map((item, i) => (
             <article key={i} className={styles.insightCard}>
               <span className={styles.insightIconWrap}>{item.icon}</span>
@@ -164,7 +254,7 @@ export default function PBJTInPractice() {
       </section>
 
       {/* ===== Quote ===== */}
-      <section className={styles.quoteSection}>
+      <section className={styles.quoteSection + " center-content"}>
         <div className={styles.quoteImageWrap}>
           <img
             src="/images/in-practice/fun-time.png"
@@ -173,56 +263,71 @@ export default function PBJTInPractice() {
           />
         </div>
         <div className={styles.quoteBox}>
-          <span className={styles.quoteOpenMark} aria-hidden="true">&ldquo;</span>
+          <span className={styles.quoteOpenMark} aria-hidden="true">
+            &ldquo;
+          </span>
           <p className={styles.quoteText}>
             These are not polished success stories. They are honest, grounded
-            accounts of transition <span className={styles.accentRed}>where power</span>,{' '}
-            <span className={styles.accentRed}>vulnerability</span>, and{' '}
+            accounts of transition{" "}
+            <span className={styles.accentRed}>where power</span>,{" "}
+            <span className={styles.accentRed}>vulnerability</span>, and{" "}
             <span className={styles.accentRed}>hope</span> meet.
           </p>
-          <span className={styles.quoteCloseMark} aria-hidden="true">&rdquo;</span>
+          <span className={styles.quoteCloseMark} aria-hidden="true">
+            &rdquo;
+          </span>
         </div>
       </section>
 
       {/* ===== Location Selector ===== */}
-      <section className={styles.locationSection}>
-        <div className={styles.locationLeft}>
-          <div className={styles.locationHeader}>
-            <span className={styles.locationPin}>
-              <MapPinIcon />
-            </span>
-            <div>
-              <h3 className={styles.locationTitle}>Choose A Location</h3>
-              <p className={styles.locationSub}>
-                Select a district to explore local stories and changes.
-              </p>
+      <section className={"center-content"}>
+        <div className={styles.locationSection}>
+          <div className={styles.locationLeft}>
+            <div className={styles.locationHeader}>
+              <span className={styles.locationPin}>
+                <MapPinIcon />
+              </span>
+              <div>
+                <h3 className={styles.locationTitle}>Choose A Location</h3>
+                <p className={styles.locationSub}>
+                  Select a district to explore local stories and changes.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.locationGrid}>
+              {locations.map((loc) => (
+                <Link href={loc.href} key={loc.name}>
+                  <button type="button" className={styles.locationCard}>
+                    <span
+                      className={styles.locationMapIcon}
+                      // style={{ backgroundColor: loc.color }}
+                      aria-hidden="true"
+                    >
+                      <img
+                        src={loc?.img}
+                        alt=""
+                        className={"relative h-full w-full"}
+                      />
+                    </span>
+
+                    <span className={styles.locationName}>{loc.name}</span>
+                    <span className={styles.locationArrow} aria-hidden="true">
+                      <ArrowIcon />
+                    </span>
+                  </button>
+                </Link>
+              ))}
             </div>
           </div>
 
-          <div className={styles.locationGrid}>
-            {locations.map((loc) => (
-              <Link href={loc.href} key={loc.name}>
-                <button type="button" className={styles.locationCard}>
-                  <span
-                    className={styles.locationMapIcon}
-                    // style={{ backgroundColor: loc.color }}
-                    aria-hidden="true"
-                  >
-                    <img src={loc?.img} alt="" className={"relative h-full w-full"} />
-                  </span>
-
-                  <span className={styles.locationName}>{loc.name}</span>
-                  <span className={styles.locationArrow} aria-hidden="true">
-                    <ArrowIcon />
-                  </span>
-                </button>
-              </Link>
-            ))}
+          <div className={styles.tnMapWrap} aria-hidden="true">
+            <img
+              src="/images/in-practice/tn.png"
+              alt="Tamil Nadu Map"
+              style={{ width: 260, height: "auto", maxWidth: "none" }}
+            />
           </div>
-        </div>
-
-        <div className={styles.tnMapWrap} aria-hidden="true">
-          <img src="/images/in-practice/tn.png" alt="Tamil Nadu Map" style={{ width: 260, height: "auto", maxWidth: "none" }} />
         </div>
       </section>
 
@@ -235,8 +340,8 @@ export default function PBJTInPractice() {
           <div className={styles.newsletterText}>
             <h3 className={styles.newsletterTitle}>Stay connected with PBJT</h3>
             <p className={styles.newsletterSub}>
-              Subscribe to our newsletter to stay updated on our latest research,
-              stories, and opportunities.
+              Subscribe to our newsletter to stay updated on our latest
+              research, stories, and opportunities.
             </p>
           </div>
           <form className={styles.newsletterForm} onSubmit={handleSubscribe}>

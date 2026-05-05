@@ -23,25 +23,32 @@ const PlaceBasedJustTransition = () => {
 
       {/* ============ SHAPING CONTENT ============ */}
       <section className={cn("pbjt-section")}>
-        <div className={cn("pbjt-container")}>
+        <div className={"center-content"}>
           <div className={cn("pbjt-grid pbjt-grid--two")}>
             {/* LEFT */}
             <div>
               <span className={cn("pbjt-bar")} aria-hidden="true" />
-              <h3 className={cn("pbjt-h3")}>No one-size-fits-all approach exists.</h3>
+              <h3 className={cn("pbjt-h3")}>
+                No one-size-fits-all approach exists.
+              </h3>
               <p className={cn("pbjt-p")}>
                 Just Transition often appears in global discussions as a policy
-                framework for meeting climate goals, shifting energy systems,
-                or channeling green investments yet for workers and communities
-                on the ground, it unfolds more intimately: in the quiet shifts
-                to daily income, the strain on working conditions, the ebb and
-                flow of access to essential resources, and the deeper sense of
+                framework for meeting climate goals, shifting energy systems, or
+                channeling green investments yet for workers and communities on
+                the ground, it unfolds more intimately: in the quiet shifts to
+                daily income, the strain on working conditions, the ebb and flow
+                of access to essential resources, and the deeper sense of
                 dignity that holds it all together shaped always by local
                 realities.
               </p>
 
               <div className={cn("pbjt-callout")}>
-                <div className={cn("pbjt-callout__badge pbjt-callout__badge--solid")} aria-hidden="true">
+                <div
+                  className={cn(
+                    "pbjt-callout__badge pbjt-callout__badge--solid",
+                  )}
+                  aria-hidden="true"
+                >
                   <PeopleIcon />
                 </div>
                 <div className={cn("pbjt-callout__body")}>
@@ -154,7 +161,7 @@ const PlaceBasedJustTransition = () => {
 
       {/* ============ WHAT IS CONTENT ============ */}
       <section className={cn("pbjt-section")}>
-        <div className={cn("pbjt-container")}>
+        <div className={"center-content"}>
           <div className={cn("pbjt-grid pbjt-grid--two")}>
             {/* LEFT */}
             <div>
@@ -179,14 +186,18 @@ const PlaceBasedJustTransition = () => {
 
               <div className={cn("pbjt-callout")}>
                 <div
-                  className={cn("pbjt-callout__badge pbjt-callout__badge--ghost")}
+                  className={cn(
+                    "pbjt-callout__badge pbjt-callout__badge--ghost",
+                  )}
                   aria-hidden="true"
                 >
                   <LeafIcon />
                 </div>
                 <div className={cn("pbjt-callout__body")}>
                   <p className={cn("pbjt-callout__text")}>
-                    <strong>A transition can only be called &ldquo;green&rdquo;</strong>{" "}
+                    <strong>
+                      A transition can only be called &ldquo;green&rdquo;
+                    </strong>{" "}
                     when it also protects people. As workers often remind us,
                     environmental improvements must go hand in hand with fair
                     wages, safety, dignity, and secure livelihoods.
@@ -245,7 +256,16 @@ export default PlaceBasedJustTransition;
 /* ============================================================ */
 
 const PeopleIcon = () => (
-  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    viewBox="0 0 24 24"
+    width="22"
+    height="22"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <circle cx="9" cy="8" r="3" />
     <circle cx="17" cy="9" r="2.4" />
     <path d="M3 19c.8-3 3.4-4.5 6-4.5s5.2 1.5 6 4.5" />
@@ -254,14 +274,32 @@ const PeopleIcon = () => (
 );
 
 const SeedIcon = () => (
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    viewBox="0 0 24 24"
+    width="20"
+    height="20"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M12 21c-4-4-4-9 0-13 4 4 4 9 0 13z" />
     <path d="M5 21h14" />
   </svg>
 );
 
 const UserIcon = () => (
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    viewBox="0 0 24 24"
+    width="20"
+    height="20"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <circle cx="12" cy="9" r="3.5" />
     <path d="M5 20c1.2-3.5 4-5 7-5s5.8 1.5 7 5" />
     <path d="M9 4.5l-2-1.2M15 4.5l2-1.2" />
@@ -269,21 +307,48 @@ const UserIcon = () => (
 );
 
 const GlobeIcon = () => (
-  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    viewBox="0 0 24 24"
+    width="18"
+    height="18"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <circle cx="12" cy="12" r="9" />
     <path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18" />
   </svg>
 );
 
 const LeafIcon = () => (
-  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    viewBox="0 0 24 24"
+    width="22"
+    height="22"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14z" />
     <path d="M5 19c3-3 6-5 10-7" />
   </svg>
 );
 
 const CheckIcon = () => (
-  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    viewBox="0 0 24 24"
+    width="14"
+    height="14"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M5 12.5l4.5 4.5L19 7.5" />
   </svg>
 );
@@ -293,7 +358,11 @@ const CheckIcon = () => (
 /* ============================================================ */
 
 const NetworkDiagram = () => (
-  <div className={cn("pbjt-network")} role="img" aria-label="Network of actors around Place-Based Transition">
+  <div
+    className={cn("pbjt-network")}
+    role="img"
+    aria-label="Network of actors around Place-Based Transition"
+  >
     <svg viewBox="0 0 460 340" className={cn("pbjt-network__svg")}>
       {/* Connecting lines */}
       <g className={cn("pbjt-network__lines")}>
@@ -325,27 +394,104 @@ const NetworkDiagram = () => (
 
       {/* Center */}
       <circle cx="230" cy="170" r="52" className={cn("pbjt-network__center")} />
-      <text x="230" y="160" textAnchor="middle" className={cn("pbjt-network__center-text")}>
+      <text
+        x="230"
+        y="160"
+        textAnchor="middle"
+        className={cn("pbjt-network__center-text")}
+      >
         Placed
       </text>
-      <text x="230" y="175" textAnchor="middle" className={cn("pbjt-network__center-text")}>
+      <text
+        x="230"
+        y="175"
+        textAnchor="middle"
+        className={cn("pbjt-network__center-text")}
+      >
         Based
       </text>
-      <text x="230" y="190" textAnchor="middle" className={cn("pbjt-network__center-text")}>
+      <text
+        x="230"
+        y="190"
+        textAnchor="middle"
+        className={cn("pbjt-network__center-text")}
+      >
         Transition
       </text>
 
       {/* Labels */}
-      <text x="90" y="200" textAnchor="middle" className={cn("pbjt-network__label")}>Workers</text>
-      <text x="230" y="32" textAnchor="middle" className={cn("pbjt-network__label")}>Associations</text>
-      <text x="395" y="100" textAnchor="start" className={cn("pbjt-network__label")}>Actor</text>
-      <text x="395" y="113" textAnchor="start" className={cn("pbjt-network__label")}>driver</text>
-      <text x="395" y="126" textAnchor="start" className={cn("pbjt-network__label")}>Small</text>
-      <text x="395" y="139" textAnchor="start" className={cn("pbjt-network__label")}>Vendor</text>
-      <text x="395" y="225" textAnchor="start" className={cn("pbjt-network__label")}>Children and</text>
-      <text x="395" y="238" textAnchor="start" className={cn("pbjt-network__label")}>Youth</text>
-      <text x="230" y="320" textAnchor="middle" className={cn("pbjt-network__label")}>MSMEs</text>
+      <text
+        x="90"
+        y="200"
+        textAnchor="middle"
+        className={cn("pbjt-network__label")}
+      >
+        Workers
+      </text>
+      <text
+        x="230"
+        y="32"
+        textAnchor="middle"
+        className={cn("pbjt-network__label")}
+      >
+        Associations
+      </text>
+      <text
+        x="395"
+        y="100"
+        textAnchor="start"
+        className={cn("pbjt-network__label")}
+      >
+        Actor
+      </text>
+      <text
+        x="395"
+        y="113"
+        textAnchor="start"
+        className={cn("pbjt-network__label")}
+      >
+        driver
+      </text>
+      <text
+        x="395"
+        y="126"
+        textAnchor="start"
+        className={cn("pbjt-network__label")}
+      >
+        Small
+      </text>
+      <text
+        x="395"
+        y="139"
+        textAnchor="start"
+        className={cn("pbjt-network__label")}
+      >
+        Vendor
+      </text>
+      <text
+        x="395"
+        y="225"
+        textAnchor="start"
+        className={cn("pbjt-network__label")}
+      >
+        Children and
+      </text>
+      <text
+        x="395"
+        y="238"
+        textAnchor="start"
+        className={cn("pbjt-network__label")}
+      >
+        Youth
+      </text>
+      <text
+        x="230"
+        y="320"
+        textAnchor="middle"
+        className={cn("pbjt-network__label")}
+      >
+        MSMEs
+      </text>
     </svg>
   </div>
 );
-

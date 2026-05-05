@@ -20,7 +20,12 @@
 
   width: 100%;
   margin: 0 auto;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   color: var(--color-text);
   background: var(--color-bg);
   box-sizing: border-box;
@@ -95,7 +100,7 @@
 
 /* ===== Practice Section ===== */
 .practiceSection {
-  padding: 3.5rem 2rem;
+  padding-block: 3.5rem;
   position: relative;
   /* max-width: 1200px; */
   /* margin: 0 auto; */
@@ -176,7 +181,9 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
   margin-bottom: 2rem;
 }
 
@@ -270,8 +277,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.75rem;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 .insightCard {
@@ -284,7 +289,9 @@
   align-items: center;
   text-align: center;
   gap: 1.25rem;
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
 }
 
 .insightCard:hover {
@@ -324,9 +331,8 @@
   display: grid;
   grid-template-columns: 1fr 1.15fr;
   gap: 0;
-  padding: 0 2rem;
-  margin: 3.5rem auto;
-  max-width: 1100px;
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .quoteImageWrap {
@@ -439,7 +445,10 @@
   padding: 0.7rem 0.95rem;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--color-text);
@@ -568,7 +577,9 @@
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
   white-space: nowrap;
 }
 
@@ -680,7 +691,7 @@
   .practiceSection,
   .insightsSection,
   .newsletterSection {
-    padding: 2.25rem 1rem;
+    padding-block: 1rem;
   }
 
   .practiceTitle {
