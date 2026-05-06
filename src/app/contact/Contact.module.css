@@ -507,6 +507,10 @@
   color: var(--pbjt-primary-color);
 }
 
+.contact-text-banner-container {
+  font-size: 4rem;
+}
+
 /* ============================
    Responsive
    ============================ */

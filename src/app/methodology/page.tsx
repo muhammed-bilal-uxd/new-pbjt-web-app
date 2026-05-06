@@ -89,11 +89,25 @@ const PILLARS = [
 export default function Methodology() {
   return (
     <div className={styles.page}>
-      <Banner
-        title="How PBJT works"
-        imgUrl="/images/impact-proposition/hero-center.jpg"
-        textColor="#ffffff"
-      />
+      <Banner>
+        <img
+          className="single-cover-banner"
+          src="/images/banner/methodology-banner-01.jpg"
+        />
+
+        <div
+          className={
+            "relative flex gap-2 items-center" + styles.focusBannerContainer
+          }
+        >
+          <div className="flex flex-col">
+            <p className={styles.heroTextOne}>Methodology:</p>
+            <span className={styles.heroTextTwo}>How</span>
+            <span className={styles.heroTextThree}>PBJT works</span>
+          </div>
+          <div className={styles.heroTextFour}>?</div>
+        </div>
+      </Banner>
 
       {/* Intro + Key Elements */}
       <section className={styles.keyElementsSection + " center-content"}>

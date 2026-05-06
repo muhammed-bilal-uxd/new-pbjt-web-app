@@ -413,6 +413,38 @@
   margin: 0;
 }
 
+.focusBannerContainer {
+}
+
+.heroTextOne {
+  line-height: 100%;
+  color: var(--pbjt-primary-color);
+  position: absolute;
+  inset: 25px auto auto 0px;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.heroTextTwo {
+  font-size: 8rem;
+  line-height: 100%;
+  color: white;
+}
+
+.heroTextThree {
+  color: var(--pbjt-primary-color);
+  font-size: 2.5rem;
+  line-height: 100%;
+  position: absolute;
+  inset: auto 60px 0px auto;
+}
+
+.heroTextFour {
+  font-size: 10rem;
+  line-height: 100%;
+  color: white;
+}
+
 /* ==========================================================================
    RESPONSIVE - Tablet (<= 1024px)
    ========================================================================== */
@@ -518,6 +550,12 @@
 
   .pillarImage {
     height: 160px;
+  }
+}
+
+@media (max-width: 600px) {
+  .focus-banner-container {
+    transform: scale(0.8);
   }
 }
 

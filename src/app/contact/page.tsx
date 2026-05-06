@@ -70,11 +70,13 @@ export default function Contact() {
         </div>
       </section> */}
 
-      <Banner
-        title="Contact us"
-        imgUrl="/images/impact-proposition/hero-center.jpg"
-        textColor="#ffffff"
-      />
+      <Banner>
+        <div className="relative">
+          <div className={cn("text-white p-4 contact-text-banner-container")}>
+            Contact PBJT
+          </div>
+        </div>
+      </Banner>
 
       {/* Form + Info */}
       <section className={cn("contact-main center-content")}>
