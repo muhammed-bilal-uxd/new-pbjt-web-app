@@ -148,13 +148,17 @@
 .hero {
   background: var(--pbjt-primary-color);
   color: white;
+  width: 100%;
   /* border-radius: var(--radius-lg); */
-  padding: 40px 44px;
+  padding: 40px 0;
+  /* margin-top: 8px; */
+}
+
+.heroContent {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 32px;
   align-items: center;
-  /* margin-top: 8px; */
 }
 
 .heroLeft {
@@ -655,9 +659,8 @@
     display: none;
   }
 
-  .hero {
+  .heroContent {
     grid-template-columns: 1fr;
-    padding: 32px 28px;
   }
 
   .heroTitle {
@@ -691,8 +694,7 @@
     padding-block: 0;
   }
 
-  .hero {
-    padding: 26px 22px;
+  .heroContent {
     border-radius: var(--radius-md);
   }
 

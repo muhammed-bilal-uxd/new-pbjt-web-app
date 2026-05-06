@@ -122,27 +122,29 @@ export default function Testimonials() {
     <div>
       {/* ===== HERO ===== */}
       <section className={styles.hero}>
-        <div className={styles.heroLeft}>
-          <span className={styles.heroLabel}>
-            <span className={styles.dot}></span> TESTIMONIALS
-          </span>
-          <h1 className={styles.heroTitle}>Stories from the Ground</h1>
-          <p className={styles.heroSubtitle}>
-            Real voices. Real experiences. Real change.
-          </p>
-          <p className={styles.heroDesc}>
-            These are stories of workers, community members, and local leaders
-            who are living the transition every day.
-          </p>
-        </div>
-        <div className={styles.heroStats}>
-          {STATS.map(({ Icon, value, label }) => (
-            <div key={label} className={styles.statCard}>
-              <Icon size={22} strokeWidth={2} />
-              <div className={styles.statValue}>{value}</div>
-              <div className={styles.statLabel}>{label}</div>
-            </div>
-          ))}
+        <div className={styles.heroContent + " center-content"}>
+          <div className={styles.heroLeft}>
+            <span className={styles.heroLabel}>
+              <span className={styles.dot}></span> TESTIMONIALS
+            </span>
+            <h1 className={styles.heroTitle}>Stories from the Ground</h1>
+            <p className={styles.heroSubtitle}>
+              Real voices. Real experiences. Real change.
+            </p>
+            <p className={styles.heroDesc}>
+              These are stories of workers, community members, and local leaders
+              who are living the transition every day.
+            </p>
+          </div>
+          <div className={styles.heroStats}>
+            {STATS.map(({ Icon, value, label }) => (
+              <div key={label} className={styles.statCard}>
+                <Icon size={22} strokeWidth={2} />
+                <div className={styles.statValue}>{value}</div>
+                <div className={styles.statLabel}>{label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
