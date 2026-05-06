@@ -375,7 +375,7 @@
 
 .hero-text-1 {
   line-height: 100%;
-  color: var(--pbjt-primary-color);
+  color: cornflowerblue;
   position: absolute;
   inset: 25px auto auto 0px;
   font-weight: bold;
