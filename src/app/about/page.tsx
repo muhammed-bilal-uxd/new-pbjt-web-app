@@ -121,17 +121,27 @@ const PlaceBasedJustTransition = () => {
           {/* BOTTOM STRIP */}
           <div className={cn("pbjt-strip")}>
             <div className={cn("pbjt-strip__col pbjt-strip__col--main")}>
-              <span className={cn("pbjt-strip__icon")} aria-hidden="true">
+              <div className={cn("pbjt-strip__icon")} aria-hidden="true">
                 <GlobeIcon />
-              </span>
-              <p>
-                Our thinking draws from global just transition frameworks
-                developed by institutions such as the International{" "}
-                <strong>Labour Organization</strong> and{" "}
-                <strong>the UNFCCC</strong>, while grounding them in the lived
-                realities of villages, peri-urban settlements, and local
-                production clusters.
-              </p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p>
+                  Our thinking draws from global just transition frameworks
+                  developed by institutions such as the International{" "}
+                  <strong>Labour Organization</strong> and{" "}
+                  <strong>the UNFCCC</strong>, while grounding them in the lived
+                  realities of villages, peri-urban settlements, and local
+                  production clusters.
+                </p>
+                <div
+                  className={cn(
+                    "flex items-center gap-2 organization-logo-container",
+                  )}
+                >
+                  <img src="/images/about/ilo-logo.png" alt="" />
+                  <img src="/images/about/unfccc-logo.png" alt="" />
+                </div>
+              </div>
             </div>
             <div className={cn("pbjt-strip__divider")} aria-hidden="true" />
             <div className={cn("pbjt-strip__col pbjt-strip__col--quote")}>

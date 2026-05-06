@@ -191,9 +191,9 @@ export default function PBJTInPractice() {
             <h2 className={styles.practiceTitle}>
               <span className={styles.accentRed}>PBJT</span> In Practice
             </h2>
-            <h3 className={styles.practiceSubtitle}>
+            {/* <h3 className={styles.practiceSubtitle}>
               What The Ground Teaches Us
-            </h3>
+            </h3> */}
             <p className={styles.practiceParagraph}>
               PBJT&apos;s learning emerges through real conversations on
               worksites, in community meetings, and in everyday informal spaces.

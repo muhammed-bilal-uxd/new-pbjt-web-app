@@ -462,6 +462,19 @@
   justify-content: center;
 }
 
+.organization-logo-container {
+  display: flex;
+  gap: 15px;
+}
+
+.organization-logo-container img {
+  --logo-size: 40px;
+  width: var(--logo-size);
+  height: var(--logo-size);
+  object-fit: contain;
+  filter: grayscale(100%);
+}
+
 /* ============================================================
    RESPONSIVE BREAKPOINTS
    ============================================================ */
