@@ -80,15 +80,6 @@
   font-family: Georgia, "Times New Roman", serif;
 }
 
-.heroQuestion {
-  display: inline-block;
-  font-size: 1em;
-  font-weight: 700;
-  color: #ffffff;
-  margin-left: 0.1em;
-  vertical-align: top;
-}
-
 .heroBottom {
   position: absolute;
   bottom: -15px;
@@ -596,6 +587,7 @@
 
 .heroWrap {
   white-space: nowrap;
+  position: relative;
 }
 
 /* =========================================================

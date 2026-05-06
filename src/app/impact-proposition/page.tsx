@@ -26,14 +26,29 @@ export default function ImpactProposition() {
     <article className={cn("pbjt impact-proposition-page")}>
       {/* ===================== HERO ===================== */}
 
-      <Banner
-        title="Why
-              Place-Based
-              Just Transition
-              is Necessary?"
-        imgUrl="/images/impact-proposition/hero-center.jpg"
-        textColor="#ffffff"
-      />
+      <Banner>
+        <img
+          className="single-cover-banner"
+          src="/images/banner/impact-banner-01.jpg"
+        />
+        <div
+          className={cn(
+            "relative flex gap-3 whitespace-nowrap banner-hero-group",
+          )}
+        >
+          <div className="text-center">
+            <div className={cn("banner-group-1")}>
+              Why <br />
+              <span className="ml-5">is Neccessary</span>
+            </div>
+            <div className={cn("text-white banner-group-2")}>
+              Place-Based <br />
+              <span className="ml-6">Just Transition</span>
+            </div>
+          </div>
+          <div className={cn("text-white banner-question-mark")}>?</div>
+        </div>
+      </Banner>
 
       {/* ===================== BOARDROOM SECTION ===================== */}
       <section className={cn("pbjt-section pbjt-boardroom center-content")}>
@@ -144,38 +159,17 @@ export default function ImpactProposition() {
         </div>
       </section>
 
-      {/* ===================== BANNER ===================== */}
-      <section className={cn("pbjt-banner")}>
-        <div
-          className={cn(
-            "pbjt-banner__cell pbjt-banner__cell--with-text relative",
-          )}
-        >
-          <img
-            src="/images/impact-proposition/img139.jpg"
-            alt="Workers in a production facility"
-          />
-          <h3 className={cn("pbjt-banner__title")}>
-            Critical inputs in
-            <br />
-            villages and
-            <br />
-            production clusters
-          </h3>
+      <Banner>
+        <img
+          className="single-cover-banner"
+          src="/images/banner/impact-banner-02.jpg"
+        />
+        <div className="relative p-4">
+          <span className="text-white font-bold text-[2rem]">
+            Critical inputs in villages and production clusters
+          </span>
         </div>
-        <div className={cn("pbjt-banner__cell relative")}>
-          <img
-            src="/images/impact-proposition/img142.jpg"
-            alt="Agricultural labourer"
-          />
-        </div>
-        <div className={cn("pbjt-banner__cell relative")}>
-          <img
-            src="/images/impact-proposition/img143.jpg"
-            alt="Farmer in a turban"
-          />
-        </div>
-      </section>
+      </Banner>
 
       {/* ===================== BENEFITS ===================== */}
       <section className={cn("pbjt-benefits center-content")}>

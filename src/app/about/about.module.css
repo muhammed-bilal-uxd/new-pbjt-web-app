@@ -98,18 +98,19 @@
   letter-spacing: -0.025em;
 }
 
-.pbjt-hero__main--white {
-  color: #fff;
-}
-
 .pbjt-hero__qmark {
   color: var(--pbjt-primary-color);
   margin-left: 0.05em;
-  font-size: 1.05em;
+  font-size: 8em;
+}
+
+.pbjt-hero__main--white {
+  color: #fff;
+  font-size: 7rem;
 }
 
 .pbjt-hero__sub {
-  font-size: clamp(24px, 4.2vw, 56px);
+  font-size: 2rem;
   font-weight: 700;
   color: #fff;
   margin: 6px 0 0 0;
@@ -475,9 +476,62 @@
   filter: grayscale(100%);
 }
 
+.about-banner-title {
+  color: var(--pbjt-primary-color);
+  font-size: 6rem;
+  line-height: 100%;
+  font-weight: 700;
+}
+
+.about-banner-desc-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.about-banner-desc-left,
+.about-banner-desc-right {
+  --opposize-distance: 1rem;
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 700;
+}
+
+.about-banner-desc-left {
+  margin-top: calc(var(--opposize-distance) * -1);
+}
+
+.about-banner-desc-right {
+  margin-bottom: var(--opposize-distance);
+}
+
+.critical-question {
+  background-color: #d4d4d4;
+}
+
+.critical-question-p1 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.critical-question-p2 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--pbjt-primary-color);
+}
+
 /* ============================================================
    RESPONSIVE BREAKPOINTS
    ============================================================ */
+
+@media (max-width: 640px) {
+  .place-based-just-transition-container {
+    transform: scale(0.8);
+    gap: 0;
+    max-width: 270px;
+  }
+}
 
 /* Tablet up */
 @media (min-width: 640px) {

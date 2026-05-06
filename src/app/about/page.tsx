@@ -15,11 +15,22 @@ const PlaceBasedJustTransition = () => {
     <div className={cn("pbjt about-page")}>
       {/* ============ HERO 1: SHAPING ============ */}
 
-      <Banner
-        title="Where PBJT works"
-        imgUrl="/images/impact-proposition/hero-center.jpg"
-        textColor="#ffffff"
-      />
+      <Banner>
+        <img
+          className="single-cover-banner"
+          src="/images/banner/about-banner-01.jpg"
+        />
+
+        <div className="relative text-center">
+          <h3 className={cn("about-banner-title")}>shaping</h3>
+          <div className={cn("about-banner-desc-container")}>
+            <span className={cn("about-banner-desc-left")}>Place based</span>
+            <span className={cn("about-banner-desc-right")}>
+              just transition
+            </span>
+          </div>
+        </div>
+      </Banner>
 
       {/* ============ SHAPING CONTENT ============ */}
       <section className={cn("pbjt-section section-one")}>
@@ -155,19 +166,46 @@ const PlaceBasedJustTransition = () => {
         </div>
       </section>
 
-      {/* ============ HERO 2: WHAT IS ============ */}
-      <section
-        className={cn("pbjt-hero pbjt-hero--whatis")}
-        style={{ backgroundImage: "url('/images/pbjt-whatis-hero.jpg')" }}
-        aria-label="What is Place-Based Just Transition"
+      <div
+        className={cn(
+          "flex flex-col justify-center items-center p-4 critical-question",
+        )}
       >
-        <div className={cn("pbjt-hero__inner pbjt-hero__inner--center")}>
-          <h1 className={cn("pbjt-hero__main pbjt-hero__main--white")}>
-            What is<span className={cn("pbjt-hero__qmark")}>?</span>
-          </h1>
-          <h2 className={cn("pbjt-hero__sub")}>Place-Based Just Transition</h2>
+        <p className={cn("critical-question-p1")}>
+          A Place-Based Just Transition begins with a simple but critical
+          question:
+        </p>
+        <p className={cn("critical-question-p2")}>
+          Who carries the cost of transition, and who decides how it happens?
+        </p>
+      </div>
+
+      <Banner>
+        <img
+          className="single-cover-banner"
+          src="/images/banner/about-banner-02.jpg"
+        />
+
+        <div className="relative text-center">
+          <div
+            className={cn(
+              "flex items-center gap-4 place-based-just-transition-container",
+            )}
+          >
+            <div className="">
+              <h1 className={cn("pbjt-hero__main pbjt-hero__main--white")}>
+                What is
+              </h1>
+              <h2 className={cn("pbjt-hero__sub")}>
+                Place-Based Just Transition
+              </h2>
+            </div>
+            <div className="">
+              <span className={cn("pbjt-hero__qmark")}>?</span>
+            </div>
+          </div>
         </div>
-      </section>
+      </Banner>
 
       {/* ============ WHAT IS CONTENT ============ */}
       <section className={cn("pbjt-section section-two")}>

@@ -45,3 +45,11 @@ body {
   padding-inline: 15px;
   box-sizing: border-box;
 }
+
+img.single-cover-banner {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
