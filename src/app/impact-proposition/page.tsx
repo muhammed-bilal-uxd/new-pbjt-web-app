@@ -67,10 +67,6 @@ export default function ImpactProposition() {
             src="/images/impact-proposition/img137.jpg"
             alt="Worker handling cement bags"
           />
-          <img
-            src="/images/impact-proposition/img138.jpg"
-            alt="Women workers smiling at a worksite"
-          />
         </div>
       </section>
 
@@ -117,6 +113,12 @@ export default function ImpactProposition() {
               <span>Are informal and last-tier risks acknowledged?</span>
             </li>
           </ul>
+        </div>
+        <div className={cn("pbjt-boardroom__media")}>
+          <img
+            src="/images/impact-proposition/img138.jpg"
+            alt="Women workers smiling at a worksite"
+          />
         </div>
       </section>
 

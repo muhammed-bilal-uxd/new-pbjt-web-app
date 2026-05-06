@@ -245,13 +245,17 @@
 /* ---------- Framework ---------- */
 .pbjt-framework {
   padding-top: 24px;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: start;
+  gap: 40px;
+  display: grid;
 }
 
 .pbjt-framework__panel {
   background: var(--pbjt-pink-soft);
   border-radius: var(--pbjt-radius-md);
   padding: 28px 32px;
-  max-width: 60%;
+  /* max-width: 60%; */
 }
 
 /* Checklist */
@@ -475,7 +479,7 @@
   }
 
   .pbjt-framework__panel {
-    max-width: 78%;
+    /* max-width: 78%; */
   }
 
   .pbjt-benefits__grid {
@@ -486,6 +490,10 @@
 /* Small tablet / large mobile: 768px */
 @media (max-width: 768px) {
   .pbjt-info {
+    grid-template-columns: 1fr;
+  }
+
+  .pbjt-framework {
     grid-template-columns: 1fr;
   }
 
@@ -530,7 +538,7 @@
   }
 
   .pbjt-framework__panel {
-    max-width: 100%;
+    /* max-width: 100%; */
     padding: 22px 22px;
   }
 

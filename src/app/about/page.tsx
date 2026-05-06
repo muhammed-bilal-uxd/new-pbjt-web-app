@@ -22,7 +22,7 @@ const PlaceBasedJustTransition = () => {
       />
 
       {/* ============ SHAPING CONTENT ============ */}
-      <section className={cn("pbjt-section")}>
+      <section className={cn("pbjt-section section-one")}>
         <div className={"center-content"}>
           <div className={cn("pbjt-grid pbjt-grid--two")}>
             {/* LEFT */}
@@ -146,7 +146,7 @@ const PlaceBasedJustTransition = () => {
       </section>
 
       {/* ============ HERO 2: WHAT IS ============ */}
-      {/* <section
+      <section
         className={cn("pbjt-hero pbjt-hero--whatis")}
         style={{ backgroundImage: "url('/images/pbjt-whatis-hero.jpg')" }}
         aria-label="What is Place-Based Just Transition"
@@ -157,10 +157,10 @@ const PlaceBasedJustTransition = () => {
           </h1>
           <h2 className={cn("pbjt-hero__sub")}>Place-Based Just Transition</h2>
         </div>
-      </section> */}
+      </section>
 
       {/* ============ WHAT IS CONTENT ============ */}
-      <section className={cn("pbjt-section")}>
+      <section className={cn("pbjt-section section-two")}>
         <div className={"center-content"}>
           <div className={cn("pbjt-grid pbjt-grid--two")}>
             {/* LEFT */}
@@ -208,8 +208,11 @@ const PlaceBasedJustTransition = () => {
 
             {/* RIGHT */}
             <div className={cn("pbjt-stack")}>
-              <NetworkDiagram />
-
+              <div className={cn("diagram-wrap")}>
+                <div className={cn("diagram-content")}>
+                  <NetworkDiagram />
+                </div>
+              </div>
               <div className={cn("pbjt-benefits")}>
                 <h4 className={cn("pbjt-benefits__title")}>
                   PBJT ensures that the shift to greener economies:

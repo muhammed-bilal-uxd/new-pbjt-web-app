@@ -204,7 +204,7 @@ export default function PBJTInPractice() {
               gap between intention and lived impact.
             </p>
 
-            <button
+            {/* <button
               type="button"
               className={styles.exploreBtn}
               onClick={() => {
@@ -220,9 +220,10 @@ export default function PBJTInPractice() {
             >
               Explore Just Transition In Practice
               <ArrowIcon />
-            </button>
+            </button> */}
 
-            <Link className={styles.tagline} href={"/testimonials"}>
+            {/* <Link className={styles.tagline} href={"/testimonials"}> */}
+            <div>
               <span className={styles.taglineIcon}>
                 <BookIcon />
               </span>
@@ -234,7 +235,8 @@ export default function PBJTInPractice() {
                   Grounded insights from the field.
                 </p>
               </div>
-            </Link>
+            </div>
+            {/* </Link> */}
           </div>
 
           <div className={styles.practiceImageWrap}>
@@ -245,6 +247,14 @@ export default function PBJTInPractice() {
               className="cover-image rounded-[12px]"
             />
           </div>
+        </div>
+      </section>
+
+      {/* ===== Location Selector ===== */}
+
+      <section className={styles.villageContainer + " center-content"}>
+        <div id="location-section">
+          <VillageLocation />
         </div>
       </section>
 
@@ -290,14 +300,6 @@ export default function PBJTInPractice() {
           <span className={styles.quoteCloseMark} aria-hidden="true">
             &rdquo;
           </span>
-        </div>
-      </section>
-
-      {/* ===== Location Selector ===== */}
-
-      <section className={styles.villageContainer + " center-content"}>
-        <div id="location-section">
-          <VillageLocation />
         </div>
       </section>
 

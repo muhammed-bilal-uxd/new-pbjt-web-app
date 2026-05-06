@@ -88,6 +88,8 @@
   position: relative;
   overflow: hidden;
   text-align: left;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .card:hover {
