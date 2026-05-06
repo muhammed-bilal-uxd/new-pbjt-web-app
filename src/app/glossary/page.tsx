@@ -396,7 +396,7 @@ export default function Glossary() {
 
       {/* CTA BANNER */}
       <section className={cn("cta-banner")}>
-        <div className={cn("cta-inner")}>
+        <div className={cn("cta-inner center-content")}>
           <div className={cn("cta-left")}>
             <div className={cn("cta-icon")}>
               <BookOpen size={26} />

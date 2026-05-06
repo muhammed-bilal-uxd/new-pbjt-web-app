@@ -443,12 +443,12 @@
 .newsletter {
   background: var(--pbjt-primary-color);
   color: #ffffff;
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 0;
 }
 
 .newsletter-content {
-  max-width: 1200px;
-  margin: 0 auto;
+  /* max-width: 1200px;
+  margin: 0 auto; */
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -572,7 +572,7 @@
   }
 
   .newsletter {
-    padding: 2rem 1.25rem;
+    padding: 2rem 0;
   }
 
   .newsletter-content {

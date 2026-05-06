@@ -353,7 +353,7 @@ export default function Contact() {
 
       {/* Newsletter */}
       <section className={cn("newsletter")}>
-        <div className={cn("newsletter-content")}>
+        <div className={cn("newsletter-content center-content")}>
           <div className={cn("newsletter-icon")}>
             <Mail size={32} />
           </div>

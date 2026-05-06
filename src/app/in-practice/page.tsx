@@ -305,7 +305,7 @@ export default function PBJTInPractice() {
 
       {/* ===== Newsletter ===== */}
       <section className={styles.newsletterSection}>
-        <div className={styles.newsletterContent}>
+        <div className={styles.newsletterContent + " center-content"}>
           <span className={styles.newsletterIconWrap}>
             <MailIcon />
           </span>
