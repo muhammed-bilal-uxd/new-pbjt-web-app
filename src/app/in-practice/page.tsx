@@ -5,6 +5,7 @@ import styles from "./in-practice.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import Banner from "@/components/banner";
+import VillageLocation from "@/components/village-location/village-location";
 
 /* ---------- Inline SVG icons (kept in JSX, no CSS) ---------- */
 const PeopleIcon = () => (
@@ -342,6 +343,10 @@ export default function PBJTInPractice() {
             />
           </div>
         </div>
+      </section>
+
+      <section className={styles.villageContainer + " center-content"}>
+        <VillageLocation />
       </section>
 
       {/* ===== Newsletter ===== */}

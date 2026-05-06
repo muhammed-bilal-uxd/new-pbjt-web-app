@@ -1,0 +1,395 @@
+/* ChooseLocation.module.css */
+
+.page {
+  font-family: "Inter", sans-serif;
+  background: #f5f5f3;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 480px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+}
+
+/* ── Left Panel ─────────────────────────────── */
+
+.left {
+  padding: 2.5rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 100px;
+  padding: 4px 12px 4px 8px;
+  font-size: 11px;
+  color: #888780;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  width: fit-content;
+  margin-bottom: 1.2rem;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pbjt-primary-color);
+  flex-shrink: 0;
+}
+
+.heading {
+  font-family: "Syne", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.sub {
+  font-size: 13px;
+  color: #888780;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* ── District Grid ──────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  flex: 1;
+}
+
+/* ── District Card ──────────────────────────── */
+
+.card {
+  all: unset;
+  background: #ffffff;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  padding: 18px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.card:hover {
+  border-color: var(--pbjt-primary-color);
+  background: #fafafa;
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--pbjt-primary-color);
+  outline-offset: 2px;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardIcon {
+  --card-size: 55px;
+  width: var(--card-size);
+  height: var(--card-size);
+  border-radius: 10px;
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  background: #f5f5f3;
+  position: relative;
+}
+
+.cardIcon img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.cardNum {
+  font-size: 11px;
+  font-weight: 500;
+  color: #b4b2a9;
+  font-family: "Syne", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cardName {
+  font-family: "Syne", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.2px;
+}
+
+.cardDesc {
+  font-size: 11px;
+  color: #b4b2a9;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.cardFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+}
+
+.cardTag {
+  font-size: 10px;
+  color: #b4b2a9;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.cardArrow {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f5f5f3;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888780;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.card:hover .cardArrow {
+  background: var(--pbjt-primary-color);
+  color: #ffffff;
+  border-color: var(--pbjt-primary-color);
+}
+
+/* ── Right Panel ─────────────────────────────── */
+
+.right {
+  background: #eeede8;
+  border-left: 0.5px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  gap: 1.25rem;
+}
+
+.mapLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888780;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.mapWrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mapSvg {
+  width: 140px;
+  height: auto;
+}
+
+/* ── Stats Grid ──────────────────────────────── */
+
+.statsGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.stat {
+  background: #ffffff;
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.statVal {
+  font-family: "Syne", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.3px;
+}
+
+.statLbl {
+  font-size: 10px;
+  color: #b4b2a9;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ── Dark Mode ───────────────────────────────── */
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    background: #1e1e1c;
+  }
+
+  .badge {
+    background: #2c2c2a;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #5f5e5a;
+  }
+
+  .heading {
+    color: #f1efe8;
+  }
+
+  .sub {
+    color: #5f5e5a;
+  }
+
+  .card {
+    background: #2c2c2a;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .card:hover {
+    background: #333331;
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  .cardIcon {
+    background: #1e1e1c;
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .cardNum {
+    color: #5f5e5a;
+  }
+
+  .cardName {
+    color: #f1efe8;
+  }
+
+  .cardDesc {
+    color: #5f5e5a;
+  }
+
+  .cardFoot {
+    border-top-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .cardTag {
+    color: #5f5e5a;
+  }
+
+  .cardArrow {
+    background: #1e1e1c;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #5f5e5a;
+  }
+
+  .right {
+    background: #181816;
+    border-left-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .mapLabel {
+    color: #5f5e5a;
+  }
+
+  .stat {
+    background: #2c2c2a;
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .statVal {
+    color: #f1efe8;
+  }
+
+  .statLbl {
+    color: #5f5e5a;
+  }
+}
+
+/* ── Responsive ──────────────────────────────── */
+
+@media (max-width: 768px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .right {
+    border-left: none;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .mapWrap {
+    width: auto;
+  }
+
+  .mapSvg {
+    width: 100px;
+  }
+
+  .statsGrid {
+    flex: 1;
+    min-width: 160px;
+    margin-top: 0;
+  }
+
+  .mapLabel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .left {
+    padding: 1.5rem;
+  }
+
+  .heading {
+    font-size: 22px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
