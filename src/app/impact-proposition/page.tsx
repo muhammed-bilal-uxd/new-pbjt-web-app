@@ -64,7 +64,7 @@ export default function ImpactProposition() {
 
         <div className={cn("pbjt-boardroom__media")}>
           <img
-            src="/images/impact-proposition/img137.jpg"
+            src="/images/impact-proposition/impact-01.jpg"
             alt="Worker handling cement bags"
           />
         </div>
@@ -116,7 +116,7 @@ export default function ImpactProposition() {
         </div>
         <div className={cn("pbjt-boardroom__media")}>
           <img
-            src="/images/impact-proposition/img138.jpg"
+            src="/images/impact-proposition/impact-02.jpg"
             alt="Women workers smiling at a worksite"
           />
         </div>

@@ -71,7 +71,7 @@ export default function Framework() {
 
         <div className={cn("pbjt-tools__image")}>
           <img
-            src="/images/framework/img137.jpg"
+            src="/images/framework/framework-01.jpg"
             alt="Informal worker collecting recyclables"
           />
         </div>
