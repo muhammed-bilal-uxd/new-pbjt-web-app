@@ -294,59 +294,11 @@ export default function PBJTInPractice() {
       </section>
 
       {/* ===== Location Selector ===== */}
-      <section className={"center-content"}>
-        <div className={styles.locationSection} id="location-section">
-          <div className={styles.locationLeft}>
-            <div className={styles.locationHeader}>
-              <span className={styles.locationPin}>
-                <MapPinIcon />
-              </span>
-              <div>
-                <h3 className={styles.locationTitle}>Choose A Location</h3>
-                <p className={styles.locationSub}>
-                  Select a district to explore local stories and changes.
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.locationGrid}>
-              {locations.map((loc) => (
-                <Link href={loc.href} key={loc.name}>
-                  <button type="button" className={styles.locationCard}>
-                    <span
-                      className={styles.locationMapIcon}
-                      // style={{ backgroundColor: loc.color }}
-                      aria-hidden="true"
-                    >
-                      <img
-                        src={loc?.img}
-                        alt=""
-                        className={"relative h-full w-full"}
-                      />
-                    </span>
-
-                    <span className={styles.locationName}>{loc.name}</span>
-                    <span className={styles.locationArrow} aria-hidden="true">
-                      <ArrowIcon />
-                    </span>
-                  </button>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className={styles.tnMapWrap} aria-hidden="true">
-            <img
-              src="/images/in-practice/tn.png"
-              alt="Tamil Nadu Map"
-              style={{ width: 260, height: "auto", maxWidth: "none" }}
-            />
-          </div>
-        </div>
-      </section>
 
       <section className={styles.villageContainer + " center-content"}>
-        <VillageLocation />
+        <div id="location-section">
+          <VillageLocation />
+        </div>
       </section>
 
       {/* ===== Newsletter ===== */}
