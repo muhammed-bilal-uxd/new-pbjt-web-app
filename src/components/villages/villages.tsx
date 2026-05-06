@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from 'react';
-import styles from './villages.module.css';
+import { useState, useRef, useEffect } from "react";
+import styles from "./villages.module.css";
 
 /* ------------------------------------------------------------------ */
 /*  DATA                                                              */
@@ -10,128 +10,124 @@ import styles from './villages.module.css';
 
 const VILLAGES = [
   {
-    id: 'avilipatti',
-    name: 'AVILIPATTI',
-    image: '/images/in-practice-detail/img01.png',
+    id: "avilipatti",
+    name: "AVILIPATTI",
+    image: "/images/in-practice-detail/img01.png",
     cardMetrics: { dumpSites: 4, waterBodies: 1, trees: 120 },
     panel: {
       tagline:
-        'Local actions that turned waste into value and restored common ecosystems.',
+        "Local actions that turned waste into value and restored common ecosystems.",
       activities: [
-        'Dump site: 4',
-        'Water bodies: 1',
-        'Trees planted: 120',
-        'Sanitation workers - Collected waste properly and received incentives from the Panchayat',
+        "Dump site: 4",
+        "Water bodies: 1",
+        "Trees planted: 120",
+        "Sanitation workers - Collected waste properly and received incentives from the Panchayat",
       ],
       insight:
-        'Community participation and incentives improved waste management practices.',
-      restored: ['Dump site: 1', 'Water bodies: 1'],
-      restoredImage:
-        'https://picsum.photos/seed/avilipatti-restored/640/360',
+        "Community participation and incentives improved waste management practices.",
+      restored: ["Dump site: 1", "Water bodies: 1"],
+      restoredImage: "https://picsum.photos/seed/avilipatti-restored/640/360",
       restoredCaption:
-        'A restored water body now supports biodiversity and community use.',
+        "A restored water body now supports biodiversity and community use.",
       groups: [
-        { name: 'Gethu Group', members: 13 },
-        { name: 'Adolescent Boys and Girls', members: 27 },
-        { name: 'MSME', members: 1 },
-        { name: 'Vendors Association', members: 13 },
+        { name: "Gethu Group", members: 13 },
+        { name: "Adolescent Boys and Girls", members: 27 },
+        { name: "MSME", members: 1 },
+        { name: "Vendors Association", members: 13 },
       ],
     },
   },
   {
-    id: 'pethampatty',
-    name: 'PETHAMPATTY',
-    image: '/images/in-practice-detail/img02.png',
+    id: "pethampatty",
+    name: "PETHAMPATTY",
+    image: "/images/in-practice-detail/img02.png",
     cardMetrics: { dumpSites: 2, waterBodies: 2, trees: 50 },
     panel: {
       tagline:
-        'Local actions that turned waste into value and restored common ecosystems.',
+        "Local actions that turned waste into value and restored common ecosystems.",
       activities: [
-        'Dump site: 2',
-        'Water bodies: 2',
-        'Trees planted: 50',
-        'Petty shops - 2 shops - Collecting empty milk packets and dosa batter packets',
+        "Dump site: 2",
+        "Water bodies: 2",
+        "Trees planted: 50",
+        "Petty shops - 2 shops - Collecting empty milk packets and dosa batter packets",
       ],
       insight:
-        'Local shops have become collection points, embedding waste sorting into daily routine.',
-      restored: ['Dump site: 1', 'Water bodies: 0'],
-      restoredImage:
-        'https://picsum.photos/seed/pethampatty-restored/640/360',
+        "Local shops have become collection points, embedding waste sorting into daily routine.",
+      restored: ["Dump site: 1", "Water bodies: 0"],
+      restoredImage: "https://picsum.photos/seed/pethampatty-restored/640/360",
       restoredCaption:
-        'Cleared dump sites are paving the way for healthier surroundings.',
+        "Cleared dump sites are paving the way for healthier surroundings.",
       groups: [
-        { name: 'Gethu Group', members: 13 },
-        { name: 'Adolescent boys and Girls', members: 25 },
+        { name: "Gethu Group", members: 13 },
+        { name: "Adolescent boys and Girls", members: 25 },
       ],
     },
   },
   {
-    id: 'gopalpatti',
-    name: 'GOPALPATTI',
-    image: '/images/in-practice-detail/img03.png',
+    id: "gopalpatti",
+    name: "GOPALPATTI",
+    image: "/images/in-practice-detail/img03.png",
     cardMetrics: { dumpSites: 6, waterBodies: 3, trees: 100 },
     panel: {
       tagline:
-        'Local actions that turned waste into value and restored common ecosystems.',
+        "Local actions that turned waste into value and restored common ecosystems.",
       activities: [
-        'Dump site: 6',
-        'Water bodies: 3',
-        'Solar: 8',
-        'Rain water: 400',
-        'Trees planted: 100',
-        'Waste recycle unit: 1 - Run by the Panchayat',
-        'Vendors committed to zero plastic usage: 45',
-        'Barber salon - 6 (segregating waste and giving hair to process manure)',
+        "Dump site: 6",
+        "Water bodies: 3",
+        "Solar: 8",
+        "Rain water: 400",
+        "Trees planted: 100",
+        "Waste recycle unit: 1 - Run by the Panchayat",
+        "Vendors committed to zero plastic usage: 45",
+        "Barber salon - 6 (segregating waste and giving hair to process manure)",
       ],
       insight:
-        'Diverse community-led initiatives are reinforcing sustainable practices across livelihoods.',
-      restored: ['Dump site: 2', 'Water bodies: 0'],
-      restoredImage:
-        'https://picsum.photos/seed/gopalpatti-restored/640/360',
+        "Diverse community-led initiatives are reinforcing sustainable practices across livelihoods.",
+      restored: ["Dump site: 2", "Water bodies: 0"],
+      restoredImage: "https://picsum.photos/seed/gopalpatti-restored/640/360",
       restoredCaption:
-        'Restored dump sites are returning land to productive community use.',
+        "Restored dump sites are returning land to productive community use.",
       groups: [
-        { name: 'Barbers Association', members: 13 },
-        { name: 'Auto drivers association', members: 11 },
-        { name: 'MSME Group', members: 4 },
-        { name: 'Green workers', members: 15 },
+        { name: "Barbers Association", members: 13 },
+        { name: "Auto drivers association", members: 11 },
+        { name: "MSME Group", members: 4 },
+        { name: "Green workers", members: 15 },
       ],
     },
   },
   {
-    id: 'sanarpatty',
-    name: 'SANARPATTY',
-    image: '/images/in-practice-detail/img04.png',
+    id: "sanarpatty",
+    name: "SANARPATTY",
+    image: "/images/in-practice-detail/img04.png",
     cardMetrics: { dumpSites: 6, waterBodies: 5, trees: 200 },
     panel: {
       tagline:
-        'Local actions that turned waste into value and restored common ecosystems.',
+        "Local actions that turned waste into value and restored common ecosystems.",
       activities: [
-        'Dump site: 6',
-        'Water bodies: 5',
-        'Solar: 6',
-        'Rain water: 11',
-        'Trees planted: 200',
-        'Waste recycle unit: 1 - Run by the Panchayat',
-        'Shops committed to zero plastic usage: 51',
-        'Best plastic free practices: 10',
+        "Dump site: 6",
+        "Water bodies: 5",
+        "Solar: 6",
+        "Rain water: 11",
+        "Trees planted: 200",
+        "Waste recycle unit: 1 - Run by the Panchayat",
+        "Shops committed to zero plastic usage: 51",
+        "Best plastic free practices: 10",
       ],
       insight:
-        'Strong vendor commitment and youth participation are accelerating change at scale.',
-      restored: ['Dump site: 2', 'Water bodies: 0'],
-      restoredImage:
-        'https://picsum.photos/seed/sanarpatty-restored/640/360',
+        "Strong vendor commitment and youth participation are accelerating change at scale.",
+      restored: ["Dump site: 2", "Water bodies: 0"],
+      restoredImage: "https://picsum.photos/seed/sanarpatty-restored/640/360",
       restoredCaption:
-        'Plastic-free practices are reshaping daily commerce in the village.',
+        "Plastic-free practices are reshaping daily commerce in the village.",
       groups: [
-        { name: 'Barbers Association', members: 4 },
-        { name: 'Environmental Protection Committee', members: 70 },
-        { name: 'MSME Group', members: 3 },
-        { name: 'Small vendors Association', members: 27 },
-        { name: 'Auto Drivers Association', members: 19 },
-        { name: 'Youth Groups', members: 45 },
-        { name: 'Adolescent Groups', members: 28 },
-        { name: 'Green Gethu workers group', members: 60 },
+        { name: "Barbers Association", members: 4 },
+        { name: "Environmental Protection Committee", members: 70 },
+        { name: "MSME Group", members: 3 },
+        { name: "Small vendors Association", members: 27 },
+        { name: "Auto Drivers Association", members: 19 },
+        { name: "Youth Groups", members: 45 },
+        { name: "Adolescent Groups", members: 28 },
+        { name: "Green Gethu workers group", members: 60 },
       ],
     },
   },
@@ -145,8 +141,15 @@ type VillageId = Village["id"];
 /* ------------------------------------------------------------------ */
 
 const TrashIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
     <path d="M3 6h18" />
     <path d="M19 6l-1.5 14a2 2 0 0 1-2 1.8H8.5a2 2 0 0 1-2-1.8L5 6" />
     <path d="M10 11v6M14 11v6" />
@@ -173,8 +176,15 @@ const PinIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const PeopleIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
     <circle cx="9" cy="8" r="3" />
     <circle cx="17" cy="9" r="2.5" />
     <path d="M2 20c0-3 3-5 7-5s7 2 7 5" />
@@ -183,8 +193,15 @@ const PeopleIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const ClipboardIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
     <rect x="6" y="4" width="12" height="17" rx="2" />
     <path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" />
     <path d="M9 10h6M9 14h6M9 18h4" />
@@ -237,8 +254,8 @@ const VillageCard = ({
   onSelect: (id: VillageId) => void;
 }) => (
   <article
-    className={`${styles.card} ${isActive ? styles.cardActive : ''}`}
-    aria-current={isActive ? 'true' : undefined}
+    className={`${styles.card} ${isActive ? styles.cardActive : ""}`}
+    aria-current={isActive ? "true" : undefined}
     onClick={() => onSelect(village.id)}
   >
     <div className={styles.cardImageWrap}>
@@ -249,15 +266,16 @@ const VillageCard = ({
         loading="lazy"
       />
       <span
-        className={`${styles.cardBadge} ${isActive ? styles.cardBadgeActive : ''
-          }`}
+        className={`${styles.cardBadge} ${
+          isActive ? styles.cardBadgeActive : ""
+        }`}
       >
         <PinIcon className={styles.cardBadgeIcon} />
         {village.name}
       </span>
     </div>
 
-    <div className={styles.cardMetrics} >
+    <div className={styles.cardMetrics}>
       <MetricTile
         icon={<TrashIcon />}
         value={village.cardMetrics.dumpSites}
@@ -280,8 +298,7 @@ const VillageCard = ({
 
     <button
       type="button"
-      className={`${styles.viewMore} ${isActive ? styles.viewMoreActive : ''
-        }`}
+      className={`${styles.viewMore} ${isActive ? styles.viewMoreActive : ""}`}
       aria-expanded={isActive}
       aria-controls="pbjt-panel"
     >
@@ -307,7 +324,7 @@ export default function Villages() {
       panelRef.current &&
       window.innerWidth < 900
     ) {
-      panelRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      panelRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
     previousIdRef.current = activeId;
   }, [activeId]);
@@ -373,9 +390,7 @@ export default function Villages() {
             <p className={styles.panelTagline}>{active.panel.tagline}</p>
             <div className={styles.panelMetricsCard}>
               <div className={styles.panelMetricRow}>
-                <span
-                  className={`${styles.metricIcon} ${styles.metric_red}`}
-                >
+                <span className={`${styles.metricIcon} ${styles.metric_red}`}>
                   <TrashIcon />
                 </span>
                 <div>
@@ -386,9 +401,7 @@ export default function Villages() {
                 </div>
               </div>
               <div className={styles.panelMetricRow}>
-                <span
-                  className={`${styles.metricIcon} ${styles.metric_blue}`}
-                >
+                <span className={`${styles.metricIcon} ${styles.metric_blue}`}>
                   <WaterIcon />
                 </span>
                 <div>
@@ -399,9 +412,7 @@ export default function Villages() {
                 </div>
               </div>
               <div className={styles.panelMetricRow}>
-                <span
-                  className={`${styles.metricIcon} ${styles.metric_green}`}
-                >
+                <span className={`${styles.metricIcon} ${styles.metric_green}`}>
                   <TreeIcon />
                 </span>
                 <div>
@@ -419,16 +430,12 @@ export default function Villages() {
             {/* ACTIVITIES */}
             <div className={styles.panelBlock}>
               <header className={styles.blockHeader}>
-                <span
-                  className={`${styles.blockIcon} ${styles.blockIcon_red}`}
-                >
+                <span className={`${styles.blockIcon} ${styles.blockIcon_red}`}>
                   <ClipboardIcon />
                 </span>
                 <h3 className={styles.blockTitle}>ACTIVITIES</h3>
               </header>
-              <ul
-                className={`${styles.blockList} ${styles.blockList_red}`}
-              >
+              <ul className={`${styles.blockList} ${styles.blockList_red}`}>
                 {active.panel.activities.map((a, i) => (
                   <li key={i}>{a}</li>
                 ))}
@@ -453,9 +460,7 @@ export default function Villages() {
                 </span>
                 <h3 className={styles.blockTitle}>RESTORED</h3>
               </header>
-              <ul
-                className={`${styles.blockList} ${styles.blockList_green}`}
-              >
+              <ul className={`${styles.blockList} ${styles.blockList_green}`}>
                 {active.panel.restored.map((r, i) => (
                   <li key={i}>{r}</li>
                 ))}

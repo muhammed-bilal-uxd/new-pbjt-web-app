@@ -23,7 +23,7 @@ const districts: District[] = [
     icon: "🏔️",
     img: "/images/in-practice/dindukal.png",
     num: "01",
-    href: "dindigal",
+    href: "/dindigal",
   },
   {
     id: 2,
@@ -85,40 +85,39 @@ export default function VillageLocation({ onSelect }: VillageLocationProps) {
         </p>
 
         <div className={styles.grid}>
-          {districts.map((d, index) => (
-            <Link href={d.href} key={index}>
-              <button
-                key={d.id}
-                className={styles.card}
-                onClick={() => onSelect?.(d)}
-              >
-                <div className="flex gap-2">
-                  <div className={styles.cardBody + " flex-grow"}>
-                    <div className={styles.cardName}>{d.name}</div>
-                    <div className={styles.cardDesc}>{d.description}</div>
-                  </div>
-                  <div>
-                    <div className={styles.cardIcon}>
-                      <img src={d.img} />
-                    </div>
+          {districts.map((d) => (
+            <Link
+              href={d.href}
+              key={d.id}
+              className={styles.card}
+              onClick={() => onSelect?.(d)}
+            >
+              <div className="flex gap-2">
+                <div className={styles.cardBody + " flex-grow"}>
+                  <div className={styles.cardName}>{d.name}</div>
+                  <div className={styles.cardDesc}>{d.description}</div>
+                </div>
+                <div>
+                  <div className={styles.cardIcon}>
+                    <img src={d.img} alt={`${d.name} district`} />
                   </div>
                 </div>
+              </div>
 
-                <div className={styles.cardFoot}>
-                  <span className={styles.cardTag}>{d.tag}</span>
-                  <div className={styles.cardArrow}>
-                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-                      <path
-                        d="M2.5 6.5h8M7 3l3.5 3.5L7 10"
-                        stroke="currentColor"
-                        strokeWidth="1.4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
+              <div className={styles.cardFoot}>
+                <span className={styles.cardTag}>{d.tag}</span>
+                <div className={styles.cardArrow}>
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                    <path
+                      d="M2.5 6.5h8M7 3l3.5 3.5L7 10"
+                      stroke="currentColor"
+                      strokeWidth="1.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </div>
-              </button>
+              </div>
             </Link>
           ))}
         </div>

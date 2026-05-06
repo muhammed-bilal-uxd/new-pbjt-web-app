@@ -557,6 +557,10 @@
   .focus-banner-container {
     transform: scale(0.8);
   }
+
+  .expectedChangeContent {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ==========================================================================
