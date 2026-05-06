@@ -20,11 +20,28 @@ export default function Framework() {
     <div className={cn("pbjt framework-page")}>
       {/* ============ HERO ============ */}
 
-      <Banner
-        title="PBJT - FRAMEWORK Principles of Place-Based Just Transition"
-        imgUrl="/images/impact-proposition/hero-center.jpg"
-        textColor="#ffffff"
-      />
+      <Banner>
+        <img
+          className="single-cover-banner"
+          src="/images/banner/framework-banner-01.jpg"
+        />
+
+        <div
+          className={cn(
+            "relative d-flex flex-col items-center justify-center h-full framework-banner-container",
+          )}
+        >
+          <h3 className={cn("hero-text-1")}>
+            <span className="ml-2">PBJT - Framework</span>{" "}
+          </h3>
+          <p className={cn("hero-text-2")}>Principles</p>
+          <p className={cn("hero-text-3")}>
+            <span className={cn("ml-[100px] mt-[-50px] hero-text-3-content")}>
+              of Place-Based Just Transition
+            </span>
+          </p>
+        </div>
+      </Banner>
 
       {/* ============ TOOLS ============ */}
       <section className={cn("pbjt-tools center-content")}>

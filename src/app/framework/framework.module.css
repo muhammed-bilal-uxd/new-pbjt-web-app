@@ -268,6 +268,35 @@
   filter: grayscale(100%);
 }
 
+.framework-banner-container h3,
+.framework-banner-container p {
+  line-height: 100%;
+  margin: 0;
+}
+
+.hero-text-1 {
+  color: black;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.hero-text-2 {
+  color: white;
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.hero-text-3 {
+  color: var(--pbjt-primary-color);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.hero-text-3-content {
+  display: block;
+  margin-top: -25px;
+}
+
 @media (min-width: 900px) {
   .pbjt-principles {
     border-radius: var(--pbjt-radius);
@@ -332,6 +361,12 @@
   gap: 1.25rem;
   max-width: var(--pbjt-max-width);
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .framework-banner-container {
+    transform: scale(0.7);
+  }
 }
 
 @media (min-width: 768px) {

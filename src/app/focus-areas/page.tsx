@@ -215,11 +215,25 @@ export default function FocusAreas() {
     <section className={cn("pbjt")} aria-labelledby="pbjt-heading">
       {/* HERO */}
 
-      <Banner
-        title="Where PBJT works"
-        imgUrl="/images/impact-proposition/hero-center.jpg"
-        textColor="#ffffff"
-      />
+      <Banner>
+        <img
+          className="single-cover-banner"
+          src="/images/banner/focus-area-banner-01.jpg"
+        />
+
+        <div
+          className={cn(
+            "relative flex gap-2 items-center focus-banner-container",
+          )}
+        >
+          <div className="flex flex-col">
+            <p className={cn("hero-text-1")}>Focus Areas:</p>
+            <span className={cn("hero-text-2")}>Where</span>
+            <span className={cn("hero-text-3")}>PBJT works</span>
+          </div>
+          <div className={cn("hero-text-4")}>?</div>
+        </div>
+      </Banner>
 
       {/* MAIN GRID */}
       <div className={cn("pbjt-main center-content")}>
