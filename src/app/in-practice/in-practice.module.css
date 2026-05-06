@@ -43,6 +43,10 @@
   padding: 1.25rem 2rem 0.75rem;
   position: relative;
   overflow: hidden;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .heroInner {
@@ -57,9 +61,8 @@
 
 .heroTop {
   position: absolute;
-  top: 16px;
-  left: 50%;
-  transform: translateX(-135%);
+  top: 0px;
+  left: 70px;
   font-size: 1.5rem;
   font-weight: 600;
   color: #1f2937;
@@ -68,7 +71,7 @@
 }
 
 .heroMain {
-  font-size: clamp(3rem, 11vw, 7rem);
+  font-size: 6rem;
   font-weight: 800;
   color: #ffffff;
   margin: 0;
@@ -88,9 +91,8 @@
 
 .heroBottom {
   position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(60%);
+  bottom: -15px;
+  right: 70px;
   font-size: 1.25rem;
   font-weight: 600;
   color: #1f2937;
@@ -592,6 +594,10 @@
   margin-block: 0 3.5rem;
 }
 
+.heroWrap {
+  white-space: nowrap;
+}
+
 /* =========================================================
    Responsive: tablet (<= 1024px)
    ========================================================= */
@@ -681,15 +687,22 @@
     gap: 0.25rem;
   }
 
-  .heroTop,
-  .heroBottom {
-    position: static;
-    transform: none;
+  /* .heroTop {
     font-size: 1.05rem;
+    left: 50px;
   }
 
-  .heroMain {
-    font-size: clamp(2.75rem, 18vw, 4.5rem);
+  .heroBottom {
+    font-size: 1.05rem;
+    right: 50px;
+  } */
+
+  /* .heroMain {
+    font-size: 4rem;
+  } */
+
+  .heroWrap {
+    transform: scale(0.8);
   }
 
   .practiceSection,

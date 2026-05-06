@@ -172,15 +172,16 @@ export default function PBJTInPractice() {
   return (
     <div className={styles.wrapper}>
       {/* ===== Hero Banner ===== */}
-      <section className={styles.heroBanner} aria-label="Page heading">
-        <div className={styles.heroInner}>
+
+      <Banner>
+        <div className={styles.heroWrap}>
           <span className={styles.heroTop}>What the</span>
-          <h1 className={styles.heroMain}>
+          <div className={styles.heroMain}>
             Ground<span className={styles.heroQuestion}>?</span>
-          </h1>
+          </div>
           <span className={styles.heroBottom}>Teaches Us</span>
         </div>
-      </section>
+      </Banner>
 
       {/* ===== PBJT In Practice ===== */}
       <section className={styles.practiceSection + " center-content"}>
