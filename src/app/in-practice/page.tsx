@@ -203,12 +203,25 @@ export default function PBJTInPractice() {
               gap between intention and lived impact.
             </p>
 
-            <button type="button" className={styles.exploreBtn}>
+            <button
+              type="button"
+              className={styles.exploreBtn}
+              onClick={() => {
+                const locationSection =
+                  document.getElementById("location-section");
+                if (locationSection) {
+                  window.scrollTo({
+                    top: locationSection.offsetTop - 70,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+            >
               Explore Just Transition In Practice
               <ArrowIcon />
             </button>
 
-            <div className={styles.tagline}>
+            <Link className={styles.tagline} href={"/testimonials"}>
               <span className={styles.taglineIcon}>
                 <BookIcon />
               </span>
@@ -220,7 +233,7 @@ export default function PBJTInPractice() {
                   Grounded insights from the field.
                 </p>
               </div>
-            </div>
+            </Link>
           </div>
 
           <div className={styles.practiceImageWrap}>
@@ -281,7 +294,7 @@ export default function PBJTInPractice() {
 
       {/* ===== Location Selector ===== */}
       <section className={"center-content"}>
-        <div className={styles.locationSection}>
+        <div className={styles.locationSection} id="location-section">
           <div className={styles.locationLeft}>
             <div className={styles.locationHeader}>
               <span className={styles.locationPin}>
