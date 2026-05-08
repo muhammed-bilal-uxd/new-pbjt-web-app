@@ -354,7 +354,7 @@ export default function Contact() {
       </section> */}
 
       {/* Newsletter */}
-      <section className={cn("newsletter")}>
+      {/* <section className={cn("newsletter")}>
         <div className={cn("newsletter-content center-content")}>
           <div className={cn("newsletter-icon")}>
             <Mail size={32} />
@@ -370,7 +370,31 @@ export default function Contact() {
             Subscribe Now <ArrowRight size={18} />
           </button>
         </div>
-      </section>
+      </section> */}
+
+      <div className="m-auto">
+        <form
+          action="mailto:mail2muhammedbilal@gmail.com"
+          method="post"
+          encType="text/plain"
+        >
+          Name:
+          <br />
+          <input type="text" name="name" />
+          <br />
+          E-mail:
+          <br />
+          <input type="text" name="mail" />
+          <br />
+          Comment:
+          <br />
+          <input type="text" name="comment" />
+          <br />
+          <br />
+          <input type="submit" value="Send" />
+          <input type="reset" value="Reset" />
+        </form>
+      </div>
     </div>
   );
 }
