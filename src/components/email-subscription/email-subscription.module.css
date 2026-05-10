@@ -1,0 +1,73 @@
+.wrapper {
+  --radius-sm: 8px;
+}
+
+/* ============================
+   Newsletter Banner
+   ============================ */
+.newsletter {
+  background: var(--pbjt-primary-color);
+  color: #ffffff;
+  padding: 2.5rem 0;
+}
+
+.newsletter-content {
+  /* max-width: 1200px;
+  margin: 0 auto; */
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.newsletter-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--pbjt-primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.newsletter-text {
+  flex: 1;
+}
+
+.newsletter-text h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+}
+
+.newsletter-text p {
+  font-size: 0.9rem;
+  opacity: 0.95;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.subscribe-btn {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.subscribe-btn:hover {
+  background: #ffffff;
+  color: var(--pbjt-primary-color);
+}

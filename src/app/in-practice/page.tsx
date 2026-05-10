@@ -304,35 +304,7 @@ export default function PBJTInPractice() {
         </div>
       </section>
 
-      {/* ===== Newsletter ===== */}
-      <section className={styles.newsletterSection}>
-        <div className={styles.newsletterContent + " center-content"}>
-          <span className={styles.newsletterIconWrap}>
-            <MailIcon />
-          </span>
-          <div className={styles.newsletterText}>
-            <h3 className={styles.newsletterTitle}>Stay connected with PBJT</h3>
-            <p className={styles.newsletterSub}>
-              Subscribe to our newsletter to stay updated on our latest
-              research, stories, and opportunities.
-            </p>
-          </div>
-          <form className={styles.newsletterForm} onSubmit={handleSubscribe}>
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className={styles.newsletterInput}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              aria-label="Email address"
-            />
-            <button type="submit" className={styles.newsletterBtn}>
-              Subscribe <ArrowIcon />
-            </button>
-          </form>
-        </div>
-      </section>
+      {/* <EmailSubscription /> */}
     </div>
   );
 }

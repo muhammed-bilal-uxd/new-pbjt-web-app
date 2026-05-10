@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import styles from "./Contact.module.css";
 import Banner from "@/components/banner";
+import EmailSubscription from "@/components/email-subscription/email-subscription";
 
 const cn = (names: string) =>
   names
@@ -69,7 +70,6 @@ export default function Contact() {
           </div>
         </div>
       </section> */}
-
       <Banner>
         <div className="relative">
           <div className={cn("text-white p-4 contact-text-banner-container")}>
@@ -77,7 +77,6 @@ export default function Contact() {
           </div>
         </div>
       </Banner>
-
       {/* Form + Info */}
       <section className={cn("contact-main center-content")}>
         <div className={cn("contact-grid")}>
@@ -302,7 +301,6 @@ export default function Contact() {
           </aside>
         </div>
       </section>
-
       {/* Other Ways */}
       {/* <section className="other-ways">
         <h2 className="other-ways-title">Other ways to connect</h2>
@@ -353,48 +351,7 @@ export default function Contact() {
         </div>
       </section> */}
 
-      {/* Newsletter */}
-      {/* <section className={cn("newsletter")}>
-        <div className={cn("newsletter-content center-content")}>
-          <div className={cn("newsletter-icon")}>
-            <Mail size={32} />
-          </div>
-          <div className={cn("newsletter-text")}>
-            <h3>Stay connected with PBJT</h3>
-            <p>
-              Subscribe to our newsletter to stay updated on our latest
-              research, stories, and opportunities.
-            </p>
-          </div>
-          <button className={cn("subscribe-btn")} type="button">
-            Subscribe Now <ArrowRight size={18} />
-          </button>
-        </div>
-      </section> */}
-
-      <div className="m-auto">
-        <form
-          action="mailto:mail2muhammedbilal@gmail.com"
-          method="post"
-          encType="text/plain"
-        >
-          Name:
-          <br />
-          <input type="text" name="name" />
-          <br />
-          E-mail:
-          <br />
-          <input type="text" name="mail" />
-          <br />
-          Comment:
-          <br />
-          <input type="text" name="comment" />
-          <br />
-          <br />
-          <input type="submit" value="Send" />
-          <input type="reset" value="Reset" />
-        </form>
-      </div>
+      {/* <EmailSubscription /> */}
     </div>
   );
 }
