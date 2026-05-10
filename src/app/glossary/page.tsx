@@ -16,6 +16,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import styles from "./Glossary.module.css";
+import Link from "next/link";
 
 const cn = (names: string) =>
   names
@@ -407,8 +408,12 @@ export default function Glossary() {
             </div>
           </div>
           <div className={cn("cta-buttons")}>
-            <button className={cn("cta-btn")}>Explore Methodology</button>
-            <button className={cn("cta-btn")}>View Framework</button>
+            <Link href="/methodology">
+              <button className={cn("cta-btn")}>Explore Methodology</button>
+            </Link>
+            <Link href="/framework">
+              <button className={cn("cta-btn")}>View Framework</button>
+            </Link>
           </div>
         </div>
       </section>
