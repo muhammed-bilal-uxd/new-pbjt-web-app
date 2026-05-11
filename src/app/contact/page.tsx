@@ -82,7 +82,7 @@ export default function Contact() {
       name: "Vijay",
       email: "vijayvasudevan.uxd@gmail.com",
       organisation: "bizzup",
-      subject: "Ideas",
+      subject: "ideas",
       message: "I have some ideas for the PBJT.",
       agreed: true,
     });
