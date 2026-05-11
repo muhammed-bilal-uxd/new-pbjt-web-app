@@ -57,13 +57,18 @@ export default function Contact() {
   };
 
   const submitApiCall = async () => {
+    const payload = {
+      ...formData,
+      websiteUrl: window.location.origin,
+    };
+    // console.log("Payload:", payload);
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
       const data = await response.json();
       console.log("Form submitted:", data);
