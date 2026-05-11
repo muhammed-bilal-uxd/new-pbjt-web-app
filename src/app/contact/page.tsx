@@ -15,6 +15,7 @@ import {
 import styles from "./Contact.module.css";
 import Banner from "@/components/banner";
 import EmailSubscription from "@/components/email-subscription/email-subscription";
+import toast from "react-hot-toast";
 
 const cn = (names: string) =>
   names
@@ -61,7 +62,7 @@ export default function Contact() {
       ...formData,
       websiteUrl: window.location.origin,
     };
-    // console.log("Payload:", payload);
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -70,10 +71,16 @@ export default function Contact() {
         },
         body: JSON.stringify(payload),
       });
+
       const data = await response.json();
-      console.log("Form submitted:", data);
-    } catch (error) {
-      console.log("Error submitting form:", error);
+
+      if (!response.ok) {
+        throw new Error(data?.message || "Error submitting form");
+      }
+
+      toast.success(data?.message || "Form submitted successfully");
+    } catch (error: any) {
+      toast.error(error?.message || "Error submitting form");
     }
   };
 

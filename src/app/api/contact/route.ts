@@ -21,10 +21,15 @@ export async function POST(req: Request) {
       websiteUrl,
     });
 
-    return Response.json({
-      success: true,
-      message: "Contact form submitted successfully",
-    });
+    return Response.json(
+      {
+        success: true,
+        message: "Contact form submitted successfully",
+      },
+      {
+        status: 200,
+      },
+    );
   } catch (error) {
     return Response.json(
       {
