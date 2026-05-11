@@ -5,15 +5,11 @@ export async function POST(req: Request) {
     const { name, email, message, organisation, subject, agreed, websiteUrl } =
       await req.json();
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST as string,
-      port: Number(process.env.SMTP_PORT),
-      secure: true,
-      auth: {
-        user: process.env.SMTP_USER as string,
-        pass: process.env.SMTP_PASS as string,
-      },
-    });
+    if (!process.env.SMTP_USER) {
+      throw new Error(
+        "Mail not configured yet. Please contact admin for help.",
+      );
+    }
 
     await notifyNewUserRegistration({
       organizationName: organisation,
@@ -25,9 +21,19 @@ export async function POST(req: Request) {
       websiteUrl,
     });
 
-    return Response.json({ success: true });
+    return Response.json({
+      success: true,
+      message: "Contact form submitted successfully",
+    });
   } catch (error) {
-    return Response.json({ success: false, error }, { status: 500 });
+    return Response.json(
+      {
+        success: false,
+        message: "Error while sending mail. Please try again later",
+        error,
+      },
+      { status: 500 },
+    );
   }
 }
 
