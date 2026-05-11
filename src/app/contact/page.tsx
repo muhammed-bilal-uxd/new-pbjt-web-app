@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import {
   User,
   Mail,
@@ -52,7 +52,41 @@ export default function Contact() {
     e.preventDefault();
     // Replace with API call
     console.log("Form submitted:", formData);
+
+    submitApiCall();
   };
+
+  const submitApiCall = async () => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      console.log("Form submitted:", data);
+    } catch (error) {
+      console.log("Error submitting form:", error);
+    }
+  };
+
+  const isValidForm = () => {
+    const { name, email, subject, message, agreed } = formData;
+    return name && email && subject && message && agreed;
+  };
+
+  useEffect(() => {
+    setFormData({
+      name: "Vijay",
+      email: "vijayvasudevan.uxd@gmail.com",
+      organisation: "bizzup",
+      subject: "Ideas",
+      message: "I have some ideas for the PBJT.",
+      agreed: true,
+    });
+  }, []);
 
   return (
     <div className={cn("contact-page")}>
@@ -207,7 +241,11 @@ export default function Contact() {
                 </label>
               </div>
 
-              <button type="submit" className={cn("submit-btn")}>
+              <button
+                type="submit"
+                className={cn("submit-btn")}
+                disabled={!isValidForm()}
+              >
                 Send Message <ArrowRight size={18} />
               </button>
             </form>

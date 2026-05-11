@@ -279,6 +279,13 @@
   transform: translateY(0);
 }
 
+.submit-btn:disabled {
+  /* background: #9ca3af; */
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: translateY(0);
+}
+
 /* ============================
    Info Card
    ============================ */
