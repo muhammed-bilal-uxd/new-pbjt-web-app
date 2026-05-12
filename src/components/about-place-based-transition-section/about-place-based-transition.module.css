@@ -1,0 +1,396 @@
+/* ─── PlaceBasedTransition.module.css ─── */
+
+/* ---------- Section layout ---------- */
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 5rem;
+  padding-block: 4rem;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #1a1a1a;
+  background: #fff;
+}
+
+/* ---------- Left column ---------- */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.headingWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.heading {
+  font-family: "Georgia", serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--pbjt-primary-color);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.heading em {
+  font-style: normal;
+}
+
+.rule {
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  background: var(--pbjt-primary-color);
+  border-radius: 2px;
+  margin-top: 0.25rem;
+}
+
+.intro {
+  font-family: "Georgia", serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #333;
+  margin: 0;
+}
+
+/* ---------- Blockquote ---------- */
+.blockquote {
+  position: relative;
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  background: #fdf5f4;
+  border-left: none;
+  border-radius: 4px;
+}
+
+.blockquote p {
+  font-family: "Georgia", serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: #1a1a1a;
+  margin: 0;
+  /* padding: 0 1rem; */
+}
+
+.quoteOpen,
+.quoteClose {
+  font-family: "Georgia", serif;
+  font-size: 3rem;
+  line-height: 0;
+  color: var(--pbjt-primary-color);
+  font-weight: 700;
+  position: relative;
+}
+
+.quoteOpen {
+  top: 0.6rem;
+  margin-right: 0.15rem;
+  float: left;
+}
+
+.quoteClose {
+  top: 0.9rem;
+  margin-left: 0.1rem;
+  float: right;
+}
+
+/* ---------- Two-column body text ---------- */
+.bodyColumns {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.25rem;
+}
+
+.bodyColumnsLine {
+  background-color: var(--pbjt-primary-color);
+}
+
+.bodyColumns p {
+  font-family: Arial, sans-serif;
+  font-size: 0.825rem;
+  line-height: 1.7;
+  color: #444;
+  margin: 0;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding-top: 0.5rem;
+  border-top: none;
+}
+
+.footerBar {
+  display: block;
+  width: 4px;
+  height: 3rem;
+  background: var(--pbjt-primary-color);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.footerText {
+  font-family: "Georgia", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  /* font-style: italic; */
+  color: var(--pbjt-primary-color);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ---------- Right column ---------- */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.rightHeading {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pbjt-primary-color);
+  margin: 0 0 1.5rem 0;
+}
+
+/* ---------- Risk list ---------- */
+.riskList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.riskItem {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  grid-template-rows: auto;
+  gap: 0 1rem;
+  align-items: start;
+  padding: 0 0 0.6rem 0;
+  position: relative;
+}
+
+/* Vertical connector line between items */
+.riskItem:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 1.35rem;
+  top: calc(3rem + 1rem);
+  bottom: 0;
+  width: 1px;
+  background: #e8d5d3;
+  z-index: 0;
+}
+
+/* ---------- Icon circles ---------- */
+.iconWrap {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: #fdf0ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.iconEmoji {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ---------- Risk text content ---------- */
+.riskContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: 0.35rem;
+}
+
+.riskTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.riskTitleHighlight {
+  /* color: var(--pbjt-primary-color); */
+}
+
+.riskTitleDanger {
+  /* color: var(--pbjt-primary-color); */
+}
+
+.riskSubtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  color: #888;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ---------- Risk badge (side note) ---------- */
+.riskBadge {
+  grid-column: 2 / 3;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: 1.5px dashed var(--pbjt-primary-color);
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--pbjt-primary-color);
+  line-height: 1.45;
+  max-width: 14rem;
+}
+
+/* ---------- Connector track (hidden visual aid) ---------- */
+.connectorTrack {
+  display: none;
+}
+
+.downArrow {
+  --arrow-height: 30px;
+  --arrow-bold: 2px;
+  width: 24px;
+  height: var(--arrow-height);
+  position: relative;
+  margin-inline-start: 25%;
+}
+
+.downArrow::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: var(--arrow-bold);
+  height: calc(var(--arrow-height) - 10px);
+  background: var(--pbjt-primary-color);
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.downArrow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  width: calc(var(--arrow-height) / 3);
+  height: calc(var(--arrow-height) / 3);
+  border-right: var(--arrow-bold) solid var(--pbjt-primary-color);
+  border-bottom: var(--arrow-bold) solid var(--pbjt-primary-color);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.rectShape {
+  --border-size: 2px;
+  --border-shape: dashed;
+  --border-color: var(--pbjt-primary-color);
+  border-radius: 5px;
+  width: 20px;
+  height: 100%;
+  border-top: var(--border-size) var(--border-shape) var(--border-color);
+  /* border-left: var(--border-size) var(--border-shape) var(--pbjt-primary-color); */
+  border-bottom: var(--border-size) var(--border-shape) var(--border-color);
+  border-right: var(--border-size) var(--border-shape) var(--border-color);
+  position: relative;
+  margin-inline-end: 10px;
+}
+
+.rectShape::before {
+  content: "";
+  border-top: var(--border-size) var(--border-shape) var(--border-color);
+  border-left: var(--border-size) var(--border-shape) var(--border-color);
+  background-color: #fff;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  transform: rotate(137deg);
+}
+
+.rectText {
+  color: var(--pbjt-primary-color);
+  font-size: 0.825rem;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ══════════════════════════════════════ */
+
+/* Tablet — stack columns */
+@media (max-width: 900px) {
+  .section {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 2rem;
+  }
+
+  .bodyColumns {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .bodyColumnsLine {
+    display: none;
+  }
+
+  .right {
+    border-top: 1px solid #f0c5c0;
+    padding-top: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .section {
+    padding: 2rem 1.25rem;
+    gap: 2rem;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .blockquote p {
+    font-size: 1rem;
+  }
+
+  .riskItem {
+    grid-template-columns: 2.5rem 1fr;
+  }
+
+  .iconWrap {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .riskBadge {
+    max-width: 100%;
+  }
+
+  .footerBar {
+    height: 2.5rem;
+  }
+}

@@ -3,6 +3,10 @@
 import Banner from "@/components/banner";
 import styles from "./about.module.css";
 
+import AboutPlaceBasedTransitionSection from "@/components/about-place-based-transition-section/about-place-based-transition-section";
+import HowPBJTWorks from "@/components/HowPBJTWorks/HowPBJTWorks";
+import VillageMapping from "@/components/village-mapping/village-mapping";
+
 const cn = (names: string) =>
   names
     .split(/\s+/)
@@ -31,6 +35,18 @@ const PlaceBasedJustTransition = () => {
           </div>
         </div>
       </Banner>
+
+      <div className={"center-content"}>
+        <AboutPlaceBasedTransitionSection />
+      </div>
+
+      <div className={"center-content"}>
+        <HowPBJTWorks />
+      </div>
+
+      <div className={"center-content"}>
+        <VillageMapping />
+      </div>
 
       {/* ============ SHAPING CONTENT ============ */}
       <section className={cn("pbjt-section section-one")}>
