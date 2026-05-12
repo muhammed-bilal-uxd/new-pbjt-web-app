@@ -332,7 +332,13 @@
 
 .rectText {
   color: var(--pbjt-primary-color);
-  font-size: 0.825rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+}
+
+.arrowIcon {
+  color: var(--pbjt-primary-color);
 }
 
 /* ══════════════════════════════════════

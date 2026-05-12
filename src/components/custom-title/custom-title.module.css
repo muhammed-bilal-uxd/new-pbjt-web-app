@@ -1,0 +1,28 @@
+.headingWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.heading {
+  font-family: "Georgia", serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--pbjt-primary-color);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.heading em {
+  font-style: normal;
+}
+
+.rule {
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  background: var(--pbjt-primary-color);
+  border-radius: 2px;
+  margin-top: 0.25rem;
+}

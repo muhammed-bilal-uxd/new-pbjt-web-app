@@ -1,5 +1,7 @@
 "use client";
 
+import { MoveDown } from "lucide-react";
+import CustomTitle from "../custom-title/custom-title";
 import styles from "./about-place-based-transition.module.css";
 
 const riskLevels = [
@@ -42,13 +44,11 @@ export default function AboutPlaceBasedTransitionSection() {
     <section className={styles.section}>
       {/* Left Column */}
       <div className={styles.left}>
-        <div className={styles.headingWrap}>
-          <h1 className={styles.heading}>
-            Transition is not a<br />
-            <em>one size fits all</em> approach.
-          </h1>
-          <span className={styles.rule} aria-hidden="true" />
-        </div>
+        <CustomTitle>
+          Transition is not a
+          <br />
+          <em>one size fits all</em> approach.
+        </CustomTitle>
 
         <p className={styles.intro}>
           A Place-Based Just Transition begins with a simple but critical
@@ -120,8 +120,8 @@ export default function AboutPlaceBasedTransitionSection() {
                     </div>
                   </div>
                   {riskLevels.length - 1 !== index && (
-                    <div>
-                      <div className={styles.downArrow}></div>
+                    <div className="w-full flex justify-center">
+                      <MoveDown className={styles.arrowIcon} />
                     </div>
                   )}
                 </div>
