@@ -186,7 +186,7 @@ export default function PBJTInPractice() {
       {/* ===== PBJT In Practice ===== */}
       <section className={styles.practiceSection + " center-content"}>
         {/* <span className={styles.decorCircle} aria-hidden="true" /> */}
-        <span className={styles.decorDots} aria-hidden="true" />
+        {/* <span className={styles.decorDots} aria-hidden="true" /> */}
         <div className={styles.practiceGrid}>
           <div className={styles.practiceText}>
             <h2 className={styles.practiceTitle}>
@@ -224,7 +224,7 @@ export default function PBJTInPractice() {
             </button> */}
 
             {/* <Link className={styles.tagline} href={"/testimonials"}> */}
-            <div>
+            {/* <div>
               <span className={styles.taglineIcon}>
                 <BookIcon />
               </span>
@@ -236,14 +236,14 @@ export default function PBJTInPractice() {
                   Grounded insights from the field.
                 </p>
               </div>
-            </div>
+            </div> */}
             {/* </Link> */}
           </div>
 
           <div className={styles.practiceImageWrap}>
             {/* <span className={styles.practiceImageBg} aria-hidden="true" /> */}
             <img
-              src="/images/in-practice/yellow-flower.png"
+              src="/images/in-practice/yellow-flower-2.png"
               alt="Workers harvesting marigold flowers in a field"
               className="cover-image rounded-[12px]"
             />

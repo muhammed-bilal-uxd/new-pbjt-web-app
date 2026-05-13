@@ -47,7 +47,7 @@ const PlaceBasedJustTransition = () => {
       <div className={cn("pbjt-diagram-section")}>
         <div className={"center-content text-center"}>
           <img
-            style={{ width: "100%", maxWidth: "1000px", height: "auto" }}
+            style={{ margin: "0 auto", maxWidth: "100%" }}
             src="/images/about/hand-diagram.png"
           />
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./DindigulPage.module.css";
+import styles from "./district.module.css";
 import BeforeAfter from "@/components/before-after";
 import Villages from "@/components/villages/villages";
 import Mapping from "@/components/mapping";

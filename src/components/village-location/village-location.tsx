@@ -6,54 +6,114 @@ import styles from "./village-location.module.css";
 interface District {
   id: number;
   name: string;
+  slugName: string;
   description: string;
   tag: string;
   icon?: string;
   img?: string;
   num: string;
-  href: string;
+  hasDetails: boolean;
 }
 
 const districts: District[] = [
   {
     id: 1,
     name: "Dindigul",
+    slugName: "dindigul",
     description: "Central hills district with rich agricultural heritage",
     tag: "Central",
     icon: "🏔️",
     img: "/images/in-practice/location-1b.png",
     num: "01",
-    href: "/dindigal",
+    hasDetails: true,
   },
   {
     id: 2,
     name: "Virudhnagar",
+    slugName: "virudhnagar",
     description: "Southern trade hub known for crackers and textiles",
     tag: "Southern",
     icon: "🌾",
     img: "/images/in-practice/location-2b.png",
     num: "02",
-    href: "#",
+    hasDetails: true,
   },
   {
     id: 3,
     name: "Krishnagiri",
+    slugName: "krishnagiri",
     description: "Northern border district growing in industry and mangoes",
     tag: "Northern",
     icon: "⛰️",
     img: "/images/in-practice/location-3b.png",
     num: "03",
-    href: "#",
+    hasDetails: true,
   },
   {
     id: 4,
     name: "Hosur",
+    slugName: "hosur",
     description: "Fast-growing EV and electronics manufacturing corridor",
     tag: "Industrial",
     icon: "🏙️",
     img: "/images/in-practice/location-4b.png",
     num: "04",
-    href: "#",
+    hasDetails: true,
+  },
+  {
+    id: 5,
+    name: "Delhi NCR",
+    slugName: "delhi-ncr",
+    description: "Bustling capital region and major economic hub",
+    tag: "Capital",
+    icon: "🏢",
+    img: "/images/in-practice/location-1b.png",
+    num: "05",
+    hasDetails: false,
+  },
+  {
+    id: 6,
+    name: "Patna",
+    slugName: "patna",
+    description: "Historic city along the banks of the Ganges river",
+    tag: "Eastern",
+    icon: "🏛️",
+    img: "/images/in-practice/location-2b.png",
+    num: "06",
+    hasDetails: false,
+  },
+  {
+    id: 7,
+    name: "Shivajinagar",
+    slugName: "shivajinagar",
+    description: "Vibrant cultural and commercial neighborhood",
+    tag: "Western",
+    icon: "🏘️",
+    img: "/images/in-practice/location-3b.png",
+    num: "07",
+    hasDetails: false,
+  },
+  {
+    id: 8,
+    name: "Chattisgarh",
+    slugName: "chattisgarh",
+    description: "Resource-rich state known for its tribal culture and forests",
+    tag: "Central",
+    icon: "🌳",
+    img: "/images/in-practice/location-4b.png",
+    num: "08",
+    hasDetails: false,
+  },
+  {
+    id: 9,
+    name: "Madhya Pradesh",
+    slugName: "madhya-pradesh",
+    description: "The heart of India, famous for wildlife reserves and temples",
+    tag: "Central",
+    icon: "🐅",
+    img: "/images/in-practice/location-1b.png",
+    num: "09",
+    hasDetails: false,
   },
 ];
 
@@ -75,7 +135,7 @@ export default function VillageLocation({ onSelect }: VillageLocationProps) {
       <div className={styles.left}>
         <div className={styles.badge}>
           <span className={styles.badgeDot} />
-          Tamil Nadu, India
+          India
         </div>
 
         <h1 className={styles.heading}>Explore your district</h1>
@@ -87,15 +147,21 @@ export default function VillageLocation({ onSelect }: VillageLocationProps) {
         <div className={styles.grid}>
           {districts.map((d) => (
             <Link
-              href={d.href}
+              href={
+                !d.hasDetails ? "#" : `/district?districtName=${d.slugName}`
+              }
               key={d.id}
-              className={styles.card}
+              className={
+                styles.card +
+                " " +
+                (!d.hasDetails ? styles.disabled : styles.active)
+              }
               onClick={() => onSelect?.(d)}
             >
               <div className="flex gap-2">
                 <div className={styles.cardBody + " flex-grow"}>
                   <div className={styles.cardName}>{d.name}</div>
-                  <div className={styles.cardDesc}>{d.description}</div>
+                  {/* <div className={styles.cardDesc}>{d.description}</div> */}
                 </div>
                 <div>
                   <div className={styles.cardIcon}>
@@ -105,7 +171,13 @@ export default function VillageLocation({ onSelect }: VillageLocationProps) {
               </div>
 
               <div className={styles.cardFoot}>
-                <span className={styles.cardTag}>{d.tag}</span>
+                <span className={styles.cardTag}>
+                  {!d.hasDetails ? (
+                    <span className={styles.commingSoon}>Coming soon...</span>
+                  ) : (
+                    <span className={styles.viewMore}>View more</span>
+                  )}
+                </span>
                 <div className={styles.cardArrow}>
                   <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
                     <path
@@ -126,7 +198,7 @@ export default function VillageLocation({ onSelect }: VillageLocationProps) {
       {/* Right Panel */}
       <div className={styles.right}>
         <div className="mt-5">
-          <img src="/images/in-practice/tn.png" alt="" />
+          <img src="/images/in-practice/india-map-02.png" alt="" />
         </div>
 
         <div className={styles.statsGrid}>
