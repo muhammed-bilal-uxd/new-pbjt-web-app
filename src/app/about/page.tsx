@@ -5,7 +5,7 @@ import styles from "./about.module.css";
 
 import AboutPlaceBasedTransitionSection from "@/components/about-place-based-transition-section/about-place-based-transition-section";
 import HowPBJTWorks from "@/components/HowPBJTWorks/HowPBJTWorks";
-import VillageMapping from "@/components/village-mapping/village-mapping";
+import CustomTitle from "@/components/custom-title/custom-title";
 
 const cn = (names: string) =>
   names
@@ -44,8 +44,13 @@ const PlaceBasedJustTransition = () => {
         <HowPBJTWorks />
       </div>
 
-      <div className={"center-content"}>
-        <VillageMapping />
+      <div className={cn("pbjt-diagram-section")}>
+        <div className={"center-content text-center"}>
+          <img
+            style={{ width: "100%", maxWidth: "1000px", height: "auto" }}
+            src="/images/about/hand-diagram.png"
+          />
+        </div>
       </div>
 
       {/* ============ SHAPING CONTENT ============ */}
@@ -54,11 +59,8 @@ const PlaceBasedJustTransition = () => {
           <div className={cn("pbjt-grid pbjt-grid--two")}>
             {/* LEFT */}
             <div>
-              <span className={cn("pbjt-bar")} aria-hidden="true" />
-              <h3 className={cn("pbjt-h3")}>
-                No one-size-fits-all approach exists.
-              </h3>
-              <p className={cn("pbjt-p")}>
+              <CustomTitle>No one-size-fits-all approach exists.</CustomTitle>
+              <p className={cn("pbjt-p mt-3")}>
                 Just Transition often appears in global discussions as a policy
                 framework for meeting climate goals, shifting energy systems, or
                 channeling green investments yet for workers and communities on
@@ -229,12 +231,14 @@ const PlaceBasedJustTransition = () => {
           <div className={cn("pbjt-grid pbjt-grid--two")}>
             {/* LEFT */}
             <div>
-              <h3 className={cn("pbjt-h3 pbjt-h3--lg")}>
-                Place-Based Just Transition (PBJT) is an approach to
-                sustainability that starts from the ground up.
-              </h3>
-              <span className={cn("pbjt-bar")} aria-hidden="true" />
-              <p className={cn("pbjt-p")}>
+              <CustomTitle>
+                <div className={cn("grounup-title")}>
+                  Place-Based Just Transition (PBJT) is an approach to
+                  sustainability that starts from the ground up.
+                </div>
+              </CustomTitle>
+
+              <p className={cn("pbjt-p mt-4")}>
                 PBJT recognises that environmental change and economic
                 transition are not abstract ideas, they are lived every day in
                 villages, neighbourhoods, worksites, and local production
