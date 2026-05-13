@@ -325,6 +325,7 @@
 
 .dp-insights__list {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 14px;
 }
 
@@ -1653,6 +1654,10 @@
   padding: 40px 20px;
   text-align: center;
   color: var(--dp-muted);
+}
+
+.dp-insight:not(.is-open) .dp-insight__title {
+  margin-top: 15px;
 }
 
 /* ==========================================================

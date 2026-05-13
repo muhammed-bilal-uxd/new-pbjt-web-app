@@ -13,6 +13,7 @@ import {
   Check,
   CheckCircle2,
 } from "lucide-react";
+import CustomTitle from "@/components/custom-title/custom-title";
 
 const cn = (names: string) =>
   names
@@ -56,9 +57,9 @@ export default function ImpactProposition() {
           <div className={cn("pbjt-iconchip")}>
             <Sprout size={22} strokeWidth={1.8} />
           </div>
-          <h2 className={cn("pbjt-h2")}>
+          <CustomTitle className="mb-4">
             Sustainability efforts must go beyond the boardroom.
-          </h2>
+          </CustomTitle>
           <p className={cn("pbjt-p")}>
             Most sustainability efforts today stop at corporate offices or
             first-tier suppliers. But the real impacts of business, both

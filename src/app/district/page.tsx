@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./district.module.css";
 import BeforeAfter from "@/components/before-after";
 import Villages from "@/components/villages/villages";
 import Mapping from "@/components/mapping";
+import { useSearchParams } from "next/navigation";
+
+import { districts } from "@/data/district";
 
 const cn = (names: string) =>
   names
@@ -639,7 +642,9 @@ const TamilNaduMap = ({ pinX = 38, pinY = 58 }) => (
    SUBCOMPONENTS
    ============================================================ */
 
-function HeroSection() {
+function HeroSection({ districtName }: { districtName: string }) {
+  const data = districts[districtName].heroSection;
+
   return (
     <section className={cn("dp-hero")}>
       <div className={cn("dp-hero__inner center-content")}>
@@ -648,17 +653,14 @@ function HeroSection() {
             <span className={cn("dp-locator__pin")}>
               <Icon.Pin />
             </span>
-            <span>Dindigul, Tamil Nadu</span>
+            <span className="capitalize">{data.name}, India</span>
           </div>
           <h1 className={cn("dp-hero__title")}>
-            <span>DINDIGUL</span>
-            <span className={cn("dp-hero__title--accent")}>IN TAMIL NADU</span>
+            <span className="uppercase">{data.name}</span>
+            <span className={cn("dp-hero__title--accent")}>IN INDIA</span>
           </h1>
           <span className={cn("dp-hero__rule")} aria-hidden="true" />
-          <p className={cn("dp-hero__lede")}>
-            A land of fertile plains, resilient communities, and rich traditions
-            — where nature, culture, and livelihoods shape everyday life.
-          </p>
+          <p className={cn("dp-hero__lede")}>{data.discription}</p>
           <button type="button" className={cn("dp-btn dp-btn--primary")}>
             <Icon.Bars />
             <span>VIEW CLIMATE DATA</span>
@@ -668,7 +670,7 @@ function HeroSection() {
         <div className={cn("dp-hero__map")}>
           {/* <TamilNaduMap /> */}
           <img
-            src="/images/in-practice/tn.png"
+            src={data.heroImage}
             alt="Tamil Nadu Map"
             style={{ width: 415, height: "auto", maxWidth: "none" }}
           />
@@ -699,32 +701,39 @@ function KeyInsights() {
           const I = ICON_BY_KEY[it.icon];
           const isOpen = open[it.id];
           return (
-            <div
-              key={it.id}
-              className={cn(`dp-insight ${isOpen ? "is-open" : ""}`)}
-            >
-              <button
-                type="button"
-                className={cn("dp-insight__row")}
-                onClick={() => toggle(it.id)}
-                aria-expanded={isOpen}
-              >
-                <span className={cn("dp-insight__icon")}>
-                  <I />
-                </span>
-                <span className={cn("dp-insight__body")}>
-                  <span className={cn("dp-insight__title")}>{it.title}</span>
-                  {isOpen && (
-                    <span className={cn("dp-insight__text")}>{it.body}</span>
-                  )}
-                </span>
-                <span
-                  className={cn(`dp-insight__chev ${isOpen ? "is-open" : ""}`)}
-                >
-                  <Icon.ChevDown />
-                </span>
-              </button>
-            </div>
+            <React.Fragment key={it.id}>
+              <div>
+                <div className={cn(`dp-insight ${isOpen ? "is-open" : ""}`)}>
+                  <button
+                    type="button"
+                    className={cn("dp-insight__row")}
+                    onClick={() => toggle(it.id)}
+                    aria-expanded={isOpen}
+                  >
+                    <span className={cn("dp-insight__icon")}>
+                      <I />
+                    </span>
+                    <span className={cn("dp-insight__body")}>
+                      <span className={cn("dp-insight__title")}>
+                        {it.title}
+                      </span>
+                      {isOpen && (
+                        <span className={cn("dp-insight__text")}>
+                          {it.body}
+                        </span>
+                      )}
+                    </span>
+                    <span
+                      className={cn(
+                        `dp-insight__chev ${isOpen ? "is-open" : ""}`,
+                      )}
+                    >
+                      <Icon.ChevDown />
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </React.Fragment>
           );
         })}
       </div>
@@ -1220,10 +1229,28 @@ function BACard({
    MAIN
    ============================================================ */
 
-export default function DindigulPage() {
+export default function DistrictPage() {
+  const searchParams = useSearchParams();
+  const districtName = searchParams.get("districtName");
+
+  useEffect(() => {
+    console.log("query", districtName);
+  }, []);
+
+  if (!districtName)
+    return (
+      <div
+        className={
+          "p3 text-center min-h-[300px] flex items-center justify-center"
+        }
+      >
+        <h1 className="text-[30px] font-bold">District name not found</h1>
+      </div>
+    );
+
   return (
     <main className={cn("dp-page")}>
-      <HeroSection />
+      <HeroSection districtName={districtName} />
       <KeyInsights />
       <ClimateTable />
       {/* <VillageProcess /> */}
