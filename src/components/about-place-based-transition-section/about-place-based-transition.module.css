@@ -181,7 +181,7 @@
 }
 
 /* Vertical connector line between items */
-.riskItem:not(:last-child)::after {
+/* .riskItem:not(:last-child)::after {
   content: "";
   position: absolute;
   left: 1.35rem;
@@ -190,7 +190,7 @@
   width: 1px;
   background: #e8d5d3;
   z-index: 0;
-}
+} */
 
 /* ---------- Icon circles ---------- */
 .iconWrap {
