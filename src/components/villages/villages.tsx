@@ -256,7 +256,20 @@ const VillageCard = ({
   <article
     className={`${styles.card} ${isActive ? styles.cardActive : ""}`}
     aria-current={isActive ? "true" : undefined}
-    onClick={() => onSelect(village.id)}
+    onClick={() => {
+      onSelect(village.id);
+
+      const pbjtPanel = document.getElementById("pbjt-panel");
+      const headerSection = document.getElementById("header-section");
+
+      const position = pbjtPanel?.offsetTop || 0;
+      const scrollPosition = position - (headerSection?.offsetHeight || 0) - 20;
+      console.log(scrollPosition);
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: "smooth",
+      });
+    }}
   >
     <div className={styles.cardImageWrap}>
       <img
@@ -275,7 +288,7 @@ const VillageCard = ({
       </span>
     </div>
 
-    <div className={styles.cardMetrics}>
+    {/* <div className={styles.cardMetrics}>
       <MetricTile
         icon={<TrashIcon />}
         value={village.cardMetrics.dumpSites}
@@ -294,7 +307,7 @@ const VillageCard = ({
         label="Trees planted"
         variant="green"
       />
-    </div>
+    </div> */}
 
     <button
       type="button"
@@ -332,7 +345,10 @@ export default function Villages() {
   const active = VILLAGES.find((v) => v.id === activeId);
 
   return (
-    <section className={styles.section} aria-labelledby="pbjt-heading">
+    <section
+      className={styles.section + " center-content"}
+      aria-labelledby="pbjt-heading"
+    >
       {/* Header */}
       <header className={styles.header}>
         <div className={styles.titleRow}>
