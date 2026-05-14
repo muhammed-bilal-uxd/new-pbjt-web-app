@@ -24,52 +24,21 @@ const INSIGHTS = [
   {
     id: "geography",
     title: "Geography & Ecology",
-    body: (
-      <p>
-        Dindigul district, in southern Tamil Nadu, sits at a unique ecological
-        crossroads — where fertile plains meet the hill ecosystems of the Palani
-        and Sirumalai ranges. These landscapes shape the district&apos;s
-        climate, water systems, and biodiversity.
-      </p>
-    ),
     icon: "mountains",
   },
   {
     id: "climate",
     title: "Climate & Rainfall",
-    body: (
-      <p>
-        The plains experience a semi-arid tropical monsoon climate, while hill
-        areas such as Kodaikanal have a cooler environment. Average annual
-        rainfall: ~836 mm, largely dependent on the North East Monsoon.
-      </p>
-    ),
     icon: "rain",
   },
   {
     id: "livelihoods",
     title: "Livelihoods",
-    body: (
-      <p>
-        Nearly 70% of the population depends on agriculture and related
-        activities. Major crops include onions, groundnuts, grapes, flowers, and
-        vegetables.
-      </p>
-    ),
     icon: "leaf",
   },
   {
     id: "industries",
     title: "Local Industries",
-    body: (
-      <div>
-        <p className={cn("dp-mb-sm")}>Traditional industries include:</p>
-        <p className={cn("dp-text-muted")}>
-          Iron lock making · Leather tanning · Textile production (Art-Silk
-          &amp; Sungudi sarees)
-        </p>
-      </div>
-    ),
     icon: "factory",
   },
 ];
@@ -661,7 +630,20 @@ function HeroSection({ districtName }: { districtName: string }) {
           </h1>
           <span className={cn("dp-hero__rule")} aria-hidden="true" />
           <p className={cn("dp-hero__lede")}>{data.discription}</p>
-          <button type="button" className={cn("dp-btn dp-btn--primary")}>
+          <button
+            type="button"
+            className={cn("dp-btn dp-btn--primary")}
+            onClick={() => {
+              const table = document.getElementById("climate-table");
+
+              const position = table?.getBoundingClientRect().top || 0;
+              const scrollPosition = position + window.pageYOffset - 100;
+              window.scrollTo({
+                top: scrollPosition,
+                behavior: "smooth",
+              });
+            }}
+          >
             <Icon.Bars />
             <span>VIEW CLIMATE DATA</span>
             <Icon.ChevRight />
@@ -680,7 +662,8 @@ function HeroSection({ districtName }: { districtName: string }) {
   );
 }
 
-function KeyInsights() {
+function KeyInsights({ districtName }: { districtName: string }) {
+  const data = districts[districtName]?.keyInsightsData;
   const [open, setOpen] = useState<any>({
     geography: true,
     climate: true,
@@ -692,12 +675,12 @@ function KeyInsights() {
   return (
     <section className={cn("dp-insights center-content")}>
       <div className={cn("dp-insights__head")}>
-        <p className={cn("dp-eyebrow")}>ABOUT DINDIGUL</p>
+        <p className={cn("dp-eyebrow")}>ABOUT {data?.name}</p>
         <h2 className={cn("dp-h2")}>Key Insights At A Glance</h2>
         <span className={cn("dp-rule")} aria-hidden="true" />
       </div>
       <div className={cn("dp-insights__list")}>
-        {INSIGHTS.map((it) => {
+        {INSIGHTS.map((it, i) => {
           const I = ICON_BY_KEY[it.icon];
           const isOpen = open[it.id];
           return (
@@ -719,7 +702,7 @@ function KeyInsights() {
                       </span>
                       {isOpen && (
                         <span className={cn("dp-insight__text")}>
-                          {it.body}
+                          {data?.description[i]}
                         </span>
                       )}
                     </span>
@@ -747,7 +730,7 @@ function ClimateTable() {
     unit === "F" ? ((c * 9) / 5 + 32).toFixed(1) : c.toFixed(1);
 
   return (
-    <section className={cn("dp-climate center-content")}>
+    <section className={cn("dp-climate center-content")} id="climate-table">
       <div className={cn("dp-climate__card")}>
         <div className={cn("dp-climate__head")}>
           <h3 className={cn("dp-climate__title")}>
@@ -1251,7 +1234,7 @@ export default function DistrictPage() {
   return (
     <main className={cn("dp-page")}>
       <HeroSection districtName={districtName} />
-      <KeyInsights />
+      <KeyInsights districtName={districtName} />
       <ClimateTable />
       {/* <VillageProcess /> */}
       <Mapping />

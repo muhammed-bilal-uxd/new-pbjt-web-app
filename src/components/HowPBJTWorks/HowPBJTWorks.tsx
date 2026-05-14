@@ -299,7 +299,7 @@ export default function HowPBJTWorks() {
             <article
               role="listitem"
               className={`${styles.step} ${visible ? styles.stepVisible : ""} ${
-                activeStep === step.id ? styles.stepActive : ""
+                activeStep === step.id && false ? styles.stepActive : ""
               }`}
               style={{ "--delay": `${i * 80}ms` } as React.CSSProperties}
               onMouseEnter={() => setActiveStep(step.id)}
