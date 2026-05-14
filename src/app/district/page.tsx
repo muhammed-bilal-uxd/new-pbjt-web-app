@@ -7,7 +7,7 @@ import Villages from "@/components/villages/villages";
 import Mapping from "@/components/mapping";
 import { useSearchParams } from "next/navigation";
 
-import { districts } from "@/data/district";
+import { ClimateRow, districts } from "@/data/district";
 
 const cn = (names: string) =>
   names
@@ -41,14 +41,6 @@ const INSIGHTS = [
     title: "Local Industries",
     icon: "factory",
   },
-];
-
-const CLIMATE_ROWS = [
-  { year: 2021, rainfall: "240.5 mm", minC: 19.5, maxC: 37.5 },
-  { year: 2022, rainfall: "1303.6 mm", minC: 19.8, maxC: 38.2 },
-  { year: 2023, rainfall: "–", minC: 19.0, maxC: 38.7 },
-  { year: 2024, rainfall: "–", minC: 20.0, maxC: 38.0 },
-  { year: 2025, rainfall: "–", minC: 19.1, maxC: 39.0 },
 ];
 
 const PROCESS_STEPS = [
@@ -724,7 +716,9 @@ function KeyInsights({ districtName }: { districtName: string }) {
   );
 }
 
-function ClimateTable() {
+function ClimateTable({ districtName }: { districtName: string }) {
+  const data = districts[districtName]?.climateData;
+
   const [unit, setUnit] = useState("C");
   const fmt = (c: any) =>
     unit === "F" ? ((c * 9) / 5 + 32).toFixed(1) : c.toFixed(1);
@@ -740,7 +734,8 @@ function ClimateTable() {
             Climate At A Glance
           </h3>
           <div className={cn("dp-climate__sub")}>
-            Year-wise rainfall and temperature overview for Dindigul district.
+            Year-wise rainfall and temperature overview for {data?.name}{" "}
+            district.
           </div>
           <div className={cn("dp-toggle")} role="tablist">
             <button
@@ -779,7 +774,7 @@ function ClimateTable() {
               </tr>
             </thead>
             <tbody>
-              {CLIMATE_ROWS.map((r) => (
+              {data?.rows.map((r: ClimateRow) => (
                 <tr key={r.year}>
                   <td>{r.year}</td>
                   <td>{r.rainfall}</td>
@@ -1235,7 +1230,7 @@ export default function DistrictPage() {
     <main className={cn("dp-page")}>
       <HeroSection districtName={districtName} />
       <KeyInsights districtName={districtName} />
-      <ClimateTable />
+      <ClimateTable districtName={districtName} />
       {/* <VillageProcess /> */}
       <Mapping />
       {/* <VillagesSection /> */}
