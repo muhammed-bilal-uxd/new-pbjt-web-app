@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import styles from "./district.module.css";
 import BeforeAfter from "@/components/before-after";
 import Villages from "@/components/villages/villages";
@@ -1207,24 +1207,15 @@ function BACard({
    MAIN
    ============================================================ */
 
-export default function DistrictPage() {
+function DistrictPageContent() {
   const searchParams = useSearchParams();
-  const districtName = searchParams.get("districtName");
+  const districtName = searchParams.get("districtName") || "";
 
   useEffect(() => {
     console.log("query", districtName);
-  }, []);
+  }, [districtName]);
 
-  if (!districtName)
-    return (
-      <div
-        className={
-          "p3 text-center min-h-[300px] flex items-center justify-center"
-        }
-      >
-        <h1 className="text-[30px] font-bold">District name not found</h1>
-      </div>
-    );
+  if (!districtName || !districts[districtName]) return <DistrictNotFound />;
 
   return (
     <main className={cn("dp-page")}>
@@ -1235,9 +1226,29 @@ export default function DistrictPage() {
       <Mapping />
       {/* <VillagesSection /> */}
       {/* <VillageDetail /> */}
-      <Villages />
+      <Villages districtName={districtName} />
       {/* <BeforeAfterJourney /> */}
-      <BeforeAfter />
+      <BeforeAfter districtName={districtName} />
     </main>
+  );
+}
+
+export default function DistrictPage() {
+  return (
+    <Suspense fallback={<DistrictNotFound />}>
+      <DistrictPageContent />
+    </Suspense>
+  );
+}
+
+function DistrictNotFound() {
+  return (
+    <div
+      className={
+        "p3 text-center min-h-[300px] flex items-center justify-center"
+      }
+    >
+      <h1 className="text-[30px] font-bold">District name not found</h1>
+    </div>
   );
 }
