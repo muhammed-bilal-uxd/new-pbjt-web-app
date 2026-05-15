@@ -7,24 +7,28 @@ import styles from "./about-place-based-transition.module.css";
 const riskLevels = [
   {
     icon: "🌐",
+    imageUrl: "/images/about/b1.png",
     title: "Global Goals & Policies",
     subtitle: "Climate goals, international frameworks",
     tier: 1,
   },
   {
     icon: "🏭",
+    imageUrl: "/images/about/b2.png",
     title: "Industries & Value Chains",
     subtitle: "Corporate strategies, market forces",
     tier: 2,
   },
   {
     icon: "🏪",
+    imageUrl: "/images/about/b3.png",
     title: "Suppliers & MSMEs",
     subtitle: "Small businesses, local enterprises",
     tier: 3,
   },
   {
     icon: "👥",
+    imageUrl: "/images/about/b4.png",
     title: "Last Tier: Informal Workers, Vendors & Marginalised Communities",
     subtitle: "Most vulnerable, least visible",
     tier: 4,
@@ -32,6 +36,7 @@ const riskLevels = [
   },
   {
     icon: "⚠️",
+    imageUrl: "/images/about/b5.png",
     title: "Concentrated Risk & Vulnerable Livelihoods",
     subtitle: "Environmental damage, income loss, insecure work, displacement",
     tier: 5,
@@ -107,7 +112,11 @@ export default function AboutPlaceBasedTransitionSection() {
                       className={`${styles.iconWrap} ${item.highlight ? styles.iconHighlight : ""} ${item.danger ? styles.iconDanger : ""}`}
                       aria-hidden="true"
                     >
-                      <span className={styles.iconEmoji}>{item.icon}</span>
+                      <img
+                        className={styles.iconImage}
+                        src={item.imageUrl}
+                        alt=""
+                      />
                     </div>
 
                     <div className={styles.riskContent}>

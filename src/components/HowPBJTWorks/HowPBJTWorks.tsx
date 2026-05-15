@@ -11,6 +11,7 @@ const steps = [
     title: "Listen & Understand",
     description:
       "Engage with workers, MSMEs, vendors, and communities to understand lived realities, needs, and aspirations.",
+    imageUrl: "/images/about/q1.png",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -65,6 +66,7 @@ const steps = [
     title: "Map & Assess",
     description:
       "Map local ecological, economic, and social contexts. Identify vulnerabilities, risks, and existing strengths.",
+    imageUrl: "/images/about/q2.png",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -106,6 +108,7 @@ const steps = [
     title: "Participate & Include",
     description:
       "Ensure meaningful participation of workers, informal labour, MSMEs, women, youth, and marginalised groups in decision-making.",
+    imageUrl: "/images/about/q3.png",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -137,6 +140,7 @@ const steps = [
     title: "Co-Design Solutions",
     description:
       "Co-create locally relevant strategies that balance environmental goals with livelihoods, dignity, and equity.",
+    imageUrl: "/images/about/q4.png",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -180,6 +184,7 @@ const steps = [
     title: "Act & Support",
     description:
       "Strengthen capacities, mobilise resources, and support just transition actions on the ground.",
+    imageUrl: "/images/about/q5.png",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -221,6 +226,7 @@ const steps = [
     title: "Monitor, Learn & Adapt",
     description:
       "Track impacts together, learn continuously, and adapt for long-term resilience.",
+    imageUrl: "/images/about/q6.png",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -310,7 +316,14 @@ export default function HowPBJTWorks() {
               aria-label={`Step ${step.id}: ${step.title}`}
             >
               <div className={styles.iconRing} aria-hidden="true">
-                <div className={styles.iconWrap}>{step.icon}</div>
+                {/* <div className={styles.iconWrap}>{step.icon}</div> */}
+                <div className={styles.iconImageContainer}>
+                  <img
+                    className={styles.iconImage}
+                    src={step.imageUrl}
+                    alt=""
+                  />
+                </div>
               </div>
               <h3 className={styles.stepTitle}>{step.title}</h3>
               <p className={styles.stepDesc}>{step.description}</p>

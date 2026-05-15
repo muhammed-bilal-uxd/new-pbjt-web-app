@@ -34,19 +34,6 @@
   box-sizing: border-box;
 }
 
-.pbjt h1,
-.pbjt h2,
-.pbjt h3 {
-  margin: 0;
-  font-family: var(--pbjt-display);
-  letter-spacing: -0.01em;
-  color: var(--pbjt-ink);
-}
-
-.pbjt p {
-  margin: 0;
-}
-
 .pbjt ul {
   list-style: none;
   margin: 0;
@@ -263,7 +250,7 @@
   box-shadow: 0 14px 30px -16px rgba(0, 0, 0, 0.35);
 }
 
-.pbjt-card__caption::after {
+/* .pbjt-card__caption::after {
   content: "";
   position: absolute;
   left: 14px;
@@ -273,7 +260,7 @@
   height: 2px;
   background: var(--pbjt-primary-color);
   border-radius: 2px;
-}
+} */
 
 .pbjt-card__icon {
   width: 36px;

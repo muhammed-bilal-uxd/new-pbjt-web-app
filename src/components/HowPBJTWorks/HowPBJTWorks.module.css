@@ -264,6 +264,22 @@
   color: var(--pbjt-primary-color);
 }
 
+.iconImageContainer {
+  --image-size: 75px;
+  width: var(--image-size);
+  height: var(--image-size);
+  position: relative;
+  background: #fdf0ee;
+  border-radius: 100%;
+  padding: 10px;
+}
+
+.iconImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 /* ── Responsive breakpoints ─────────────────────────────────── */
 
 /* Tablet: 2 rows of 3 */

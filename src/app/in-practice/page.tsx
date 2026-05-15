@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Banner from "@/components/banner";
 import VillageLocation from "@/components/village-location/village-location";
+import CustomTitle from "@/components/custom-title/custom-title";
 
 /* ---------- Inline SVG icons (kept in JSX, no CSS) ---------- */
 const PeopleIcon = () => (
@@ -189,13 +190,14 @@ export default function PBJTInPractice() {
         {/* <span className={styles.decorDots} aria-hidden="true" /> */}
         <div className={styles.practiceGrid}>
           <div className={styles.practiceText}>
-            <h2 className={styles.practiceTitle}>
+            <CustomTitle>PBJT In Practice</CustomTitle>
+            {/* <h2 className={styles.practiceTitle}>
               <span className={styles.accentRed}>PBJT</span> In Practice
-            </h2>
+            </h2> */}
             {/* <h3 className={styles.practiceSubtitle}>
               What The Ground Teaches Us
             </h3> */}
-            <p className={styles.practiceParagraph}>
+            <p className={styles.practiceParagraph + " mt-3"}>
               PBJT&apos;s learning emerges through real conversations on
               worksites, in community meetings, and in everyday informal spaces.
               In one cluster, workers told us that &lsquo;green jobs&rsquo;

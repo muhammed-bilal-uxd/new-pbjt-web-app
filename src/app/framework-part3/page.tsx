@@ -5,40 +5,42 @@
 //   /public/images/recycler.jpg
 //   /public/images/farmer.jpg
 
-import "./Framework.css";
+import styles from "./framework.module.css";
 
 export default function Framework() {
   return (
-    <div className="pbjt">
+    <div className={styles["pbjt"]}>
       {/* ============ HERO ============ */}
-      <header className="pbjt-hero">
-        <div className="pbjt-hero__inner">
-          <p className="pbjt-hero__eyebrow">PBJT - FRAMEWORK</p>
-          <h1 className="pbjt-hero__title">Principles</h1>
-          <p className="pbjt-hero__subtitle">of Place-Based Just Transition</p>
+      <header className={styles["pbjt-hero"]}>
+        <div className={styles["pbjt-hero__inner"]}>
+          <p className={styles["pbjt-hero__eyebrow"]}>PBJT - FRAMEWORK</p>
+          <h1 className={styles["pbjt-hero__title"]}>Principles</h1>
+          <p className={styles["pbjt-hero__subtitle"]}>
+            of Place-Based Just Transition
+          </p>
         </div>
 
-        <div className="pbjt-hero__image">
-          <img src="/images/hero-worker.jpg" alt="Worker" />
+        <div className={styles["pbjt-hero__image"]}>
+          <img src="/images/framework/hero-worker.jpg" alt="Worker" />
         </div>
       </header>
 
       {/* ============ TOOLS ============ */}
-      <section className="pbjt-tools">
-        <div className="pbjt-tools__text">
-          <span className="pbjt-bar" aria-hidden="true" />
-          <p className="pbjt-tools__lead">
+      <section className={styles["pbjt-tools"]}>
+        <div className={styles["pbjt-tools__text"]}>
+          <span className={styles["pbjt-bar"]} aria-hidden="true" />
+          <p className={styles["pbjt-tools__lead"]}>
             To make Place-Based Transition actionable, PBJT develops and uses
             simple, practical tools that communities and practitioners can
             actually use.
           </p>
 
-          <div className="pbjt-item">
-            <div className="pbjt-icon">
+          <div className={styles["pbjt-item"]}>
+            <div className={styles["pbjt-icon"]}>
               <IconNetwork />
             </div>
             <div>
-              <h3 className="pbjt-item__heading">These include:</h3>
+              <h3 className={styles["pbjt-item__heading"]}>These include:</h3>
               <p>
                 Value Chain Mapping Tools that identify informal and last-tier
                 actors, Community Impact Reflection Guides to assess
@@ -49,12 +51,12 @@ export default function Framework() {
             </div>
           </div>
 
-          <div className="pbjt-item">
-            <div className="pbjt-icon">
+          <div className={styles["pbjt-item"]}>
+            <div className={styles["pbjt-icon"]}>
               <IconQuestion />
             </div>
             <div>
-              <h3 className="pbjt-item__heading">
+              <h3 className={styles["pbjt-item__heading"]}>
                 Each tool is designed to support discussion, not compliance.
               </h3>
               <p>
@@ -66,27 +68,30 @@ export default function Framework() {
           </div>
         </div>
 
-        <div className="pbjt-tools__image">
-          <img src="/images/recycler.jpg" alt="Informal worker collecting recyclables" />
+        <div className={styles["pbjt-tools__image"]}>
+          <img
+            src="/images/framework/recycler.jpg"
+            alt="Informal worker collecting recyclables"
+          />
         </div>
       </section>
 
       {/* ============ PRINCIPLES ============ */}
-      <section className="pbjt-principles">
-        <div className="pbjt-principles__card">
-          <div className="pbjt-item">
-            <div className="pbjt-icon">
+      <section className={styles["pbjt-principles"]}>
+        <div className={styles["pbjt-principles__card"]}>
+          <div className={styles["pbjt-item"]}>
+            <div className={styles["pbjt-icon"]}>
               <IconPeople />
             </div>
             <div>
-              <h3 className="pbjt-item__heading">
+              <h3 className={styles["pbjt-item__heading"]}>
                 Embedded in Business Responsibility:
               </h3>
               <p>
                 A just transition must be part of everyday business
-                responsibility. All economic actors—workers, vendors, MSMEs,
-                and communities are part of the business ecosystem, not just
-                large firms.
+                responsibility. All economic actors—workers, vendors, MSMEs, and
+                communities are part of the business ecosystem, not just large
+                firms.
               </p>
               <p>
                 Businesses have responsibilities toward the social and
@@ -99,20 +104,20 @@ export default function Framework() {
             </div>
           </div>
 
-          <hr className="pbjt-divider" />
+          <hr className={styles["pbjt-divider"]} />
 
-          <div className="pbjt-item">
-            <div className="pbjt-icon">
+          <div className={styles["pbjt-item"]}>
+            <div className={styles["pbjt-icon"]}>
               <IconHands />
             </div>
             <div>
-              <h3 className="pbjt-item__heading">
+              <h3 className={styles["pbjt-item__heading"]}>
                 Collectivisation and Collective Agency:
               </h3>
               <p>
                 PBJT is built on collective strength. Transition processes are
-                more democratic, inclusive, and sustainable when communities
-                act together rather than as isolated individuals.
+                more democratic, inclusive, and sustainable when communities act
+                together rather than as isolated individuals.
               </p>
               <p>
                 Worker groups, community collectives, and local associations
@@ -123,24 +128,31 @@ export default function Framework() {
           </div>
         </div>
 
-        <div className="pbjt-principles__image">
-          <img src="/images/farmer.jpg" alt="Farmer in field" />
+        <div className={styles["pbjt-principles__image"]}>
+          <img src="/images/framework/farmer.jpg" alt="Farmer in field" />
         </div>
       </section>
 
       {/* ============ LAST TIER ============ */}
-      <section className="pbjt-tiers">
-        <div className="pbjt-tiers__head">
-          <h2 className="pbjt-tiers__title">Starting from the Last Tier</h2>
-          <span className="pbjt-bar pbjt-bar--center" aria-hidden="true" />
+      <section className={styles["pbjt-tiers"]}>
+        <div className={styles["pbjt-tiers__head"]}>
+          <h2 className={styles["pbjt-tiers__title"]}>
+            Starting from the Last Tier
+          </h2>
+          <span
+            className={[styles["pbjt-bar"], styles["pbjt-bar--center"]].join(
+              " ",
+            )}
+            aria-hidden="true"
+          />
         </div>
 
-        <div className="pbjt-tiers__grid">
-          <article className="pbjt-tiers__card">
-            <div className="pbjt-icon">
+        <div className={styles["pbjt-tiers__grid"]}>
+          <article className={styles["pbjt-tiers__card"]}>
+            <div className={styles["pbjt-icon"]}>
               <IconPeople />
             </div>
-            <h3 className="pbjt-tiers__heading">
+            <h3 className={styles["pbjt-tiers__heading"]}>
               PBJT prioritises those most affected
             </h3>
             <p>
@@ -152,11 +164,13 @@ export default function Framework() {
             </p>
           </article>
 
-          <article className="pbjt-tiers__card">
-            <div className="pbjt-icon">
+          <article className={styles["pbjt-tiers__card"]}>
+            <div className={styles["pbjt-icon"]}>
               <IconPin />
             </div>
-            <h3 className="pbjt-tiers__heading">Place-Based and Context-Driven</h3>
+            <h3 className={styles["pbjt-tiers__heading"]}>
+              Place-Based and Context-Driven
+            </h3>
             <p>
               Every place is different. PBJT is rooted in local social,
               economic, cultural, and environmental contexts. Instead of
@@ -166,19 +180,19 @@ export default function Framework() {
             </p>
           </article>
 
-          <article className="pbjt-tiers__card">
-            <div className="pbjt-icon">
+          <article className={styles["pbjt-tiers__card"]}>
+            <div className={styles["pbjt-icon"]}>
               <IconScales />
             </div>
-            <h3 className="pbjt-tiers__heading">
+            <h3 className={styles["pbjt-tiers__heading"]}>
               Equity and Redistribution of Power
             </h3>
             <p>
               A just transition requires shifting decision-making power toward
-              those historically excluded. PBJT ensures meaningful
-              participation of workers, women, informal sector actors, and
-              marginalised communities in decisions that affect their
-              livelihoods and environment.
+              those historically excluded. PBJT ensures meaningful participation
+              of workers, women, informal sector actors, and marginalised
+              communities in decisions that affect their livelihoods and
+              environment.
             </p>
           </article>
         </div>
@@ -191,7 +205,13 @@ export default function Framework() {
 
 function IconNetwork() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+    >
       <circle cx="6" cy="6" r="2" />
       <circle cx="18" cy="6" r="2" />
       <circle cx="12" cy="18" r="2" />
@@ -204,9 +224,21 @@ function IconNetwork() {
 
 function IconQuestion() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-      <path d="M21 11.5c0 4.7-4 8.5-9 8.5-1.4 0-2.7-.3-3.9-.9L4 20.5l1.3-3.6A8.5 8.5 0 0 1 3 11.5C3 6.8 7 3 12 3s9 3.8 9 8.5z" strokeLinejoin="round" />
-      <path d="M9.8 9.4a2.3 2.3 0 0 1 4.5 0c0 1.4-2.3 1.8-2.3 3.3" strokeLinecap="round" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+    >
+      <path
+        d="M21 11.5c0 4.7-4 8.5-9 8.5-1.4 0-2.7-.3-3.9-.9L4 20.5l1.3-3.6A8.5 8.5 0 0 1 3 11.5C3 6.8 7 3 12 3s9 3.8 9 8.5z"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9.8 9.4a2.3 2.3 0 0 1 4.5 0c0 1.4-2.3 1.8-2.3 3.3"
+        strokeLinecap="round"
+      />
       <circle cx="12" cy="15.7" r="0.6" fill="currentColor" stroke="none" />
     </svg>
   );
@@ -214,12 +246,24 @@ function IconQuestion() {
 
 function IconPeople() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+    >
       <circle cx="9" cy="8" r="2.5" />
       <circle cx="17" cy="9" r="1.8" />
       <circle cx="5.5" cy="9" r="1.6" />
-      <path d="M3.5 17.5c0-2.4 2.5-4 5.5-4s5.5 1.6 5.5 4" strokeLinecap="round" />
-      <path d="M14.5 16c.4-1.7 1.8-2.7 3.5-2.7 1.8 0 3 .9 3.5 2.7" strokeLinecap="round" />
+      <path
+        d="M3.5 17.5c0-2.4 2.5-4 5.5-4s5.5 1.6 5.5 4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M14.5 16c.4-1.7 1.8-2.7 3.5-2.7 1.8 0 3 .9 3.5 2.7"
+        strokeLinecap="round"
+      />
       <path d="M2 16c.4-1.7 1.5-2.7 3-2.7" strokeLinecap="round" />
     </svg>
   );
@@ -227,19 +271,47 @@ function IconPeople() {
 
 function IconHands() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-      <path d="M9 13V7c0-.8.5-1.4 1.4-1.4S11.8 6.2 11.8 7v4" strokeLinecap="round" />
-      <path d="M11.8 11V5.5c0-.8.5-1.4 1.4-1.4s1.4.6 1.4 1.4V11" strokeLinecap="round" />
-      <path d="M14.6 11V6.5c0-.8.5-1.4 1.4-1.4s1.4.6 1.4 1.4V12" strokeLinecap="round" />
-      <path d="M17.4 12v-1.5c0-.8.5-1.4 1.4-1.4s1.4.6 1.4 1.4V15c0 3-2.2 5.5-5.5 5.5S9.7 19 8.5 16.5L6.7 13c-.4-.8 0-1.7.9-1.7.7 0 1.2.4 1.5 1l.9 1.7" strokeLinecap="round" strokeLinejoin="round" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+    >
+      <path
+        d="M9 13V7c0-.8.5-1.4 1.4-1.4S11.8 6.2 11.8 7v4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M11.8 11V5.5c0-.8.5-1.4 1.4-1.4s1.4.6 1.4 1.4V11"
+        strokeLinecap="round"
+      />
+      <path
+        d="M14.6 11V6.5c0-.8.5-1.4 1.4-1.4s1.4.6 1.4 1.4V12"
+        strokeLinecap="round"
+      />
+      <path
+        d="M17.4 12v-1.5c0-.8.5-1.4 1.4-1.4s1.4.6 1.4 1.4V15c0 3-2.2 5.5-5.5 5.5S9.7 19 8.5 16.5L6.7 13c-.4-.8 0-1.7.9-1.7.7 0 1.2.4 1.5 1l.9 1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
 
 function IconPin() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-      <path d="M12 21.5s7.5-6.5 7.5-12a7.5 7.5 0 1 0-15 0c0 5.5 7.5 12 7.5 12z" strokeLinejoin="round" />
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+    >
+      <path
+        d="M12 21.5s7.5-6.5 7.5-12a7.5 7.5 0 1 0-15 0c0 5.5 7.5 12 7.5 12z"
+        strokeLinejoin="round"
+      />
       <circle cx="12" cy="9.5" r="2.5" />
     </svg>
   );
@@ -247,7 +319,13 @@ function IconPin() {
 
 function IconScales() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+    >
       <path d="M12 4v17" strokeLinecap="round" />
       <path d="M5.5 7h13" strokeLinecap="round" />
       <path d="M9 21h6" strokeLinecap="round" />

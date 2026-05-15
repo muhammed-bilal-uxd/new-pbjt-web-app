@@ -2,6 +2,7 @@
 
 import Banner from "@/components/banner";
 import styles from "./focus-areas.module.css";
+import CustomTitle from "@/components/custom-title/custom-title";
 
 const cn = (names: string) =>
   names
@@ -238,13 +239,13 @@ export default function FocusAreas() {
       {/* MAIN GRID */}
       <div className={cn("pbjt-main center-content")}>
         <div className={cn("pbjt-main__left")}>
-          <span className={cn("pbjt-bar")} aria-hidden="true" />
-          <h2 className={cn("pbjt-main__title")}>
+          <CustomTitle>
             Strengthening Local
             <br />
             Groups and Collectives
-          </h2>
-          <p className={cn("pbjt-main__lead")}>
+          </CustomTitle>
+
+          <p className={cn("pbjt-main__lead mt-3")}>
             PBJT works through existing collectives, worker groups, vendor
             associations, MSMEs, women&rsquo;s collectives and SHGs, youth and
             farmer groups, recognising them as the foundation of democratic

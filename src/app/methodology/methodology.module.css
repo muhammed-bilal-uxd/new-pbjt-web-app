@@ -258,7 +258,7 @@
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-  background-color: #ffffff;
+  background-color: #ffffff33;
   padding: 1.5rem 1.75rem;
   max-width: 240px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
@@ -266,12 +266,16 @@
 }
 
 .quoteMark {
-  display: block;
+  /* display: block; */
   color: var(--pbjt-primary-color);
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  line-height: 0.7;
-  margin-bottom: 0.5rem;
+  /* line-height: 0.7; */
+  /* margin-bottom: 0.5rem; */
+  font-family:
+    Georgia,
+    Times New Roman,
+    serif;
 }
 
 .quoteBox p {

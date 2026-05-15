@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import styles from "./methodology.module.css";
 import Banner from "@/components/banner";
+import CustomTitle from "@/components/custom-title/custom-title";
 
 const KEY_ELEMENTS = [
   {
@@ -146,13 +147,22 @@ export default function Methodology() {
       <section className={styles.expectedChange}>
         <div className={styles.expectedChangeContent + " center-content"}>
           <div className={styles.changeContent}>
-            <h2 className={styles.changeHeading}>
+            <CustomTitle>
+              <div
+                className="text-2xl"
+                style={{ lineHeight: "120%", letterSpacing: "0.5px" }}
+              >
+                Expected Change <br />
+                of Place-Based Just Transition
+              </div>
+            </CustomTitle>
+            {/* <h2 className={styles.changeHeading}>
               Expected Change <br />
               <span className={styles.changeSubheading}>
                 Of Place-Based Just Transition
               </span>
-            </h2>
-            <div className={styles.changeList}>
+            </h2> */}
+            <div className={styles.changeList + " mt-[1.5rem]"}>
               {EXPECTED_CHANGES.map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -177,8 +187,11 @@ export default function Methodology() {
               className={styles.changeImage}
             />
             <div className={styles.quoteBox}>
-              <span className={styles.quoteMark}>&#8220;</span>
-              <p>From local realities to systemic change, together.</p>
+              <p>
+                <span className={styles.quoteMark}>“</span>
+                From local realities to systemic change, together.
+                <span className={styles.quoteMark}>”</span>
+              </p>
             </div>
           </div>
         </div>
