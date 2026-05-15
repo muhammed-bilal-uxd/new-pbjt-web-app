@@ -1,6 +1,7 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import styles from "./before-after.module.css";
+import { districts, VillageTheme } from "@/data/district";
 
 const icons: Record<string, string> = {
   waste: "WS",
@@ -13,182 +14,7 @@ const icons: Record<string, string> = {
   child: "CP",
 };
 
-const themes = [
-  {
-    id: "waste",
-    label: "Waste System Transformation",
-    heading: "Waste System Transformation",
-    timeline: "June 2025 -> February 2026",
-    beforeTitle: "Before (June 2025)",
-    afterTitle: "After (By February 2026)",
-    before: [
-      "Waste dump sites were identified across villages",
-      "Mixed waste was disposed of without systematic segregation",
-      "Meetings were conducted with vendors and households",
-      "A community pledge was initiated towards waste segregation and responsible disposal",
-    ],
-    after: [
-      "Households are properly segregating milk packets and other plastic waste",
-      "Plastic waste is responsibly disposed of through structured collection systems",
-      "Hair waste from salons is being segregated and sent to farmers for use as organic manure",
-      "Community-level awareness has translated into consistent waste management practices",
-    ],
-    impact: [
-      "Informal dumping reduced",
-      "Structured waste segregation",
-      "Resource recovery enabled",
-    ],
-  },
-  {
-    id: "plastic",
-    label: "Plastic Accountability Model",
-    heading: "Plastic Accountability Model",
-    timeline: "June 2025 -> February 2026",
-    beforeTitle: "Before (June 2025)",
-    afterTitle: "After (By February 2026)",
-    before: [
-      "Plastics were indiscriminately dumped and burnt at local dump sites",
-      "Shops commonly used plastic covers for packaging",
-    ],
-    after: [
-      "Plastics are now properly collected and sold to waste vendors for recycling",
-      "Shopkeepers have transitioned to eco-friendly alternatives such as banana leaves for packaging",
-      "Community-level conversations on plastic accountability are influencing local business practices",
-    ],
-    impact: [
-      "Reduced open burning",
-      "Circular waste systems",
-      "Responsible retail practices",
-    ],
-  },
-  {
-    id: "water",
-    label: "Water & Ecological Restoration",
-    heading: "Water and Ecological Restoration",
-    timeline: "June 2025 -> February 2026",
-    beforeTitle: "Before (June 2025)",
-    afterTitle: "After (By February 2026)",
-    before: [
-      "Waterbodies were identified during village mapping",
-      "Large quantities of village waste were dumped inside waterbodies and along bunds",
-    ],
-    after: [
-      "Waste from waterbodies and bund areas was cleared",
-      "Tree saplings were planted to restore and protect the ecological spaces",
-      "Community engagement has strengthened local stewardship over common water resources",
-    ],
-    impact: [
-      "Reduced ecological degradation",
-      "Restoration of commons",
-      "Protection of local ecosystems",
-    ],
-  },
-  {
-    id: "energy",
-    label: "Renewable Energy & Water Harvesting",
-    heading: "Renewable Energy and Water Harvesting",
-    timeline: "June 2025 -> February 2026",
-    beforeTitle: "Before (June 2025)",
-    afterTitle: "After (By February 2026)",
-    before: [
-      "Awareness sessions conducted on rainwater harvesting and its benefits",
-    ],
-    after: ["2 households adopted and installed a rainwater harvesting pit"],
-    impact: [
-      "Knowledge translated into action at the household level",
-      "Adoption of rainwater harvesting practices",
-      "Improved local climate resilience through water conservation",
-    ],
-  },
-  {
-    id: "culture",
-    label: "Green Cultural Practices",
-    heading: "Green Cultural Practices",
-    timeline: "June 2025 -> February 2026",
-    beforeTitle: "Before (June 2025)",
-    afterTitle: "After (February 2026)",
-    before: [
-      "Festivals used flex banners",
-      "Non-sustainable practices were followed",
-    ],
-    after: [
-      "Temple festival organized as a Green Festival initiative",
-      "Plastic-free celebration implemented",
-      "Sustainable waste management practices introduced",
-      "Tree planting integrated into celebrations",
-    ],
-    impact: [
-      "Cultural events transformed into platforms for environmental responsibility",
-      "Increased adoption of sustainable practices during festivals",
-      "Strengthened community dignity and collective participation",
-    ],
-  },
-  {
-    id: "business",
-    label: "Responsible Business Norms",
-    heading: "Responsible Business Norms",
-    timeline: "June 2025 -> February 2026",
-    beforeTitle: "Before (June 2025)",
-    afterTitle: "After (By February 2026)",
-    before: ["Vendors identified and engaged through focused meetings"],
-    after: [
-      "Discussions promoted reduced plastic use and reusable alternatives",
-      "Vendors incentivize customers bringing their own vessels",
-      "112 vendors established Zero Plastic commitment in their shops",
-    ],
-    impact: [
-      "Emerging responsible business behavior rooted in local economic systems",
-      "Increased adoption of sustainable retail practices",
-      "Strengthened accountability among local vendors",
-    ],
-  },
-  {
-    id: "labour",
-    label: "Labour Dignity & Heat Response",
-    heading: "Labour Dignity and Heat Response",
-    timeline: "June 2025 -> February 2026",
-    beforeTitle: "Before (June 2025)",
-    afterTitle: "After (By February 2026)",
-    before: [
-      "Heat stress impacts on workers were not systematically addressed",
-      "Limited local response to rising temperatures and working conditions",
-    ],
-    after: [
-      "100 saplings distributed by an MSME as a heat response initiative",
-      "Totally 470 saplings planted across 4 villages",
-      "Villagers actively maintaining the trees",
-    ],
-    impact: [
-      "Community-led heat mitigation through greening",
-      "Improved local environmental conditions for workers",
-      "Shared responsibility between communities and local actors",
-    ],
-  },
-  {
-    id: "child",
-    label: "Child Protection & Ethical Business",
-    heading: "Child Protection & Ethical Business",
-    timeline: "June 2025 -> February 2026",
-    beforeTitle: "Before (June 2025)",
-    afterTitle: "After (By February 2026)",
-    before: [
-      "Limited coordinated efforts to address child marriage and child labour",
-      "Lack of visible commitments from local businesses on child protection",
-    ],
-    after: [
-      "Rally organized with schools, colleges, and Panchayat to prevent child marriage",
-      "Enterprises committed to eliminating child labour",
-      "No Child Labour signage displayed across business establishments",
-    ],
-    impact: [
-      "Strengthened ethical business norms",
-      "Increased institutional backing for child protection",
-      "Greater community awareness and collective action",
-    ],
-  },
-];
-
-function runTests() {
+function runTests({ themes }: { themes: VillageTheme[] }) {
   console.assert(themes.length === 8, "Expected 8 PBJT journey themes");
   console.assert(
     themes.every(
@@ -219,8 +45,6 @@ function runTests() {
   );
 }
 
-runTests();
-
 function ListBlock({
   title,
   items,
@@ -244,7 +68,7 @@ function ListBlock({
         />
       </div>
       <div className={styles.boxTitle}>
-        <span className={styles.statusIcon}>{isBefore ? "!" : "+"}</span>
+        {/* <span className={styles.statusIcon}>{isBefore ? "!" : "+"}</span> */}
         <span>{title}</span>
       </div>
       <ul className={styles.list}>
@@ -256,9 +80,19 @@ function ListBlock({
   );
 }
 
-export default function BeforeAfter() {
+export default function BeforeAfter({
+  districtName,
+}: {
+  districtName: string;
+}) {
+  const data = districts[districtName]?.beforeAfter;
+  const themes = data.themes;
   const [activeIndex, setActiveIndex] = useState(0);
   const active = themes[activeIndex];
+
+  useEffect(() => {
+    runTests({ themes });
+  }, [themes]);
 
   const next = () => {
     setActiveIndex((value) => (value + 1) % themes.length);
@@ -281,15 +115,10 @@ export default function BeforeAfter() {
       <div className="center-content">
         <section className={styles.shell}>
           <header className={styles.hero}>
-            <p className={styles.eyebrow}>Dindigul</p>
-            <h1 className={styles.title}>PBJT: The Before and After Journey</h1>
-            <p className={styles.subtitle}>
-              Rooted in collaboration. Measurable impact across seven key
-              themes.
-            </p>
-            <div className={styles.badge}>
-              Built by communities. Sustained together.
-            </div>
+            <p className={styles.eyebrow}>{data.name}</p>
+            <h1 className={styles.title}>PBJT - {data?.title}</h1>
+            <p className={styles.subtitle}>{data?.description}</p>
+            <div className={styles.badge}>{data?.badge}</div>
           </header>
 
           <nav className={styles.tabsWrap} aria-label="PBJT journey themes">
@@ -361,10 +190,11 @@ export default function BeforeAfter() {
               <div className={styles.impactHead}>
                 <div className={styles.impactIcon}>*</div>
                 <div>
-                  <small className={styles.impactLabel}>Impact</small>
+                  {/* <small className={styles.impactLabel}>Impact</small> */}
                   <h3 className={styles.impactTitle}>What changed</h3>
                 </div>
               </div>
+
               <div>
                 {active.impact.map((item, index) => (
                   <div key={index} className={styles.impactItem}>

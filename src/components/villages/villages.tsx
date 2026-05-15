@@ -2,138 +2,14 @@
 
 import { useState, useRef, useEffect } from "react";
 import styles from "./villages.module.css";
+import { districts, VillageArea } from "@/data/district";
 
 /* ------------------------------------------------------------------ */
 /*  DATA                                                              */
 /*  Move this to a separate file (data/villages.js) when convenient.  */
 /* ------------------------------------------------------------------ */
 
-const VILLAGES = [
-  {
-    id: "avilipatti",
-    name: "AVILIPATTI",
-    image: "/images/in-practice-detail/img01.png",
-    cardMetrics: { dumpSites: 4, waterBodies: 1, trees: 120 },
-    panel: {
-      tagline:
-        "Local actions that turned waste into value and restored common ecosystems.",
-      activities: [
-        "Dump site: 4",
-        "Water bodies: 1",
-        "Trees planted: 120",
-        "Sanitation workers - Collected waste properly and received incentives from the Panchayat",
-      ],
-      insight:
-        "Community participation and incentives improved waste management practices.",
-      restored: ["Dump site: 1", "Water bodies: 1"],
-      restoredImage: "https://picsum.photos/seed/avilipatti-restored/640/360",
-      restoredCaption:
-        "A restored water body now supports biodiversity and community use.",
-      groups: [
-        { name: "Gethu Group", members: 13 },
-        { name: "Adolescent Boys and Girls", members: 27 },
-        { name: "MSME", members: 1 },
-        { name: "Vendors Association", members: 13 },
-      ],
-    },
-  },
-  {
-    id: "pethampatty",
-    name: "PETHAMPATTY",
-    image: "/images/in-practice-detail/img02.png",
-    cardMetrics: { dumpSites: 2, waterBodies: 2, trees: 50 },
-    panel: {
-      tagline:
-        "Local actions that turned waste into value and restored common ecosystems.",
-      activities: [
-        "Dump site: 2",
-        "Water bodies: 2",
-        "Trees planted: 50",
-        "Petty shops - 2 shops - Collecting empty milk packets and dosa batter packets",
-      ],
-      insight:
-        "Local shops have become collection points, embedding waste sorting into daily routine.",
-      restored: ["Dump site: 1", "Water bodies: 0"],
-      restoredImage: "https://picsum.photos/seed/pethampatty-restored/640/360",
-      restoredCaption:
-        "Cleared dump sites are paving the way for healthier surroundings.",
-      groups: [
-        { name: "Gethu Group", members: 13 },
-        { name: "Adolescent boys and Girls", members: 25 },
-      ],
-    },
-  },
-  {
-    id: "gopalpatti",
-    name: "GOPALPATTI",
-    image: "/images/in-practice-detail/img03.png",
-    cardMetrics: { dumpSites: 6, waterBodies: 3, trees: 100 },
-    panel: {
-      tagline:
-        "Local actions that turned waste into value and restored common ecosystems.",
-      activities: [
-        "Dump site: 6",
-        "Water bodies: 3",
-        "Solar: 8",
-        "Rain water: 400",
-        "Trees planted: 100",
-        "Waste recycle unit: 1 - Run by the Panchayat",
-        "Vendors committed to zero plastic usage: 45",
-        "Barber salon - 6 (segregating waste and giving hair to process manure)",
-      ],
-      insight:
-        "Diverse community-led initiatives are reinforcing sustainable practices across livelihoods.",
-      restored: ["Dump site: 2", "Water bodies: 0"],
-      restoredImage: "https://picsum.photos/seed/gopalpatti-restored/640/360",
-      restoredCaption:
-        "Restored dump sites are returning land to productive community use.",
-      groups: [
-        { name: "Barbers Association", members: 13 },
-        { name: "Auto drivers association", members: 11 },
-        { name: "MSME Group", members: 4 },
-        { name: "Green workers", members: 15 },
-      ],
-    },
-  },
-  {
-    id: "sanarpatty",
-    name: "SANARPATTY",
-    image: "/images/in-practice-detail/img04.png",
-    cardMetrics: { dumpSites: 6, waterBodies: 5, trees: 200 },
-    panel: {
-      tagline:
-        "Local actions that turned waste into value and restored common ecosystems.",
-      activities: [
-        "Dump site: 6",
-        "Water bodies: 5",
-        "Solar: 6",
-        "Rain water: 11",
-        "Trees planted: 200",
-        "Waste recycle unit: 1 - Run by the Panchayat",
-        "Shops committed to zero plastic usage: 51",
-        "Best plastic free practices: 10",
-      ],
-      insight:
-        "Strong vendor commitment and youth participation are accelerating change at scale.",
-      restored: ["Dump site: 2", "Water bodies: 0"],
-      restoredImage: "https://picsum.photos/seed/sanarpatty-restored/640/360",
-      restoredCaption:
-        "Plastic-free practices are reshaping daily commerce in the village.",
-      groups: [
-        { name: "Barbers Association", members: 4 },
-        { name: "Environmental Protection Committee", members: 70 },
-        { name: "MSME Group", members: 3 },
-        { name: "Small vendors Association", members: 27 },
-        { name: "Auto Drivers Association", members: 19 },
-        { name: "Youth Groups", members: 45 },
-        { name: "Adolescent Groups", members: 28 },
-        { name: "Green Gethu workers group", members: 60 },
-      ],
-    },
-  },
-];
-
-type Village = (typeof VILLAGES)[number];
+type Village = (typeof villageAreas)[number];
 type VillageId = Village["id"];
 
 /* ------------------------------------------------------------------ */
@@ -324,10 +200,13 @@ const VillageCard = ({
 /*  MAIN COMPONENT                                                    */
 /* ------------------------------------------------------------------ */
 
-export default function Villages() {
+export default function Villages({ districtName }: { districtName: string }) {
   const [activeId, setActiveId] = useState<VillageId | null>("avilipatti");
   const panelRef = useRef<HTMLDivElement | null>(null);
   const previousIdRef = useRef<VillageId | null>("avilipatti");
+
+  const villageAreas: VillageArea[] =
+    districts[districtName]?.village?.villageAreas;
 
   // Scroll panel into view on mobile when user picks a different village.
   useEffect(() => {
@@ -342,7 +221,9 @@ export default function Villages() {
     previousIdRef.current = activeId;
   }, [activeId]);
 
-  const active = VILLAGES.find((v) => v.id === activeId);
+  const active = villageAreas.find((v: VillageArea) => v.id === activeId);
+
+  const data = districts[districtName].village;
 
   return (
     <section
@@ -356,19 +237,15 @@ export default function Villages() {
             <PeopleIcon className={styles.titleIconSvg} />
           </span>
           <h2 id="pbjt-heading" className={styles.title}>
-            <span className={styles.titleAccent}>PBJT</span> In Four Villages
-            Across Dindigul
+            <span className={styles.titleAccent}>PBJT</span> {data?.title}
           </h2>
         </div>
-        <p className={styles.subtitle}>
-          Community-Led actions restoring ecosystems, reducing waste and
-          building local livelihoods.
-        </p>
+        <p className={styles.subtitle}>{data?.description}</p>
       </header>
 
       {/* Village card grid */}
       <div className={styles.cardGrid}>
-        {VILLAGES.map((v) => (
+        {villageAreas.map((v: VillageArea) => (
           <VillageCard
             key={v.id}
             village={v}
@@ -387,14 +264,14 @@ export default function Villages() {
           role="region"
           aria-label={`Details for ${active.name}`}
         >
-          <button
+          {/* <button
             type="button"
             className={styles.panelClose}
             onClick={() => setActiveId(null)}
             aria-label="Close detail panel"
           >
             ×
-          </button>
+          </button> */}
 
           {/* Sidebar */}
           <aside className={styles.panelSidebar}>
