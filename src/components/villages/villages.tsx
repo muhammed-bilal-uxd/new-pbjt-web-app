@@ -9,7 +9,7 @@ import { districts, VillageArea } from "@/data/district";
 /*  Move this to a separate file (data/villages.js) when convenient.  */
 /* ------------------------------------------------------------------ */
 
-type Village = (typeof villageAreas)[number];
+type Village = VillageArea;
 type VillageId = Village["id"];
 
 /* ------------------------------------------------------------------ */
@@ -205,8 +205,8 @@ export default function Villages({ districtName }: { districtName: string }) {
   const panelRef = useRef<HTMLDivElement | null>(null);
   const previousIdRef = useRef<VillageId | null>("avilipatti");
 
-  const villageAreas: VillageArea[] =
-    districts[districtName]?.village?.villageAreas;
+  const villageData = districts[districtName]?.village;
+  const villageAreas = villageData?.villageAreas ?? [];
 
   // Scroll panel into view on mobile when user picks a different village.
   useEffect(() => {
@@ -223,8 +223,6 @@ export default function Villages({ districtName }: { districtName: string }) {
 
   const active = villageAreas.find((v: VillageArea) => v.id === activeId);
 
-  const data = districts[districtName].village;
-
   return (
     <section
       className={styles.section + " center-content"}
@@ -237,10 +235,11 @@ export default function Villages({ districtName }: { districtName: string }) {
             <PeopleIcon className={styles.titleIconSvg} />
           </span>
           <h2 id="pbjt-heading" className={styles.title}>
-            <span className={styles.titleAccent}>PBJT</span> {data?.title}
+            <span className={styles.titleAccent}>PBJT</span>{" "}
+            {villageData?.title}
           </h2>
         </div>
-        <p className={styles.subtitle}>{data?.description}</p>
+        <p className={styles.subtitle}>{villageData?.description}</p>
       </header>
 
       {/* Village card grid */}
