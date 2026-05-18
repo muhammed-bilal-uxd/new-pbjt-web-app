@@ -80,7 +80,7 @@ export default function ImpactProposition() {
 
         <div className={cn("pbjt-boardroom__media")}>
           <img
-            src="/images/impact-proposition/impact-01.jpg"
+            src="/images/impact-proposition/impact-01b.png"
             alt="Worker handling cement bags"
           />
         </div>
@@ -163,7 +163,7 @@ export default function ImpactProposition() {
       <Banner>
         <img
           className="single-cover-banner"
-          src="/images/banner/impact-banner-02.jpg"
+          src="/images/banner/impact-banner-02b.png"
         />
         <div className="relative p-4">
           <span className="text-white font-bold text-[2rem]">

@@ -284,7 +284,7 @@ export default function PBJTInPractice() {
       <section className={styles.quoteSection + " center-content"}>
         <div className={styles.quoteImageWrap}>
           <img
-            src="/images/in-practice/fun-time.png"
+            src="/images/in-practice/fun-time-2.png"
             alt="Two women workers in conversation at a worksite"
             className={styles.quoteImg}
           />

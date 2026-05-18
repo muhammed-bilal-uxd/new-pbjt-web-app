@@ -126,7 +126,7 @@ const PlaceBasedJustTransition = () => {
               <article className={cn("pbjt-card")}>
                 <div className={cn("pbjt-card__media")}>
                   <img
-                    src="/images/about/about-09.jpg"
+                    src="/images/about/about-09b.png"
                     alt="Informal worker loading sacks"
                     loading="lazy"
                   />
