@@ -114,7 +114,7 @@
   height: var(--card-size);
   border-radius: 10px;
   border: 0.5px solid rgba(0, 0, 0, 0.08);
-  background: #f5f5f3;
+  background: #fffcfc;
   position: relative;
 }
 
@@ -272,91 +272,6 @@
 
 .card.disabled .cardName {
   color: #444444;
-}
-
-/* ── Dark Mode ───────────────────────────────── */
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    background: #1e1e1c;
-  }
-
-  .badge {
-    background: #2c2c2a;
-    border-color: rgba(255, 255, 255, 0.08);
-    color: #5f5e5a;
-  }
-
-  .heading {
-    color: #f1efe8;
-  }
-
-  .sub {
-    color: #5f5e5a;
-  }
-
-  .card {
-    background: #2c2c2a;
-    border-color: rgba(255, 255, 255, 0.08);
-  }
-
-  .card:not(.disabled):hover {
-    background: #333331;
-    border-color: rgba(255, 255, 255, 0.18);
-  }
-
-  .cardIcon {
-    background: #1e1e1c;
-    border-color: rgba(255, 255, 255, 0.06);
-  }
-
-  .cardNum {
-    color: #5f5e5a;
-  }
-
-  .cardName {
-    color: #f1efe8;
-  }
-
-  .cardDesc {
-    color: #5f5e5a;
-  }
-
-  .cardFoot {
-    border-top-color: rgba(255, 255, 255, 0.06);
-  }
-
-  .cardTag {
-    color: #5f5e5a;
-  }
-
-  .cardArrow {
-    background: #1e1e1c;
-    border-color: rgba(255, 255, 255, 0.08);
-    color: #5f5e5a;
-  }
-
-  .right {
-    background: #181816;
-    border-left-color: rgba(255, 255, 255, 0.06);
-  }
-
-  .mapLabel {
-    color: #5f5e5a;
-  }
-
-  .stat {
-    background: #2c2c2a;
-    border-color: rgba(255, 255, 255, 0.06);
-  }
-
-  .statVal {
-    color: #f1efe8;
-  }
-
-  .statLbl {
-    color: #5f5e5a;
-  }
 }
 
 /* ── Responsive ──────────────────────────────── */

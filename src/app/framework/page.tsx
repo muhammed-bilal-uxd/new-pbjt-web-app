@@ -93,7 +93,7 @@ export default function PbjtMockup() {
         </div>
 
         <div className={styles.orbitWrap}>
-          <div className={styles.centerCircle}>
+          {/* <div className={styles.centerCircle}>
             <Users size={42} />
             <span>Shared Responsibility</span>
           </div>
@@ -109,7 +109,9 @@ export default function PbjtMockup() {
                 <span>{item.label}</span>
               </div>
             );
-          })}
+          })} */}
+
+          <img src="/images/framework/shared-responsibility.png" />
         </div>
       </div>
 
@@ -186,7 +188,9 @@ export default function PbjtMockup() {
           <div className={styles.toolGrid}>
             {tools.map(([title, desc, Icon], index) => (
               <div className={styles.toolCard} key={title}>
-                <Icon size={30} />
+                <div className={styles.svgContainer}>
+                  <Icon size={30} />
+                </div>
                 <div>
                   <h3>
                     {index + 1}. {title}
