@@ -191,7 +191,7 @@ const VillageCard = ({
       aria-expanded={isActive}
       aria-controls="pbjt-panel"
     >
-      View More <span aria-hidden="true">→</span>
+      View Details <span aria-hidden="true">→</span>
     </button>
   </article>
 );

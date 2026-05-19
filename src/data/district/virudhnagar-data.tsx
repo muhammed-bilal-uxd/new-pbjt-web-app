@@ -1,6 +1,6 @@
 import { District } from "../district";
 
-const heroImage = "/images/in-practice/location-1b.png";
+const heroImage = "/images/in-practice/location-1d.png";
 
 export const virudhunagarData: District = {
   heroSection: {
@@ -172,7 +172,7 @@ export const virudhunagarData: District = {
         id: "waste",
         label: "Waste System Transformation",
         heading: "Waste System Transformation",
-        timeline: "June 2025 -> February 2026",
+        timeline: "June 2025 - February 2026",
         beforeTitle: "June 2025",
         afterTitle: "February 2026",
         before: [
@@ -197,7 +197,7 @@ export const virudhunagarData: District = {
         id: "plastic",
         label: "Plastic Accountability Model",
         heading: "Plastic Accountability Model",
-        timeline: "June 2025 -> February 2026",
+        timeline: "June 2025 - February 2026",
         beforeTitle: "June 2025",
         afterTitle: "February 2026",
         before: [
@@ -219,7 +219,7 @@ export const virudhunagarData: District = {
         id: "water",
         label: "Water & Ecological Restoration",
         heading: "Water and Ecological Restoration",
-        timeline: "June 2025 -> February 2026",
+        timeline: "June 2025 - February 2026",
         beforeTitle: "June 2025",
         afterTitle: "February 2026",
         before: [
@@ -241,7 +241,7 @@ export const virudhunagarData: District = {
         id: "energy",
         label: "Renewable Energy & Water Harvesting",
         heading: "Renewable Energy and Water Harvesting",
-        timeline: "June 2025 -> February 2026",
+        timeline: "June 2025 - February 2026",
         beforeTitle: "June 2025",
         afterTitle: "February 2026",
         before: [
@@ -260,7 +260,7 @@ export const virudhunagarData: District = {
         id: "culture",
         label: "Green Cultural Practices",
         heading: "Green Cultural Practices",
-        timeline: "June 2025 -> February 2026",
+        timeline: "June 2025 - February 2026",
         beforeTitle: "June 2025",
         afterTitle: "February 2026",
         before: [
@@ -283,7 +283,7 @@ export const virudhunagarData: District = {
         id: "business",
         label: "Responsible Business Norms",
         heading: "Responsible Business Norms",
-        timeline: "June 2025 -> February 2026",
+        timeline: "June 2025 - February 2026",
         beforeTitle: "June 2025",
         afterTitle: "February 2026",
         before: ["Vendors identified and engaged through focused meetings"],
@@ -302,7 +302,7 @@ export const virudhunagarData: District = {
         id: "labour",
         label: "Labour Dignity & Heat Response",
         heading: "Labour Dignity and Heat Response",
-        timeline: "June 2025 -> February 2026",
+        timeline: "June 2025 - February 2026",
         beforeTitle: "June 2025",
         afterTitle: "February 2026",
         before: [
@@ -324,7 +324,7 @@ export const virudhunagarData: District = {
         id: "child",
         label: "Child Protection & Ethical Business",
         heading: "Child Protection & Ethical Business",
-        timeline: "June 2025 -> February 2026",
+        timeline: "June 2025 - February 2026",
         beforeTitle: "June 2025",
         afterTitle: "February 2026",
         before: [

@@ -96,16 +96,25 @@ export default function BeforeAfter({
 
   const next = () => {
     setActiveIndex((value) => (value + 1) % themes.length);
-    document
-      .getElementById("pbjt-root")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    scrollToTabsWrap();
   };
 
   const previous = () => {
     setActiveIndex((value) => (value - 1 + themes.length) % themes.length);
-    document
-      .getElementById("pbjt-root")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    scrollToTabsWrap();
+  };
+
+  const scrollToTabsWrap = () => {
+    const pbjtPanel = document.getElementById("pbjt-root");
+    const headerSection = document.getElementById("header-section");
+
+    const position = pbjtPanel?.offsetTop || 0;
+    const scrollPosition = position - (headerSection?.offsetHeight || 0) - 20;
+    console.log(scrollPosition);
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth",
+    });
   };
 
   const activeIcon = useMemo(() => icons[active.id] || "o", [active.id]);
@@ -114,14 +123,18 @@ export default function BeforeAfter({
     <main id="pbjt-root" className={styles.page}>
       <div className="center-content">
         <section className={styles.shell}>
-          <header className={styles.hero}>
+          <header className={styles.hero} id="before-after-hero">
             <p className={styles.eyebrow}>{data.name}</p>
             <h1 className={styles.title}>PBJT - {data?.title}</h1>
             <p className={styles.subtitle}>{data?.description}</p>
             <div className={styles.badge}>{data?.badge}</div>
           </header>
 
-          <nav className={styles.tabsWrap} aria-label="PBJT journey themes">
+          <nav
+            className={styles.tabsWrap}
+            aria-label="PBJT journey themes"
+            id="tabs-wrap"
+          >
             <div
               className={styles.tabs}
               role="tablist"
