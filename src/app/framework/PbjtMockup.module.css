@@ -261,7 +261,7 @@
 }
 
 .cardLarge {
-  padding: 32px;
+  padding: 1rem;
 }
 
 .sectionHead {
@@ -323,9 +323,9 @@
 
 .principle,
 .toolCard {
-  border: 1px solid #eee;
+  border: 1px solid #c1c1c1;
   border-radius: 18px;
-  padding: 24px;
+  padding: 1rem;
 }
 
 .principle h3,
@@ -383,6 +383,40 @@
   border-radius: 0;
 }
 
+.frameworkBannerContainer h3,
+.frameworkBannerContainer p {
+  line-height: 100%;
+  margin: 0;
+}
+
+.frameworkBannerContent {
+  display: block;
+  margin-top: -25px;
+}
+
+.heroText1 {
+  color: black;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.heroText2 {
+  color: white;
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.heroText3 {
+  color: var(--pbjt-primary-color);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.heroText3Content {
+  display: block;
+  margin-top: -25px;
+}
+
 @media (max-width: 1024px) {
   .orbitWrap img {
     margin: 0 auto;
@@ -406,6 +440,12 @@
 
   .values {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .frameworkBannerContainer {
+    transform: scale(0.7);
   }
 }
 
@@ -451,7 +491,7 @@
   .tier,
   .cardLarge,
   .values {
-    padding: 22px;
+    padding: 1.5rem;
   }
 
   .toolCard,

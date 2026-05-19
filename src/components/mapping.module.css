@@ -87,7 +87,8 @@
 .vui-cardGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 1.25em;
+  font-size: 0.8rem;
 }
 
 .vui-footer {
@@ -251,10 +252,10 @@
 .vui-card {
   background: var(--color-surface);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 1em;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0.5em;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border);
   transition:
@@ -262,6 +263,7 @@
     box-shadow 0.25s ease;
   position: relative;
   overflow: hidden;
+  /* font-size: 16px; */
 }
 
 .vui-card:hover {
@@ -271,8 +273,8 @@
 
 .vui-cardHeader {
   display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: 16px;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em;
   align-items: flex-start;
 }
 
@@ -280,25 +282,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
   background: var(--pbjt-primary-color);
   color: #fff;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1em;
   flex-shrink: 0;
 }
 
 .vui-titleBlock {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.25em;
 }
 
 .vui-title {
-  font-size: 1.35rem;
+  font-size: 1.35em;
   font-weight: 700;
   color: var(--color-text);
   text-transform: uppercase;
@@ -306,23 +308,23 @@
 }
 
 .vui-subtitle {
-  font-size: 0.9rem;
+  font-size: 0.9em;
   color: var(--color-text-muted);
   font-weight: 500;
 }
 
 .vui-body {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1em;
 }
 
 .vui-cardFooter {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  padding-top: 16px;
+  gap: 0.5em;
+  padding-top: 0.5em;
   border-top: 1px dashed var(--color-border);
   justify-content: space-around;
 }
@@ -331,17 +333,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 0.5em;
   flex: 1;
-  min-width: 60px;
+  min-width: 45px;
 }
 
 .vui-footerIconCircle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 2.5em;
+  height: 2.5em;
   border-radius: 50%;
 }
 
@@ -371,7 +373,7 @@
 }
 
 .vui-footerLabel {
-  font-size: 0.75rem;
+  font-size: 0.75em;
   color: var(--color-text-muted);
   text-align: center;
   font-weight: 500;
@@ -381,7 +383,7 @@
 .vui-priorityList {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0em;
 }
 
 .vui-priorityItem {
@@ -389,7 +391,7 @@
   grid-template-columns: 40px 1fr;
   gap: 12px;
   align-items: center;
-  padding: 12px;
+  padding: 0.25em 0.75em;
   background: var(--color-primary-tint);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-primary-soft);
@@ -399,8 +401,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 2.25em;
+  height: 2.25em;
   border-radius: 50%;
   background: var(--pbjt-primary-color);
   color: #fff;
@@ -409,12 +411,12 @@
 
 .vui-priorityLabel {
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.95em;
   color: var(--color-text);
 }
 
 .vui-priorityDetail {
-  font-size: 0.8rem;
+  font-size: 0.8em;
   color: var(--color-text-muted);
 }
 
@@ -429,16 +431,16 @@
 }
 
 .vui-clipboardIcon {
-  width: 56px;
-  height: 64px;
+  width: 3.5em;
+  height: 4em;
   background: var(--color-surface);
   border: 2px solid var(--pbjt-primary-color);
   border-radius: 8px;
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 12px 8px;
-  gap: 4px;
+  padding: 0.75em 0.5em;
+  gap: 0.25em;
   flex-shrink: 0;
 }
 
@@ -464,7 +466,7 @@
 .vui-clipboardList {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 1em;
 }
 
 .vui-clipboardItem {

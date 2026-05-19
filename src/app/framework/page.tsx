@@ -17,6 +17,7 @@ import {
 
 import styles from "./PbjtMockup.module.css";
 import CustomTitle from "@/components/custom-title/custom-title";
+import Banner from "@/components/banner";
 
 const actors = [
   { label: "Businesses", icon: Building2 },
@@ -62,6 +63,29 @@ const tools = [
 export default function PbjtMockup() {
   return (
     <>
+      <Banner>
+        <img
+          className="single-cover-banner"
+          src="/images/banner/framework-banner-01.jpg"
+        />
+
+        <div
+          className={`relative d-flex flex-col items-center justify-center h-full ${styles.frameworkBannerContainer}`}
+        >
+          <h3 className={styles.heroText1}>
+            <span className="ml-2">PBJT - Framework</span>{" "}
+          </h3>
+          <p className={styles.heroText2}>Principles</p>
+          <p className={styles.heroText3}>
+            <span
+              className={`ml-[100px] mt-[-50px] ${styles.heroText3Content}`}
+            >
+              of Place-Based Just Transition
+            </span>
+          </p>
+        </div>
+      </Banner>
+
       <div className={`${styles.hero} center-content`}>
         <div className={styles.heroText}>
           <CustomTitle>
