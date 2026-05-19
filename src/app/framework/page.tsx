@@ -14,12 +14,20 @@ import {
   Handshake,
   ArrowRight,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 import styles from "./PbjtMockup.module.css";
 import CustomTitle from "@/components/custom-title/custom-title";
 import Banner from "@/components/banner";
 
-const actors = [
+type IconItem = {
+  label: string;
+  icon: LucideIcon;
+};
+
+type IconTuple = [title: string, desc: string, Icon: LucideIcon];
+
+const actors: IconItem[] = [
   { label: "Businesses", icon: Building2 },
   { label: "Industry", icon: Factory },
   { label: "Vendors", icon: Store },
@@ -29,7 +37,7 @@ const actors = [
   { label: "Workers", icon: Users },
 ];
 
-const chain = [
+const chain: IconItem[] = [
   { label: "Brands", icon: Building2 },
   { label: "Manufacturers", icon: Factory },
   { label: "Suppliers", icon: Truck },
@@ -37,7 +45,7 @@ const chain = [
   { label: "Retailers", icon: ShoppingBag },
 ];
 
-const tools = [
+const tools: IconTuple[] = [
   [
     "Value Chain Mapping Tools",
     "Identify informal and last-tier actors",
@@ -57,6 +65,17 @@ const tools = [
     "Collective Dialogue Templates",
     "Grievance redressal and negotiation",
     MessageCircle,
+  ],
+];
+
+const values: IconTuple[] = [
+  ["People First", "Centering workers and communities.", Users],
+  ["Local Realities", "Solutions shaped by context.", Handshake],
+  ["Accountability", "Shared responsibility with action.", ShieldCheck],
+  [
+    "Sustainable Change",
+    "Long-term impact through collaboration.",
+    Leaf,
   ],
 ];
 
@@ -228,21 +247,12 @@ export default function PbjtMockup() {
       </div>
 
       <div className={`${styles.values} center-content`}>
-        {[
-          ["People First", "Centering workers and communities.", Users],
-          ["Local Realities", "Solutions shaped by context.", Handshake],
-          ["Accountability", "Shared responsibility with action.", ShieldCheck],
-          [
-            "Sustainable Change",
-            "Long-term impact through collaboration.",
-            Leaf,
-          ],
-        ].map(([title, desc, Icon]) => (
+        {values.map(([title, desc, Icon]) => (
           <div className={styles.valueItem} key={title}>
             <Icon size={30} />
             <div>
-              <h3>{title || ""}</h3>
-              <p>{desc || ""}</p>
+              <h3>{title}</h3>
+              <p>{desc}</p>
             </div>
           </div>
         ))}
