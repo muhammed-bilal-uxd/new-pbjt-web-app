@@ -207,7 +207,7 @@ const PlaceBasedJustTransition = () => {
         <div className="relative text-center">
           <div
             className={cn(
-              "flex items-center gap-4 place-based-just-transition-container",
+              "flex flex-col items-center p-7 place-based-just-transition-container",
             )}
           >
             <div className="">
@@ -215,7 +215,9 @@ const PlaceBasedJustTransition = () => {
                 What is
               </h1>
               <h2 className={cn("pbjt-hero__sub")}>
-                Place-Based Just Transition
+                Place-Based <br />
+                Just Transition
+                <br />
               </h2>
             </div>
             <div className="">
@@ -232,7 +234,7 @@ const PlaceBasedJustTransition = () => {
             {/* LEFT */}
             <div>
               <CustomTitle>
-                <div className={cn("grounup-title")}>
+                <div className={cn("grounup-title mt-[25px]")}>
                   Place-Based Just Transition (PBJT) is an approach to
                   sustainability that starts from the ground up.
                 </div>

@@ -4,7 +4,7 @@
   overflow: hidden;
   background: var(--pbjt-primary-color);
   /* padding: 1.25rem 2rem 0.75rem; */
-  min-height: 250px;
+  min-height: 280px;
   z-index: 0;
   font-family: Georgia, "Times New Roman", serif;
 }

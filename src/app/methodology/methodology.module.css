@@ -417,36 +417,39 @@
   margin: 0;
 }
 
-.focusBannerContainer {
-}
-
 .heroTextOne {
   line-height: 100%;
   color: var(--pbjt-primary-color);
-  position: absolute;
+  /* position: absolute; */
   inset: 25px auto auto 0px;
   font-weight: bold;
-  font-size: 1.7rem;
+  font-size: 3rem;
+  padding-left: 25px;
+  text-align: center;
 }
 
 .heroTextTwo {
   font-size: 8rem;
   line-height: 100%;
   color: white;
+  text-align: center;
 }
 
 .heroTextThree {
   color: var(--pbjt-primary-color);
-  font-size: 2.5rem;
+  font-size: 4rem;
   line-height: 100%;
-  position: absolute;
+  /* position: absolute; */
   inset: auto 60px 30px auto;
+  padding-left: 25px;
+  text-align: center;
 }
 
 .heroTextFour {
   font-size: 10rem;
   line-height: 100%;
   color: white;
+  padding-top: clamp(25px, 3vw, 30px);
 }
 
 /* ==========================================================================
@@ -564,6 +567,10 @@
 
   .expectedChangeContent {
     grid-template-columns: 1fr;
+  }
+
+  .focusBannerContainer {
+    transform: scale(0.8);
   }
 }
 

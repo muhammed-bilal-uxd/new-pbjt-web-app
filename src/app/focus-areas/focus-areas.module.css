@@ -363,10 +363,12 @@
 .hero-text-1 {
   line-height: 100%;
   color: var(--pbjt-primary-color);
-  position: absolute;
+  /* position: absolute; */
   inset: 25px auto auto 0px;
   font-weight: bold;
-  font-size: 1.7rem;
+  font-size: 2.5rem;
+  text-align: center;
+  padding-left: 25px;
 }
 
 .hero-text-2 {
@@ -379,8 +381,10 @@
   color: var(--pbjt-primary-color);
   font-size: 3rem;
   line-height: 100%;
-  position: absolute;
+  /* position: absolute; */
   inset: auto 60px 0px auto;
+  text-align: center;
+  padding-left: 25px;
 }
 
 .hero-text-4 {

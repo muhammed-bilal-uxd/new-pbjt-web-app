@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-import styles from "./PbjtMockup.module.css";
+import styles from "./framework.module.css";
 import CustomTitle from "@/components/custom-title/custom-title";
 import Banner from "@/components/banner";
 
@@ -72,11 +72,7 @@ const values: IconTuple[] = [
   ["People First", "Centering workers and communities.", Users],
   ["Local Realities", "Solutions shaped by context.", Handshake],
   ["Accountability", "Shared responsibility with action.", ShieldCheck],
-  [
-    "Sustainable Change",
-    "Long-term impact through collaboration.",
-    Leaf,
-  ],
+  ["Sustainable Change", "Long-term impact through collaboration.", Leaf],
 ];
 
 export default function PbjtMockup() {
@@ -91,14 +87,12 @@ export default function PbjtMockup() {
         <div
           className={`relative d-flex flex-col items-center justify-center h-full ${styles.frameworkBannerContainer}`}
         >
-          <h3 className={styles.heroText1}>
+          <h3 className={styles.heroText1 + " text-center"}>
             <span className="ml-2">PBJT - Framework</span>{" "}
           </h3>
           <p className={styles.heroText2}>Principles</p>
           <p className={styles.heroText3}>
-            <span
-              className={`ml-[100px] mt-[-50px] ${styles.heroText3Content}`}
-            >
+            <span className={`mt-[-50px] ${styles.heroText3Content}`}>
               of Place-Based Just Transition
             </span>
           </p>
@@ -106,7 +100,7 @@ export default function PbjtMockup() {
       </Banner>
 
       <div className={`${styles.hero} center-content`}>
-        <div className={styles.heroText}>
+        <div className={styles.heroText + " mt-5"}>
           <CustomTitle>
             <div className="text-4xl font-extrabold">
               A place-based framework for <strong>shared responsibility</strong>{" "}

@@ -100,8 +100,9 @@
 
 .pbjt-hero__qmark {
   color: var(--pbjt-primary-color);
-  margin-left: 0.05em;
+  /* margin-left: 0.05em; */
   font-size: 8em;
+  line-height: 100%;
 }
 
 .pbjt-hero__main--white {
@@ -110,7 +111,7 @@
 }
 
 .pbjt-hero__sub {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   color: #fff;
   margin: 6px 0 0 0;

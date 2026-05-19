@@ -61,9 +61,8 @@
 
 .heroTop {
   position: absolute;
-  top: 0px;
-  left: 70px;
-  font-size: 1.5rem;
+  inset: -24px auto auto 40px;
+  font-size: 3rem;
   font-weight: 600;
   color: #1f2937;
   font-style: italic;
@@ -82,9 +81,8 @@
 
 .heroBottom {
   position: absolute;
-  bottom: -15px;
-  right: 70px;
-  font-size: 1.25rem;
+  inset: auto 30px -29px auto;
+  font-size: 3rem;
   font-weight: 600;
   color: #1f2937;
   font-style: italic;

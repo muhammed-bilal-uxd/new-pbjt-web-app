@@ -34,17 +34,16 @@ export default function ImpactProposition() {
         />
         <div
           className={cn(
-            "relative flex gap-3 whitespace-nowrap banner-hero-group",
+            "relative flex flex-col items-center whitespace-nowrap banner-hero-group",
           )}
         >
           <div className="text-center">
             <div className={cn("banner-group-1")}>
               Why <br />
+              <div className={cn("text-white banner-group-2")}>
+                Place-Based Just Transition
+              </div>
               <span className="ml-5">is Neccessary</span>
-            </div>
-            <div className={cn("text-white banner-group-2")}>
-              Place-Based <br />
-              <span className="ml-6">Just Transition</span>
             </div>
           </div>
           <div className={cn("text-white banner-question-mark")}>?</div>

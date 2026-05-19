@@ -98,7 +98,7 @@ export default function Methodology() {
 
         <div
           className={
-            "relative flex gap-2 items-center" + styles.focusBannerContainer
+            "relative flex gap-2 items-center " + styles.focusBannerContainer
           }
         >
           <div className="flex flex-col">
