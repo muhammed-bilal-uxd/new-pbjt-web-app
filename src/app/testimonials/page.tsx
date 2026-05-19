@@ -65,21 +65,20 @@ const VIDEOS = [
     title: "From Waste to Worth: Our Village Journey",
     location: "Sanarpatty, Dindigul",
     duration: "02:46",
-    thumbnail:
-      "https://placehold.co/600x340/8b1a1a/ffffff?text=Village+Journey",
+    thumbnail: "/images/testimonials/testimonials-01.png",
     featured: true,
   },
   {
     title: "Water Changes Everything",
     location: "Gopalpatty, Dindigul",
     duration: "01:58",
-    thumbnail: "https://placehold.co/300x180/4a7c59/ffffff?text=Water+Story",
+    thumbnail: "/images/testimonials/testimonials-02.png",
   },
   {
     title: "Women Leading Waste Management",
     location: "Avilipatti, Dindigul",
     duration: "02:12",
-    thumbnail: "https://placehold.co/300x180/c8102e/ffffff?text=Women+Lead",
+    thumbnail: "/images/testimonials/testimonials-03.png",
   },
 ];
 
@@ -87,27 +86,27 @@ const MOMENTS = [
   {
     title: "Waste Segregation Drive",
     location: "Sanarpatty",
-    image: "https://placehold.co/300x220/4a7c59/ffffff?text=Segregation",
+    image: "/images/testimonials/testimonials-04.png",
   },
   {
     title: "Water Body Restoration",
     location: "Gopalpatty",
-    image: "https://placehold.co/300x220/2c5f7c/ffffff?text=Water",
+    image: "/images/testimonials/testimonials-05.png",
   },
   {
     title: "Tree Plantation",
     location: "Pettampatty",
-    image: "https://placehold.co/300x220/3a6b3a/ffffff?text=Trees",
+    image: "/images/testimonials/testimonials-06.png",
   },
   {
     title: "Plastic-Free Shop",
     location: "Avilipatti",
-    image: "https://placehold.co/300x220/c8102e/ffffff?text=Shop",
+    image: "/images/testimonials/testimonials-07.png",
   },
   {
     title: "Community Meeting",
     location: "Sanarpatty",
-    image: "https://placehold.co/300x220/8b6914/ffffff?text=Meeting",
+    image: "/images/testimonials/testimonials-08.png",
   },
 ];
 
@@ -308,9 +307,9 @@ export default function Testimonials() {
                 </p>
               </div>
             </div>
-            <button className={styles.ctaBtn}>
+            {/* <button className={styles.ctaBtn}>
               Share Your Story <ArrowRight size={16} />
-            </button>
+            </button> */}
           </div>
         </section>
       </div>
