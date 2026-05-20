@@ -20,12 +20,9 @@ import type { LucideIcon } from "lucide-react";
 import styles from "./framework.module.css";
 import CustomTitle from "@/components/custom-title/custom-title";
 import Banner from "@/components/banner";
+import { pagesMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Framework",
-  description:
-    "Understand the PBJT framework for responsible business, last-tier value chains, and place-based transition action.",
-};
+export const metadata: Metadata = pagesMetadata.framework;
 
 type IconItem = {
   label: string;

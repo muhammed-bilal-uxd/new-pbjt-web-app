@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import ImpactPropositionClient from "./impact-proposition-client";
+import { pagesMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Impact Proposition",
-  description:
-    "Understand why Place-Based Just Transition is necessary for workers, communities, MSMEs, and responsible business action.",
-};
+export const metadata: Metadata = pagesMetadata.impactProposition;
 
 export default function ImpactPropositionPage() {
   return <ImpactPropositionClient />;

@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import AboutClient from "./about/about-client";
+import { pagesMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Home",
-  description:
-    "PBJT's learning emerges through real conversations on worksites, in community meetings, and in everyday informal spaces.",
-};
+export const metadata: Metadata = pagesMetadata.home;
 
 export default function Home() {
   return (

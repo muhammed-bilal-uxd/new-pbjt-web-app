@@ -12,12 +12,9 @@ import type { Metadata } from "next";
 import styles from "./methodology.module.css";
 import Banner from "@/components/banner";
 import CustomTitle from "@/components/custom-title/custom-title";
+import { pagesMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Methodology",
-  description:
-    "Explore PBJT methodology for worker-led action, MSME transition support, community task groups, and responsible business collaboration.",
-};
+export const metadata: Metadata = pagesMetadata.methodology;
 
 const KEY_ELEMENTS = [
   {

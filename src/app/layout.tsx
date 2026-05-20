@@ -1,17 +1,12 @@
+
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
+import { pagesMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: {
-    default: "PBJT | Home",
-    template: "%s | PBJT",
-  },
-  description:
-    "PBJT's learning emerges through real conversations on worksites, in community meetings, and in everyday informal spaces",
-};
+export const metadata: Metadata = pagesMetadata.layout;
 
 const toastConfig = {
   success: {

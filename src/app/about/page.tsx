@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import AboutClient from "./about-client";
+import { pagesMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Learn how Place-Based Just Transition starts from local realities and centers workers, MSMEs, informal labour, and communities.",
-};
+export const metadata: Metadata = pagesMetadata.about;
 
 export default function AboutPage() {
   return <AboutClient />;
