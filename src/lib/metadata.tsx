@@ -61,6 +61,7 @@ export const pagesMetadata: Record<string, Metadata> = {
                 "Driving village development through water, livelihoods, climate resilience, women empowerment, and community-led rural transformation.",
         },
     },
+
     home: {
         title: `${siteName} | Village Development NGO in India`,
         description:
@@ -103,13 +104,13 @@ export const pagesMetadata: Record<string, Metadata> = {
             "NGO framework",
             "sustainable development",
         ],
-        alternates: { canonical: `${siteUrl}/pbjt-approach` },
+        alternates: { canonical: `${siteUrl}/about` },
         openGraph: {
             title: `PBJT Approach | ${siteName}`,
             description:
                 "Explore the PBJT approach for village development, linking local realities, shared accountability, sustainability, and community-led change.",
             type: "website",
-            url: `${siteUrl}/pbjt-approach`,
+            url: `${siteUrl}/about`,
         },
     },
 
