@@ -5,7 +5,10 @@ import { Footer } from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
-  title: "PBJT | Home",
+  title: {
+    default: "PBJT | Home",
+    template: "%s | PBJT",
+  },
   description:
     "PBJT's learning emerges through real conversations on worksites, in community meetings, and in everyday informal spaces",
 };

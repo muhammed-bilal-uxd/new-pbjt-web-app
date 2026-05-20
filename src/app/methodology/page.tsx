@@ -8,9 +8,16 @@ import {
   TrendingUp,
   Leaf,
 } from "lucide-react";
+import type { Metadata } from "next";
 import styles from "./methodology.module.css";
 import Banner from "@/components/banner";
 import CustomTitle from "@/components/custom-title/custom-title";
+
+export const metadata: Metadata = {
+  title: "Methodology",
+  description:
+    "Explore PBJT methodology for worker-led action, MSME transition support, community task groups, and responsible business collaboration.",
+};
 
 const KEY_ELEMENTS = [
   {

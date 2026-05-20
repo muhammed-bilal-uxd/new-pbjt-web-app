@@ -14,11 +14,18 @@ import {
   Handshake,
   ArrowRight,
 } from "lucide-react";
+import type { Metadata } from "next";
 import type { LucideIcon } from "lucide-react";
 
 import styles from "./framework.module.css";
 import CustomTitle from "@/components/custom-title/custom-title";
 import Banner from "@/components/banner";
+
+export const metadata: Metadata = {
+  title: "Framework",
+  description:
+    "Understand the PBJT framework for responsible business, last-tier value chains, and place-based transition action.",
+};
 
 type IconItem = {
   label: string;

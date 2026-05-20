@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, type ComponentType } from "react";
 import styles from "./district.module.css";
 import BeforeAfter from "@/components/before-after";
 import Villages from "@/components/villages/villages";
@@ -565,7 +565,7 @@ const Icon = {
   ),
 };
 
-const ICON_BY_KEY: Record<string, any> = {
+const ICON_BY_KEY: Record<string, ComponentType> = {
   mountains: Icon.Mountains,
   rain: Icon.Rain,
   leaf: Icon.Leaf,
@@ -655,13 +655,13 @@ function HeroSection({ districtName }: { districtName: string }) {
 
 function KeyInsights({ districtName }: { districtName: string }) {
   const data = districts[districtName]?.keyInsightsData;
-  const [open, setOpen] = useState<any>({
+  const [open, setOpen] = useState<Record<string, boolean>>({
     geography: true,
     climate: true,
     livelihoods: true,
     industries: true,
   });
-  const toggle = (id: string) => setOpen((p: any) => ({ ...p, [id]: !p[id] }));
+  const toggle = (id: string) => setOpen((p) => ({ ...p, [id]: !p[id] }));
 
   return (
     <section className={cn("dp-insights center-content")}>
@@ -672,7 +672,7 @@ function KeyInsights({ districtName }: { districtName: string }) {
       </div>
       <div className={cn("dp-insights__list")}>
         {INSIGHTS.map((it, i) => {
-          const I = ICON_BY_KEY[it.icon];
+          const I = ICON_BY_KEY[it.icon] || Icon.Leaf;
           const isOpen = open[it.id];
           return (
             <React.Fragment key={it.id}>
@@ -719,7 +719,7 @@ function ClimateTable({ districtName }: { districtName: string }) {
   const data = districts[districtName]?.climateData;
 
   const [unit, setUnit] = useState("C");
-  const fmt = (c: any) =>
+  const fmt = (c: number) =>
     unit === "F" ? ((c * 9) / 5 + 32).toFixed(1) : c.toFixed(1);
 
   return (
@@ -1173,9 +1173,12 @@ function BACard({
   title,
   block,
 }: {
-  variant: any;
-  title: any;
-  block: any;
+  variant: "before" | "after";
+  title: string;
+  block: {
+    images: { src: string; label: string }[];
+    points: string[];
+  };
 }) {
   return (
     <div className={cn(`dp-ba dp-ba--${variant}`)}>
@@ -1186,7 +1189,7 @@ function BACard({
         <span>{title}</span>
       </header>
       <div className={cn("dp-ba__images")}>
-        {block.images.map((im: any, i: any) => (
+        {block.images.map((im, i) => (
           <figure key={i} className={cn("dp-ba__fig")}>
             <img src={im.src} alt={im.label} loading="lazy" />
             <figcaption>{im.label}</figcaption>
@@ -1194,7 +1197,7 @@ function BACard({
         ))}
       </div>
       <ul className={cn("dp-ba__points")}>
-        {block.points.map((p: any, i: any) => (
+        {block.points.map((p, i) => (
           <li key={i}>{p}</li>
         ))}
       </ul>
