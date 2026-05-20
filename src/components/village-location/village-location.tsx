@@ -148,7 +148,7 @@ export default function VillageLocation({ onSelect }: VillageLocationProps) {
           {districts.map((d) => (
             <Link
               href={
-                !d.hasDetails ? "#" : `/district?districtName=${d.slugName}`
+                !d.hasDetails ? "#" : `/in-practice/district/${d.slugName}`
               }
               key={d.id}
               className={
