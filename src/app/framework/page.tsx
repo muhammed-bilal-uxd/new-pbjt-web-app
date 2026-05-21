@@ -92,7 +92,7 @@ export default function PbjtMockup() {
           className={`relative d-flex flex-col items-center justify-center h-full ${styles.frameworkBannerContainer}`}
         >
           <h3 className={styles.heroText1 + " text-center"}>
-            <span className="ml-2">PBJT - Framework</span>{" "}
+            <span className="ml-2">PBJT - Framework:</span>{" "}
           </h3>
           <p className={styles.heroText2}>Principles</p>
           <p className={styles.heroText3}>

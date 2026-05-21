@@ -219,7 +219,7 @@ export default function FocusAreas() {
       <Banner>
         <img
           className="single-cover-banner"
-          src="/images/banner/focus-area-banner-01.jpg"
+          src="/images/banner/focus-area-banner-01a.jpg"
         />
 
         <div

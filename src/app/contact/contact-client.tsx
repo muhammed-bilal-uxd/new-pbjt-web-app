@@ -25,12 +25,12 @@ const cn = (names: string) =>
     .join(" ");
 
 const initialFormData = {
-  name: "Vijay",
-  email: "vijayvasudevan.uxd@gmail.com",
-  organisation: "bizzup",
-  subject: "ideas",
-  message: "I have some ideas for the PBJT.",
-  agreed: true,
+  name: "",
+  email: "",
+  organisation: "",
+  subject: "",
+  message: "",
+  agreed: false,
 };
 
 export default function Contact() {
