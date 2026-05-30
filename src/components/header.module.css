@@ -16,6 +16,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 1.25rem;
+  color: #171717;
 }
 
 .menu {
@@ -70,6 +71,7 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  color: #171717;
 }
 
 .mobileMenuPanel {
@@ -80,6 +82,10 @@
 .mobileMenuPanel nav {
   height: calc(100vh - 47px);
   overflow: auto;
+}
+
+.mobileMenuPanel {
+  color: #171717;
 }
 
 .mobileMenuLinkActive {

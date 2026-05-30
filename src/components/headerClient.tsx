@@ -32,7 +32,7 @@ export function HeaderClient({
         return (
           <Link key={item.href} href={item.href}>
             <span
-              className={`${styles.menu} ${isActive ? styles.menuActive : ""} dark:hover:text-white transition-colors rounded-[25px] px-1 py-2`}
+              className={`${styles.menu} ${isActive ? styles.menuActive : ""} transition-colors rounded-[25px] px-1 py-2`}
             >
               <span className={styles.menuLabel}>
                 <span>{item.label}</span>
@@ -72,7 +72,7 @@ export function MobileMenu({
 
       {isMobileMenuOpen && (
         <div
-          className={`${styles.mobileMenuPanel} absolute left-0 w-full bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800`}
+          className={`${styles.mobileMenuPanel} absolute left-0 w-full bg-white border-t border-gray-200`}
         >
           <nav className="flex flex-col py-4 px-6">
             {navLinks.map((item) => {
@@ -81,14 +81,14 @@ export function MobileMenu({
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`${styles.menu} ${isActive ? styles.mobileMenuLinkActive : ""} p-1 dark:hover:text-white transition-colors`}
+                  className={`${styles.menu} ${isActive ? styles.mobileMenuLinkActive : ""} p-1 transition-colors`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.type === "button" ? (
                     ""
                   ) : (
                     <span
-                      className={`${styles.menu} ${isActive ? styles.mobileMenuLinkActive : ""} dark:hover:text-white transition-colors rounded-full p-2`}
+                      className={`${styles.menu} ${isActive ? styles.mobileMenuLinkActive : ""} transition-colors rounded-full p-2`}
                     >
                       {item.label}
                     </span>
