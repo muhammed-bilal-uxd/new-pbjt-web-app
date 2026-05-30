@@ -90,6 +90,14 @@ const terms = [
     description:
       "The full range of activities and actors involved in producing, distributing, using, and disposing of...",
   },
+  {
+    id: "value-chain-1",
+    name: "Value Chain",
+    category: "Framework",
+    icon: Link2,
+    description:
+      "The full range of activities and actors involved in producing, distributing, using, and disposing of...",
+  },
 ];
 
 const alphabet = [
@@ -163,20 +171,29 @@ export default function Glossary() {
     return matchesCategory && matchesLetter && matchesSearch;
   });
 
+  const DEFAULT_VISIBLE_COUNT = 8;
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleTerms = showAll
+    ? filteredTerms
+    : filteredTerms.slice(0, DEFAULT_VISIBLE_COUNT);
+
   return (
     <div className={cn("glossary-page")}>
       {/* HERO */}
       <header className={cn("hero")}>
         <div className={cn("hero-overlay")} />
         <div className={cn("hero-inner center-content")}>
-          <h1 className={cn("hero-title")}>Glossary</h1>
+          <h1 className={cn("hero-title")}>Glossary & Acronyms</h1>
           <p className={cn("hero-subtitle")}>
-            Understanding the language of Place-Based Just Transition
+            Key terms and abbreviations used across the PBJT website
           </p>
           <div className={cn("hero-tag")}>
             <p>
-              Key terms, concepts, and frameworks that shape how PBJT works on
-              the ground.
+              This glossary explains how key terms and acronyms are used within
+              the Place-Based Just Transition (PBJT) framework. Definitions are
+              practical and grounded in how these ideas appear in real work,
+              communities, and value chains.
             </p>
           </div>
         </div>
@@ -195,7 +212,7 @@ export default function Glossary() {
         </div>
 
         {/* ALPHABET FILTER */}
-        <div className={cn("filter-section")}>
+        {/* <div className={cn("filter-section")}>
           <p className={cn("filter-label")}>Browse by alphabet</p>
           <div className={cn("alphabet-filter")}>
             {alphabet.map((letter) => (
@@ -210,7 +227,7 @@ export default function Glossary() {
               </button>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* CATEGORY FILTER */}
         <div className={cn("filter-section")}>
@@ -232,7 +249,7 @@ export default function Glossary() {
 
         {/* TERMS GRID */}
         <div className={cn("terms-grid")}>
-          {filteredTerms.map((term) => {
+          {visibleTerms.map((term) => {
             const Icon = term.icon;
             return (
               <article key={term.id} className={cn("term-card")}>
@@ -258,18 +275,27 @@ export default function Glossary() {
           })}
         </div>
 
-        {filteredTerms.length === 0 && (
+        {visibleTerms.length === 0 && (
           <div className={cn("no-results")}>No terms match your filters.</div>
         )}
 
-        <div className={cn("view-all-wrapper")}>
-          <button className={cn("view-all-btn")}>
-            View all terms <ChevronDown size={16} />
-          </button>
-        </div>
+        {!showAll && (
+          <div className={cn("view-all-wrapper")}>
+            <button
+              className={cn("view-all-btn")}
+              onClick={() => {
+                setShowAll(true);
+              }}
+            >
+              View all terms <ChevronDown size={16} />
+            </button>
+          </div>
+        )}
+
+        <div className="w-full h-15"></div>
 
         {/* FEATURED TERMS */}
-        <section className={cn("featured-section")}>
+        {/* <section className={cn("featured-section")}>
           <div className={cn("section-header")}>
             <h2>Featured terms</h2>
             <a href="#" className={cn("view-all-link")}>
@@ -303,10 +329,10 @@ export default function Glossary() {
               );
             })}
           </div>
-        </section>
+        </section> */}
 
         {/* CONNECTIONS DIAGRAM */}
-        <section className={cn("connections-section")}>
+        {/* <section className={cn("connections-section")}>
           <div className={cn("connections-intro")}>
             <h2>How key terms connect in PBJT</h2>
             <p>
@@ -370,10 +396,10 @@ export default function Glossary() {
               </span>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* ALL TERMS A-Z */}
-        <section className={cn("all-terms-section")}>
+        {/* <section className={cn("all-terms-section")}>
           <div className={cn("section-header")}>
             <h2>All terms A–Z</h2>
             <a href="#" className={cn("view-all-link")}>
@@ -392,11 +418,11 @@ export default function Glossary() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
       </main>
 
       {/* CTA BANNER */}
-      <section className={cn("cta-banner")}>
+      {/* <section className={cn("cta-banner")}>
         <div className={cn("cta-inner center-content")}>
           <div className={cn("cta-left")}>
             <div className={cn("cta-icon")}>
@@ -416,7 +442,7 @@ export default function Glossary() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
