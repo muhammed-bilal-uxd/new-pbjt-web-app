@@ -3,20 +3,15 @@
 import { useState } from "react";
 import {
   Search,
-  Building2,
-  Users,
-  Leaf,
-  FileText,
-  Store,
-  Heart,
-  UsersRound,
-  Link2,
-  BookOpen,
   ChevronDown,
   ArrowRight,
+  Building2,
+  Users,
+  Link2,
 } from "lucide-react";
 import styles from "./Glossary.module.css";
 import Link from "next/link";
+import { terms } from "@/data/glossary";
 
 const cn = (names: string) =>
   names
@@ -25,81 +20,6 @@ const cn = (names: string) =>
     .map((name) => styles[name] ?? name)
     .join(" ");
 
-const terms = [
-  {
-    id: "pbjt",
-    name: "PBJT",
-    category: "Framework",
-    icon: Building2,
-    description:
-      "Place-Based Just Transition focuses on how sustainability is experienced at the last tiers of value chains",
-  },
-  {
-    id: "jt",
-    name: "JT",
-    category: "Framework",
-    icon: Users,
-    description:
-      "A process of shifting to environmentally sustainable economies in a way that is fair and inclusive",
-  },
-  {
-    id: "esg",
-    name: "ESG",
-    category: "Business",
-    icon: Leaf,
-    description:
-      "A framework used by companies and investors to assess non-financial performance",
-  },
-  {
-    id: "brsr",
-    name: "BRSR",
-    category: "Business",
-    icon: FileText,
-    description:
-      "A disclosure framework through which companies report on their social and environmental responsibilities",
-  },
-  {
-    id: "msmes",
-    name: "MSMEs",
-    category: "Business",
-    icon: Store,
-    description:
-      "Small-scale businesses that form the backbone of local economies and supply chains",
-  },
-  {
-    id: "csr",
-    name: "CSR",
-    category: "Business",
-    icon: Heart,
-    description:
-      "Activities undertaken by companies to contribute to social and environmental wellbeing",
-  },
-  {
-    id: "shgs",
-    name: "SHGs",
-    category: "Community",
-    icon: UsersRound,
-    description:
-      "Community-based groups, often of women, formed around savings, credit, livelihoods, or shared issues",
-  },
-  {
-    id: "value-chain",
-    name: "Value Chain",
-    category: "Framework",
-    icon: Link2,
-    description:
-      "The full range of activities and actors involved in producing, distributing, using, and disposing of",
-  },
-  {
-    id: "value-chain-1",
-    name: "Value Chain",
-    category: "Framework",
-    icon: Link2,
-    description:
-      "The full range of activities and actors involved in producing, distributing, using, and disposing of",
-  },
-];
-
 const alphabet = [
   "All",
   ...Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i)),
@@ -107,10 +27,15 @@ const alphabet = [
 const categories = [
   "All",
   "Framework",
-  "Community",
-  "Business",
   "Governance",
+  "Reporting",
+  "Enterprise",
+  "Community",
+  "Labour",
+  "Economy",
   "Research",
+  "Methodology",
+  "Risk",
 ];
 
 const allTermsAZ = {
@@ -185,9 +110,9 @@ export default function Glossary() {
   return (
     <div className={cn("glossary-page")}>
       {/* HERO */}
-      <header className={cn("hero")}>
+      <div className={cn("hero")}>
         <div className={cn("hero-overlay")} />
-        <div className={cn("hero-inner center-content")}>
+        <div className={cn("hero-inner text-center")}>
           <h1 className={cn("hero-title")}>Glossary & Acronyms</h1>
           <p className={cn("hero-subtitle")}>
             Key terms and abbreviations used across the PBJT website
@@ -201,7 +126,7 @@ export default function Glossary() {
             </p>
           </div>
         </div>
-      </header>
+      </div>
 
       <main className={cn("container center-content")}>
         {/* SEARCH */}
@@ -270,7 +195,7 @@ export default function Glossary() {
                     {term.category.toUpperCase()}
                   </span>
                 </div>
-                <p className={cn("term-description line-clamp-3")}>
+                <p className={cn("term-description description-clamp")}>
                   {term.description}
                 </p>
                 <div
