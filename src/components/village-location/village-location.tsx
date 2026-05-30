@@ -133,10 +133,10 @@ export default function VillageLocation({ onSelect }: VillageLocationProps) {
     <div className={styles.page}>
       {/* Left Panel */}
       <div className={styles.left}>
-        <div className={styles.badge}>
+        {/* <div className={styles.badge}>
           <span className={styles.badgeDot} />
           India
-        </div>
+        </div> */}
 
         <h1 className={styles.heading}>Explore your district</h1>
         <p className={styles.sub}>
@@ -147,9 +147,7 @@ export default function VillageLocation({ onSelect }: VillageLocationProps) {
         <div className={styles.grid}>
           {districts.map((d) => (
             <Link
-              href={
-                !d.hasDetails ? "#" : `/in-practice/district/${d.slugName}`
-              }
+              href={!d.hasDetails ? "#" : `/in-practice/district/${d.slugName}`}
               key={d.id}
               className={
                 styles.card +
@@ -197,9 +195,9 @@ export default function VillageLocation({ onSelect }: VillageLocationProps) {
 
       {/* Right Panel */}
       <div className={styles.right}>
-        <div className="mt-5">
+        {/* <div className="mt-5">
           <img src="/images/in-practice/india-map-02.png" alt="" />
-        </div>
+        </div> */}
 
         <div className={styles.statsGrid}>
           {mapStats.map((s) => (
