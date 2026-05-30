@@ -32,7 +32,7 @@ const terms = [
     category: "Framework",
     icon: Building2,
     description:
-      "Place-Based Just Transition focuses on how sustainability is experienced at the last tiers of value chains...",
+      "Place-Based Just Transition focuses on how sustainability is experienced at the last tiers of value chains",
   },
   {
     id: "jt",
@@ -40,7 +40,7 @@ const terms = [
     category: "Framework",
     icon: Users,
     description:
-      "A process of shifting to environmentally sustainable economies in a way that is fair and inclusive...",
+      "A process of shifting to environmentally sustainable economies in a way that is fair and inclusive",
   },
   {
     id: "esg",
@@ -48,7 +48,7 @@ const terms = [
     category: "Business",
     icon: Leaf,
     description:
-      "A framework used by companies and investors to assess non-financial performance...",
+      "A framework used by companies and investors to assess non-financial performance",
   },
   {
     id: "brsr",
@@ -56,7 +56,7 @@ const terms = [
     category: "Business",
     icon: FileText,
     description:
-      "A disclosure framework through which companies report on their social and environmental responsibilities...",
+      "A disclosure framework through which companies report on their social and environmental responsibilities",
   },
   {
     id: "msmes",
@@ -64,7 +64,7 @@ const terms = [
     category: "Business",
     icon: Store,
     description:
-      "Small-scale businesses that form the backbone of local economies and supply chains...",
+      "Small-scale businesses that form the backbone of local economies and supply chains",
   },
   {
     id: "csr",
@@ -72,7 +72,7 @@ const terms = [
     category: "Business",
     icon: Heart,
     description:
-      "Activities undertaken by companies to contribute to social and environmental wellbeing...",
+      "Activities undertaken by companies to contribute to social and environmental wellbeing",
   },
   {
     id: "shgs",
@@ -80,7 +80,7 @@ const terms = [
     category: "Community",
     icon: UsersRound,
     description:
-      "Community-based groups, often of women, formed around savings, credit, livelihoods, or shared issues...",
+      "Community-based groups, often of women, formed around savings, credit, livelihoods, or shared issues",
   },
   {
     id: "value-chain",
@@ -88,7 +88,7 @@ const terms = [
     category: "Framework",
     icon: Link2,
     description:
-      "The full range of activities and actors involved in producing, distributing, using, and disposing of...",
+      "The full range of activities and actors involved in producing, distributing, using, and disposing of",
   },
   {
     id: "value-chain-1",
@@ -96,7 +96,7 @@ const terms = [
     category: "Framework",
     icon: Link2,
     description:
-      "The full range of activities and actors involved in producing, distributing, using, and disposing of...",
+      "The full range of activities and actors involved in producing, distributing, using, and disposing of",
   },
 ];
 
@@ -178,6 +178,10 @@ export default function Glossary() {
     ? filteredTerms
     : filteredTerms.slice(0, DEFAULT_VISIBLE_COUNT);
 
+  const [selectedTermId, setSelectedTermId] = useState<string | null>(null);
+
+  const selectedTerm = filteredTerms.find((term) => term.id === selectedTermId);
+
   return (
     <div className={cn("glossary-page")}>
       {/* HERO */}
@@ -205,7 +209,7 @@ export default function Glossary() {
           <Search size={20} className={cn("search-icon")} />
           <input
             type="text"
-            placeholder="Search for a term, acronym or concept..."
+            placeholder="Search for a term, acronym or concept"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -266,10 +270,15 @@ export default function Glossary() {
                     {term.category.toUpperCase()}
                   </span>
                 </div>
-                <p className={cn("term-description")}>{term.description}</p>
-                <a href="#" className={cn("read-more")}>
+                <p className={cn("term-description line-clamp-3")}>
+                  {term.description}
+                </p>
+                <div
+                  className={cn("read-more cursor-pointer")}
+                  onClick={() => setSelectedTermId(term.id)}
+                >
                   Read more <ArrowRight size={14} />
-                </a>
+                </div>
               </article>
             );
           })}
@@ -443,6 +452,44 @@ export default function Glossary() {
           </div>
         </div>
       </section> */}
+
+      {selectedTerm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
+          <div className="relative w-full max-w-2xl rounded-2xl bg-white p-6 shadow-2xl">
+            <button
+              type="button"
+              onClick={() => setSelectedTermId(null)}
+              className="absolute right-4 top-4 rounded-full bg-gray-100 px-3 py-1 text-sm font-bold text-gray-700 hover:bg-gray-200"
+            >
+              ✕
+            </button>
+
+            <article className="pr-8">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-red-700">
+                <selectedTerm.icon size={22} />
+              </div>
+
+              <div className="mb-3 flex items-center gap-3">
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {selectedTerm.name}
+                </h3>
+
+                <span
+                  className={cn(
+                    `term-category cat-${selectedTerm.category.toLowerCase()}`,
+                  )}
+                >
+                  {selectedTerm.category.toUpperCase()}
+                </span>
+              </div>
+
+              <p className="text-base leading-7 text-gray-700">
+                {selectedTerm.description}
+              </p>
+            </article>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
