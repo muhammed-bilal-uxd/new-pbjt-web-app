@@ -195,18 +195,7 @@ export default function VillageLocation({ onSelect }: VillageLocationProps) {
 
       {/* Right Panel */}
       <div className={styles.right}>
-        {/* <div className="mt-5">
-          <img src="/images/in-practice/india-map-02.png" alt="" />
-        </div> */}
-
-        <div className={styles.statsGrid}>
-          {mapStats.map((s) => (
-            <div key={s.label} className={styles.stat}>
-              <div className={styles.statVal}>{s.value}</div>
-              <div className={styles.statLbl}>{s.label}</div>
-            </div>
-          ))}
-        </div>
+        <img src="/images/in-practice/workers-01a.png" alt="" />
       </div>
     </div>
   );

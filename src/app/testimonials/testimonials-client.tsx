@@ -13,10 +13,11 @@ import {
   Leaf,
   Sparkles,
   Quote,
-  Play,
   ArrowRight,
+  Play,
 } from "lucide-react";
 import styles from "./Testimonials.module.css";
+import VideoCard from "@/components/VideoCard";
 
 const STATS = [
   { Icon: Users, value: "250+", label: "People Engaged" },
@@ -60,25 +61,39 @@ const TESTIMONIALS = [
   },
 ];
 
-const VIDEOS = [
+interface IVideo {
+  title: string;
+  location: string;
+  duration: string;
+  thumbnail: string;
+  videoUrl: string;
+  featured: boolean;
+}
+
+const VIDEOS: IVideo[] = [
   {
     title: "From Waste to Worth: Our Village Journey",
     location: "Sanarpatty, Dindigul",
     duration: "02:46",
     thumbnail: "/images/testimonials/testimonials-01.png",
+    videoUrl: "https://www.youtube.com/watch?v=Nq8P4rvwLKI",
     featured: true,
   },
   {
     title: "Water Changes Everything",
     location: "Gopalpatty, Dindigul",
     duration: "01:58",
+    videoUrl: "",
     thumbnail: "/images/testimonials/testimonials-02.png",
+    featured: false,
   },
   {
     title: "Women Leading Waste Management",
     location: "Avilipatti, Dindigul",
     duration: "02:12",
+    videoUrl: "",
     thumbnail: "/images/testimonials/testimonials-03.png",
+    featured: false,
   },
 ];
 
@@ -216,18 +231,29 @@ export default function Testimonials() {
 
             {featuredVideo && (
               <div className={`${styles.videoCard} ${styles.videoFeatured}`}>
-                <div className={styles.videoThumb}>
-                  <img
-                    src={featuredVideo.thumbnail}
-                    alt={featuredVideo.title}
-                  />
-                  <button className={styles.playBtn} aria-label="Play video">
-                    <Play size={18} fill="white" strokeWidth={0} />
-                  </button>
-                  <span className={styles.duration}>
-                    {featuredVideo.duration}
-                  </span>
-                </div>
+                {/* <VideoCard
+                  src={featuredVideo.videoUrl}
+                  thumbnail={featuredVideo.thumbnail}
+                  title={featuredVideo.title}
+                  duration={featuredVideo.duration}
+                /> */}
+
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/Nq8P4rvwLKI?si=HFCO7sHxMiO2s1YF"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  style={{
+                    width: "100%",
+                    height: "315px",
+                    borderRadius: "var(--radius-md)",
+                  }}
+                ></iframe>
+
                 <div className={styles.videoMeta}>
                   <h3 className={styles.videoTitle}>
                     &ldquo;{featuredVideo.title}&rdquo;

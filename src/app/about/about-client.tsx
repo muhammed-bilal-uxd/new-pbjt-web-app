@@ -44,7 +44,7 @@ const PlaceBasedJustTransition = () => {
         <HowPBJTWorks />
       </div>
 
-      <div className={cn("pbjt-diagram-section")}>
+      <div className={cn("pbjt-diagram-section mb-15")}>
         <div className={"center-content text-center"}>
           <img
             style={{ margin: "0 auto", maxWidth: "100%" }}
@@ -54,10 +54,9 @@ const PlaceBasedJustTransition = () => {
       </div>
 
       {/* ============ SHAPING CONTENT ============ */}
-      <section className={cn("pbjt-section section-one")}>
+      {/* <section className={cn("pbjt-section section-one")}>
         <div className={"center-content"}>
           <div className={cn("pbjt-grid pbjt-grid--two")}>
-            {/* LEFT */}
             <div>
               <CustomTitle>No one-size-fits-all approach exists.</CustomTitle>
               <p className={cn("pbjt-p mt-3")}>
@@ -99,7 +98,6 @@ const PlaceBasedJustTransition = () => {
               </p>
             </div>
 
-            {/* RIGHT */}
             <div className={cn("pbjt-stack")}>
               <article className={cn("pbjt-card")}>
                 <div className={cn("pbjt-card__media")}>
@@ -147,7 +145,6 @@ const PlaceBasedJustTransition = () => {
             </div>
           </div>
 
-          {/* BOTTOM STRIP */}
           <div className={cn("pbjt-strip")}>
             <div className={cn("pbjt-strip__col pbjt-strip__col--main")}>
               <div className={cn("pbjt-strip__icon")} aria-hidden="true">
@@ -182,9 +179,9 @@ const PlaceBasedJustTransition = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <div
+      {/* <div
         className={cn(
           "flex flex-col justify-center items-center p-4 critical-question",
         )}
@@ -196,7 +193,7 @@ const PlaceBasedJustTransition = () => {
         <p className={cn("critical-question-p2")}>
           Who carries the cost of transition, and who decides how it happens?
         </p>
-      </div>
+      </div> */}
 
       <Banner>
         <img
