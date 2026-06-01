@@ -360,7 +360,7 @@ export default function VirudhunagarPage({
                     <img
                       src={step?.image || imgUrl}
                       className={
-                        "w-[300px] h-[200px] overflow-hidden rounded-md " +
+                        "w-[300px] h-[200px] overflow-hidden rounded-md bg-black " +
                         step.imageClass
                       }
                     />
