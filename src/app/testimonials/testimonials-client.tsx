@@ -164,7 +164,7 @@ export default function Testimonials() {
 
       <div className={styles.page + " center-content"}>
         {/* ===== FILTERS ===== */}
-        <div className={styles.filtersWrap}>
+        {/* <div className={styles.filtersWrap}>
           <div className={styles.filters}>
             {FILTERS.map(({ id, label, Icon }) => (
               <button
@@ -177,10 +177,10 @@ export default function Testimonials() {
               </button>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* ===== CONTENT GRID ===== */}
-        <section className={styles.contentGrid}>
+        <section className={styles.contentGrid + " mt-15"}>
           {/* Voices */}
           <div className={styles.voicesCol}>
             <div className={styles.colHeader}>
@@ -220,9 +220,9 @@ export default function Testimonials() {
             <div className={styles.colHeader}>
               <div className={styles.headerRow}>
                 <h2 className={styles.h2}>Stories in Motion</h2>
-                <a href="#" className={styles.viewAll}>
+                {/* <a href="#" className={styles.viewAll}>
                   View All Videos <ArrowRight size={14} />
-                </a>
+                </a> */}
               </div>
               <p className={styles.sectionSub}>
                 Watch and listen to real experiences from the field.
@@ -297,9 +297,9 @@ export default function Testimonials() {
                 Snapshots from the ground that tell powerful stories.
               </p>
             </div>
-            <a href="#" className={styles.viewAll}>
-              View All Photos <ArrowRight size={14} />
-            </a>
+            {/* <a href="#" className={styles.viewAll}>
+                View All Photos <ArrowRight size={14} />
+              </a> */}
           </div>
 
           <div className={styles.momentsGrid}>

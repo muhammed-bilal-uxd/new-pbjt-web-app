@@ -32,27 +32,63 @@ const InstagramIcon = () => (
 );
 
 const LocationIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
     <circle cx="12" cy="10" r="3" />
   </svg>
 );
 
 const MailIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
     <polyline points="22,6 12,13 2,6" />
   </svg>
 );
 
 const PhoneIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.56 2 2 0 0 1 3.58 1.36h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.09 6.09l.96-1.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
   </svg>
 );
 
 const GlobeIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <circle cx="12" cy="12" r="10" />
     <line x1="2" y1="12" x2="22" y2="12" />
     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -60,7 +96,16 @@ const GlobeIcon = () => (
 );
 
 const ChevronRightIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <polyline points="9 18 15 12 9 6" />
   </svg>
 );
@@ -82,7 +127,9 @@ const resourcesLinks = [
 ];
 
 export function Footer() {
-  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
+  const [expandedSections, setExpandedSections] = useState<
+    Record<string, boolean>
+  >({});
 
   const toggleSection = (section: string) => {
     setExpandedSections((prev) => ({ ...prev, [section]: !prev[section] }));
@@ -93,7 +140,7 @@ export function Footer() {
       <div className={`${styles.footerContainer} px-6 py-4`}>
         <div className={styles.topGrid}>
           <div className={styles.brandCol}>
-            <Link href="/" >
+            <Link href="/">
               <div className={styles.footerBrandLogo}>
                 <div className={styles.logoBox}>
                   <span className={styles.logoText}>PB</span>
@@ -107,7 +154,8 @@ export function Footer() {
               </div>
             </Link>
             <p className={styles.footerTagline}>
-              Building fair, inclusive and sustainable economies from the ground up.
+              Building fair, inclusive and sustainable economies from the ground
+              up.
             </p>
             <div className={styles.footerDivider} />
             <div className={styles.socials}>
@@ -117,20 +165,27 @@ export function Footer() {
                 { icon: <YouTubeIcon />, label: "YouTube" },
                 { icon: <InstagramIcon />, label: "Instagram" },
               ].map(({ icon, label }) => (
-                <a key={label} href="#" aria-label={label} className={styles.socialBtn}>
+                <a
+                  key={label}
+                  href="#"
+                  aria-label={label}
+                  className={styles.socialBtn}
+                >
                   {icon}
                 </a>
               ))}
             </div>
           </div>
-
+          <span></span>
+          <span></span>
           <NavColumn
+            className={styles.navColFooter}
             title="EXPLORE"
             links={navLinks}
             expanded={!!expandedSections.explore}
             onToggle={() => toggleSection("explore")}
           />
-          <NavColumn
+          {/* <NavColumn
             title="GET INVOLVED"
             links={getInvolvedLinks}
             expanded={!!expandedSections.getinvolved}
@@ -141,7 +196,7 @@ export function Footer() {
             links={resourcesLinks}
             expanded={!!expandedSections.resources}
             onToggle={() => toggleSection("resources")}
-          />
+          /> */}
 
           <div className={styles.navCol}>
             <button
@@ -151,30 +206,44 @@ export function Footer() {
               aria-expanded={!!expandedSections.contact}
             >
               <span>CONTACT US</span>
-              <span className={`${styles.mobileChevron} ${expandedSections.contact ? styles.expanded : ""}`}>
+              <span
+                className={`${styles.mobileChevron} ${expandedSections.contact ? styles.expanded : ""}`}
+              >
                 <ChevronRightIcon />
               </span>
             </button>
             <div className={styles.headerUnderline} />
-            <div className={`${styles.colContent} ${expandedSections.contact ? styles.expanded : ""}`}>
+            <div
+              className={`${styles.colContent} ${expandedSections.contact ? styles.expanded : ""}`}
+            >
               <ContactItem icon={<LocationIcon />}>
-                <span className={styles.contactText}>C/o Centre for Sustainable Work</span>
-                <span className={styles.contactText}>First Floor, 123 Community Lane</span>
-                <span className={styles.contactText}>Bengaluru, Karnataka 560001, India</span>
+                <span className={styles.contactText}>
+                  C/o Centre for Sustainable Work
+                </span>
+                <span className={styles.contactText}>
+                  First Floor, 123 Community Lane
+                </span>
+                <span className={styles.contactText}>
+                  Bengaluru, Karnataka 560001, India
+                </span>
               </ContactItem>
               <div className={styles.contactDivider} />
               <ContactItem icon={<MailIcon />}>
                 <a href="mailto:hello@pbjt.org" className={styles.contactLink}>
                   hello@pbjt.org
                 </a>
-                <span className={styles.contactSubtext}>We aim to respond within 2-3 working days.</span>
+                <span className={styles.contactSubtext}>
+                  We aim to respond within 2-3 working days.
+                </span>
               </ContactItem>
               <div className={styles.contactDivider} />
               <ContactItem icon={<PhoneIcon />}>
                 <a href="tel:+918012345678" className={styles.contactLink}>
                   +91 80 1234 5678
                 </a>
-                <span className={styles.contactSubtext}>Mon - Fri, 10:00 AM - 6:00 PM IST</span>
+                <span className={styles.contactSubtext}>
+                  Mon - Fri, 10:00 AM - 6:00 PM IST
+                </span>
               </ContactItem>
               <div className={styles.contactDivider} />
               <ContactItem icon={<GlobeIcon />}>
@@ -187,16 +256,20 @@ export function Footer() {
         </div>
 
         <div className={`${styles.bottomBar} sm:text-center`}>
-          <p className={styles.copyright}>&copy; 2024 Place-Based Just Transition. All rights reserved.</p>
+          <p className={styles.copyright}>
+            &copy; 2024 Place-Based Just Transition. All rights reserved.
+          </p>
           <div className={styles.bottomLinks}>
-            {["Privacy Policy", "Terms of Use", "Accessibility"].map((item, i) => (
-              <span key={item} className={styles.bottomLinkGroup}>
-                <a href="#" className={styles.bottomLink}>
-                  {item}
-                </a>
-                {i < 2 && <span className={styles.bottomSep}>|</span>}
-              </span>
-            ))}
+            {["Privacy Policy", "Terms of Use", "Accessibility"].map(
+              (item, i) => (
+                <span key={item} className={styles.bottomLinkGroup}>
+                  <a href="#" className={styles.bottomLink}>
+                    {item}
+                  </a>
+                  {i < 2 && <span className={styles.bottomSep}>|</span>}
+                </span>
+              ),
+            )}
           </div>
         </div>
       </div>
@@ -205,21 +278,30 @@ export function Footer() {
 }
 
 function NavColumn({
+  className,
   title,
   links,
   expanded,
   onToggle,
 }: {
+  className?: string;
   title: string;
   links: Array<Pick<INavLinks, "label" | "href" | "hasArrow">>;
   expanded: boolean;
   onToggle: () => void;
 }) {
   return (
-    <div className={styles.navCol}>
-      <button type="button" className={styles.colHeader} onClick={onToggle} aria-expanded={expanded}>
+    <div className={`${styles.navCol} ${className}`}>
+      <button
+        type="button"
+        className={styles.colHeader}
+        onClick={onToggle}
+        aria-expanded={expanded}
+      >
         <span>{title}</span>
-        <span className={`${styles.mobileChevron} ${expanded ? styles.expanded : ""}`}>
+        <span
+          className={`${styles.mobileChevron} ${expanded ? styles.expanded : ""}`}
+        >
           <ChevronRightIcon />
         </span>
       </button>
@@ -242,7 +324,13 @@ function NavColumn({
   );
 }
 
-function ContactItem({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
+function ContactItem({
+  icon,
+  children,
+}: {
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}) {
   return (
     <div className={styles.contactItem}>
       <span className={styles.contactIcon}>{icon}</span>
