@@ -247,8 +247,11 @@ export function Footer() {
               </ContactItem>
               <div className={styles.contactDivider} />
               <ContactItem icon={<GlobeIcon />}>
-                <a href="https://www.pbjt.org" className={styles.contactLink}>
-                  www.pbjt.org
+                <a
+                  href="https://www.thepbjt.com"
+                  className={styles.contactLink}
+                >
+                  www.thepbjt.com
                 </a>
               </ContactItem>
             </div>

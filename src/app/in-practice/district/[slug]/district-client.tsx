@@ -3,6 +3,7 @@
 import DindigulPage from "@/components/district/dindigul";
 import HosurPage from "@/components/district/hosur";
 import KrishnagiriPage from "@/components/district/krishnagiri";
+import VirudhunagarPage from "@/components/district/virudhunagar";
 import { districts } from "@/data/district";
 
 export default function DistrictPageClient({
@@ -17,7 +18,7 @@ export default function DistrictPageClient({
     dindigul: DindigulPage,
     krishnagiri: KrishnagiriPage,
     hosur: HosurPage,
-    // virudhunagar: VirudhunagarPage,
+    virudhnagar: VirudhunagarPage,
   };
 
   if (!districtName || !districts[districtName]) {

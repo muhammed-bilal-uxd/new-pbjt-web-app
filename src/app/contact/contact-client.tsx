@@ -336,8 +336,8 @@ export default function Contact() {
               </div>
               <div className={cn("info-content")}>
                 <h4>Website</h4>
-                <a href="https://www.pbjt.org" className={cn("info-link")}>
-                  www.pbjt.org
+                <a href="https://www.thepbjt.com" className={cn("info-link")}>
+                  www.thepbjt.com
                 </a>
               </div>
             </div>

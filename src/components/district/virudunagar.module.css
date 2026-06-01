@@ -1,0 +1,12 @@
+.rule {
+  background: var(--pbjt-primary-color);
+  border-radius: var(--dp-radius-pill);
+  width: 64px;
+  height: 4px;
+  margin: 18px 0 22px;
+  display: block;
+}
+
+.bannerTitle {
+  color: var(--pbjt-primary-color);
+}

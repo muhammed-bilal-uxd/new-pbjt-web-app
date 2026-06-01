@@ -18,6 +18,7 @@ import {
 import { scrollToElement } from "@/utils/scroll";
 
 const red = "#ba151d";
+const imgUrl = "/images/krishnagiri/";
 
 const stats = [
   { icon: Users, value: "86+", label: "Field Activities" },
@@ -91,19 +92,19 @@ const initiatives: IInitiative[] = [
     steps: [
       {
         text: "30 vendors committed to proper waste segregation and disposal.",
-        image: "",
+        image: imgUrl + "business-with-purpose-1a.jpeg",
       },
       {
         text: "Discussions held with sanitation workers on regular waste collection.",
-        image: "",
+        image: imgUrl + "business-with-purpose-2a.jpeg",
       },
       {
         text: "Market waste collection systems strengthened.",
-        image: "",
+        image: imgUrl + "business-with-purpose-3a.jpeg",
       },
       {
         text: "Market areas cleaned; vendors stopped dumping waste in public spaces.",
-        image: "",
+        image: imgUrl + "business-with-purpose-4a.jpeg",
       },
     ],
   },
@@ -115,19 +116,19 @@ const initiatives: IInitiative[] = [
     steps: [
       {
         text: "Discussions initiated on promoting kitchen gardens.",
-        image: "",
+        image: imgUrl + "kitchen-garden-1a.jpeg",
       },
       {
         text: "Seeds distributed; guidance provided on plant care.",
-        image: "",
+        image: imgUrl + "kitchen-garden-2a.jpeg",
       },
       {
         text: "Households started kitchen gardens.",
-        image: "",
+        image: imgUrl + "kitchen-garden-3a.jpeg",
       },
       {
         text: "Community members are sharing surplus vegetables.",
-        image: "",
+        image: imgUrl + "kitchen-garden-4a.jpeg",
       },
     ],
   },
@@ -139,21 +140,41 @@ const initiatives: IInitiative[] = [
     steps: [
       {
         text: "Subject-wise mentoring classes conducted.",
-        image: "",
+        image: imgUrl + "education-1a.jpeg",
       },
       {
         text: "Monthly parent meetings promoted education.",
-        image: "",
+        image: imgUrl + "education-2a.jpeg",
       },
       {
         text: "Auto escort facility enabled regular school attendance.",
-        image: "",
+        image: imgUrl + "education-3a.jpeg",
       },
       {
         text: "Career guidance increased higher education enrolment.",
-        image: "",
+        image: imgUrl + "education-4a.png",
       },
     ],
+  },
+];
+
+interface ITransformationImage {
+  label: string;
+  image: string;
+}
+
+const transformationData: ITransformationImage[] = [
+  {
+    label: "Before",
+    image: imgUrl + "before-1a.png",
+  },
+  {
+    label: "Beyond",
+    image: imgUrl + "before-2a.png",
+  },
+  {
+    label: "Transformation",
+    image: imgUrl + "before-3a.png",
   },
 ];
 
@@ -245,20 +266,16 @@ export default function KrishnagiriPage() {
       <section className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
         <div className="grid gap-10 rounded-3xl bg-gradient-to-br from-red-50 to-white p-6 shadow-sm lg:grid-cols-2 lg:p-10">
           <div className="grid grid-cols-2 gap-4">
-            {["Before", "Beyond", "Transformation"].map((label, index) => (
+            {transformationData.map((data, index) => (
               <div
-                key={label}
+                key={data?.label}
                 className={`relative overflow-hidden rounded-[2rem] ${
                   index === 2 ? "col-span-2 mx-auto w-2/3" : ""
                 }`}
               >
-                <img
-                  src={`https://picsum.photos/seed/${label}/500/350`}
-                  alt={label}
-                  className="h-48 w-full object-cover"
-                />
+                <img src={data?.image} className="h-48 w-full object-cover" />
                 <span className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-white px-5 py-2 text-sm font-bold text-[#ba151d] shadow">
-                  {label}
+                  {data?.label}
                 </span>
               </div>
             ))}
@@ -343,14 +360,15 @@ export default function KrishnagiriPage() {
                   {item.steps.map((step, stepIndex) => (
                     <div key={stepIndex} className="relative">
                       <img
-                        src={step}
-                        alt=""
+                        src={step?.image}
                         className="mb-3 h-32 w-full rounded-xl object-cover"
                       />
                       <span className="absolute left-2 top-22 flex h-8 w-8 items-center justify-center rounded-full bg-[#ba151d] text-sm font-bold text-white">
                         {stepIndex + 1}
                       </span>
-                      <p className="text-sm font-medium leading-6">{step}</p>
+                      <p className="text-sm font-medium leading-6">
+                        {step?.text}
+                      </p>
                     </div>
                   ))}
                 </div>
