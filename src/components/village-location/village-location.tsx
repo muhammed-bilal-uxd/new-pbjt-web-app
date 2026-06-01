@@ -171,7 +171,10 @@ export default function VillageLocation({ onSelect }: VillageLocationProps) {
               <div className={styles.cardFoot}>
                 <span className={styles.cardTag}>
                   {!d.hasDetails ? (
-                    <span className={styles.commingSoon}>Coming soon...</span>
+                    <span className={styles.commingSoon}>
+                      {/* Coming soon... */}
+                      Data will be updated soon
+                    </span>
                   ) : (
                     <span className={styles.viewMore}>View more</span>
                   )}

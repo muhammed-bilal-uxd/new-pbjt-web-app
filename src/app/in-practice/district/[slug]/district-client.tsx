@@ -7,6 +7,7 @@ import Villages from "@/components/villages/villages";
 import Mapping from "@/components/mapping";
 
 import { ClimateRow, districts } from "@/data/district";
+import CommunityMap from "@/components/community-map/community-map";
 
 const cn = (names: string) =>
   names
@@ -1222,7 +1223,8 @@ export default function DistrictPageClient({
       <KeyInsights districtName={districtName} />
       <ClimateTable districtName={districtName} />
       {/* <VillageProcess /> */}
-      <Mapping />
+      {/* <Mapping /> */}
+      <CommunityMap />
       {/* <VillagesSection /> */}
       {/* <VillageDetail /> */}
       <Villages districtName={districtName} />
