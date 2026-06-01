@@ -7,16 +7,44 @@ const imgUrlBase = "/images/virudunagar/";
 
 const primary = "#BA151D";
 
-const themes = [
+interface IThemeStep {
+  text: string;
+  image: string;
+  imageClass: string;
+}
+
+interface ITheme {
+  title: string;
+  impact: string;
+  steps: IThemeStep[];
+}
+
+const themes: ITheme[] = [
   {
     title: "Reimagining Waste Systems",
     impact:
       "Transition from irregular waste disposal to a cleaner environment supported by community participation.",
     steps: [
-      "Waste issues identified; initial engagement with households and vendors.",
-      "Awareness walks conducted to mobilize community participation.",
-      "Mass cleaning drive removed garbage and built awareness.",
-      "Cleaner public spaces with improved household waste practices and community ownership.",
+      {
+        text: "Waste issues identified; initial engagement with households and vendors.",
+        image: imgUrlBase + "reimagining-waste-systems-1a.png",
+        imageClass: "object-cover",
+      },
+      {
+        text: "Awareness walks conducted to mobilize community participation.",
+        image: imgUrlBase + "reimagining-waste-systems-2a.png",
+        imageClass: "object-cover",
+      },
+      {
+        text: "Mass cleaning drive removed garbage and built awareness.",
+        image: imgUrlBase + "reimagining-waste-systems-3a.png",
+        imageClass: "object-cover",
+      },
+      {
+        text: "Cleaner public spaces with improved household waste practices and community ownership.",
+        image: imgUrlBase + "reimagining-waste-systems-4a.png",
+        imageClass: "object-cover",
+      },
     ],
   },
   {
@@ -24,10 +52,26 @@ const themes = [
     impact:
       "Movement from open burning and pollution to circular waste management and responsible retail behaviour.",
     steps: [
-      "Discussions initiated to form an Environmental Protection Committee.",
-      "Committee formed with 8 volunteers focusing on awareness and plastic reduction.",
-      "The Environmental Protection Committee expanded with strong community participation.",
-      "WhatsApp group with 242 members driving coordinated environmental action.",
+      {
+        text: "Discussions initiated to form an Environmental Protection Committee.",
+        image: imgUrlBase + "responsibility-1a.png",
+        imageClass: "object-cover",
+      },
+      {
+        text: "Committee formed with 8 volunteers focusing on awareness and plastic reduction.",
+        image: imgUrlBase + "responsibility-2a.png",
+        imageClass: "object-cover",
+      },
+      {
+        text: "The Environmental Protection Committee expanded with strong community participation.",
+        image: imgUrlBase + "responsibility-3a.png",
+        imageClass: "object-cover",
+      },
+      {
+        text: "WhatsApp group with 242 members driving coordinated environmental action.",
+        image: imgUrlBase + "responsibility-4a.png",
+        imageClass: "object-contain",
+      },
     ],
   },
   {
@@ -35,10 +79,26 @@ const themes = [
     impact:
       "Increased accountability among vendors and households has reduced plastic pollution and strengthened responsible waste handling.",
     steps: [
-      "Awareness sessions on the harmful impacts of polythene bags.",
-      "Vendors and households encouraged to reduce single-use plastics.",
-      "Improved segregation; polythene waste now systematically collected.",
-      "18 kg plastic waste collected weekly and responsibly managed.",
+      {
+        text: "Awareness sessions on the harmful impacts of polythene bags.",
+        image: imgUrlBase + "purpose-1a.png",
+        imageClass: "object-cover",
+      },
+      {
+        text: "Vendors and households encouraged to reduce single-use plastics.",
+        image: imgUrlBase + "purpose-2a.png",
+        imageClass: "object-cover",
+      },
+      {
+        text: "Improved segregation; polythene waste now systematically collected.",
+        image: imgUrlBase + "purpose-3a.png",
+        imageClass: "object-cover",
+      },
+      {
+        text: "18 kg plastic waste collected weekly and responsibly managed.",
+        image: imgUrlBase + "purpose-4a.png",
+        imageClass: "object-cover",
+      },
     ],
   },
   {
@@ -46,9 +106,21 @@ const themes = [
     impact:
       "Increased awareness and facilitation have improved access to social security for unorganised workers.",
     steps: [
-      "Awareness raised on Welfare Scheme; low awareness identified.",
-      "Labourers supported with Welfare Board registration.",
-      "39 workers received ID cards and now access social protection benefits.",
+      {
+        text: "Awareness raised on Welfare Scheme; low awareness identified.",
+        image: imgUrlBase + "protect-1a.png",
+        imageClass: "object-cover",
+      },
+      {
+        text: "Labourers supported with Welfare Board registration.",
+        image: imgUrlBase + "protect-2a.png",
+        imageClass: "object-cover",
+      },
+      {
+        text: "39 workers received ID cards and now access social protection benefits.",
+        image: imgUrlBase + "protect-3a.png",
+        imageClass: "object-cover",
+      },
     ],
   },
 ];
@@ -110,42 +182,51 @@ const transformationThemes: TransformationTheme[] = [
 
 function VirudhunagarTransformationSection() {
   return (
-    <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 rounded-[32px] p-6 md:p-10 lg:grid-cols-[0.95fr_1.05fr]">
-        {/* Left Content */}
-        <div className="max-w-xl">
-          <h1 className="text-4xl font-black leading-tight tracking-tight text-neutral-950 sm:text-5xl lg:text-6xl">
-            Before & Beyond
-          </h1>
+    <section className="bg-white px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+      <div className="mx-auto max-w-7xl rounded-[24px] bg-white px-0 sm:rounded-[32px] sm:px-6 lg:px-10">
+        <div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+          {/* Left Content */}
+          <div className="max-w-2xl text-left">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#ba151d] sm:text-sm">
+              Virudhunagar Transformation
+            </p>
 
-          <div className="mt-6 h-1.5 w-24 rounded-full bg-[#ba151d]" />
-        </div>
+            <h1 className="mt-4 text-3xl font-black leading-tight tracking-tight text-neutral-950 sm:text-5xl lg:text-6xl">
+              Before & Beyond
+            </h1>
 
-        {/* Right Image Items */}
-        <div className="grid grid-cols-2 gap-5 sm:gap-6">
-          {transformationThemes.map((item, index) => (
-            <article
-              key={item.title}
-              className={
-                "group relative overflow-hidden rounded-[28px] bg-neutral-100 shadow-md"
-              }
-            >
-              <div className="aspect-[1.05/1] overflow-hidden">
-                <img
-                  src={item.image}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-                />
-              </div>
+            <div className="mt-5 h-1.5 w-20 rounded-full bg-[#ba151d] sm:w-24" />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+            <p className="mt-5 max-w-xl text-sm leading-7 text-neutral-600 sm:text-base sm:leading-8">
+              A visual journey of how local participation, responsible business,
+              and worker protection are shaping community-led transformation.
+            </p>
+          </div>
 
-              <div className="absolute bottom-4 left-4 right-4">
-                <span className="inline-flex rounded-full bg-white px-4 py-2 text-xs font-black leading-tight text-[#ba151d] shadow-md sm:text-sm">
-                  {item.title}
-                </span>
-              </div>
-            </article>
-          ))}
+          {/* Right Image Items */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6">
+            {transformationThemes.map((item) => (
+              <article
+                key={item.title}
+                className="group relative overflow-hidden rounded-[22px] bg-neutral-100 shadow-sm ring-1 ring-neutral-200 sm:rounded-[28px]"
+              >
+                <div className="aspect-[16/11] overflow-hidden sm:aspect-[1.05/1]">
+                  <img
+                    src={item.image}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                  />
+                </div>
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent" />
+
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4">
+                  <span className="inline-flex max-w-full rounded-full bg-white px-3 py-2 text-[11px] font-black leading-tight text-[#ba151d] shadow-md sm:px-4 sm:text-sm">
+                    {item.title}
+                  </span>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -265,7 +346,7 @@ export default function VirudhunagarPage({
               <div className="grid sm:grid-cols-2">
                 {theme.steps.map((step, stepIndex) => (
                   <div
-                    key={step}
+                    key={step?.text}
                     className="border-b border-neutral-100 p-6 sm:border-r"
                   >
                     {/* <span
@@ -277,12 +358,15 @@ export default function VirudhunagarPage({
                     <h3 className="mt-4 font-black">Step {stepIndex + 1}</h3> */}
 
                     <img
-                      src={imgUrl}
-                      className="w-[300px] h-[200px] object-cover overflow-hidden rounded-md"
+                      src={step?.image || imgUrl}
+                      className={
+                        "w-[300px] h-[200px] overflow-hidden rounded-md " +
+                        step.imageClass
+                      }
                     />
 
                     <p className="mt-2 text-sm leading-6 text-neutral-600">
-                      {step}
+                      {step?.text}
                     </p>
                   </div>
                 ))}
@@ -334,7 +418,7 @@ export default function VirudhunagarPage({
               Long-Term Vision
             </p>
 
-            <h2 className="mt-5 max-w-5xl text-3xl font-black leading-tight text-neutral-950 md:text-5xl">
+            <h2 className="mt-5 max-w-5xl text-3xl font-black leading-tight text-neutral-950">
               A resilient Virudhunagar where environmental sustainability,
               responsible business practices, community participation, and
               worker well-being are integrated into local development pathways.
