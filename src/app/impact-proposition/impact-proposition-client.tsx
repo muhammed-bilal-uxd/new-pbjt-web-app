@@ -45,8 +45,8 @@ export default function ImpactProposition() {
               </div>
               <span className="ml-5">is Neccessary</span>
             </div>
+            <div className={cn("text-white banner-question-mark")}>?</div>
           </div>
-          <div className={cn("text-white banner-question-mark")}>?</div>
         </div>
       </Banner>
 

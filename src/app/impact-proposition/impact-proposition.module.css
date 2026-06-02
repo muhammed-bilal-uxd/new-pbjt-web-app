@@ -459,18 +459,18 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-size: 1.8rem;
+  font-size: 0.6em;
   line-height: 100%;
 }
 
 .banner-group-1 {
-  font-size: 5rem;
+  font-size: 3rem;
   line-height: 110%;
   color: var(--pbjt-primary-color);
 }
 
 .banner-question-mark {
-  font-size: 7rem;
+  font-size: 4em;
   line-height: 100%;
 }
 
@@ -593,7 +593,7 @@
 
 @media (max-width: 600px) {
   .banner-hero-group {
-    transform: scale(0.7);
+    /* transform: scale(0.7); */
   }
 }
 
