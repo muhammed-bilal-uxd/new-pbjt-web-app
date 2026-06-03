@@ -11,7 +11,7 @@ const Icon = {
     )
 }
 
-export default function BannerTag({name, istransparent=false}) {
+export default function BannerTag({name, istransparent=false}:{name:string, istransparent?:boolean}) {
     return (
     <div>
       <div className={styles.dpLocator + " "  + (istransparent ? styles.dpLocatorNoBg : "") }>
