@@ -135,7 +135,7 @@ export default function HosurPage() {
           <div>
             <BannerTag name={"Hosur"} />
 
-            <h1 className="max-w-3xl text-4xl font-extrabold leading-tight md:text-6xl">
+            <h1 className="district-page-title">
               Building a Care-Supportive Industrial Ecosystem
             </h1>
 

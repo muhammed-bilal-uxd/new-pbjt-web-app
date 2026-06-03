@@ -201,7 +201,7 @@ export default function KrishnagiriPage() {
 
             <BannerTag name={"Krishnagiri"} istransparent={true} />
 
-            <h1 className="max-w-2xl text-4xl font-extrabold leading-tight md:text-6xl">
+            <h1 className="district-page-title">
               Journey of Transformation – Before & Beyond
             </h1>
 
@@ -310,7 +310,15 @@ export default function KrishnagiriPage() {
                 ["Countless", "Lives Transformed"],
               ].map(([value, label]) => (
                 <div key={label} className="rounded-2xl bg-white p-4 shadow">
-                  <h4 className="text-xl font-extrabold">{value}</h4>
+                  <h4
+                    className={
+                      value === "Countless"
+                        ? "text-sm font-extrabold"
+                        : "text-xl font-extrabold"
+                    }
+                  >
+                    {value}
+                  </h4>
                   <p className="mt-1 text-xs text-slate-600">{label}</p>
                 </div>
               ))}

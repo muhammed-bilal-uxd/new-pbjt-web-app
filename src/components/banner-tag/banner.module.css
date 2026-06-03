@@ -1,33 +1,33 @@
 .dpLocator {
-    border-radius: var(--dp-radius-pill);
-    border: 1px solid var(--dp-line);
-    box-shadow: var(--dp-shadow-sm);
-    color: var(--dp-ink-2);
-    background: #fff;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 18px;
-    padding: 6px 14px 6px 8px;
-    font-size: 13px;
-    font-weight: 600;
-    display: inline-flex;
+  border-radius: var(--dp-radius-pill);
+  border: 1px solid var(--dp-line);
+  box-shadow: var(--dp-shadow-sm);
+  color: var(--dp-ink-2);
+  background: #fff;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 6px 14px 6px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
 }
 
 .dpLocator.dpLocatorNoBg {
-    background: transparent;
+  background: transparent;
 }
 
 .pin {
-    background: var(--pbjt-primary-color);
-    color: #fff;
-    border-radius: 999px;
-    place-items: center;
-    width: 22px;
-    height: 22px;
-    display: inline-grid;
+  background: var(--pbjt-primary-color);
+  color: #fff;
+  border-radius: 999px;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  display: inline-grid;
 }
 
 .svgIcon {
-    width: 12px;
-    height: 12px;
+  width: 12px;
+  height: 12px;
 }

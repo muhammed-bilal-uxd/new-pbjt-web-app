@@ -189,7 +189,7 @@ function VirudhunagarTransformationSection() {
         <div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
           {/* Left Content */}
           <div className="max-w-2xl text-left">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#ba151d] sm:text-sm">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#ba151d]">
               Virudhunagar Transformation
             </p>
 
@@ -199,7 +199,7 @@ function VirudhunagarTransformationSection() {
 
             <div className="mt-5 h-1.5 w-20 rounded-full bg-[#ba151d] sm:w-24" />
 
-            <p className="mt-5 max-w-xl text-sm leading-7 text-neutral-600 sm: sm:leading-8">
+            <p className="mt-5 max-w-xl leading-7 text-neutral-600 sm: sm:leading-8">
               A visual journey of how local participation, responsible business,
               and worker protection are shaping community-led transformation.
             </p>
@@ -257,14 +257,10 @@ export default function VirudhunagarPage({
 
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <h1
-                className={
-                  " text-[2rem] font-black uppercase leading-tight tracking-tight text-neutral-950 sm:text-5xl"
-                }
-              >
+              <h1 className={"district-page-title"}>
                 Virudhunagar Journey of Transformation
               </h1>
-              <span className={styles.rule}></span>
+              {/* <span className={styles.rule}></span> */}
               <p className="mt-5 max-w-3xl  leading-8 text-neutral-600">
                 Virudhunagar is an industrial and agricultural district facing
                 waste, climate, livelihood, and labour challenges. This journey
@@ -274,9 +270,18 @@ export default function VirudhunagarPage({
             </div>
 
             <div>
-              <img
+              {/* <img
                 src={"/images/in-practice/location-2d.png"}
                 className="rounded-xl"
+              /> */}
+              <img
+                src="/images/in-practice/virudhunagar-map-01.jpeg"
+                alt="Tamil Nadu Map"
+                style={{
+                  maxWidth: "500px",
+                  width: "100%",
+                  height: "auto",
+                }}
               />
               <div className="grid grid-cols-3 gap-3 mt-3">
                 {[
@@ -294,7 +299,7 @@ export default function VirudhunagarPage({
                     >
                       {value}
                     </h3>
-                    <p className="mt-1 text-xs font-medium text-neutral-600">
+                    <p className="mt-1 text-sm font-medium text-neutral-600">
                       {label}
                     </p>
                   </div>
@@ -342,7 +347,7 @@ export default function VirudhunagarPage({
                 <h2 className="mt-3 text-2xl font-black md:text-3xl">
                   {theme.title}
                 </h2>
-                <p className="mt-4 text-sm leading-7 text-neutral-600">
+                <p className="mt-4 leading-7 text-neutral-600">
                   {theme.impact}
                 </p>
               </div>

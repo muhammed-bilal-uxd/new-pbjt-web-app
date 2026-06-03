@@ -523,7 +523,7 @@
 .dp-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14.5px;
+  /* font-size: 14.5px; */
   min-width: 540px;
 }
 
@@ -532,7 +532,7 @@
   background: var(--dp-bg-soft);
   color: var(--dp-ink-2);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   padding: 14px 22px;
   border-bottom: 1px solid var(--dp-line);
 }

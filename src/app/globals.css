@@ -65,3 +65,9 @@ img.single-cover-banner {
 .banner-subtitle {
   font-size: 3rem;
 }
+
+@layer components {
+  .district-page-title {
+    @apply max-w-3xl text-4xl font-extrabold leading-tight capitalize md:text-6xl;
+  }
+}

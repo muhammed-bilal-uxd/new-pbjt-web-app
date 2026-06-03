@@ -67,8 +67,8 @@
   max-width: 620px;
   margin: 10px 0 0;
   color: #57534e;
-  font-size: 14px;
-  line-height: 1.5;
+  /* font-size: 14px; */
+  /* line-height: 1.5; */
 }
 
 .badge {
@@ -320,7 +320,7 @@
   display: flex;
   gap: 9px;
   color: #3f3f46;
-  font-size: 13px;
+  /* font-size: 13px; */
   line-height: 1.45;
   margin-bottom: 8px;
 }
@@ -394,7 +394,7 @@
   border-left: 4px solid #b91c1c;
   border-radius: 13px;
   padding: 11px 12px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.4;
   font-weight: 800;
   color: #3f3f46;

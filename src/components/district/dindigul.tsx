@@ -4,7 +4,7 @@ import CommunityMap from "../community-map/community-map";
 import Villages from "../villages/villages";
 import styles from "./dindigul.module.css";
 
-import BannerTag from "@/components/banner-tag/banner-tag"
+import BannerTag from "@/components/banner-tag/banner-tag";
 
 import { ClimateRow, districts } from "@/data/district";
 
@@ -612,11 +612,8 @@ function HeroSection({ districtName }: { districtName: string }) {
             </span>
             <span className="capitalize">{data.name}, India</span>
           </div> */}
-          <h1 className={cn("dp-hero__title")}>
-            <span className="uppercase">{data.name}</span>
-            <span className={cn("dp-hero__title--accent")}>IN INDIA</span>
-          </h1>
-          <span className={cn("dp-hero__rule")} aria-hidden="true" />
+          <h1 className={cn("district-page-title")}>{data.name} in india</h1>
+          {/* <span className={cn("dp-hero__rule")} aria-hidden="true" /> */}
           <p className={cn("dp-hero__lede")}>{data.discription}</p>
           <button
             type="button"
@@ -640,9 +637,13 @@ function HeroSection({ districtName }: { districtName: string }) {
         <div className={cn("dp-hero__map")}>
           {/* <TamilNaduMap /> */}
           <img
-            src={data.heroImage}
+            src="/images/in-practice/dindigul-01.jpeg"
             alt="Tamil Nadu Map"
-            style={{ width: 415, height: "auto", maxWidth: "none" }}
+            style={{
+              maxWidth: "500px",
+              width: "100%",
+              height: "auto",
+            }}
           />
         </div>
       </div>

@@ -61,7 +61,7 @@ export default function CommunityMap() {
           </div>
 
           <div className="p-7">
-            <p className="max-w-3xl text-1xl font-medium leading-relaxed text-slate-600">
+            <p className="max-w-3xl font-medium leading-relaxed text-slate-600">
               Simple steps for a cleaner, greener, and stronger village.
             </p>
 
