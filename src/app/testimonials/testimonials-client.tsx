@@ -197,8 +197,8 @@ export default function Testimonials() {
                   <div className={styles.quoteBadge}>
                     <Quote size={12} fill="white" strokeWidth={0} />
                   </div>
-                  <p className={styles.voiceQuote}>{t.quote}</p>
-                  <p className={styles.voiceText}>{t.text}</p>
+                  <p className={styles.voiceQuote + " text-base"}>{t.quote}</p>
+                  <p className={styles.voiceText + " text-base"}>{t.text}</p>
                   <div className={styles.voiceAuthor}>
                     <img
                       src={t.avatar}
@@ -206,8 +206,12 @@ export default function Testimonials() {
                       className={styles.avatar}
                     />
                     <div>
-                      <div className={styles.authorName}>{t.name}</div>
-                      <div className={styles.authorRole}>{t.role}</div>
+                      <div className={styles.authorName + " text-sm"}>
+                        {t.name}
+                      </div>
+                      <div className={styles.authorRole + " text-sm"}>
+                        {t.role}
+                      </div>
                     </div>
                   </div>
                 </article>

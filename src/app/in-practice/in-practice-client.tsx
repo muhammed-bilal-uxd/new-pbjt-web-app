@@ -184,9 +184,13 @@ export default function PBJTInPractice() {
             "relative flex flex-col items-center whitespace-nowrap banner-hero-group text-white"
           }
         >
-        <span className={styles.bannerText1}>What the</span>
-        <span className={styles.bannerText2}>Ground</span>
-        <span className={styles.bannerText3}>Teaches Us ?</span>
+          <span className={styles.bannerText1 + " banner-subtitle"}>
+            What the
+          </span>
+          <span className={styles.bannerText2 + " banner-title"}>Ground</span>
+          <span className={styles.bannerText3 + " banner-subtitle"}>
+            Teaches Us ?
+          </span>
         </div>
       </Banner>
 
@@ -270,7 +274,8 @@ export default function PBJTInPractice() {
       {/* ===== Field Insights ===== */}
       <section className={styles.insightsSection}>
         <h2 className={styles.insightsTitle}>
-        Our field learning <span className={styles.accentRed}>focuses</span> on:
+          Our field learning <span className={styles.accentRed}>focuses</span>{" "}
+          on:
           {/* Our Field Insights <span className={styles.accentRed}>Centre</span>{" "}
           On: */}
         </h2>
@@ -308,10 +313,9 @@ export default function PBJTInPractice() {
             <span className={styles.accentRed}>hope</span> meet.
           </p> */}
           <p className={styles.quoteText}>
-          These are not success stories. They are honest accounts of transition {" "}
-            <span className={styles.accentRed}>where power</span>,{" "}
-            <span className={styles.accentRed}>vulnerability</span>, and{" "}
-            <span className={styles.accentRed}>hope</span> intersect.
+            These are not success stories. They are honest accounts of
+            transition <span>where power</span>, <span>vulnerability</span>, and{" "}
+            <span>hope</span> intersect.
           </p>
           <span className={styles.quoteCloseMark} aria-hidden="true">
             &rdquo;

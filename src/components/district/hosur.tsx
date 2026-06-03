@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { scrollToElement } from "@/utils/scroll";
 
-import BannerTag from "@/components/banner-tag/banner-tag"
+import BannerTag from "@/components/banner-tag/banner-tag";
 
 const primary = "#ba151d";
 
@@ -139,7 +139,7 @@ export default function HosurPage() {
               Building a Care-Supportive Industrial Ecosystem
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-700 md:text-lg">
+            <p className="mt-6 max-w-2xl  leading-8 text-slate-700 md:text-lg">
               One of India’s fastest-growing industrial hubs, where migration,
               manufacturing and the care economy intersect.
             </p>
@@ -200,10 +200,7 @@ export default function HosurPage() {
       </section>
 
       {/* JOURNEY FLOW */}
-      <section
-        className="mx-auto center-content py-10"
-        id="hosur-journey"
-      >
+      <section className="mx-auto center-content py-10" id="hosur-journey">
         <div className="mb-8 text-center">
           <p className="font-bold uppercase text-[#ba151d]">
             Our Journey In Hosur

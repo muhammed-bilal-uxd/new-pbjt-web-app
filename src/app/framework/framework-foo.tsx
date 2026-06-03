@@ -12,7 +12,7 @@ import {
 import Image from "next/image";
 import Banner from "@/components/banner";
 
-import styles from './framework.module.css'
+import styles from "./framework.module.css";
 
 const RED = "#ba151d";
 
@@ -86,36 +86,30 @@ export default function PBJTPrinciples() {
   return (
     <main>
       <Banner>
-          <Image
-            alt=""
-            className={"single-cover-banner " + styles.frameworkBanner}
-            fill
-            priority
-            sizes="100vw"
-            src="/images/banner/framework-banner-01.jpg"
-          />
+        <Image
+          alt=""
+          className={"single-cover-banner " + styles.frameworkBanner}
+          fill
+          priority
+          sizes="100vw"
+          src="/images/banner/framework-banner-01.jpg"
+        />
 
-          <div
-            className={`relative d-flex flex-col items-center justify-center h-full ${styles.frameworkBannerContainer}`}
-          >
-            <h3 className={styles.heroText1 + " text-center"}>
-              <span className="ml-2">PBJT - Framework:</span>{" "}
-            </h3>
-            <p className={styles.heroText2}>Principles</p>
-            <p className={styles.heroText3}>
-              <span className={`mt-[-50px] ${styles.heroText3Content}`}>
-                of Place-Based Just Transition
-              </span>
-            </p>
-          </div>
-        </Banner>
+        <div
+          className={`relative d-flex flex-col items-center justify-center h-full text-center ${styles.frameworkBannerContainer}`}
+        >
+          <p className={styles.heroText1 + " text-center banner-subtitle"}>
+            PBJT - Framework:
+          </p>
+          <p className={styles.heroText2 + " banner-title"}>Principles</p>
+          <p className={styles.heroText3 + " banner-subtitle"}>
+            of Place-Based Just Transition
+          </p>
+        </div>
+      </Banner>
 
       <section className="min-h-screen bg-white py-10">
-
         <div className="center-content">
-
-        
-
           {/* Header */}
           {/* <div className="mb-10 max-w-4xl text-left">
             <h1 className="text-4xl font-extrabold leading-tight text-black md:text-6xl">
@@ -130,18 +124,18 @@ export default function PBJTPrinciples() {
               style={{ backgroundColor: RED }}
             />
 
-            <p className="mt-6 max-w-3xl text-base leading-8 text-gray-700">
+            <p className="mt-6 max-w-3xl   text-gray-700">
               To make Place-Based Transition actionable, PBJT develops and uses
               simple, practical tools that communities and practitioners can
               actually use.
             </p>
           </div> */}
 
-            <p className="mt-6 max-w-3xl text-base leading-8 text-gray-700">
-              To make Place-Based Transition actionable, PBJT develops and uses
-              simple, practical tools that communities and practitioners can
-              actually use.
-            </p>
+          <p className="mt-6 text-[2rem] text-gray-700">
+            To make Place-Based Transition actionable, PBJT develops and uses
+            simple, practical tools that communities and practitioners can
+            actually use.
+          </p>
 
           {/* Tools */}
           <div className="relative mb-8 rounded-2xl border border-red-200 bg-white p-5 md:p-8 mt-15">
@@ -164,30 +158,35 @@ export default function PBJTPrinciples() {
                       className="mb-4 flex h-16 w-16 items-center justify-center rounded-full"
                       style={{ backgroundColor: `${RED}12` }}
                     >
-                      <Icon size={32} style={{ color: RED }} strokeWidth={2.2} />
+                      <Icon
+                        size={32}
+                        style={{ color: RED }}
+                        strokeWidth={2.2}
+                      />
                     </div>
 
-                    <h3 className="mb-3 text-[1.2rem] font-bold" style={{ color: RED }}>
+                    <h3
+                      className="mb-0 text-[1.2rem] font-bold"
+                      style={{ color: RED }}
+                    >
                       {item.title}
                     </h3>
 
-                    <p className="text-base leading-7 text-gray-700">
-                      {item.text}
-                    </p>
+                    <p className="  text-gray-700">{item.text}</p>
                   </div>
                 );
               })}
             </div>
           </div>
 
-          <div className="space-y-5 text-base leading-8 text-gray-800">
+          <div className="space-y-5   text-gray-800">
             <p>
               Each tool is designed to{" "}
               <strong style={{ color: RED }}>
                 support discussion, not compliance.
               </strong>{" "}
-              They help communities ask better questions, and help businesses see
-              what is usually invisible.
+              They help communities ask better questions, and help businesses
+              see what is usually invisible.
             </p>
             <p>
               Our approach prioritises{" "}
@@ -209,7 +208,7 @@ export default function PBJTPrinciples() {
                 <Users size={32} style={{ color: RED }} />
               </div>
 
-              <div className="space-y-5 text-base leading-8 text-gray-800">
+              <div className="space-y-5   text-gray-800">
                 <p>
                   Each tool is designed to{" "}
                   <strong style={{ color: RED }}>
@@ -254,7 +253,7 @@ export default function PBJTPrinciples() {
                     {item?.text?.map((a, b) => {
                       return (
                         <p
-                          className="max-w-5xl text-base leading-8 text-gray-800 mt-0 mb-3"
+                          className="max-w-5xl   text-gray-800 mt-0 mb-3"
                           key={b}
                         >
                           {a}

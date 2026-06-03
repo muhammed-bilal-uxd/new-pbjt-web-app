@@ -20,7 +20,7 @@ import { scrollToElement } from "@/utils/scroll";
 const red = "#ba151d";
 const imgUrl = "/images/krishnagiri/";
 
-import BannerTag from "@/components/banner-tag/banner-tag"
+import BannerTag from "@/components/banner-tag/banner-tag";
 
 const stats = [
   { icon: Users, value: "86+", label: "Field Activities" },
@@ -199,13 +199,13 @@ export default function KrishnagiriPage() {
               Krishnagiri
             </p> */}
 
-          <BannerTag name={"Krishnagiri"} istransparent={true} />
+            <BannerTag name={"Krishnagiri"} istransparent={true} />
 
             <h1 className="max-w-2xl text-4xl font-extrabold leading-tight md:text-6xl">
               Journey of Transformation – Before & Beyond
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-slate-700 md:text-lg">
+            <p className="mt-6 max-w-xl  leading-8 text-slate-700 md:text-lg">
               From challenges to change, from vision to reality — exploring the
               inspiring transformation of Krishnagiri through people, purpose
               and collective action.

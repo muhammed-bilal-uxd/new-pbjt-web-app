@@ -408,7 +408,7 @@ export default function Glossary() {
                 </span>
               </div>
 
-              <p className="text-base leading-7 text-gray-700">
+              <p className=" leading-7 text-gray-700">
                 {selectedTerm.description}
               </p>
             </article>

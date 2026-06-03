@@ -77,9 +77,9 @@
 }
 
 .pbjt-p {
-  font-size: 1.15rem;
+  /* font-size: 1.15rem; */
   color: var(--pbjt-ink-soft);
-  line-height: 1.65;
+  /* line-height: 1.65; */
 }
 
 .pbjt-p--muted {
@@ -418,9 +418,9 @@
 }
 
 .pbjt-card__body {
-  font-size: 1.15rem;
+  /* font-size: 1.15rem; */
   color: var(--pbjt-ink-soft);
-  line-height: 1.55;
+  /* line-height: 1.55; */
   margin: 0;
 }
 
@@ -449,7 +449,7 @@
   margin: 0;
   font-weight: 600;
   color: var(--pbjt-ink);
-  font-size: 0.98rem;
+  /* font-size: 0.98rem; */
 }
 
 .pbjt-footnote__icon {
@@ -465,12 +465,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-size: 0.6em;
+  /* font-size: 0.6em; */
   line-height: 100%;
 }
 
 .banner-group-1 {
-  font-size: 3rem;
+  /* font-size: 3rem; */
   line-height: 110%;
   color: var(--pbjt-primary-color);
 }

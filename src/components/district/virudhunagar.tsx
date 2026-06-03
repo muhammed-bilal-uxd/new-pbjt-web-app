@@ -5,7 +5,7 @@ import styles from "./virudunagar.module.css";
 const imgUrl = "/images/virudunagar/virudunagar-01.png";
 const imgUrlBase = "/images/virudunagar/";
 
-import BannerTag from "@/components/banner-tag/banner-tag"
+import BannerTag from "@/components/banner-tag/banner-tag";
 
 const primary = "#BA151D";
 
@@ -199,7 +199,7 @@ function VirudhunagarTransformationSection() {
 
             <div className="mt-5 h-1.5 w-20 rounded-full bg-[#ba151d] sm:w-24" />
 
-            <p className="mt-5 max-w-xl text-sm leading-7 text-neutral-600 sm:text-base sm:leading-8">
+            <p className="mt-5 max-w-xl text-sm leading-7 text-neutral-600 sm: sm:leading-8">
               A visual journey of how local participation, responsible business,
               and worker protection are shaping community-led transformation.
             </p>
@@ -253,12 +253,9 @@ export default function VirudhunagarPage({
             Before & Beyond
           </p> */}
 
-<BannerTag name={"Virudhunagar"} />
-
+          <BannerTag name={"Virudhunagar"} />
 
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-
-          
             <div>
               <h1
                 className={
@@ -268,7 +265,7 @@ export default function VirudhunagarPage({
                 Virudhunagar Journey of Transformation
               </h1>
               <span className={styles.rule}></span>
-              <p className="mt-5 max-w-3xl text-base leading-8 text-neutral-600">
+              <p className="mt-5 max-w-3xl  leading-8 text-neutral-600">
                 Virudhunagar is an industrial and agricultural district facing
                 waste, climate, livelihood, and labour challenges. This journey
                 captures how community participation, responsible business, and

@@ -139,7 +139,7 @@ export default function VillageLocation({ onSelect }: VillageLocationProps) {
         </div> */}
 
         <h1 className={styles.heading}>Explore your district</h1>
-        <p className={styles.sub}>
+        <p className={styles.sub + " "}>
           Select a district to surface local stories, changes, and civic
           updates.
         </p>
@@ -169,7 +169,7 @@ export default function VillageLocation({ onSelect }: VillageLocationProps) {
               </div>
 
               <div className={styles.cardFoot}>
-                <span className={styles.cardTag}>
+                <span className={styles.cardTag + " text-xs"}>
                   {!d.hasDetails ? (
                     <span className={styles.commingSoon}>
                       {/* Coming soon... */}

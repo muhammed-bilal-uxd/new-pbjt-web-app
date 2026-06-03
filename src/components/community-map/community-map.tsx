@@ -84,7 +84,7 @@ export default function CommunityMap() {
                     <h3 className="mt-2 text-lg font-bold text-[color:var(--pbjt-primary-color)]">
                       {step.title}
                     </h3>
-                    <p className="mt-2 max-w-[14rem] text-base leading-7 text-slate-600">
+                    <p className="mt-2 max-w-[14rem]  leading-7 text-slate-600">
                       {step.description}
                     </p>
                   </div>

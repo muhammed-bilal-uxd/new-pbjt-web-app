@@ -133,7 +133,7 @@
 
 .pbjt-main__left {
   position: relative;
-  padding-top: 18px;
+  /* padding-top: 18px; */
 }
 
 .pbjt-bar {
@@ -155,8 +155,8 @@
 
 .pbjt-main__lead {
   color: var(--pbjt-text);
-  font-size: 15px;
-  line-height: 1.65;
+  /* font-size: 15px; */
+  /* line-height: 1.65; */
   max-width: 560px;
   margin-bottom: 28px;
 }
@@ -207,8 +207,8 @@
 }
 
 .pbjt-feature__desc {
-  font-size: 14px;
-  line-height: 1.6;
+  /* font-size: 14px; */
+  /* line-height: 1.6; */
   color: var(--pbjt-muted);
 }
 
@@ -437,7 +437,7 @@
   }
 
   .pbjt-feature__desc {
-    font-size: 14.5px;
+    /* font-size: 14.5px; */
   }
 
   .pbjt-card__caption {
@@ -487,7 +487,7 @@
   }
 
   .pbjt-main__left {
-    padding-top: 24px;
+    /* padding-top: 24px; */
   }
 
   .pbjt-main__right {
@@ -520,7 +520,7 @@
   }
 
   .pbjt-feature__desc {
-    font-size: 14.5px;
+    /* font-size: 14.5px; */
   }
 }
 

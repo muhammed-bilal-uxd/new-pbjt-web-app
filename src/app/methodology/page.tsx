@@ -96,7 +96,7 @@ function SustainabilityStatementSection() {
     <section className="relative overflow-hidden bg-white center-content mt-3 mb-5">
       <div className="relative mx-auto max-w-6xl">
         <div className="max-w-5xl">
-          <p className="text-[1rem] leading-[1.35] tracking-[-0.02em] text-[#374151]">
+          <p className="tracking-[-0.02em] text-[#374151]">
             This process does not aim to audit companies, but to democratise
             sustainability language. When communities understand what companies
             promise, they are better positioned to engage, negotiate, and hold

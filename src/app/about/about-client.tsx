@@ -26,8 +26,8 @@ const PlaceBasedJustTransition = () => {
         />
 
         <div className="relative text-center">
-          <h3 className={cn("about-banner-title")}>shaping</h3>
-          <div className={cn("about-banner-desc-container")}>
+          <h3 className={cn("about-banner-title banner-title")}>shaping</h3>
+          <div className={cn("about-banner-desc-container banner-subtitle")}>
             <span className={cn("about-banner-desc-left")}>Place-based</span>
             <span className={cn("about-banner-desc-right")}>
               just transition
@@ -59,7 +59,7 @@ const PlaceBasedJustTransition = () => {
           <div className={cn("pbjt-grid pbjt-grid--two")}>
             <div>
               <CustomTitle>No one-size-fits-all approach exists.</CustomTitle>
-              <p className={cn("pbjt-p mt-3")}>
+              <p className={cn("pbjt-p  mt-3")}>
                 Just Transition often appears in global discussions as a policy
                 framework for meeting climate goals, shifting energy systems, or
                 channeling green investments yet for workers and communities on
@@ -91,7 +91,7 @@ const PlaceBasedJustTransition = () => {
                 </div>
               </div>
 
-              <p className={cn("pbjt-p")}>
+              <p className={cn("pbjt-p ")}>
                 Across most value chains, the heaviest burdens fall on those at
                 the last tier: informal workers, MSMEs, vendors, and
                 marginalised communities.
@@ -212,14 +212,14 @@ const PlaceBasedJustTransition = () => {
                 What is
               </h1>
               <h2 className={cn("pbjt-hero__sub")}>
-                Place-Based <br />
-                Just Transition
+                Place-Based Just Transition{" "}
+                <span className={cn("pbjt-hero__qmark")}>?</span>
                 <br />
               </h2>
             </div>
-            <div className="">
-              <span className={cn("pbjt-hero__qmark")}>?</span>
-            </div>
+            {/* <div className="">
+              
+            </div> */}
           </div>
         </div>
       </Banner>
@@ -237,13 +237,13 @@ const PlaceBasedJustTransition = () => {
                 </div>
               </CustomTitle>
 
-              <p className={cn("pbjt-p mt-4")}>
+              <p className={cn("pbjt-p  mt-4")}>
                 PBJT recognises that environmental change and economic
                 transition are not abstract ideas, they are lived every day in
                 villages, neighbourhoods, worksites, and local production
                 clusters.
               </p>
-              <p className={cn("pbjt-p")}>
+              <p className={cn("pbjt-p ")}>
                 PBJT focuses on how workers, MSMEs, vendors, informal labour,
                 and communities experience climate action, sustainability
                 policies, and business practices at the last tiers of the value
@@ -261,7 +261,7 @@ const PlaceBasedJustTransition = () => {
                   <LeafIcon />
                 </div>
                 <div className={cn("pbjt-callout__body")}>
-                  <p className={cn("pbjt-callout__text")}>
+                  <p className={cn("pbjt-callout__text ")}>
                     <strong>
                       A transition can only be called &ldquo;green&rdquo;
                     </strong>{" "}

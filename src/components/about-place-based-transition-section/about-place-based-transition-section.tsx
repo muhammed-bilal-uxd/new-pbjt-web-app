@@ -46,113 +46,123 @@ const riskLevels = [
 
 export default function AboutPlaceBasedTransitionSection() {
   return (
-    <section className={styles.section}>
-      {/* Left Column */}
-      <div className={styles.left}>
-        <CustomTitle>
-          Transition is not a
-          <br />
-          <em>one size fits all</em> approach.
-        </CustomTitle>
+    <div>
+      <section className={styles.section}>
+        {/* Left Column */}
+        <div className={styles.left}>
+          <CustomTitle>
+            Transition is not a
+            <br />
+            <em>one size fits all</em> approach.
+          </CustomTitle>
 
-        <p className={styles.intro}>
-          A Place-Based Just Transition begins with a simple but critical
-          question.
-        </p>
+          <p className={styles.intro + " text-lg"}>
+            A Place-Based Just Transition begins with a simple but critical
+            question.
+          </p>
 
-        <blockquote className={styles.blockquote}>
-          <span className={styles.quoteOpen} aria-hidden="true">
-            “
-          </span>
-          <p className="px-[30px]">
-          Who carries the cost of transition, and who decides how it happens?
-          </p>
-          <span className={styles.quoteClose} aria-hidden="true">
-            ”
-          </span>
-        </blockquote>
+          <div>
+            <blockquote className={styles.blockquote}>
+              <span className={styles.quoteOpen} aria-hidden="true">
+                “
+              </span>
+              <p className="px-[30px]">
+                Who carries the cost of transition, and who decides how it
+                happens?
+              </p>
+              <span className={styles.quoteClose} aria-hidden="true">
+                ”
+              </span>
+            </blockquote>
+          </div>
 
-        <div className={styles.bodyColumns}>
-          <p>
-            Just Transition is often discussed as a global policy idea related
-            to climate targets, energy shifts, or green investments. But for
-            workers and communities, transition is experienced differently. It
-            appears in changes to income, working conditions, access to
-            resources, and dignity.
-          </p>
-          <span className={"h-full w-[2px] " + styles.bodyColumnsLine}></span>
-          <p>
-            Across most value chains, the most significant risks are
-            concentrated at the last tier — informal workers, MSMEs, vendors,
-            and marginalised communities. These are the groups that are severely
-            impacted by environmental damage, have vulnerable livelihoods, and
-            experience the most disruptive transitions in the value chain.
-          </p>
+          <div className={styles.bodyColumns + " "}>
+            <p>
+              Just Transition is often discussed as a global policy idea related
+              to climate targets, energy shifts, or green investments. But for
+              workers and communities, transition is experienced differently. It
+              appears in changes to income, working conditions, access to
+              resources, and dignity.
+            </p>
+            <span
+              className={"h-full w-[2px]  " + styles.bodyColumnsLine}
+            ></span>
+            <p>
+              Across most value chains, the most significant risks are
+              concentrated at the last tier — informal workers, MSMEs, vendors,
+              and marginalised communities. These are the groups that are
+              severely impacted by environmental damage, have vulnerable
+              livelihoods, and experience the most disruptive transitions in the
+              value chain.
+            </p>
+          </div>
         </div>
 
-        <div className={styles.footer}>
-          <span className={styles.footerBar} aria-hidden="true" />
-          <p className={styles.footerText}>
-            PBJT emphasizes the central role of these actors in sustainability.
-          </p>
-        </div>
-      </div>
-
-      {/* Right Column */}
-      <div className={styles.right}>
-        <h2 className={styles.rightHeading}>Where Risk Concentrates</h2>
-        <div className="flex items-end gap-3">
-          <div className="">
-            <div className={styles.riskList}>
-              {riskLevels.map((item, index) => (
-                <div key={index}>
-                  <div className={styles.riskItem}>
-                    <div
-                      className={`${styles.iconWrap} ${item.highlight ? styles.iconHighlight : ""} ${item.danger ? styles.iconDanger : ""}`}
-                      aria-hidden="true"
-                    >
-                      <img
-                        className={styles.iconImage}
-                        src={item.imageUrl}
-                        alt=""
-                      />
-                    </div>
-
-                    <div className={styles.riskContent}>
-                      <p
-                        className={`${styles.riskTitle} ${item.highlight ? styles.riskTitleHighlight : ""} ${item.danger ? styles.riskTitleDanger : ""}`}
+        {/* Right Column */}
+        <div className={styles.right}>
+          <h2 className={styles.rightHeading}>Where Risk Concentrates</h2>
+          <div className="flex items-end gap-3">
+            <div className="">
+              <div className={styles.riskList}>
+                {riskLevels.map((item, index) => (
+                  <div key={index}>
+                    <div className={styles.riskItem}>
+                      <div
+                        className={`${styles.iconWrap} ${item.highlight ? styles.iconHighlight : ""} ${item.danger ? styles.iconDanger : ""}`}
+                        aria-hidden="true"
                       >
-                        {item.title}
-                      </p>
-                      <p className={styles.riskSubtitle}>{item.subtitle}</p>
-                    </div>
-                  </div>
-                  {riskLevels.length - 1 !== index && (
-                    <div className="w-full flex justify-center">
-                      <MoveDown className={styles.arrowIcon} />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="flex items-center gap-2 h-[65%] width-[45%]">
-            <div className={styles.rectShape}></div>
-            <div className={styles.rectText}>
-              Risks concentrate at the last tier of the value chain.
-            </div>
-          </div>
-        </div>
+                        <img
+                          className={styles.iconImage}
+                          src={item.imageUrl}
+                          alt=""
+                        />
+                      </div>
 
-        {/* Connector arrows between items */}
-        <div className={styles.connectorTrack} aria-hidden="true">
-          {[...Array(4)].map((_, i) => (
-            <span key={i} className={styles.connector}>
-              ↓
-            </span>
-          ))}
+                      <div className={styles.riskContent}>
+                        <p
+                          className={`${styles.riskTitle} ${item.highlight ? styles.riskTitleHighlight : ""} ${item.danger ? styles.riskTitleDanger : ""}`}
+                        >
+                          {item.title}
+                        </p>
+                        <p className={styles.riskSubtitle + " text-sm"}>
+                          {item.subtitle}
+                        </p>
+                      </div>
+                    </div>
+                    {riskLevels.length - 1 !== index && (
+                      <div className="w-full flex justify-center">
+                        <MoveDown className={styles.arrowIcon} />
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex items-center gap-2 h-[65%] width-[45%]">
+              <div className={styles.rectShape}></div>
+              <div className={styles.rectText + " text-sm"}>
+                Risks concentrate at the last tier of the value chain.
+              </div>
+            </div>
+          </div>
+
+          {/* Connector arrows between items */}
+          <div className={styles.connectorTrack} aria-hidden="true">
+            {[...Array(4)].map((_, i) => (
+              <span key={i} className={styles.connector}>
+                ↓
+              </span>
+            ))}
+          </div>
         </div>
+      </section>
+
+      <div className={styles.footer}>
+        <span className={styles.footerBar} aria-hidden="true" />
+        <p className={styles.footerText + " text-lg"}>
+          PBJT emphasizes the central role of these actors in sustainability.
+        </p>
       </div>
-    </section>
+    </div>
   );
 }

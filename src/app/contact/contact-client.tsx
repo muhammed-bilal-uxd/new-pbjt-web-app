@@ -110,6 +110,10 @@ export default function Contact() {
         </div>
       </section> */}
       <Banner>
+        <img
+          src="/images/banner/contact-banner-01.jpeg"
+          className="single-cover-banner"
+        />
         <div className="relative">
           <div className={cn("text-white p-4 contact-text-banner-container")}>
             Contact PBJT

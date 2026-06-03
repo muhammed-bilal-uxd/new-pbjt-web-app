@@ -325,8 +325,8 @@ export default function HowPBJTWorks() {
                   />
                 </div>
               </div>
-              <h3 className={styles.stepTitle}>{step.title}</h3>
-              <p className={styles.stepDesc}>{step.description}</p>
+              <h3 className={styles.stepTitle + " "}>{step.title}</h3>
+              <p className={styles.stepDesc + " text-sm"}>{step.description}</p>
             </article>
 
             {i < steps.length - 1 && (
@@ -341,7 +341,7 @@ export default function HowPBJTWorks() {
         <div className={styles.feedbackBand}></div>
       </div>
       <div className={styles.feedbackLine + " p-3"}>
-        <span className={styles.feedbackLabel}>
+        <span className={styles.feedbackLabel + " text-xs"}>
           Continuous learning, feedback and adaptation
         </span>
       </div>

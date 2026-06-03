@@ -39,10 +39,17 @@ export default function ImpactProposition() {
         >
           <div className="text-center">
             <div className={cn("banner-group-1")}>
-              <span className={"text-[5rem]"} style={{
-                fontStyle: "italic" 
-              }}> Why </span> <br />
-              <div className={cn("text-white banner-group-2")}>
+              <span
+                className={"banner-title"}
+                style={{
+                  fontStyle: "italic",
+                }}
+              >
+                {" "}
+                Why{" "}
+              </span>{" "}
+              <br />
+              <div className={cn("text-white banner-group-2 banner-subtitle")}>
                 Place-Based <br /> Just Transition is Neccessary ?
               </div>
             </div>
@@ -53,9 +60,9 @@ export default function ImpactProposition() {
       {/* ===================== BOARDROOM SECTION ===================== */}
       <section className={cn("pbjt-section pbjt-boardroom center-content")}>
         <div className={cn("pbjt-boardroom__text")}>
-          <div className={cn("pbjt-iconchip")}>
+          {/* <div className={cn("pbjt-iconchip")}>
             <Sprout size={22} strokeWidth={1.8} />
-          </div>
+          </div> */}
           <CustomTitle className="mb-4">
             PBJT as a Value Chain Discovery and Accountability Framework
           </CustomTitle>

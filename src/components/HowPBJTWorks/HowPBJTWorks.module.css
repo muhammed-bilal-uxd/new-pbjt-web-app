@@ -157,11 +157,11 @@
 
 /* ── Step text ──────────────────────────────────────────────── */
 .stepTitle {
-  font-size: 0.8125rem;
+  /* font-size: 0.8125rem; */
   font-weight: 700;
   color: #111827;
   margin: 0 0 0.4rem;
-  line-height: 1.3;
+  /* line-height: 1.3; */
   letter-spacing: -0.01em;
   transition: color 0.2s ease;
 }
@@ -171,9 +171,9 @@
 }
 
 .stepDesc {
-  font-size: 0.6875rem;
+  /* font-size: 0.6875rem; */
   color: #6b7280;
-  line-height: 1.55;
+  /* line-height: 1.55; */
   margin: 0;
   font-weight: 400;
 }
@@ -253,11 +253,11 @@
 
 .feedbackLabel {
   color: #111827;
-  letter-spacing: -0.01em;
+  /* letter-spacing: -0.01em; */
   margin: 0 0 0.4rem;
-  font-size: 0.75rem;
+  /* font-size: 0.75rem; */
   font-weight: 700;
-  line-height: 1.3;
+  /* line-height: 1.3; */
 }
 
 .arrowIcon {

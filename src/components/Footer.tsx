@@ -153,7 +153,7 @@ export function Footer() {
                 </div>
               </div>
             </Link>
-            <p className={styles.footerTagline}>
+            <p className={styles.footerTagline + " text-sm"}>
               Building fair, inclusive and sustainable economies from the ground
               up.
             </p>
@@ -315,7 +315,7 @@ function NavColumn({
       <ul className={`${styles.navList} ${expanded ? styles.expanded : ""}`}>
         {links.map(({ label, href, hasArrow }) => (
           <li key={label}>
-            <a href={href} className={styles.navLink}>
+            <a href={href} className={styles.navLink + " text-sm"}>
               {label}
               {hasArrow && (
                 <span className={styles.arrowIcon}>
