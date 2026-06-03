@@ -593,7 +593,7 @@
   }
 
   .panel {
-    grid-template-columns: 1fr;
+    grid-template-columns: 280px 1fr;
   }
 
   .panelSidebar {
@@ -608,6 +608,14 @@
 }
 
 @media (max-width: 600px) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+
+  .panelContent {
+    grid-row: auto;
+  }
+
   .section {
     padding: 20px 16px;
   }

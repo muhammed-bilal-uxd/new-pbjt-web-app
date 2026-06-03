@@ -21,7 +21,7 @@ export const dingigulData: District = {
   climateData: {
     name: "Dindigul",
     rows: [
-      { year: 2021, rainfall: "240.5 mm", minC: 19.5, maxC: 37.5 },
+      { year: 2021, rainfall: "1240.5 mm", minC: 19.5, maxC: 37.5 },
       { year: 2022, rainfall: "1303.6 mm", minC: 19.8, maxC: 38.2 },
       { year: 2023, rainfall: "–", minC: 19.0, maxC: 38.7 },
       { year: 2024, rainfall: "–", minC: 20.0, maxC: 38.0 },

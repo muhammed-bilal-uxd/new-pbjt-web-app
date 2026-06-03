@@ -48,7 +48,7 @@ const PROCESS_STEPS = [
     title: "MAP OUR VILLAGE",
     sub: "What we have & what we face",
     img: "/images/process/step-1.png",
-    legend: ["Homes", "Trees", "Water", "Roads", "Dumpsite"],
+    legend: ["Homes", "Tfrees", "Water", "Roads", "Dumpsite"],
   },
   {
     n: 2,
