@@ -5,6 +5,8 @@ import styles from "./virudunagar.module.css";
 const imgUrl = "/images/virudunagar/virudunagar-01.png";
 const imgUrlBase = "/images/virudunagar/";
 
+import BannerTag from "@/components/banner-tag/banner-tag"
+
 const primary = "#BA151D";
 
 interface IThemeStep {
@@ -183,7 +185,7 @@ const transformationThemes: TransformationTheme[] = [
 function VirudhunagarTransformationSection() {
   return (
     <section className="bg-white px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
-      <div className="mx-auto max-w-7xl rounded-[24px] bg-white px-0 sm:rounded-[32px] sm:px-6 lg:px-10">
+      <div className="center-content rounded-[24px] bg-white sm:rounded-[32px]">
         <div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
           {/* Left Content */}
           <div className="max-w-2xl text-left">
@@ -241,7 +243,7 @@ export default function VirudhunagarPage({
 }) {
   return (
     <main className="min-h-screen bg-[#f8f5f2] text-neutral-900">
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <section className="center-content py-10">
         <div className="rounded-[32px] bg-white p-6 shadow-sm md:p-10">
           {/* <p
             className={
@@ -251,7 +253,12 @@ export default function VirudhunagarPage({
             Before & Beyond
           </p> */}
 
-          <div className="mt-6 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+<BannerTag name={"Virudhunagar"} />
+
+
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+
+          
             <div>
               <h1
                 className={
@@ -300,7 +307,7 @@ export default function VirudhunagarPage({
           </div>
         </div>
       </section>
-      {/* <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
+      {/* <section className="center-content pb-10 ">
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {themes.map((theme, index) => (
             <article
@@ -324,7 +331,7 @@ export default function VirudhunagarPage({
 
       <VirudhunagarTransformationSection />
 
-      <section className="mx-auto max-w-7xl space-y-6 px-4 pb-10 sm:px-6 lg:px-8 mt-15">
+      <section className="center-content space-y-6 pb-10 mt-15">
         {themes.map((theme, index) => (
           <article
             key={theme.title}
@@ -375,7 +382,7 @@ export default function VirudhunagarPage({
           </article>
         ))}
       </section>
-      <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
+      <section className="center-content px-4 pb-10">
         <div className="rounded-[32px] bg-white p-6 text-neutral-950 shadow-sm ring-1 ring-neutral-200 md:p-10">
           <div className="flex items-center gap-3">
             <span className="h-10 w-1.5 rounded-full bg-[#ba151d]" />
@@ -408,7 +415,7 @@ export default function VirudhunagarPage({
           </div>
         </div>
       </section>
-      <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 lg:px-8">
+      <section className="center-content pb-14">
         <div className="relative overflow-hidden rounded-[32px] bg-white p-6 shadow-sm ring-1 ring-[#ba151d]/20 md:p-10">
           <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#ba151d]/10 blur-3xl" />
           <div className="absolute left-0 top-0 h-full w-2 bg-[#ba151d]" />

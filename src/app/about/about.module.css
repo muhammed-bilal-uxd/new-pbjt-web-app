@@ -478,7 +478,8 @@
 }
 
 .about-banner-title {
-  color: var(--pbjt-primary-color);
+  /* color: var(--pbjt-primary-color); */
+  color: #ffffff;
   font-size: 6rem;
   line-height: 100%;
   font-weight: 700;
@@ -488,19 +489,20 @@
   display: flex;
   gap: 10px;
   justify-content: center;
+  text-transform: capitalize;
 }
 
 .about-banner-desc-left,
 .about-banner-desc-right {
   --opposize-distance: 1rem;
-  font-size: 1.3rem;
+  font-size: 3rem;
   color: white;
-  font-weight: 700;
+  /* font-weight: 700; */
 }
 
-.about-banner-desc-left {
+/* .about-banner-desc-left {
   margin-top: calc(var(--opposize-distance) * -1);
-}
+} */
 
 .about-banner-desc-right {
   margin-bottom: var(--opposize-distance);

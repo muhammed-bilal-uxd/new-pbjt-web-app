@@ -4,6 +4,8 @@ import CommunityMap from "../community-map/community-map";
 import Villages from "../villages/villages";
 import styles from "./dindigul.module.css";
 
+import BannerTag from "@/components/banner-tag/banner-tag"
+
 import { ClimateRow, districts } from "@/data/district";
 
 const cn = (names: string) =>
@@ -603,12 +605,13 @@ function HeroSection({ districtName }: { districtName: string }) {
     <section className={cn("dp-hero")}>
       <div className={cn("dp-hero__inner center-content")}>
         <div className={cn("dp-hero__copy")}>
-          <div className={cn("dp-locator")}>
+          <BannerTag name={data?.name} />
+          {/* <div className={cn("dp-locator")}>
             <span className={cn("dp-locator__pin")}>
               <Icon.Pin />
             </span>
             <span className="capitalize">{data.name}, India</span>
-          </div>
+          </div> */}
           <h1 className={cn("dp-hero__title")}>
             <span className="uppercase">{data.name}</span>
             <span className={cn("dp-hero__title--accent")}>IN INDIA</span>

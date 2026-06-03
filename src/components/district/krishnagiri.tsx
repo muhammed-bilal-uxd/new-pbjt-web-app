@@ -20,6 +20,8 @@ import { scrollToElement } from "@/utils/scroll";
 const red = "#ba151d";
 const imgUrl = "/images/krishnagiri/";
 
+import BannerTag from "@/components/banner-tag/banner-tag"
+
 const stats = [
   { icon: Users, value: "86+", label: "Field Activities" },
   { icon: Home, value: "2,201+", label: "Households Covered" },
@@ -191,11 +193,13 @@ export default function KrishnagiriPage() {
           }}
         />
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-14 lg:grid-cols-[1fr_0.9fr] lg:px-8 lg:py-20">
+        <div className="relative mx-auto grid center-content gap-10 py-14 lg:grid-cols-[1fr_0.9fr] lg:py-20">
           <div className="flex flex-col justify-center">
-            <p className="mb-4 font-bold uppercase tracking-wide text-[#ba151d]">
+            {/* <p className="mb-4 font-bold uppercase tracking-wide text-[#ba151d]">
               Krishnagiri
-            </p>
+            </p> */}
+
+          <BannerTag name={"Krishnagiri"} istransparent={true} />
 
             <h1 className="max-w-2xl text-4xl font-extrabold leading-tight md:text-6xl">
               Journey of Transformation – Before & Beyond
@@ -240,7 +244,7 @@ export default function KrishnagiriPage() {
       </section>
 
       {/* FOCUS AREAS */}
-      <section className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
+      <section className="mx-auto center-content py-8">
         <div className="grid gap-4 rounded-3xl bg-white p-5 shadow-xl md:grid-cols-3 lg:grid-cols-7">
           {focusAreas.map((item, index) => {
             const Icon = item.icon;
@@ -263,7 +267,7 @@ export default function KrishnagiriPage() {
       </section>
 
       {/* ABOUT */}
-      <section className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
+      <section className="mx-auto center-content py-8">
         <div className="grid gap-10 rounded-3xl bg-gradient-to-br from-red-50 to-white p-6 shadow-sm lg:grid-cols-2 lg:p-10">
           <div className="grid grid-cols-2 gap-4">
             {transformationData.map((data, index) => (
@@ -320,7 +324,7 @@ export default function KrishnagiriPage() {
       </section>
 
       {/* INITIATIVES */}
-      <section className="mx-auto max-w-7xl px-5 py-8 pb-16 lg:px-8">
+      <section className="mx-auto center-content py-8 pb-16">
         <div className="mb-5 flex items-center justify-between">
           <h2 className="text-2xl font-extrabold">Our Initiatives</h2>
           {/* <button className="flex items-center gap-2 font-bold text-[#ba151d]">

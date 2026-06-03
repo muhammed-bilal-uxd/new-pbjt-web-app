@@ -110,9 +110,9 @@ export default function PBJTPrinciples() {
           </div>
         </Banner>
 
-      <section className="min-h-screen bg-white px-5 py-10 md:px-10 lg:px-16">
+      <section className="min-h-screen bg-white py-10">
 
-        <div className="mx-auto max-w-7xl">
+        <div className="center-content">
 
         
 
@@ -130,14 +130,14 @@ export default function PBJTPrinciples() {
               style={{ backgroundColor: RED }}
             />
 
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-700">
+            <p className="mt-6 max-w-3xl text-base leading-8 text-gray-700">
               To make Place-Based Transition actionable, PBJT develops and uses
               simple, practical tools that communities and practitioners can
               actually use.
             </p>
           </div> */}
 
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-700">
+            <p className="mt-6 max-w-3xl text-base leading-8 text-gray-700">
               To make Place-Based Transition actionable, PBJT develops and uses
               simple, practical tools that communities and practitioners can
               actually use.
@@ -167,7 +167,7 @@ export default function PBJTPrinciples() {
                       <Icon size={32} style={{ color: RED }} strokeWidth={2.2} />
                     </div>
 
-                    <h3 className="mb-3 text-lg font-bold" style={{ color: RED }}>
+                    <h3 className="mb-3 text-[1.2rem] font-bold" style={{ color: RED }}>
                       {item.title}
                     </h3>
 
@@ -180,7 +180,7 @@ export default function PBJTPrinciples() {
             </div>
           </div>
 
-          <div className="space-y-5 text-lg leading-8 text-gray-800">
+          <div className="space-y-5 text-base leading-8 text-gray-800">
             <p>
               Each tool is designed to{" "}
               <strong style={{ color: RED }}>
@@ -209,7 +209,7 @@ export default function PBJTPrinciples() {
                 <Users size={32} style={{ color: RED }} />
               </div>
 
-              <div className="space-y-5 text-lg leading-8 text-gray-800">
+              <div className="space-y-5 text-base leading-8 text-gray-800">
                 <p>
                   Each tool is designed to{" "}
                   <strong style={{ color: RED }}>
@@ -245,7 +245,7 @@ export default function PBJTPrinciples() {
 
                   <div className="border-l-2 pl-6" style={{ borderColor: RED }}>
                     <h2
-                      className="mb-2 text-2xl font-bold"
+                      className="mb-2 text-[1.2rem] font-bold"
                       style={{ color: RED }}
                     >
                       {item.title}
@@ -254,7 +254,7 @@ export default function PBJTPrinciples() {
                     {item?.text?.map((a, b) => {
                       return (
                         <p
-                          className="max-w-5xl text-lg leading-8 text-gray-800 mt-0 mb-3"
+                          className="max-w-5xl text-base leading-8 text-gray-800 mt-0 mb-3"
                           key={b}
                         >
                           {a}

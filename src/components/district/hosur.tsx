@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import { scrollToElement } from "@/utils/scroll";
 
+import BannerTag from "@/components/banner-tag/banner-tag"
+
 const primary = "#ba151d";
 
 const insights = [
@@ -129,11 +131,9 @@ export default function HosurPage() {
           }}
         />
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[1fr_0.85fr] lg:px-8 lg:py-20">
+        <div className="relative mx-auto grid center-content gap-10 py-16 lg:grid-cols-[1fr_0.85fr] lg:py-20">
           <div>
-            <p className="mb-4 font-extrabold uppercase tracking-wide text-[#ba151d]">
-              Hosur in India
-            </p>
+            <BannerTag name={"Hosur"} />
 
             <h1 className="max-w-3xl text-4xl font-extrabold leading-tight md:text-6xl">
               Building a Care-Supportive Industrial Ecosystem
@@ -172,7 +172,7 @@ export default function HosurPage() {
       </section>
 
       {/* INSIGHTS */}
-      <section className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
+      <section className="mx-auto center-content py-10">
         <div className="mb-6">
           <p className="font-bold uppercase text-[#ba151d]">Key Insights</p>
           <h2 className="mt-2 text-3xl font-extrabold">At A Glance</h2>
@@ -201,7 +201,7 @@ export default function HosurPage() {
 
       {/* JOURNEY FLOW */}
       <section
-        className="mx-auto max-w-7xl px-5 py-10 lg:px-8"
+        className="mx-auto center-content py-10"
         id="hosur-journey"
       >
         <div className="mb-8 text-center">
@@ -247,7 +247,7 @@ export default function HosurPage() {
       </section>
 
       {/* STAKEHOLDER + PRIORITIES */}
-      <section className="mx-auto grid max-w-7xl gap-6 px-5 py-10 lg:grid-cols-2 lg:px-8">
+      <section className="mx-auto grid center-content gap-6 py-10 lg:grid-cols-2">
         <div className="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-slate-100">
           <div className="text-center">
             <p className="font-bold uppercase text-[#ba151d]">
@@ -330,7 +330,7 @@ export default function HosurPage() {
       </section>
 
       {/* SIMPLE END IMAGE SECTION */}
-      <section className="mx-auto max-w-7xl px-5 pb-16 lg:px-8">
+      <section className="mx-auto center-content pb-16">
         <div className="rounded-3xl bg-gradient-to-br from-red-50 to-white p-6 text-center shadow-sm">
           <ShieldCheck className="mx-auto mb-4 text-[#ba151d]" size={44} />
           <h2 className="text-2xl font-extrabold">

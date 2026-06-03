@@ -504,7 +504,7 @@
 
 .bannerText2 {
   font-size: 5rem;
-  font-weight: bold;
+  /* font-weight: bold; */
   line-height: calc(1em + 2px);
   font-style: italic;
 }

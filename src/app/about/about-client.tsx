@@ -28,7 +28,7 @@ const PlaceBasedJustTransition = () => {
         <div className="relative text-center">
           <h3 className={cn("about-banner-title")}>shaping</h3>
           <div className={cn("about-banner-desc-container")}>
-            <span className={cn("about-banner-desc-left")}>Place based</span>
+            <span className={cn("about-banner-desc-left")}>Place-based</span>
             <span className={cn("about-banner-desc-right")}>
               just transition
             </span>

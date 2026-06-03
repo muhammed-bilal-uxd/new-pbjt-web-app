@@ -30,7 +30,7 @@ export default function ImpactProposition() {
       <Banner>
         <img
           className="single-cover-banner"
-          src="/images/banner/impact-banner-01.jpg"
+          src="/images/banner/impact-banner-03.jpg"
         />
         <div
           className={cn(
@@ -39,13 +39,13 @@ export default function ImpactProposition() {
         >
           <div className="text-center">
             <div className={cn("banner-group-1")}>
-              Why <br />
+              <span className={"text-[5rem]"} style={{
+                fontStyle: "italic" 
+              }}> Why </span> <br />
               <div className={cn("text-white banner-group-2")}>
-                Place-Based Just Transition
+                Place-Based <br /> Just Transition is Neccessary ?
               </div>
-              <span className="ml-5">is Neccessary</span>
             </div>
-            <div className={cn("text-white banner-question-mark")}>?</div>
           </div>
         </div>
       </Banner>
