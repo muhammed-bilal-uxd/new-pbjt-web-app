@@ -229,8 +229,11 @@ export function Footer() {
               </ContactItem>
               <div className={styles.contactDivider} />
               <ContactItem icon={<MailIcon />}>
-                <a href="mailto:hello@pbjt.org" className={styles.contactLink}>
-                  hello@pbjt.org
+                <a
+                  href="mailto:info@thepbjt.com"
+                  className={styles.contactLink}
+                >
+                  info@thepbjt.com
                 </a>
                 <span className={styles.contactSubtext}>
                   We aim to respond within 2-3 working days.
@@ -260,7 +263,7 @@ export function Footer() {
 
         <div className={`${styles.bottomBar} sm:text-center`}>
           <p className={styles.copyright}>
-            &copy; 2024 Place-Based Just Transition. All rights reserved.
+            &copy; 2026 Place-Based Just Transition. All rights reserved.
           </p>
           <div className={styles.bottomLinks}>
             {["Privacy Policy", "Terms of Use", "Accessibility"].map(

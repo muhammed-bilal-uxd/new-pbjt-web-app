@@ -65,8 +65,7 @@ export default function AboutPlaceBasedTransitionSection() {
             “
           </span>
           <p className="px-[30px]">
-            How can the costs of transition be shared equitably, and how can
-            decision-making be made more inclusive?
+          Who carries the cost of transition, and who decides how it happens?
           </p>
           <span className={styles.quoteClose} aria-hidden="true">
             ”

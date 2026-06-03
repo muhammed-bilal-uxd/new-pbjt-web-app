@@ -286,8 +286,8 @@ export default function Contact() {
               </div>
               <div className={cn("info-content")}>
                 <h4>Email</h4>
-                <a href="mailto:hello@pbjt.org" className={cn("info-link")}>
-                  hello@pbjt.org
+                <a href="mailto:info@thepbjt.com" className={cn("info-link")}>
+                  info@thepbjt.com
                 </a>
                 <p className={cn("info-note")}>
                   We aim to respond within 2&ndash;3 working days.

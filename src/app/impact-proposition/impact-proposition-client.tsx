@@ -57,9 +57,9 @@ export default function ImpactProposition() {
             <Sprout size={22} strokeWidth={1.8} />
           </div>
           <CustomTitle className="mb-4">
-            Sustainability efforts must go beyond the boardroom.
+            PBJT as a Value Chain Discovery and Accountability Framework
           </CustomTitle>
-          <p className={cn("pbjt-p")}>
+          {/* <p className={cn("pbjt-p")}>
             Most sustainability efforts today stop at corporate offices or
             first-tier suppliers. But the real impacts of business, both
             positive and negative, are felt much further down the chain. Waste
@@ -70,11 +70,46 @@ export default function ImpactProposition() {
             limited access to finance, technology, and support. Workers
             experience the risks of transition long before companies or
             investors do.
-          </p>
+          </p> */}
+
           <p className={cn("pbjt-p")}>
+            Corporate sustainability reports speak of responsibility, ethics,
+            and impact. PBJT asks a different question: how do these commitments
+            translate in villages and worksites? Using disclosures such as BRSR,
+            PBJT creates a ground-level lens for reflection:
+          </p>
+          <ul className={cn("pbjt-checklist")}>
+            <li>
+              <CheckCircle2
+                size={18}
+                strokeWidth={1.8}
+                className={cn("pbjt-checklist__icon")}
+              />
+              <span>
+                Do reported labour standards match worker experiences?
+              </span>
+            </li>
+            <li>
+              <CheckCircle2
+                size={18}
+                strokeWidth={1.8}
+                className={cn("pbjt-checklist__icon")}
+              />
+              <span>Are environmental claims visible in local ecosystems?</span>
+            </li>
+            <li>
+              <CheckCircle2
+                size={18}
+                strokeWidth={1.8}
+                className={cn("pbjt-checklist__icon")}
+              />
+              <span>Are informal and last-tier risks acknowledged?</span>
+            </li>
+          </ul>
+          {/* <p className={cn("pbjt-p")}>
             PBJT bridges this gap by shifting the focus of sustainability to
             where impacts are real, visible, and sustainable.
-          </p>
+          </p> */}
         </div>
 
         <div className={cn("pbjt-boardroom__media")}>
@@ -87,7 +122,7 @@ export default function ImpactProposition() {
 
       {/* ===================== FRAMEWORK SECTION ===================== */}
       <section className={cn("pbjt-section pbjt-framework center-content")}>
-        <div className={cn("pbjt-framework__panel")}>
+        {/* <div className={cn("pbjt-framework__panel")}>
           <div className={cn("pbjt-iconchip pbjt-iconchip--solid")}>
             <Users size={22} strokeWidth={1.8} />
           </div>
@@ -128,17 +163,33 @@ export default function ImpactProposition() {
               <span>Are informal and last-tier risks acknowledged?</span>
             </li>
           </ul>
+        </div> */}
+
+        <div>
+          <p className={cn("pbjt-p pbjt-p--muted")}>
+            This work is not about auditing companies. It is about democratising
+            sustainability language, enabling communities to understand what
+            companies promise and to engage, negotiate, and seek accountability.
+          </p>
+
+          <p className={cn("pbjt-p pbjt-p--muted")}>
+            Our approach aligns with emerging global thinking on responsible
+            value chains, including work by the Institute for Human Rights and
+            Business and investor discussions that emphasise last-mile
+            accountability.
+          </p>
         </div>
-        <div className={cn("pbjt-boardroom__media")}>
+        {/* <div className={cn("pbjt-boardroom__media")}>
           <img
+            className={cn("impact-image-worker-01")}
             src="/images/impact-proposition/impact-02.jpg"
             alt="Women workers smiling at a worksite"
           />
-        </div>
+        </div> */}
       </section>
 
       {/* ===================== INFO BOXES ===================== */}
-      <section className={cn("pbjt-info center-content")}>
+      {/* <section className={cn("pbjt-info center-content")}>
         <div className={cn("pbjt-info__box pbjt-info__box--icon")}>
           <div className={cn("pbjt-iconchip pbjt-iconchip--solid")}>
             <Globe size={22} strokeWidth={1.8} />
@@ -157,7 +208,7 @@ export default function ImpactProposition() {
             accountability.
           </p>
         </div>
-      </section>
+      </section> */}
 
       <Banner>
         <img
@@ -174,9 +225,8 @@ export default function ImpactProposition() {
       {/* ===================== BENEFITS ===================== */}
       <section className={cn("pbjt-benefits center-content")}>
         <h3 className={cn("pbjt-benefits__lead")}>
-          By working directly in villages and production clusters,
-          <br />
-          PBJT helps businesses:
+          By working directly in villages and production clusters, PBJT helps
+          businesses:
         </h3>
 
         <div className={cn("pbjt-benefits__grid")}>
@@ -223,7 +273,7 @@ export default function ImpactProposition() {
 
       {/* ===================== FOOTNOTE ===================== */}
       <div className="center-content">
-        <footer className={cn("pbjt-footnote")}>
+        <footer className={cn("pbjt-footnote text-center")}>
           <Check
             size={18}
             strokeWidth={2.2}

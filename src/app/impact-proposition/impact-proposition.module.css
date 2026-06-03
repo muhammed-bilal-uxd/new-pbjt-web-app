@@ -77,14 +77,19 @@
 }
 
 .pbjt-p {
-  font-size: 0.97rem;
+  font-size: 1.15rem;
   color: var(--pbjt-ink-soft);
   line-height: 1.65;
 }
 
 .pbjt-p--muted {
   color: var(--pbjt-ink-muted);
-  font-size: 0.92rem;
+  /* font-size: 0.92rem; */
+}
+
+.impact-image-worker-01 {
+  width: auto;
+  height: 200px;
 }
 
 /* ---------- Icon chip ---------- */
@@ -244,7 +249,7 @@
 /* ---------- Framework ---------- */
 .pbjt-framework {
   padding-top: 24px;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1fr auto;
   align-items: start;
   gap: 40px;
   display: grid;
@@ -413,7 +418,7 @@
 }
 
 .pbjt-card__body {
-  font-size: 0.92rem;
+  font-size: 1.15rem;
   color: var(--pbjt-ink-soft);
   line-height: 1.55;
   margin: 0;
@@ -436,6 +441,7 @@
   border-radius: var(--pbjt-radius-md);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 }
 

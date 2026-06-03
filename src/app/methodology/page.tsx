@@ -91,6 +91,30 @@ const PILLARS = [
   },
 ];
 
+function SustainabilityStatementSection() {
+  return (
+    <section className="relative overflow-hidden bg-white center-content mt-3 mb-5">
+      <div className="relative mx-auto max-w-6xl">
+        <div className="max-w-5xl">
+          <p className="text-[1rem] leading-[1.35] tracking-[-0.02em] text-[#374151]">
+            This process does not aim to audit companies, but to democratise
+            sustainability language. When communities understand what companies
+            promise, they are better positioned to engage, negotiate, and hold
+            systems accountable. Our work aligns with emerging global
+            conversations on responsible value chains, including perspectives
+            from organisations like the Institute for Human Rights and Business
+            and investor-led frameworks that emphasise last-mile accountability.
+          </p>
+
+          <div className={styles.footnote}>
+            This is how transition becomes not only green but also just.
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Methodology() {
   return (
     <div className={styles.page}>
@@ -238,6 +262,8 @@ export default function Methodology() {
           ))}
         </div>
       </section>
+
+      <SustainabilityStatementSection />
     </div>
   );
 }

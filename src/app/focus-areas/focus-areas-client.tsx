@@ -283,7 +283,7 @@ export default function FocusAreas() {
       </div>
 
       {/* FOOTER STRIP */}
-      <div className="center-content">
+      {/* <div className="center-content">
         <footer className={cn("pbjt-footer")}>
           <div className={cn("pbjt-footer__message")}>
             <span className={cn("pbjt-footer__icon")} aria-hidden="true">
@@ -305,7 +305,7 @@ export default function FocusAreas() {
             ))}
           </ul>
         </footer>
-      </div>
+      </div> */}
     </section>
   );
 }

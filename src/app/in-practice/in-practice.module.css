@@ -340,7 +340,7 @@
 }
 
 .quoteBox {
-  background: var(--color-dark);
+  background: #646464;
   color: #ffffff;
   padding: 2.5rem 2.5rem;
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
@@ -494,6 +494,19 @@
 .heroWrap {
   white-space: nowrap;
   position: relative;
+}
+
+.bannerText1,
+.bannerText3 {
+  font-size: 2.5rem;
+  line-height: calc(1em + 2px);
+}
+
+.bannerText2 {
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: calc(1em + 2px);
+  font-style: italic;
 }
 
 /* =========================================================

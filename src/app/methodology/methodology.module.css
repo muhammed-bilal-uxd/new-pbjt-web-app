@@ -99,14 +99,14 @@
 
 .introMain {
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   line-height: 1.55;
   color: #1f2937;
   margin: 0 0 1.5rem;
 }
 
 .introSecondary {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.65;
   color: #4b5563;
   margin: 0;
@@ -147,7 +147,7 @@
 }
 
 .elementCard p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.55;
   color: #374151;
   margin: 0;
@@ -234,7 +234,7 @@
 }
 
 .changeItem p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.55;
   color: #4b5563;
   margin: 0;
@@ -308,7 +308,7 @@
 }
 
 .architectureDesc {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.65;
   color: #4b5563;
   margin: 0 0 2rem;
@@ -330,7 +330,7 @@
 .checklist li {
   position: relative;
   padding: 0.4rem 0 0.4rem 1.85rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #374151;
   line-height: 1.5;
 }
@@ -411,7 +411,7 @@
 }
 
 .pillarText p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.45;
   color: #4b5563;
   margin: 0;
@@ -450,6 +450,18 @@
   line-height: 100%;
   color: white;
   padding-top: clamp(25px, 3vw, 30px);
+}
+
+.footnote {
+  background: #fdf3f3;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-block: 30px 0;
+  padding: 18px 24px;
+  display: flex;
+  font-weight: bold;
 }
 
 /* ==========================================================================

@@ -175,12 +175,18 @@ export default function PBJTInPractice() {
       {/* ===== Hero Banner ===== */}
 
       <Banner>
-        <div className={styles.heroWrap}>
-          <span className={styles.heroTop}>What the</span>
-          <div className={styles.heroMain}>
-            Ground<span className={styles.heroQuestion}>?</span>
-          </div>
-          <span className={styles.heroBottom}>Teaches Us</span>
+        <img
+          className="single-cover-banner"
+          src="/images/banner/what-the-ground.jpg"
+        />
+        <div
+          className={
+            "relative flex flex-col items-center whitespace-nowrap banner-hero-group text-white"
+          }
+        >
+        <span className={styles.bannerText1}>What the</span>
+        <span className={styles.bannerText2}>Ground</span>
+        <span className={styles.bannerText3}>Teaches Us ?</span>
         </div>
       </Banner>
 
@@ -264,8 +270,9 @@ export default function PBJTInPractice() {
       {/* ===== Field Insights ===== */}
       <section className={styles.insightsSection}>
         <h2 className={styles.insightsTitle}>
-          Our Field Insights <span className={styles.accentRed}>Centre</span>{" "}
-          On:
+        Our field learning <span className={styles.accentRed}>focuses</span> on:
+          {/* Our Field Insights <span className={styles.accentRed}>Centre</span>{" "}
+          On: */}
         </h2>
         <span className={styles.titleUnderline} aria-hidden="true" />
 
@@ -274,7 +281,7 @@ export default function PBJTInPractice() {
             <article key={i} className={styles.insightCard}>
               <span className={styles.insightIconWrap}>{item.icon}</span>
               <p className={styles.insightText}>{item.text}</p>
-              <span className={styles.insightDivider} aria-hidden="true" />
+              {/* <span className={styles.insightDivider} aria-hidden="true" /> */}
             </article>
           ))}
         </div>
@@ -293,12 +300,18 @@ export default function PBJTInPractice() {
           <span className={styles.quoteOpenMark} aria-hidden="true">
             &ldquo;
           </span>
-          <p className={styles.quoteText}>
+          {/* <p className={styles.quoteText}>
             These are not polished success stories. They are honest, grounded
             accounts of transition{" "}
             <span className={styles.accentRed}>where power</span>,{" "}
             <span className={styles.accentRed}>vulnerability</span>, and{" "}
             <span className={styles.accentRed}>hope</span> meet.
+          </p> */}
+          <p className={styles.quoteText}>
+          These are not success stories. They are honest accounts of transition {" "}
+            <span className={styles.accentRed}>where power</span>,{" "}
+            <span className={styles.accentRed}>vulnerability</span>, and{" "}
+            <span className={styles.accentRed}>hope</span> intersect.
           </p>
           <span className={styles.quoteCloseMark} aria-hidden="true">
             &rdquo;
