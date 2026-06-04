@@ -601,6 +601,10 @@
   .banner-hero-group {
     /* transform: scale(0.7); */
   }
+
+  .banner-group-1 {
+    transform: scale(0.7);
+  }
 }
 
 /* Mobile: 480px */
