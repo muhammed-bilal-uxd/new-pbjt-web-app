@@ -31,13 +31,13 @@ export function Header() {
       <div
         className={`${styles.headerContent} container-fluid mx-auto flex items-center justify-between px-6 py-2`}
       >
-        <div className="hidden min-[1250px]:flex items-center justify-between gap-6 w-full">
+        <div className="hidden min-[1300px]:flex items-center justify-between gap-6 w-full">
           <Logo />
           <HeaderClient navLinks={navLinks} phoneNumber={phoneNumber} />
         </div>
         <div
           className={
-            "flex min-[1250px]:hidden items-center justify-between gap-6 w-full"
+            "flex min-[1300px]:hidden items-center justify-between gap-6 w-full"
           }
         >
           <Logo />
