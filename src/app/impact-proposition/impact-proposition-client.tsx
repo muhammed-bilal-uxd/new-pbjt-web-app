@@ -34,7 +34,7 @@ export default function ImpactProposition() {
         />
         <div
           className={cn(
-            "relative flex flex-col items-center whitespace-nowrap banner-hero-group",
+            "relative flex flex-col items-center banner-hero-group",
           )}
         >
           <div className="text-center">
